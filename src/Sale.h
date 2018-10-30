@@ -2,7 +2,7 @@
  * Sale.h
  *
  *  Created on: 30/10/2018
- *      Author: tiagobarbosa
+ *      Author: tiagobarbosa 
  */
 
 #ifndef SRC_SALE_H_
