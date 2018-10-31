@@ -41,3 +41,4 @@ ostream & operator << (ostream & os, const Medicine & m){
 	return os;
 }
 
+

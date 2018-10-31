@@ -29,6 +29,9 @@ public:
 	const string& getClient() const;
 	const string& getDoctor() const;
 	vector<int> getProducts() const;
+
+	//adds the product with code c to products
+	void addProduct(int c);
 };
 
 #endif /* SRC_RECEIPT_H_ */

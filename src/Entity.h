@@ -2,6 +2,7 @@
 #define ENTITY_H_
 
 #include <string>
+#include <iostream>
 
 using namespace std;
 
@@ -14,6 +15,7 @@ public:
 	string getAddress() const;
 	void setName(string nn);
 	void setAddress(string naddr);
+	friend ostream & operator <<(ostream &os, const Entity & e);
 };
 
 

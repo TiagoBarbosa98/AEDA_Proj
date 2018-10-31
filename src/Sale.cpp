@@ -20,11 +20,16 @@ int Sale::getMin() const {
 	return min;
 }
 
-const vector<pair<string, int> >& Sale::getProdQtd() const {
-	return prodQtd;
+const vector<pair<int, int> >& Sale::getProdQtt() const {
+	return prodQtt;
 }
 
 Sale::~Sale() {
 	// TODO Auto-generated destructor stub
+}
+
+void Sale::addProdQtt(int c, int q){
+	pair<c, q> prod;
+	prodQtt.push_back(prod);
 }
 

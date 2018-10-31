@@ -45,10 +45,10 @@ float Product::getTotalPrice() const{
 }
 
 ostream& operator <<(ostream& os, const Product& p) {
-	os << "Name: " << p.name << endl
-	   << "Code: " << p.code << endl
-	   << "Price: " << p.price << endl //TODO price or price + iva?
-	   << "Description: " << p.description << endl;
+	os << "Name: " << p.name
+	   << "\nCode: " << p.code
+	   << "\nPrice: " << p.price //TODO price or price + iva?
+	   << "\nDescription: " << p.description << endl;
 
 	return os;
 }

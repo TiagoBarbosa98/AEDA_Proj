@@ -21,5 +21,11 @@ void Entity::setAddress(string naddr){
 	this->address = naddr;
 }
 
+ostream & operator <<(ostream &os, const Entity & e){
+	os << "Name: " << e.name << "\nAddress: " << e.address << endl;
+
+	return os;
+}
+
 
 

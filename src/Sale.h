@@ -16,14 +16,20 @@ using namespace std;
 class Sale {
 private:
 	int hour, min;
-	//string -> product name; int -> product quantity
-	vector<pair<string, int>> prodQtd;
+	//int -> product code; int -> product quantity
+	vector<pair<int, int>> prodQtt;
 public:
 	Sale();
 	virtual ~Sale();
+
+	//Getters and setters
 	int getHour() const;
 	int getMin() const;
-	const vector<pair<string, int> >& getProdQtd() const;
+	const vector<pair<string, int> >& getProdQtt() const;
+
+	//adds a new product to prodQtt
+	void addProdQtt(int code, int qtt);
+
 };
 
 #endif /* SRC_SALE_H_ */

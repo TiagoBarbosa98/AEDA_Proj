@@ -30,3 +30,7 @@ vector<int> Receipt::getProducts() const {
 const string& Receipt::getClient() const {
 	return client;
 }
+
+void Receipt::addProduct(int c){
+	products.push_back(c);
+}

@@ -13,5 +13,5 @@ bool Person::operator ==(const Person & p){
 }
 
 bool Person::operator< (const Person & p){
-	return contribNo < p.getContribNo();
+	return getName() < p.getName();
 }
