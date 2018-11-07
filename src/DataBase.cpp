@@ -53,8 +53,14 @@ void DataBase::showAllClients(){
 
 void DataBase::showAllPharmacies(){
 	for(unsigned int i = 0; i < pharmacies.size();i++)
-		cout << pharmacies.at(i).getInfo() << endl;
+		cout << pharmacies.at(i).getInfo()<< endl;
 }
+
+void DataBase::showAllStaff(){
+	for(unsigned int i = 0; i < staff.size();i++)
+		cout << staff.at(i).getInfo()<< endl;
+}
+
 void DataBase::addClient(){
 	string n;
 	string addr;
@@ -113,7 +119,7 @@ void DataBase::openClientsFile(){
 
 void DataBase::openpharmaciesFile(){
     ifstream infich;
-    string textLine,adress, name, manager;
+    string textLine,adress, name, manager="joao";
 
     infich.open(clientsFile);
     if (!infich.fail()) {
@@ -126,7 +132,7 @@ void DataBase::openpharmaciesFile(){
 
             adress = readComplexString(cardStream, ';');
 
-            cardStream >> manager;
+         //   manager = readComplexString(cardStream, ' ');
 
             pharmacies.push_back(Pharmacy(name,adress,manager));
         }

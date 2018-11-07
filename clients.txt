@@ -1,5 +1,1 @@
 rui ; regua ; 2345
-ana ; 53223 ; 235
-joao ; porto ; 34524
-miguel ; gaia ; 23546236
-

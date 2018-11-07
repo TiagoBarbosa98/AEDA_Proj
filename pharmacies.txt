@@ -1,1 +1,3 @@
-rui, regua, 2543
+rui ; regua ; joao
+adega ; porto ; rui
+

@@ -8,3 +8,4 @@ void mainMenu(DataBase d);
 
 void clientMenu(DataBase d);
 
+void pharmacyMenu(DataBase d);

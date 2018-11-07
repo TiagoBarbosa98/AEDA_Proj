@@ -46,6 +46,7 @@ public:
 
 	void showAllClients();
 	void showAllPharmacies();
+	void showAllStaff();
 	string readComplexString (istringstream &ss, char separate);
 	void openproductsFile();
 	void openClientsFile ();

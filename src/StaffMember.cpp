@@ -30,3 +30,11 @@ void StaffMember::setPosition(string pos){
 void StaffMember::setSalary(unsigned int ns){
 	salary = ns;
 }
+
+string StaffMember::getInfo() const{
+	stringstream ss;
+	ss << Person::getInfo() << "salary: " << this->getSalary();
+	ss << "pharmacy name: "<<  this->getPharmacy();
+	ss << "position: " << this->getPosition();
+	return ss.str();
+}

@@ -52,7 +52,7 @@ void mainMenu(DataBase d) {
 
 		switch (choice) {
 		case 1:
-			//pharmacy menu
+			pharmacyMenu(d);
 			break;
 
 		case 2:
@@ -83,10 +83,10 @@ void clientMenu(DataBase d){
 		cout << "|                 CLIENTS MENU                     |" << endl;
 		cout << "|                                                  |" << endl;
 		cout << "|        Type your option:                         |" << endl;
-		cout << "|     1) Show clients                              |" << endl;
-		cout << "|     2) Show client information                   |" << endl;
+		cout << "|     1) Print clients                             |" << endl;
+		cout << "|     2) Show client history                       |" << endl;
 		cout << "|     3) Add Client                                |" << endl;
-		cout << "|     4) Exit                                      |" << endl;
+		cout << "|     4) Go Back to Main Menu                                      |" << endl;
 		cout << "|    Option: ";
 
 		choice = checkBoundaries(1, 4);
@@ -113,7 +113,7 @@ void clientMenu(DataBase d){
 }
 
 
-void PharmacyMenu(DataBase d){
+void pharmacyMenu(DataBase d){
 	int choice;
 
 	while (choice != 4) {
@@ -124,7 +124,7 @@ void PharmacyMenu(DataBase d){
 		cout << "|     1) Show Pharmacies                           |" << endl;
 		cout << "|     2) Show Pharmacy information                 |" << endl;
 		cout << "|     3) Add Pharmacy                              |" << endl;
-		cout << "|     4) Exit                                      |" << endl;
+		cout << "|     4) Go Back to Main Menu                                    |" << endl;
 		cout << "|    Option: ";
 
 		choice = checkBoundaries(1, 4);

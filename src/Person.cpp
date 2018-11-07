@@ -18,6 +18,6 @@ bool Person::operator< (const Person & p){
 
 string Person::getInfo() const{
 	stringstream ss;
-	ss << Entity::getInfo() << ", " << this->getContribNo();
+	ss << Entity::getInfo()  << ", " << this->getContribNo();
 	return ss.str();
 }
