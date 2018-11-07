@@ -5,19 +5,19 @@ DataBase::DataBase() {
 
 }
 DataBase::DataBase(string productsFile, string clientsFile, string pharmaciesFile, string staffFile){
-	 this->productsFile = productsFile;
-	    this->clientsFile = clientsFile;
-	    this->pharmaciesFile = pharmaciesFile;
-	    this->staffFile = staffFile;
+	this->productsFile = productsFile;
+	this->clientsFile = clientsFile;
+	this->pharmaciesFile = pharmaciesFile;
+	this->staffFile = staffFile;
 
-	    try {
-	      //  openproductsFile();
-	        openClientsFile();
-	        openpharmaciesFile();
-	    //    openstaffFile();
-	    } catch (ErrorOpeningFile &name) {
-	        cout << "Error opening the file " << name.getFileName() << endl
-	             << "No data was imported\n";
+	try {
+		//  openproductsFile();
+		openClientsFile();
+		openpharmaciesFile();
+		openstaffFile();
+	} catch (ErrorOpeningFile &name) {
+		cout << "Error opening the file " << name.getFileName() << endl
+				<< "No data was imported\n";
 
 	}
 }
@@ -89,109 +89,182 @@ void DataBase::addFarmacy(){
 	pharmacies.push_back(*f);
 }
 
+void DataBase::addStaffMember(){
+	string n;
+	string addr;
+	unsigned int cN, sal;
+	string ph;
+	string pos;
+	cout  << "name: ";
+	cin >> n;
+	cout << "adress: ";
+	cin >> addr;
+	cout << "contrib number: ";
+	cin >> cN;
+	cout << "salary: ";
+	cin >> sal;
+	cout  << "pharmacy: ";
+	cin >> ph;
+	cout << "position: ";
+	cin >> pos;
+	StaffMember * f = new StaffMember(n, addr, cN,sal,ph, pos);
+	staff.push_back(*f);
+}
+
 /*   OPEN FILES  */
 void DataBase::openClientsFile(){
-    ifstream infich;
-    char aux;
-    string textLine,adress, name;
-    unsigned int contribNo;
+	ifstream infich;
+	char aux;
+	string textLine,adress, name;
+	unsigned int contribNo;
 
-    infich.open(clientsFile);
-    if (!infich.fail()) {
+	infich.open(clientsFile);
+	if (!infich.fail()) {
 
-        while (getline(infich, textLine)) {
+		while (getline(infich, textLine)) {
 
-            istringstream cardStream (textLine);
+			istringstream cardStream (textLine);
 
 
-            name = readComplexString(cardStream, ';');
+			name = readComplexString(cardStream, ';');
 
-            adress = readComplexString(cardStream, ';');
+			adress = readComplexString(cardStream, ';');
 
 			cardStream >> contribNo >> aux;
 
 			clients.push_back(Client(name,adress,contribNo));
-        }
-    }else {
-        throw ErrorOpeningFile(clientsFile);
-    }
+		}
+	}else {
+		throw ErrorOpeningFile(clientsFile);
+	}
 }
 
 void DataBase::openpharmaciesFile(){
-    ifstream infich;
-    string textLine,adress, name, manager="joao";
+	ifstream infich;
+	string textLine,adress, name, manager="joao";
 
-    infich.open(clientsFile);
-    if (!infich.fail()) {
+	infich.open(clientsFile);
+	if (!infich.fail()) {
 
-        while (getline(infich, textLine)) {
+		while (getline(infich, textLine)) {
 
-            istringstream cardStream (textLine);
+			istringstream cardStream (textLine);
 
-            name = readComplexString(cardStream, ';');
+			name = readComplexString(cardStream, ';');
 
-            adress = readComplexString(cardStream, ';');
+			adress = readComplexString(cardStream, ';');
 
-         //   manager = readComplexString(cardStream, ' ');
+			//   manager = readComplexString(cardStream, ' ');
 
-            pharmacies.push_back(Pharmacy(name,adress,manager));
-        }
-    }else {
-        throw ErrorOpeningFile(pharmaciesFile);
-    }
+			pharmacies.push_back(Pharmacy(name,adress,manager));
+		}
+	}else {
+		throw ErrorOpeningFile(pharmaciesFile);
+	}
+}
+
+void DataBase::openstaffFile(){
+	ifstream infich;
+	string textLine,adress, name,ph,pos;
+	unsigned int contribNo,sal;
+	char aux;
+
+	infich.open(clientsFile);
+	if (!infich.fail()) {
+
+		while (getline(infich, textLine)) {
+
+			istringstream cardStream (textLine);
+
+			name = readComplexString(cardStream, ';');
+
+			adress = readComplexString(cardStream, ';');
+
+			cardStream >> contribNo >> aux;
+
+			cardStream >> sal >> aux;
+
+			ph = readComplexString(cardStream, ';');
+
+			pos = readComplexString(cardStream, ';');
+
+			staff.push_back(StaffMember(name,adress,contribNo,sal,ph,pos));
+		}
+	}else {
+		throw ErrorOpeningFile(pharmaciesFile);
+	}
 }
 
 
 void DataBase::closePharmaciesFile() {
-    ofstream saveData;
+	ofstream saveData;
 
-    saveData.open(pharmaciesFile, ios::out | ios::trunc);
+	saveData.open(pharmaciesFile, ios::out | ios::trunc);
 
-    if (saveData.fail()){
-        throw ErrorOpeningFile (pharmaciesFile);
-    }
+	if (saveData.fail()){
+		throw ErrorOpeningFile (pharmaciesFile);
+	}
 
-    for (unsigned int i = 0; i < pharmacies.size(); i++) {
+	for (unsigned int i = 0; i < pharmacies.size(); i++) {
 
-         saveData << pharmacies[i].getName()<< " ; " << pharmacies[i].getAddress()<< " ; " << pharmacies[i].getManager() << endl;
-         }
-         saveData << endl;
+		saveData << pharmacies[i].getName()<< " ; " << pharmacies[i].getAddress()<< " ; " << pharmacies[i].getManager() << endl;
+	}
+	saveData << endl;
 
-    saveData.close();
+	saveData.close();
 }
 
 void DataBase::closeClientsFile() {
-    ofstream saveData;
+	ofstream saveData;
 
-    saveData.open(clientsFile, ios::out | ios::trunc);
+	saveData.open(clientsFile, ios::out | ios::trunc);
 
-    if (saveData.fail()){
-        throw ErrorOpeningFile (clientsFile);
-    }
+	if (saveData.fail()){
+		throw ErrorOpeningFile (clientsFile);
+	}
 
-    for (unsigned int i = 0; i < clients.size(); i++) {
+	for (unsigned int i = 0; i < clients.size(); i++) {
 
-         saveData << clients[i].getName()<< " ; " << clients[i].getAddress()<< " ; " << clients[i].getContribNo() << endl;
-         }
-         saveData << endl;
+		saveData << clients[i].getName()<< " ; " << clients[i].getAddress()<< " ; " << clients[i].getContribNo() << endl;
+	}
+	saveData << endl;
 
-    saveData.close();
+	saveData.close();
 }
+
+void DataBase::closeStaffFile() {
+	ofstream saveData;
+
+	saveData.open(staffFile, ios::out | ios::trunc);
+
+	if (saveData.fail()){
+		throw ErrorOpeningFile (staffFile);
+	}
+
+	for (unsigned int i = 0; i < staff.size(); i++) {
+
+		saveData << staff[i].getName()<< " ; " << staff[i].getAddress()<< " ; " << staff[i].getContribNo() << staff[i].getSalary() << " ; " << staff[i].getPharmacy() << " ; " << staff[i].getPosition() << endl;
+	}
+	saveData << endl;
+
+	saveData.close();
+}
+
 string DataBase::readComplexString (istringstream &ss, char separate) {
-    string final, auxString;
-    char aux;
+	string final, auxString;
+	char aux;
 
-    do {
-        ss >> auxString;
-        final += auxString;
-        ss.get(aux);
-        ss.get(aux);
+	do {
+		ss >> auxString;
+		final += auxString;
+		ss.get(aux);
+		ss.get(aux);
 
-        if (aux != separate) {
-            final += " ";
-            ss.unget();
-        }
-    } while (aux != separate);
+		if (aux != separate) {
+			final += " ";
+			ss.unget();
+		}
+	} while (aux != separate);
 
-    return final;
+	return final;
 }

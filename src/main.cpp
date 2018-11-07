@@ -56,7 +56,7 @@ void mainMenu(DataBase d) {
 			break;
 
 		case 2:
-			//staff menu
+			staffMenu(d);
 			break;
 
 		case 3:
@@ -144,6 +144,44 @@ void pharmacyMenu(DataBase d){
 
 		case 4:
 			d.closePharmaciesFile();
+			cout << endl;
+			break;
+		}
+	}
+}
+
+
+void staffMenu(DataBase d){
+	int choice;
+
+	while (choice != 4) {
+		cout << "____________________________________________________" << endl;
+		cout << "|                STAFF MENU                        |" << endl;
+		cout << "|                                                  |" << endl;
+		cout << "|        Type your option:                         |" << endl;
+		cout << "|     1) Show Staff                                |" << endl;
+		cout << "|     2) Show Staff information                    |" << endl;
+		cout << "|     3) Add Staff                                 |" << endl;
+		cout << "|     4) Go Back to Main Menu                                    |" << endl;
+		cout << "|    Option: ";
+
+		choice = checkBoundaries(1, 4);
+
+		switch (choice) {
+		case 1:
+			d.showAllStaff();
+			break;
+
+		case 2:
+			//staff menu
+			break;
+
+		case 3:
+			d.addStaffMember();
+			break;
+
+		case 4:
+			d.closeStaffFile();
 			cout << endl;
 			break;
 		}

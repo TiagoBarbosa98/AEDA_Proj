@@ -38,6 +38,7 @@ public:
 	vector<StaffMember> getStaff() const;
 	void addClient();
 	void addFarmacy();
+	void addStaffMember();
 	//adding elem to vector v
 	template<class T>
 	void addElement(T elem, vector<T> &v){
@@ -54,6 +55,7 @@ public:
 	void openstaffFile();
 	void closeClientsFile();
 	void closePharmaciesFile();
+	void closeStaffFile();
 
 };
 
