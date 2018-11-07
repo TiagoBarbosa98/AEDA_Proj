@@ -3,14 +3,19 @@
 #include <vector>
 #include "Person.h"
 #include "Client.h"
+#include <iostream>
+#include <fstream>
 
 using namespace std;
+
+class Person;
 
 class Client:  public Person{
 	vector<unsigned int> history;
 public:
-	Client(string n, string addr, string contribNo):Person(n, addr, contribNo){};
-	vector<unsigned int> getHistory(){return history;};
+	Client(string n, string addr,  unsigned int  contribNo);
+	vector<unsigned int> getHistory();
+
 
 };
 

@@ -1,10 +1,3 @@
- /*
- * Receipt.h
- *
- *  Created on: 30/10/2018
- *      Author: tiagobarbosa 
- */
-
 #ifndef SRC_RECEIPT_H_
 #define SRC_RECEIPT_H_
 #include <iostream>

@@ -1,10 +1,3 @@
-/*
- * Medicine.h
- *
- *  Created on: 30/10/2018
- *      Author: tiagobarbosa 
- */
-
 #ifndef SRC_MEDICINE_H_
 #define SRC_MEDICINE_H_
 

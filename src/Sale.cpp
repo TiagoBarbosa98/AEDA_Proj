@@ -1,10 +1,3 @@
-/*
- * Sale.cpp
- *
- *  Created on: 30/10/2018
- *      Author: tiagobarbosa 
- */
-
 #include "Sale.h"
 
 Sale::Sale() {
@@ -27,9 +20,9 @@ const vector<pair<int, int> >& Sale::getProdQtt() const {
 Sale::~Sale() {
 	// TODO Auto-generated destructor stub
 }
-
+/*
 void Sale::addProdQtt(int c, int q){
 	pair<c, q> prod;
 	prodQtt.push_back(prod);
-}
+}*/
 

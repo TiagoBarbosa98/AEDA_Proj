@@ -1,10 +1,3 @@
-/*
- * Sale.h
- *
- *  Created on: 30/10/2018
- *      Author: tiagobarbosa 
- */
-
 #ifndef SRC_SALE_H_
 #define SRC_SALE_H_
 #include <iostream>
@@ -25,10 +18,10 @@ public:
 	//Getters and setters
 	int getHour() const;
 	int getMin() const;
-	const vector<pair<string, int> >& getProdQtt() const;
+	const vector<pair<int, int> >& getProdQtt() const;
 
 	//adds a new product to prodQtt
-	void addProdQtt(int code, int qtt);
+	//void addProdQtt(int code, int qtt);
 
 };
 

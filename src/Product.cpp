@@ -1,10 +1,3 @@
-/*
- * Product.cpp
- *
- *  Created on: 30/10/2018 
- *      Author: tiagobarbosa
- */
-
 #include "Product.h"
 
 Product::Product() {

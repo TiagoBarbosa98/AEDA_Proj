@@ -1,10 +1,3 @@
-/*
- * Product.h
- *
- *  Created on: 30/10/2018
- *      Author: tiagobarbosa 
- */
-
 #ifndef SRC_PRODUCT_H_
 #define SRC_PRODUCT_H_
 #include <iostream>
