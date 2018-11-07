@@ -14,10 +14,10 @@ public:
 	Pharmacy(string n, string addr,string manager);
 	Pharmacy(string n, string addr, vector<StaffMember> sl);
 	vector<StaffMember> getStaff() const;
-	void showPharmacy();
+	string getInfo() const;
 	void addStaff(StaffMember *s);
 	void removeStaff(StaffMember s);
-	string getManager();
+	string getManager() const;
 	void setManager(StaffMember m); //Manager has to exist in list
 };
 

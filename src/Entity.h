@@ -3,6 +3,7 @@
 
 #include <string>
 #include <iostream>
+#include <sstream>
 
 using namespace std;
 
@@ -16,6 +17,7 @@ public:
 	void setName(string nn);
 	void setAddress(string naddr);
 	friend ostream & operator <<(ostream &os, const Entity & e);
+	virtual string getInfo() const;
 };
 
 

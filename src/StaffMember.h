@@ -16,6 +16,7 @@ public:
 	string getPosition() const;
 	void setSalary(unsigned int ns);
 	void setPharmacy(string ph);
+	void showStaff();
 	void setPosition(string pos);
 };
 

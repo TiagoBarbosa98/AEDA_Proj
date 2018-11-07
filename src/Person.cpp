@@ -15,3 +15,9 @@ bool Person::operator ==(const Person & p){
 bool Person::operator< (const Person & p){
 	return getName() < p.getName();
 }
+
+string Person::getInfo() const{
+	stringstream ss;
+	ss << Entity::getInfo() << ", " << this->getContribNo();
+	return ss.str();
+}

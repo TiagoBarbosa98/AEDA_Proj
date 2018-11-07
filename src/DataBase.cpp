@@ -48,12 +48,12 @@ vector<StaffMember> DataBase::getStaff() const {
 
 void DataBase::showAllClients(){
 	for(unsigned int i = 0; i < clients.size();i++)
-		clients.at(i).showClients();
+		cout << clients.at(i).getInfo() << endl;
 }
 
 void DataBase::showAllPharmacies(){
 	for(unsigned int i = 0; i < pharmacies.size();i++)
-		pharmacies.at(i).showPharmacy();
+		cout << pharmacies.at(i).getInfo() << endl;
 }
 void DataBase::addClient(){
 	string n;
@@ -113,7 +113,6 @@ void DataBase::openClientsFile(){
 
 void DataBase::openpharmaciesFile(){
     ifstream infich;
-    char aux;
     string textLine,adress, name, manager;
 
     infich.open(clientsFile);
@@ -126,7 +125,8 @@ void DataBase::openpharmaciesFile(){
             name = readComplexString(cardStream, ';');
 
             adress = readComplexString(cardStream, ';');
-            manager = readComplexString(cardStream, ';');
+
+            cardStream >> manager;
 
             pharmacies.push_back(Pharmacy(name,adress,manager));
         }

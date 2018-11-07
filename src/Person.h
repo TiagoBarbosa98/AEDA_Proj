@@ -12,6 +12,7 @@ public:
 	unsigned int getContribNo() const;
 	bool operator==(const Person & p);
 	bool operator< (const Person & p);
+	virtual string getInfo() const;
 };
 
 

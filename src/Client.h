@@ -15,7 +15,7 @@ class Client:  public Person{
 public:
 	Client(string n, string addr,  unsigned int  contribNo);
 	vector<unsigned int> getHistory();
-	void showClients();
+	string getInfo() const;
 
 };
 

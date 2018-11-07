@@ -24,10 +24,12 @@ void Pharmacy::removeStaff(StaffMember s){
 	}
 }
 
-string Pharmacy::getManager(){
+string Pharmacy::getManager() const{
 	return manager;
 }
 
-void Pharmacy::showPharmacy(){
-cout << this->getName() << ", " << this->getAddress() << ", " << this->getManager() << endl;
+string Pharmacy::getInfo() const{
+	stringstream ss;
+	ss << Entity::getInfo() << ", " << this->getManager();
+	return ss.str();
 }

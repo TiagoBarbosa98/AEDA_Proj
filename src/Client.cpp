@@ -6,7 +6,9 @@ vector<unsigned int> Client::getHistory(){
 	return history;
 }
 
-void Client::showClients(){
-	cout << this->getName() << ", " << this->getAddress() << ", " << this->getContribNo() << endl;
+string Client::getInfo() const{
+	stringstream ss;
+	ss << Person::getInfo();
+	return ss.str();
 }
 
