@@ -5,3 +5,6 @@
 int checkBoundaries(int linf, int lsup);
 
 void mainMenu(DataBase d);
+
+void clientMenu(DataBase d);
+

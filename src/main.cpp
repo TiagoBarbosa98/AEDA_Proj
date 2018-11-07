@@ -12,7 +12,7 @@
 using namespace std;
 
 int main(){
-	DataBase d;
+	DataBase d("products.txt", "clients.txt","pharmacies.txt", "staff.txt");
 	mainMenu(d);
 	return 0;
 }
@@ -60,7 +60,7 @@ void mainMenu(DataBase d) {
 			break;
 
 		case 3:
-			d.addClient();
+			clientMenu(d);
 			break;
 
 		case 4:
@@ -70,6 +70,81 @@ void mainMenu(DataBase d) {
 		case 5:
 			cout << endl;
 			cout << "See you next time!\n";
+			break;
+		}
+	}
+}
+
+void clientMenu(DataBase d){
+	int choice;
+
+	while (choice != 4) {
+		cout << "____________________________________________________" << endl;
+		cout << "|                 CLIENTS MENU                     |" << endl;
+		cout << "|                                                  |" << endl;
+		cout << "|        Type your option:                         |" << endl;
+		cout << "|     1) Show clients                              |" << endl;
+		cout << "|     2) Show client information                   |" << endl;
+		cout << "|     3) Add Client                                |" << endl;
+		cout << "|     4) Exit                                      |" << endl;
+		cout << "|    Option: ";
+
+		choice = checkBoundaries(1, 4);
+
+		switch (choice) {
+		case 1:
+			d.showAllClients();
+			break;
+
+		case 2:
+			//staff menu
+			break;
+
+		case 3:
+			d.addClient();
+			break;
+
+		case 4:
+			d.closeClientsFile();
+			cout << endl;
+			break;
+		}
+	}
+}
+
+
+void PharmacyMenu(DataBase d){
+	int choice;
+
+	while (choice != 4) {
+		cout << "____________________________________________________" << endl;
+		cout << "|                PHARMACY MENU                     |" << endl;
+		cout << "|                                                  |" << endl;
+		cout << "|        Type your option:                         |" << endl;
+		cout << "|     1) Show Pharmacies                           |" << endl;
+		cout << "|     2) Show Pharmacy information                 |" << endl;
+		cout << "|     3) Add Pharmacy                              |" << endl;
+		cout << "|     4) Exit                                      |" << endl;
+		cout << "|    Option: ";
+
+		choice = checkBoundaries(1, 4);
+
+		switch (choice) {
+		case 1:
+			d.showAllPharmacies();
+			break;
+
+		case 2:
+			//staff menu
+			break;
+
+		case 3:
+			d.addFarmacy();
+			break;
+
+		case 4:
+			d.closePharmaciesFile();
+			cout << endl;
 			break;
 		}
 	}

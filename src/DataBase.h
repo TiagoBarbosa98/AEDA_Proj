@@ -37,16 +37,22 @@ public:
 	vector<Receipt> getReceipts() const;
 	vector<StaffMember> getStaff() const;
 	void addClient();
+	void addFarmacy();
 	//adding elem to vector v
 	template<class T>
 	void addElement(T elem, vector<T> &v){
 		v.push_back(elem);
 	}
+
+	void showAllClients();
+	void showAllPharmacies();
 	string readComplexString (istringstream &ss, char separate);
 	void openproductsFile();
-	void openclientsFile ();
+	void openClientsFile ();
 	void openpharmaciesFile();
 	void openstaffFile();
+	void closeClientsFile();
+	void closePharmaciesFile();
 
 };
 

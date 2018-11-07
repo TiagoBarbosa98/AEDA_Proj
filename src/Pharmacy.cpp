@@ -2,7 +2,9 @@
 
 using namespace std;
 
-Pharmacy::Pharmacy(string n, string addr):Entity(n, addr){}
+Pharmacy::Pharmacy(string n, string addr, string manager):Entity(n, addr){
+	this->manager=manager;
+}
 
 Pharmacy::Pharmacy(string n, string addr, vector<StaffMember> sl): Entity(n, addr){
 	this->staff = sl;
@@ -22,5 +24,10 @@ void Pharmacy::removeStaff(StaffMember s){
 	}
 }
 
+string Pharmacy::getManager(){
+	return manager;
+}
 
-
+void Pharmacy::showPharmacy(){
+cout << this->getName() << ", " << this->getAddress() << ", " << this->getManager() << endl;
+}
