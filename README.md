@@ -1,4 +1,4 @@
-#**AEDA Project**
+# **AEDA Project**
 ## TODO LIST:
   * Consult DB;
   * Add items to DB;
