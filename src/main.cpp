@@ -3,20 +3,30 @@
 #include <fstream>
 #include <iomanip>
 #include <limits>
+#include <fstream>
+#include "Sale.h"
 #include "Product.h"
 #include "Medicine.h"
 #include "DataBase.h"
-#include "main.h"
-#include <fstream>
 
 using namespace std;
 
 int main(){
-	DataBase d("products.txt", "clients.txt","pharmacies.txt", "staff.txt");
-	mainMenu(d);
+	//DataBase d("products.txt", "clients.txt","pharmacies.txt", "staff.txt");
+	//mainMenu(d);
+	Product p("Benurom", "Geral", 2, 10, 69);
+	Product q("Benurao", "Geral", 2, 10, 240);
+	Sale * s1 = new Sale();
+	s1->addProdQtt(p, 10);
+	s1->addProdQtt(q, 20);
+	cout << *s1;
+	Sale *s2 = new Sale();
+	s2->addProdQtt(p, 5);
+	s2->addProdQtt(q, 4);
+	cout << *s2;
 	return 0;
 }
-
+/*
 int checkBoundaries(int linf, int lsup) {
 	int nr;
 
@@ -186,4 +196,4 @@ void staffMenu(DataBase d){
 			break;
 		}
 	}
-}
+}*/

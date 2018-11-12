@@ -3,25 +3,28 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <ctime>
+#include "Product.h"
 
 using namespace std;
 
 class Sale {
 private:
-	int hour, min;
-	//int -> product code; int -> product quantity
-	vector<pair<int, int>> prodQtt;
+	tm *date;
+	static unsigned int lastCode;
+	unsigned int code;
+	vector<pair<Product, unsigned int>> prodQtt;
 public:
 	Sale();
 	virtual ~Sale();
-
+	Sale(vector<pair<Product, unsigned int>> cart);
 	//Getters and setters
-	int getHour() const;
-	int getMin() const;
-	const vector<pair<int, int> >& getProdQtt() const;
-
+	tm * getDate() const;
+	unsigned int getCode() const;
+	const vector<pair<Product, unsigned int> >& getProdQtt() const;
+	friend ostream & operator << (ostream & os, const Sale & s);
+	void addProdQtt(Product p, int qtt);
 	//adds a new product to prodQtt
-	//void addProdQtt(int code, int qtt);
 
 };
 
