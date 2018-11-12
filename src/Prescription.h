@@ -1,11 +1,11 @@
-#ifndef SRC_RECEIPT_H_
-#define SRC_RECEIPT_H_
+#ifndef SRC_PRESCRIPTION_H_
+#define SRC_PRESCRIPTION_H_
 #include <iostream>
 #include <string>
 #include <vector>
 using namespace std;
 
-class Receipt {
+class Prescription {
 	//numero, numero, cliente, medico e lista produtos
 private:
 	int number;
@@ -13,9 +13,9 @@ private:
 	vector<int> products;
 
 public:
-	Receipt();
-	Receipt(int number, string client, string doctor, vector<int> products);
-	virtual ~Receipt();
+	Prescription();
+	Prescription(int number, string client, string doctor, vector<int> products);
+	virtual ~Prescription();
 
 	//Getters and Setters
 	int getNumber() const;

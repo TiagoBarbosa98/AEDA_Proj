@@ -3,19 +3,19 @@
 #include <iostream>
 #include <string>
 #include <vector>
-
-#include "Product.h"
-#include "Pharmacy.h"
-#include "Client.h"
-#include "StaffMember.h"
-#include "Receipt.h"
-
 #include <vector>
 #include <fstream>
 #include <set>
 #include <queue>
 #include <unordered_set>
 #include <sstream>
+
+#include "Product.h"
+#include "Pharmacy.h"
+#include "Client.h"
+#include "StaffMember.h"
+#include "Prescription.h"
+#include "Sale.h"
 
 class DataBase {
 private:
@@ -24,7 +24,8 @@ private:
 	vector<Client> clients;
 	vector<Pharmacy> pharmacies;
 	vector<StaffMember> staff;
-	vector<Receipt> receipts;
+	vector<Prescription> prescriptions;
+	vector<Sale> sales;
 public:
 	DataBase();
 	DataBase(string productsFile, string clientsFile, string pharmaciesFile, string staffFile);
@@ -34,7 +35,7 @@ public:
 	vector<Client> getClients() const;
 	vector<Pharmacy> getPharmacies() const;
 	const vector<Product*>& getProducts() const;
-	vector<Receipt> getReceipts() const;
+	vector<Prescription> getPrescriptions() const;
 	vector<StaffMember> getStaff() const;
 	void addClient();
 	void addFarmacy();
@@ -48,6 +49,7 @@ public:
 	void showAllClients();
 	void showAllPharmacies();
 	void showAllStaff();
+
 	string readComplexString (istringstream &ss, char separate);
 	void openproductsFile();
 	void openClientsFile ();

@@ -38,8 +38,8 @@ const vector<Product*>& DataBase::getProducts() const {
 	return products;
 }
 
-vector<Receipt> DataBase::getReceipts() const {
-	return receipts;
+vector<Prescription> DataBase::getPrescriptions() const {
+	return prescriptions;
 }
 
 vector<StaffMember> DataBase::getStaff() const {
