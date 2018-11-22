@@ -28,7 +28,7 @@ private:
 	vector<Sale> sales;
 public:
 	DataBase();
-	DataBase(string productsFile, string clientsFile, string pharmaciesFile, string staffFile);
+	DataBase(string prodFile, string cliFile, string pharmFile, string staffFile);
 	virtual ~DataBase();
 
 	//Getters
@@ -37,6 +37,7 @@ public:
 	const vector<Product*>& getProducts() const;
 	vector<Prescription> getPrescriptions() const;
 	vector<StaffMember> getStaff() const;
+
 	void addClient();
 	void addFarmacy();
 	void addStaffMember();

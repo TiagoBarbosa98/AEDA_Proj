@@ -10,6 +10,7 @@ class StaffMember: public Person{
 	string pharmacy;
 	string position;
 public:
+	StaffMember();
 	StaffMember(string n, string addr, unsigned int contribNo, unsigned int sal , string ph, string pos);
 	unsigned int getSalary() const;
 	string getPharmacy() const;
@@ -19,6 +20,7 @@ public:
 	void setPharmacy(string ph);
 	void showStaff();
 	void setPosition(string pos);
+	friend ostream& operator<<(ostream &os, const StaffMember &s);
 };
 
 

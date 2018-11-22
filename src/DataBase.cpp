@@ -47,8 +47,7 @@ vector<StaffMember> DataBase::getStaff() const {
 }
 
 void DataBase::showAllClients(){
-	for(unsigned int i = 0; i < clients.size();i++)
-		cout << clients.at(i).getInfo() << endl;
+	printVector(clients);
 }
 
 void DataBase::showAllPharmacies(){
@@ -65,11 +64,11 @@ void DataBase::addClient(){
 	string n;
 	string addr;
 	unsigned int  contribNo;
-	cout  << "name: ";
-	cin >> n;
-	cout << "adress: ";
-	cin >> addr;
-	cout << "contrib number: ";
+	cout  << "Name: ";
+	getline(cin, n);
+	cout << "Address: ";
+	getline(cin, addr);
+	cout << "Identification Number: ";
 	cin >> contribNo;
 	Client * cli = new Client(n, addr, contribNo);
 	clients.push_back(*cli);
@@ -79,14 +78,14 @@ void DataBase::addFarmacy(){
 	string n;
 	string addr;
 	string m;
-	cout  << "name: ";
+	cout  << "Name: ";
 	cin >> n;
-	cout << "adress: ";
+	cout << "adDress: ";
 	cin >> addr;
 	cout << "manager: ";
 	cin >> m;
-	Pharmacy * f = new Pharmacy(n, addr, m);
-	pharmacies.push_back(*f);
+	Pharmacy f(n, addr, m);
+	pharmacies.push_back(f);
 }
 
 void DataBase::addStaffMember(){
@@ -107,8 +106,8 @@ void DataBase::addStaffMember(){
 	cin >> ph;
 	cout << "position: ";
 	cin >> pos;
-	StaffMember * f = new StaffMember(n, addr, cN,sal,ph, pos);
-	staff.push_back(*f);
+	StaffMember f(n, addr, cN,sal,ph, pos);
+	staff.push_back(f);
 }
 
 /*   OPEN FILES  */
@@ -126,7 +125,7 @@ void DataBase::openClientsFile(){
 			istringstream cardStream (textLine);
 
 
-			name = readComplexString(cardStream, ';');
+				name = readComplexString(cardStream, ';');
 
 			adress = readComplexString(cardStream, ';');
 
@@ -137,6 +136,19 @@ void DataBase::openClientsFile(){
 	}else {
 		throw ErrorOpeningFile(clientsFile);
 	}
+
+	/*ifstream myReadFile;
+	myReadFile.open("t.txt");
+	string output;
+
+	while(getline(myReadFile, output)){
+		cout << output << endl;
+
+		int pos = output.find_first_of(" ", 0);
+
+		string final = output.substr(pos + 1, output.size() - pos);
+		cout << final << endl;
+	}*/
 }
 
 void DataBase::openpharmaciesFile(){
@@ -207,7 +219,7 @@ void DataBase::closePharmaciesFile() {
 
 	for (unsigned int i = 0; i < pharmacies.size(); i++) {
 
-		saveData << pharmacies[i].getName()<< " ; " << pharmacies[i].getAddress()<< " ; " << pharmacies[i].getManager() << endl;
+		saveData << pharmacies[i] << endl;
 	}
 	saveData << endl;
 
@@ -225,7 +237,7 @@ void DataBase::closeClientsFile() {
 
 	for (unsigned int i = 0; i < clients.size(); i++) {
 
-		saveData << clients[i].getName()<< " ; " << clients[i].getAddress()<< " ; " << clients[i].getContribNo() << endl;
+		saveData << clients[i] << endl;
 	}
 	saveData << endl;
 
@@ -243,13 +255,14 @@ void DataBase::closeStaffFile() {
 
 	for (unsigned int i = 0; i < staff.size(); i++) {
 
-		saveData << staff[i].getName()<< " ; " << staff[i].getAddress()<< " ; " << staff[i].getContribNo() << staff[i].getSalary() << " ; " << staff[i].getPharmacy() << " ; " << staff[i].getPosition() << endl;
+		saveData << staff[i] << endl;
 	}
 	saveData << endl;
 
 	saveData.close();
 }
 
+/*TODO
 string DataBase::readComplexString (istringstream &ss, char separate) {
 	string final, auxString;
 	char aux;
@@ -268,3 +281,4 @@ string DataBase::readComplexString (istringstream &ss, char separate) {
 
 	return final;
 }
+*/

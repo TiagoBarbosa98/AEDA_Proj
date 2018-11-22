@@ -7,6 +7,11 @@ StaffMember::StaffMember(string n, string addr, unsigned int cN, unsigned int sa
 	position = pos;
 }
 
+StaffMember::StaffMember(): Person("www", "wqq", 221){
+	salary = 0;
+	pharmacy = "w";
+	position = "d";
+}
 unsigned int StaffMember::getSalary() const{
 	return salary;
 }
@@ -37,4 +42,14 @@ string StaffMember::getInfo() const{
 	ss << "pharmacy name: "<<  this->getPharmacy();
 	ss << "position: " << this->getPosition();
 	return ss.str();
+}
+
+ostream& operator<<(ostream &os, const StaffMember &s){
+	const Person *p = &s;
+	os << *p;
+	os << "Salary: " << s.salary
+	   << "\nWorks for: " << s.pharmacy << " Pharmacy"
+	   << "\nWorks as: " << s.position << endl;
+
+	return os;
 }
