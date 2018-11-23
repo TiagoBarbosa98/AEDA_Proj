@@ -265,11 +265,14 @@ int main(){
 	s->addProdPriceQtt(*p, 5);
 	cout << *s << endl;*/
 
-	DataBase * d = new DataBase("TextFiles/Products.txt", "TextFiles/Clients.txt","TextFiles/Pharmacies.txt", "TextFiles/Staff.txt", "TextFiles/Sales.txt");
-	mainMenu(*d);
+	DataBase * d = new DataBase("TextFiles/Products.txt", "TextFiles/Clients.txt","TextFiles/Pharmacies.txt", "TextFiles/Staff.txt", "TextFiles/Sales.txt", "TextFiles/Prescriptions.txt");
+	//mainMenu(*d);
 	/*
 	Prescription p(0, "Joao Vitor", "Dr. Pontes", "Benurom");
 	cout << p;*/
+	d->openProductsFile();
+	d->showAllProducts();
+
 	return 0;
 }
 
@@ -306,7 +309,7 @@ void mainMenu(DataBase d) {
 			break;
 
 		case 4:
-			//products menu
+			productsMenu(d);
 			break;
 
 		case 5:

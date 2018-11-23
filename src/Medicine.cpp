@@ -34,4 +34,16 @@ ostream & operator << (ostream & os, const Medicine & m){
 	return os;
 }
 
+string Medicine::display() const {
+	string out = Product::display();
+	out = out + "Discount: " + 	to_string(discount) + "\nPrescription Required: " + prescr() + "\n";
+	return out;
+}
 
+string Medicine::prescr() const {
+	if(prescription){
+		return "1";
+	}
+	else
+		return "0";
+}

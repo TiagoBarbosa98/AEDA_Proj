@@ -51,6 +51,19 @@ ostream& operator <<(ostream& os, const Product& p) {
 	return os;
 }
 
+string Product::display() const {
+	string out;
+	out = "Name: " + name +
+			"\nCode: " + to_string(code) +
+			"\nPrice: " + to_string(getTotalPrice()) +
+			"\nDescription: " + description +
+			"\nMedicine: " + med() + "\n";
+	return out;
+}
 
-
-
+string Product::med() const {
+	if(medicine)
+		return "1";
+	else
+		return "0";
+}

@@ -5,12 +5,13 @@ DataBase::DataBase() {
 	// TODO Auto-generated constructor stub
 
 }
-DataBase::DataBase(string productsFile, string clientsFile, string pharmaciesFile, string staffFile, string salesFile){
+DataBase::DataBase(string productsFile, string clientsFile, string pharmaciesFile, string staffFile, string salesFile, string prescFile){
 	this->productsFile = productsFile;
 	this->clientsFile = clientsFile;
 	this->pharmaciesFile = pharmaciesFile;
 	this->staffFile = staffFile;
 	this->salesFile = salesFile;
+	this->prescFile = prescFile;
 /*
 	try {
 		//  openproductsFile();
@@ -64,6 +65,10 @@ void DataBase::showAllPrescriptions(){
 	printVector(prescriptions);
 }
 
+void DataBase::showAllSales(){
+	printVector(sales);
+}
+
 void DataBase::addPrescription(){
 	cout << "Number: " << endl;
 	int n = checkForType<int>();
@@ -85,7 +90,9 @@ void DataBase::addPrescription(){
 }
 
 void DataBase::showAllProducts(){
-	printVector(products);
+	for(unsigned int i = 0; i < products.size(); i++){
+		cout << products[i]->display() << endl;
+	}
 }
 
 Product DataBase::getProductByName(string name) const{
@@ -169,10 +176,6 @@ void DataBase::removeClient(){
 	throw ItemDoesNotExist(name);
 }
 
-void DataBase::showAllSales(){
-	printVector(sales);
-
-}
 
 void DataBase::addSale(){
 	Sale *s = new Sale();
@@ -305,7 +308,7 @@ Sale DataBase::getSale(unsigned int code){
 	return Sale();
 }
 
-
+//TODO
 void DataBase::openSalesFile(){
 	ifstream infich;
 		string salen, date, prod, garbage;
@@ -452,7 +455,7 @@ void DataBase::openProductsFile(){
 
 			//checking if prod is medicine and getting rest of info if it is
 			getline(infich, disc);
-			if(disc.size() > 1){
+			if(disc.size() > 1 & !infich.eof()){
 				getline(infich, presc);
 
 				disc = parse(disc);
@@ -466,7 +469,6 @@ void DataBase::openProductsFile(){
 
 				getline(infich, garbage);
 
-				//Medicine::Medicine(string n, string desc, float p, float iva, int c, float disc, bool nr)
 				Product *prod = new Medicine(name, desc, price, 0, code, discount, prescr);
 				products.push_back(prod);
 			}
@@ -526,9 +528,28 @@ void DataBase::openPrescriptionFile() {
 	ifstream infich;
 	string number, doctor, client, garbage, prod;
 		//TODO change file
-		infich.open(staffFile);
-		if (!infich.fail()) {
+	infich.open(prescFile);
+	if (!infich.fail()) {
+		while(!infich.eof()){
+			getline(infich, number);
+			getline(infich, doctor);
+			getline(infich, client);
+			getline(infich, prod);
+			getline(infich, garbage);
+
+			number = parse(number);
+			doctor = parse(doctor);
+			client = parse(client);
+			prod = parse(prod);
+
+			int num = stoi(number);
+
+			Prescription p(num, client, doctor, prod);
+			prescriptions.push_back(p);
 		}
+	}
+	else
+		throw ErrorOpeningFile(prescFile);
 }
 
 void DataBase::writeToProductsFile() {

@@ -1,0 +1,15 @@
+Name: lel
+Address: poop
+Nc: 999
+Purchases:
+  -1
+  -2
+  -3
+
+Name: grgr
+Address: mnmnm
+Nc: 11
+Purchases:
+  -9
+  -5
+  -3

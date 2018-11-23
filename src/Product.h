@@ -84,7 +84,11 @@ public:
 	 */
 	float getTotalPrice() const;
 
+	virtual string display() const;
+
 	bool getMedicine() const;
+
+	string med() const;
 
 };
 

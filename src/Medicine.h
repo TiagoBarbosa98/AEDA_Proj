@@ -20,6 +20,8 @@ public:
 	float getPriceWithDiscount() const;
 	bool prescriptionRequired() const;
 	friend ostream & operator << (ostream & os, const Medicine & m);
+	string display() const;
+	string prescr() const;
 };
 
 #endif /* SRC_MEDICINE_H_ */

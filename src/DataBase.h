@@ -3,11 +3,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include <vector>
 #include <fstream>
-#include <set>
-#include <queue>
-#include <unordered_set>
 #include <sstream>
 
 #include "Product.h"
@@ -20,7 +16,7 @@
 
 class DataBase {
 private:
-	string productsFile, clientsFile, pharmaciesFile, staffFile, salesFile;
+	string prescFile, productsFile, clientsFile, pharmaciesFile, staffFile, salesFile;
 	vector<Product* > products;
 	vector<Client> clients;
 	vector<Pharmacy> pharmacies;
@@ -30,7 +26,7 @@ private:
 public:
 	DataBase();
 	DataBase(string prodFile, string cliFile, string pharmFile, string staffFile);
-	DataBase(string productsFile, string clientsFile, string pharmaciesFile, string staffFile, string salesFile);
+	DataBase(string productsFile, string clientsFile, string pharmaciesFile, string staffFile, string salesFile, string prescFile);
 	virtual ~DataBase();
 
 	//Getters
@@ -111,7 +107,6 @@ public:
 
 			saveData << v[i] << endl;
 		}
-		saveData << endl;
 
 		saveData.close();
 	}
