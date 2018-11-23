@@ -9,15 +9,17 @@
 #include "Medicine.h"
 #include "DataBase.h"
 #include "Entity.h"
+#include "StaffMember.h"
 
 using namespace std;
 
 int main(){
-	DataBase d("Products.txt", "Clients.txt","Pharmacies.txt", "TextFiles/Staff.txt", "Sales.txt");
-	string in;
-	getline(cin, in);
-	string out = d.parseStaff(in);
-	cout << out;
+
+	DataBase d("Products.txt", "Clients.txt", "TextFiles/Pharmacies.txt", "TextFiles/Staff.txt", "Sales.txt");
+	d.addStaffMember();
+	d.addStaffMember();
+	d.openPharmaciesFile();
+	d.showAllPharmacies();
 	return 0;
 }
 /*

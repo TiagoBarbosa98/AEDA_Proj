@@ -7,7 +7,7 @@ StaffMember::StaffMember(string n, string addr, unsigned int cN, unsigned int sa
 	position = pos;
 }
 
-StaffMember::StaffMember(): Person("", "", 0){
+StaffMember::StaffMember(): Person("error", "error", 0){
 }
 
 unsigned int StaffMember::getSalary() const{

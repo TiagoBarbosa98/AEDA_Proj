@@ -13,7 +13,7 @@ class Pharmacy: public Entity{
 	vector<StaffMember> staff;
 public:
 	Pharmacy(string n, string addr,string manager);
-	Pharmacy(string n, string addr, vector<StaffMember> sl);
+	Pharmacy(string n, string addr, string manager, vector<StaffMember> sl);
 	vector<StaffMember> getStaff() const;
 	string getInfo() const;
 	void addStaff(StaffMember s);

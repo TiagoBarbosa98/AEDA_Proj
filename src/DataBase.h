@@ -64,6 +64,7 @@ public:
 
 	string parse(string in);
 	string parseStaff(string in);
+	StaffMember getStaffM(string name);
 
 	//Utilities
 	int checkForInt(){
