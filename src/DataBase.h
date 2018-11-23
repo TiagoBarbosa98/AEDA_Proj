@@ -19,7 +19,7 @@
 
 class DataBase {
 private:
-	string productsFile, clientsFile, pharmaciesFile, staffFile;
+	string productsFile, clientsFile, pharmaciesFile, staffFile, salesFile;
 	vector<Product* > products;
 	vector<Client> clients;
 	vector<Pharmacy> pharmacies;
@@ -29,6 +29,7 @@ private:
 public:
 	DataBase();
 	DataBase(string prodFile, string cliFile, string pharmFile, string staffFile);
+	DataBase(string productsFile, string clientsFile, string pharmaciesFile, string staffFile, string salesFile);
 	virtual ~DataBase();
 
 	//Getters
@@ -50,6 +51,8 @@ public:
 	void showAllClients();
 	void showAllPharmacies();
 	void showAllStaff();
+
+	void readProductsFile();
 
 	string readComplexString (istringstream &ss, char separate);
 	void openproductsFile();

@@ -9,8 +9,8 @@ Product::~Product() {
 	// TODO Auto-generated destructor stub
 }
 
-Product::Product(string n, string d, float p, float iva, int c)
-: name(n), description(d), price(p), iva(iva), code(c){}
+Product::Product(string n, string d, float p, float iva, int c, bool m)
+: name(n), description(d), price(p), iva(iva), code(c), medicine(m){}
 
 
 int Product::getCode() const {
@@ -38,10 +38,11 @@ float Product::getTotalPrice() const{
 }
 
 ostream& operator <<(ostream& os, const Product& p) {
-	os << "Name: " << p.name
-	   << "\nCode: " << p.code
-	   << "\nPrice: " << p.price //TODO price or price + iva?
-	   << "\nDescription: " << p.description << endl;
+	os << "Name: " << p.name << endl;
+	os << "Code: " << p.code << endl;
+	os << "Price: " << p.price << endl; //TODO price or price + iva?
+	os << "Description: " << p.description << endl;
+	os << "Medicine: " << p.medicine << endl;
 
 	return os;
 }

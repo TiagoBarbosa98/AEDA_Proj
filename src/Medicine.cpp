@@ -1,4 +1,5 @@
 #include "Medicine.h"
+#include "Product.h"
 
 Medicine::Medicine() {
 	// TODO Auto-generated constructor stub
@@ -6,7 +7,7 @@ Medicine::Medicine() {
 }
 
 Medicine::Medicine(string n, string desc, float p, float iva, int c, float disc, bool nr)
-: Product(n, desc, p, iva, c), discount(disc), noReceipt(nr){}
+: Product(n, desc, p, iva, c, true), discount(disc), prescription(nr){}
 
 
 float Medicine::getDiscount() const {
@@ -17,8 +18,10 @@ float Medicine::getPriceWithDiscount() const{
 	return getPrice() - getDiscount()*getPrice();
 }
 
-bool Medicine::isNoReceipt() const {
-	return noReceipt;
+
+bool Medicine::prescriptionRequired() const {
+	return prescription;
+
 }
 
 Medicine::~Medicine() {
@@ -27,14 +30,11 @@ Medicine::~Medicine() {
 
 ostream & operator << (ostream & os, const Medicine & m){
 	const Product *l = &m;
-	cout << *l;
+	os << *l;
 	if(m.discount > 0){
-		os << "Price with discount: " << m.getPrice() - m.getPrice() * m.discount << endl;
+		os << "Discount: " << m.discount << endl;
 	}
-	if(m.noReceipt)
-		os << "This medicine can be bought without a receipt" << endl;
-	else
-		os << "This medicine cannot be bought without a receipt" << endl;
+	os << "Prescription Required: " << m.prescriptionRequired() << endl;
 	return os;
 }
 

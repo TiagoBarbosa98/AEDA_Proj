@@ -4,12 +4,13 @@ DataBase::DataBase() {
 	// TODO Auto-generated constructor stub
 
 }
-DataBase::DataBase(string productsFile, string clientsFile, string pharmaciesFile, string staffFile){
+DataBase::DataBase(string productsFile, string clientsFile, string pharmaciesFile, string staffFile, string salesFile){
 	this->productsFile = productsFile;
 	this->clientsFile = clientsFile;
 	this->pharmaciesFile = pharmaciesFile;
 	this->staffFile = staffFile;
-
+	this->salesFile = salesFile;
+/*
 	try {
 		//  openproductsFile();
 		openClientsFile();
@@ -19,7 +20,7 @@ DataBase::DataBase(string productsFile, string clientsFile, string pharmaciesFil
 		cout << "Error opening the file " << name.getFileName() << endl
 				<< "No data was imported\n";
 
-	}
+	}*/
 }
 
 DataBase::~DataBase() {
@@ -108,6 +109,17 @@ void DataBase::addStaffMember(){
 	cin >> pos;
 	StaffMember f(n, addr, cN,sal,ph, pos);
 	staff.push_back(f);
+}
+
+void DataBase::readProductsFile(){
+	ofstream myfile;
+	myfile.open(productsFile);
+	string name, description;
+	bool medicine;
+	int price;
+	while(!myfile.eof()){
+
+	}
 }
 
 /*   OPEN FILES  */

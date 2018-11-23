@@ -14,16 +14,16 @@ using namespace std;
 int main(){
 	//DataBase d("products.txt", "clients.txt","pharmacies.txt", "staff.txt");
 	//mainMenu(d);
-	Product p("Benurom", "Geral", 2, 10, 69);
-	Product q("Benurao", "Geral", 2, 10, 240);
-	Sale * s1 = new Sale();
-	s1->addProdQtt(p, 10);
-	s1->addProdQtt(q, 20);
-	cout << *s1;
-	Sale *s2 = new Sale();
-	s2->addProdQtt(p, 5);
-	s2->addProdQtt(q, 4);
-	cout << *s2;
+	Medicine benurom("Benurom", "Paracetemol", 2, 10, 69, 0.25, false);
+	Medicine brufen("Brufen", "Ibuprofen", 20, 1, 21, 0.1, false);
+	Product toothbrush("TeethBrush by Col-gate", "TEETHBRUSH", 10, 20, 30, false);
+	ofstream myfile;
+	myfile.open("Products.txt");
+	myfile << benurom << endl;
+	myfile << brufen << endl;
+	myfile << toothbrush << endl;
+	myfile.close();
+	cout << "TEST";
 	return 0;
 }
 /*

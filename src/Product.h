@@ -9,10 +9,11 @@ private:
 	string name, description;
 	float price, iva;
 	int code;
+	bool medicine;
 
 public:
 	Product();
-	Product(string name, string description, float price, float iva, int code);
+	Product(string name, string description, float price, float iva, int code, bool medicine);
 	virtual ~Product();
 
 	//Getters And Setters

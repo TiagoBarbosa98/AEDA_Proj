@@ -3,7 +3,7 @@ Code: 69
 Price: 2
 Description: Paracetemol
 Medicine: 1
-Price with discount: 1.5
+Discount: 0.25
 Prescription Required: 0
 
 Name: Brufen
@@ -11,7 +11,7 @@ Code: 21
 Price: 20
 Description: Ibuprofen
 Medicine: 1
-Price with discount: 18
+Discount: 0.1
 Prescription Required: 0
 
 Name: TeethBrush by Col-gate
