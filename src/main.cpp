@@ -27,15 +27,42 @@ int checkBoundaries(int linf, int lsup) {
 
 	return nr;
 }
-/*
-void clientsMenu(DataBase d){
+
+void clientsMenu(DataBase & d){
 	int op = 0;
 	while(op != 4){
+		cout << "|                CLIENTS MENU                      |" << endl;
+		cout << "|                                                  |" << endl;
+		cout << "|        Type your option:                         |" << endl;
+		cout << "|     1) List Clients                              |" << endl;
+		cout << "|     2) Add Client                                |" << endl;
+		cout << "|     3) Remove Client                             |" << endl;
+		cout << "|     4) Exit                                      |" << endl;
+		cout << "|    Option: ";
+		op = checkBoundaries(1, 4);
+		switch(op){
+		case 1:
+			cout << "Listing Clients" << endl;
+			d.showAllClients();
+			break;
+		case 2:
+			cout << "Adding Client" << endl;
+			d.addClient();
+			break;
+		case 3:
+			cout << "Removing Client" << endl;
+			try {d.removeClient();}
+			catch (ItemDoesNotExist & e){ e.printMsg();}
+			break;
+		default:
+			break;
+
+		}
 
 	}
-}*/
+}
 
-void productsMenu(DataBase d){
+void productsMenu(DataBase & d){
 
 	int op = 0;
 	while(op != 4){
@@ -68,10 +95,45 @@ void productsMenu(DataBase d){
 	}
 }
 
-void mainMenu(DataBase d){
+void salesMenu(DataBase & d){
 
 	int op = 0;
-	while(op != 5){
+		while(op != 4){
+			cout << "|                SALES MENU                        |" << endl;
+			cout << "|                                                  |" << endl;
+			cout << "|        Type your option:                         |" << endl;
+			cout << "|     1) List Sales                                |" << endl;
+			cout << "|     2) Add Sale                                  |" << endl;
+			cout << "|     3) Remove Sale                               |" << endl;
+			cout << "|     4) Exit                                      |" << endl;
+			cout << "|    Option: ";
+			op = checkBoundaries(1, 4);
+			switch(op){
+			case 1:
+				cout << "Listing Sales" << endl;
+				d.showAllSales();
+				break;
+			case 2:
+				cout << "Adding Sale" << endl;
+				d.addSale();
+				break;
+			case 3:/*
+				cout << "Removing Product" << endl;
+				try {d.removeProduct();}
+				catch (ItemDoesNotExist & e){ e.printMsg();}*/
+				cout << "Placeholed Remove Sale" << endl;
+				break;
+			default:
+				break;
+			}
+		}
+
+}
+
+void mainMenu(DataBase & d){
+
+	int op = 0;
+	while(op != 6){
 		cout << "|                  MAIN MENU                       |" << endl;
 		cout << "|                                                  |" << endl;
 		cout << "|        Type your option:                         |" << endl;
@@ -91,13 +153,13 @@ void mainMenu(DataBase d){
 			cout << "Placeholder Staff Menu" << endl;
 			break;
 		case 3:
-			cout << "Placeholder Clients Menu" << endl;
+			clientsMenu(d);
 			break;
 		case 4:
 			productsMenu(d);
 			break;
 		case 5:
-			cout << "Placeholder Sales Menu" << endl;
+			salesMenu(d);
 			break;
 		default:
 			cout << "Goodbye!" << endl;
@@ -109,8 +171,14 @@ void mainMenu(DataBase d){
 }
 
 int main(){
-	DataBase d("Products.txt", "Clients.txt","Pharmacies.txt", "Staff.txt", "Sales.txt");
-	mainMenu(d);
+	/*Product * p = new Product("name", "desc", 10, 0.2, 0, false);
+	vector<tuple<string, unsigned int, unsigned int >> v;
+	Sale *s = new Sale(v);
+	s->addProdPriceQtt(*p, 5);
+	cout << *s << endl;*/
+
+	DataBase * d = new DataBase("Products.txt", "Clients.txt","Pharmacies.txt", "Staff.txt", "Sales.txt");
+	mainMenu(*d);
 	return 0;
 }
 

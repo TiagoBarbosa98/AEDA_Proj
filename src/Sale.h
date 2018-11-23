@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include <ctime>
+#include <tuple>
 #include "Product.h"
 
 using namespace std;
@@ -13,17 +14,17 @@ private:
 	tm *date;
 	static unsigned int lastCode;
 	unsigned int code;
-	vector<pair<Product *, unsigned int>> prodQtt;
+	vector<tuple<string , unsigned int, unsigned int>> prodPriceQtt;
 public:
 	Sale();
 	virtual ~Sale();
-	Sale(vector<pair<Product *, unsigned int>> cart);
+	Sale(vector<tuple<string , unsigned int, unsigned int>> cart);
 	//Getters and setters
 	tm * getDate() const;
 	unsigned int getCode() const;
-	const vector<pair<Product *, unsigned int> >& getProdQtt() const;
 	friend ostream & operator << (ostream & os,  Sale & s);
-	void addProdQtt(Product * p, int qtt);
+	void addProdPriceQtt(Product p, int qtt);
+	string getInfo() const;
 	//adds a new product to prodQtt
 
 };

@@ -4,6 +4,11 @@ DataBase::DataBase() {
 	// TODO Auto-generated constructor stub
 
 }
+
+void DataBase::setSail(vector<Sale*> s){
+	this->sales = s;
+}
+
 DataBase::DataBase(string productsFile, string clientsFile, string pharmaciesFile, string staffFile, string salesFile){
 	this->productsFile = productsFile;
 	this->clientsFile = clientsFile;
@@ -51,14 +56,6 @@ void DataBase::showAllClients(){
 	printVector(clients);
 }
 
-void DataBase::showAllProducts(){
-	//printVector(products);
-	for(unsigned int i = 0; i < products.size(); i++){
-		if(!products.at(i)->getMedicine())cout << *products.at(i);
-		else cout << * static_cast<Medicine *>(products.at(i));
-	}
-}
-
 void DataBase::showAllPharmacies(){
 	for(unsigned int i = 0; i < pharmacies.size();i++)
 		cout << pharmacies.at(i) << endl;
@@ -67,6 +64,19 @@ void DataBase::showAllPharmacies(){
 void DataBase::showAllStaff(){
 	for(unsigned int i = 0; i < staff.size();i++)
 		cout << staff.at(i).getInfo()<< endl;
+}
+
+void DataBase::showAllProducts(){
+	for(unsigned int i = 0; i < products.size(); i++){
+		if(!products.at(i)->getMedicine())cout << *products.at(i);
+		else cout << * static_cast<Medicine *>(products.at(i));
+	}
+}
+
+Product DataBase::getProductByName(string name) const{
+	for(vector<Product*>::const_iterator it = products.begin(); it != products.end(); it++)
+		if((*it)->getName() == name) return (*(*it));
+	throw ItemDoesNotExist(name);
 }
 
 void DataBase::addProduct(){
@@ -120,6 +130,7 @@ void DataBase::addClient(){
 	string addr;
 	unsigned int  contribNo;
 	cout  << "Name: ";
+	cin.ignore();
 	getline(cin, n);
 	cout << "Address: ";
 	getline(cin, addr);
@@ -130,7 +141,7 @@ void DataBase::addClient(){
 }
 
 void DataBase::removeClient(){
-	cout << "Enter client Name: " << endl;
+	cout << "Enter client name: " << endl;
 	cin.ignore();
 	string name;
 	getline(cin, name);
@@ -140,6 +151,40 @@ void DataBase::removeClient(){
 			return;
 		}
 	throw ItemDoesNotExist(name);
+}
+
+void DataBase::showAllSales(){
+	for(unsigned int i = 0; i < sales.size(); i++)
+		cout << *sales.at(i);
+
+}
+
+void DataBase::addSale(){
+	Sale *s = new Sale();
+	int op = 0;
+	while(op != 2){
+		cout << "1) Add Product " << endl;
+		cout << "2) Finish " << endl;
+		op = checkForType<int>();
+		if(op != 1) continue;
+		string pname;
+		cout << "Product Name: " << endl;
+		cin.ignore();
+		getline(cin, pname);
+		try{
+			Product p = getProductByName(pname);
+			cout << "Quantity: " << endl;
+			int q = checkForType<int>();
+			s->addProdPriceQtt(p, q);
+
+		}
+		catch(ItemDoesNotExist & e){
+			e.printMsg();
+			continue;
+		}
+	}
+
+	sales.push_back(s);
 }
 
 void DataBase::addFarmacy(){

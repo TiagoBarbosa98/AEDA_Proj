@@ -26,9 +26,11 @@ private:
 	vector<Pharmacy> pharmacies;
 	vector<StaffMember> staff;
 	vector<Prescription> prescriptions;
-	vector<Sale> sales;
+	vector<Sale *> sales;
 public:
 	DataBase();
+	//TODO: REMOVE AFTER TESTING
+	void setSail(vector<Sale *> s);
 	DataBase(string prodFile, string cliFile, string pharmFile, string staffFile);
 	DataBase(string productsFile, string clientsFile, string pharmaciesFile, string staffFile, string salesFile);
 	virtual ~DataBase();
@@ -44,6 +46,7 @@ public:
 	void addFarmacy();
 	void addStaffMember();
 	void addProduct();
+	void addSale();
 
 	void removeProduct();
 	void removeClient();
@@ -52,6 +55,7 @@ public:
 	void showAllProducts();
 	void showAllPharmacies();
 	void showAllStaff();
+	void showAllSales();
 
 	void readProductsFile();
 
@@ -66,6 +70,9 @@ public:
 	void writeToStaffFile();
 	void writeToSalesFile();
 	void writeToProductsFile();
+
+
+	Product getProductByName(string name) const;
 
 	string parse(string in);
 	string parseStaff(string in);
