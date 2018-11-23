@@ -5,7 +5,7 @@ Prescription::Prescription() {
 
 }
 
-Prescription::Prescription(int n, string c, string d, vector<string> p)
+Prescription::Prescription(int n, string c, string d, vector<int> p)
 : number(n), client(c), doctor(d), products(p){}
 
 Prescription::~Prescription() {
@@ -16,7 +16,7 @@ int Prescription::getNumber() const {
 	return number;
 }
 
-vector<string> Prescription::getProducts() const {
+vector<int> Prescription::getProducts() const {
 	return products;
 }
 
@@ -24,20 +24,6 @@ const string& Prescription::getClient() const {
 	return client;
 }
 
-const string& Prescription::getDoctor() const{
-	return doctor;
-}
-
-void Prescription::addProduct(string c){
+void Prescription::addProduct(int c){
 	products.push_back(c);
-}
-
-ostream & operator<< (ostream & os, Prescription const & s){
-	os << "Prescription no: " << s.getNumber() << endl;
-	os << "Client: " << s.getClient() << endl;
-	os << "Doctor: " << s.getDoctor() << endl;
-	os << "Products: " << endl;
-	for(unsigned int i = 0; i < s.getProducts().size(); i++)
-		os << s.getProducts()[i] << endl;
-	return os;
 }

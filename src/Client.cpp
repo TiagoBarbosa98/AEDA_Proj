@@ -9,7 +9,7 @@ vector<unsigned int> Client::getHistory(){
 ostream& operator <<(ostream& os, const Client& c) {
 	const Person *p = &c;
 	os << *p;
-	os << "Purchases made:\n";
+	os << "Purchases:\n";
 	for(unsigned int i = 0; i < c.history.size(); i++){
 		os << c.history[i] << endl;
 	}

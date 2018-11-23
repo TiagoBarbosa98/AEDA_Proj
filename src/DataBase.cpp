@@ -150,18 +150,6 @@ void DataBase::openClientsFile(){
 		throw ErrorOpeningFile(clientsFile);
 	}
 
-	/*ifstream myReadFile;
-	myReadFile.open("t.txt");
-	string output;
-
-	while(getline(myReadFile, output)){
-		cout << output << endl;
-
-		int pos = output.find_first_of(" ", 0);
-
-		string final = output.substr(pos + 1, output.size() - pos);
-		cout << final << endl;
-	}*/
 }
 
 void DataBase::openPharmaciesFile(){
@@ -188,36 +176,48 @@ void DataBase::openPharmaciesFile(){
 	}
 }
 
+string DataBase::parse(string in){
+
+	int pos = in.find_first_of(':', 0);
+
+	string final = in.substr(pos + 2, in.size() - pos);
+
+	return final;
+
+}
+
 void DataBase::openStaffFile(){
 	ifstream infich;
-	string textLine,adress, name,ph,pos;
-	unsigned int contribNo,sal;
-	char aux;
 
-	infich.open(clientsFile);
+	infich.open(staffFile);
 	if (!infich.fail()) {
 
-		while (getline(infich, textLine)) {
+		string name, address, salary, pharmacy, pos, id, garbage;
 
-			istringstream cardStream (textLine);
+		getline(infich, name);
+		getline(infich, address);
+		getline(infich, id);
+		getline(infich, salary);
+		getline(infich, pharmacy);
+		getline(infich, pos);
 
-			name = readComplexString(cardStream, ';');
+		name = parse(name);
+		address = parse(address);
+		salary = parse(salary);
+		pharmacy = parse(pharmacy);
+		pos = parse(pos);
+		id = parse(id);
 
-			adress = readComplexString(cardStream, ';');
+		int sal = stoi(salary);
+		int nc = stoi(id);
 
-			cardStream >> contribNo >> aux;
+		StaffMember s(name, address, nc, sal, pharmacy, pos);
+		staff.push_back(s);
 
-			cardStream >> sal >> aux;
-
-			ph = readComplexString(cardStream, ';');
-
-			pos = readComplexString(cardStream, ';');
-
-			staff.push_back(StaffMember(name,adress,contribNo,sal,ph,pos));
-		}
 	}else {
-		throw ErrorOpeningFile(pharmaciesFile);
+		throw ErrorOpeningFile(staffFile);
 	}
+
 }
 
 /*

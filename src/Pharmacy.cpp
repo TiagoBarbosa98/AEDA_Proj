@@ -50,3 +50,10 @@ ostream & operator <<(ostream &os, const Pharmacy &p){
 
 	return os;
 }
+
+istream & operator >>(istream &is, Pharmacy &p){
+	string line;
+	getline(is, line);
+	istringstream iss(line);
+	return is;
+}

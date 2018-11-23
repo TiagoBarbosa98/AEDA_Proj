@@ -50,7 +50,6 @@ public:
 	void readProductsFile();
 
 	string readComplexString (istringstream &ss, char separate);
-	void openproductsFile();
 	void openClientsFile ();
 	void openPharmaciesFile();
 	void openStaffFile();
@@ -60,6 +59,8 @@ public:
 	void writeToStaffFile();
 	void writeToSalesFile();
 	void writeToProductsFile();
+
+	string parse(string in);
 
 	//Utilities
 	int checkForInt(){

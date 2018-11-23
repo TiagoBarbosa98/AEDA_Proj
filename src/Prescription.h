@@ -10,22 +10,21 @@ class Prescription {
 private:
 	int number;
 	string client, doctor;
-	vector<string> products;
+	vector<int> products;
 
 public:
 	Prescription();
-	Prescription(int number, string client, string doctor, vector<string> products);
+	Prescription(int number, string client, string doctor, vector<int> products);
 	virtual ~Prescription();
 
 	//Getters and Setters
 	int getNumber() const;
 	const string& getClient() const;
 	const string& getDoctor() const;
-	vector<string> getProducts() const;
-	friend ostream & operator<< (ostream & os, Prescription const & s);
+	vector<int> getProducts() const;
 
 	//adds the product with code c to products
-	void addProduct(string  c);
+	void addProduct(int c);
 };
 
 #endif /* SRC_RECEIPT_H_ */

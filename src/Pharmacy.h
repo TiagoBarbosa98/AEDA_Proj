@@ -21,6 +21,7 @@ public:
 	string getManager() const;
 	void setManager(StaffMember m); //Manager has to exist in list
 	friend ostream & operator <<(ostream &os, const Pharmacy &p);
+	friend istream & operator >>(istream &is, Pharmacy &p);
 };
 
 #endif /* PHARMACY_H_ */

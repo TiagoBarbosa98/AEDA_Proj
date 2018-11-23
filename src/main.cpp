@@ -8,13 +8,14 @@
 #include "Product.h"
 #include "Medicine.h"
 #include "DataBase.h"
+#include "Entity.h"
 
 using namespace std;
 
 int main(){
-	DataBase d("Products.txt", "Clients.txt","Pharmacies.txt", "Staff.txt", "Sales.txt");
-	d.addStaffMember();
-	d.writeToStaffFile();
+	DataBase d("Products.txt", "Clients.txt","Pharmacies.txt", "TextFiles/Staff.txt", "Sales.txt");
+	d.openStaffFile();
+	cout << d.getStaff()[0];
 	return 0;
 }
 /*
