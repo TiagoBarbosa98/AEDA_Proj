@@ -164,7 +164,7 @@ void DataBase::openClientsFile(){
 	}*/
 }
 
-void DataBase::openpharmaciesFile(){
+void DataBase::openPharmaciesFile(){
 	ifstream infich;
 	string textLine,adress, name, manager="joao";
 
@@ -188,7 +188,7 @@ void DataBase::openpharmaciesFile(){
 	}
 }
 
-void DataBase::openstaffFile(){
+void DataBase::openStaffFile(){
 	ifstream infich;
 	string textLine,adress, name,ph,pos;
 	unsigned int contribNo,sal;

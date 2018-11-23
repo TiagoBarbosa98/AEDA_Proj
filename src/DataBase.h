@@ -69,7 +69,7 @@ public:
 		int input;
 		cin >> input;
 		while(cin.fail()){
-			cout << "Your input is not a valid number, please try again.\n"
+			cout << "Your input is not a valid number, please try again.\n";
 			cin >> input;
 		}
 		return input;
