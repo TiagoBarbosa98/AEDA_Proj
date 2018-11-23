@@ -61,7 +61,7 @@ void DataBase::showAllProducts(){
 
 void DataBase::showAllPharmacies(){
 	for(unsigned int i = 0; i < pharmacies.size();i++)
-		cout << pharmacies.at(i).getInfo()<< endl;
+		cout << pharmacies.at(i) << endl;
 }
 
 void DataBase::showAllStaff(){
@@ -129,6 +129,19 @@ void DataBase::addClient(){
 	clients.push_back(*cli);
 }
 
+void DataBase::removeClient(){
+	cout << "Enter client Name: " << endl;
+	cin.ignore();
+	string name;
+	getline(cin, name);
+	for(vector<Client>::iterator it = clients.begin(); it != clients.end(); it++)
+		if(it->getName() == name){
+			clients.erase(it);
+			return;
+		}
+	throw ItemDoesNotExist(name);
+}
+
 void DataBase::addFarmacy(){
 	string n;
 	string addr;
@@ -166,16 +179,6 @@ void DataBase::addStaffMember(){
 	staff.push_back(f);
 }
 
-void DataBase::readProductsFile(){
-	ofstream myfile;
-	myfile.open(productsFile);
-	string name, description;
-	bool medicine;
-	int price;
-	while(!myfile.eof()){
-
-	}
-}
 
 /*   OPEN FILES  */
 
@@ -226,29 +229,49 @@ string DataBase::parseStaff(string in){
 }
 
 
-/*
+StaffMember DataBase::getStaffM(string name){
+	//possivel excecao aqui
+	for(unsigned int i = 0; i < staff.size(); i++){
+		if(staff[i].getName() == name){
+			return staff[i];
+		}
+	}
+	return StaffMember();
+}
 void DataBase::openPharmaciesFile(){
 	ifstream infich;
 
-		infich.open(productsFile);
+		infich.open(pharmaciesFile);
 		if (!infich.fail()) {
-			string name, address, manager, garbage, staffName;
 
-			getline(infich, name);
-			getline(infich, address);
-			getline(infich, manager);
-			getline(infich, garbage);
-			getline(infich, staffName);
+			while(!infich.eof()){
+				string name, address, manager, garbage, staffName;
 
-			name = parse(name);
-			address = parse(address);
-			manager = parse(manager);
+				getline(infich, name);
+				getline(infich, address);
+				getline(infich, manager);
+				getline(infich, garbage);
+				getline(infich, staffName);
 
-			while(staffName.size() > 1){
-				staffName = parseStaff(staffName);
+				name = parse(name);
+				address = parse(address);
+				manager = parse(manager);
+
+				vector<StaffMember> tmp;
+				while(staffName.size() > 1 & !infich.eof()){
+					staffName = parseStaff(staffName);
+					StaffMember s = getStaffM(staffName);
+					tmp.push_back(s);
+					getline(infich, staffName);
+				}
+				Pharmacy pharm(name, address, manager, tmp);
+				pharmacies.push_back(pharm);
 			}
 		}
-}*/
+		else {
+			throw ErrorOpeningFile(pharmaciesFile);
+		}
+}
 
 void DataBase::openProductsFile(){
 	ifstream infich;

@@ -46,6 +46,7 @@ public:
 	void addProduct();
 
 	void removeProduct();
+	void removeClient();
 
 	void showAllClients();
 	void showAllProducts();
@@ -68,6 +69,7 @@ public:
 
 	string parse(string in);
 	string parseStaff(string in);
+	StaffMember getStaffM(string name);
 
 
 	template<class T>

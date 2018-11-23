@@ -21,7 +21,6 @@ public:
 	void showStaff();
 	void setPosition(string pos);
 	friend ostream& operator<<(ostream &os, const StaffMember &s);
-	friend istream& operator>>(ostream &is, StaffMember &s);
 };
 
 

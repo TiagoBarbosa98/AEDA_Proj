@@ -9,6 +9,7 @@
 #include "Medicine.h"
 #include "DataBase.h"
 #include "Entity.h"
+#include "StaffMember.h"
 
 using namespace std;
 
@@ -26,6 +27,13 @@ int checkBoundaries(int linf, int lsup) {
 
 	return nr;
 }
+/*
+void clientsMenu(DataBase d){
+	int op = 0;
+	while(op != 4){
+
+	}
+}*/
 
 void productsMenu(DataBase d){
 
@@ -71,9 +79,10 @@ void mainMenu(DataBase d){
 		cout << "|     2) Manage Staff                              |" << endl;
 		cout << "|     3) Manage Clients                            |" << endl;
 		cout << "|     4) Manage Products                           |" << endl;
-		cout << "|     5) Exit                                      |" << endl;
+		cout << "|     5) Manage Sales                              |" << endl;
+		cout << "|     6) Exit                                      |" << endl;
 		cout << "|    Option: ";
-		op = checkBoundaries(1, 5);
+		op = checkBoundaries(1, 6);
 		switch(op){
 		case 1:
 			cout << "Placeholder Pharmacy Menu" << endl;
@@ -86,6 +95,9 @@ void mainMenu(DataBase d){
 			break;
 		case 4:
 			productsMenu(d);
+			break;
+		case 5:
+			cout << "Placeholder Sales Menu" << endl;
 			break;
 		default:
 			cout << "Goodbye!" << endl;

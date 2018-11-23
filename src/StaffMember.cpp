@@ -7,7 +7,7 @@ StaffMember::StaffMember(string n, string addr, unsigned int cN, unsigned int sa
 	position = pos;
 }
 
-StaffMember::StaffMember(): Person("", "", 0){
+StaffMember::StaffMember(): Person("error", "error", 0){
 }
 
 unsigned int StaffMember::getSalary() const{
@@ -51,7 +51,7 @@ ostream& operator<<(ostream &os, const StaffMember &s){
 
 	return os;
 }
-
+/*
 istream& operator>>(istream &is, StaffMember &s){
 	string name, address, salary, pharmacy, pos, id, garbage;
 	string name2, address2, salary2, pharmacy2, pos2, id2;
@@ -97,4 +97,4 @@ istream& operator>>(istream &is, StaffMember &s){
 	s.setNc(nc);
 
 	return is;
-}
+}*/
