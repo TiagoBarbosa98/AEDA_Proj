@@ -54,10 +54,12 @@ public:
 	void openClientsFile ();
 	void openPharmaciesFile();
 	void openStaffFile();
+	void openProductsFile();
 	void writeToClientsFile();
 	void writeToPharmaciesFile();
 	void writeToStaffFile();
 	void writeToSalesFile();
+	void writeToProductsFile();
 
 	//Utilities
 	int checkForInt(){

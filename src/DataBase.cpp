@@ -227,6 +227,9 @@ this->productsFile = productsFile;
 	this->staffFile = staffFile;
 	this->salesFile = salesFile;
 	*/
+void DataBase::writeToProductsFile() {
+	writeToFile(productsFile, products);
+}
 void DataBase::writeToPharmaciesFile() {
 	writeToFile(pharmaciesFile, pharmacies);
 }
