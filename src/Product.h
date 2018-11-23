@@ -24,6 +24,7 @@ public:
 	float getPrice() const;
 	friend ostream & operator << (ostream & os, const Product & p);
 	float getTotalPrice() const;
+	bool getMedicine() const;
 
 };
 

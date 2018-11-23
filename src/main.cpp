@@ -14,16 +14,22 @@ using namespace std;
 int main(){
 	//DataBase d("products.txt", "clients.txt","pharmacies.txt", "staff.txt");
 	//mainMenu(d);
-	Medicine benurom("Benurom", "Paracetemol", 2, 10, 69, 0.25, false);
-	Medicine brufen("Brufen", "Ibuprofen", 20, 1, 21, 0.1, false);
+	Medicine benurom("Benurom", "Paracetemol", 2, 0.06, 69, 0.25, false);
+	Medicine brufen("Brufen", "Ibuprofen", 20, 0.06, 21, 0.1, false);
 	Product toothbrush("TeethBrush by Col-gate", "TEETHBRUSH", 10, 20, 30, false);
-	ofstream myfile;
+	vector<pair<Product *, unsigned int>> v;
+	v.push_back(pair<Product *, unsigned int> (&benurom, 3));
+	v.push_back(pair<Product *, unsigned int> (&brufen, 2));
+	v.push_back(pair<Product *, unsigned int> (&toothbrush, 1));
+	Sale *s1 = new Sale(v);
+	//cout << s1->getProdQtt().at(0).first.getPriceWithDiscount();
+	/*ofstream myfile;
 	myfile.open("Products.txt");
 	myfile << benurom << endl;
 	myfile << brufen << endl;
 	myfile << toothbrush << endl;
-	myfile.close();
-	cout << "TEST";
+	myfile.close();*/
+	cout << *s1;
 	return 0;
 }
 /*
