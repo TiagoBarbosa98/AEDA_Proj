@@ -13,7 +13,7 @@
 
 using namespace std;
 
-/*
+
 int checkBoundaries(int linf, int lsup) {
 	int nr;
 
@@ -257,7 +257,7 @@ void mainMenu(DataBase & d){
 	}
 
 }
-*/
+
 int main(){
 	/*Product * p = new Product("name", "desc", 10, 0.2, 0, false);
 	vector<tuple<string, unsigned int, unsigned int >> v;
@@ -266,14 +266,14 @@ int main(){
 	cout << *s << endl;*/
 
 	DataBase * d = new DataBase("TextFiles/Products.txt", "TextFiles/Clients.txt","TextFiles/Pharmacies.txt", "TextFiles/Staff.txt", "TextFiles/Sales.txt");
-	//mainMenu(*d);
+	mainMenu(*d);
 	/*
 	Prescription p(0, "Joao Vitor", "Dr. Pontes", "Benurom");
 	cout << p;*/
 	return 0;
 }
 
-/*
+
 void mainMenu(DataBase d) {
 	int choice;
 
@@ -294,7 +294,7 @@ void mainMenu(DataBase d) {
 
 		switch (choice) {
 		case 1:
-			pharmacyMenu(d);
+			pharmaciesMenu(d);
 			break;
 
 		case 2:
@@ -302,7 +302,7 @@ void mainMenu(DataBase d) {
 			break;
 
 		case 3:
-			clientMenu(d);
+			clientsMenu(d);
 			break;
 
 		case 4:
@@ -347,7 +347,7 @@ void clientMenu(DataBase d){
 			break;
 
 		case 4:
-			d.closeClientsFile();
+			d.writeToClientsFile();
 			cout << endl;
 			break;
 		}
@@ -381,11 +381,11 @@ void pharmacyMenu(DataBase d){
 			break;
 
 		case 3:
-			d.addFarmacy();
+			d.addPharmacy();
 			break;
 
 		case 4:
-			d.closePharmaciesFile();
+			d.writeToPharmaciesFile();
 			cout << endl;
 			break;
 		}
@@ -423,9 +423,9 @@ void staffMenu(DataBase d){
 			break;
 
 		case 4:
-			d.closeStaffFile();
+			d.writeToStaffFile();
 			cout << endl;
 			break;
 		}
 	}
-}*/
+}
