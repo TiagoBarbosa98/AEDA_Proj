@@ -275,6 +275,10 @@ void DataBase::closeStaffFile() {
 	saveData.close();
 }
 
+void DataBase::closeSalesFile(){
+
+}
+
 string DataBase::readComplexString (istringstream &ss, char separate) {
 	string final, auxString;
 	char aux;
