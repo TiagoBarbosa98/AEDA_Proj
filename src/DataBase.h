@@ -42,8 +42,10 @@ public:
 	void addClient();
 	void addFarmacy();
 	void addStaffMember();
+	void addProduct();
 
 	void showAllClients();
+	void showAllProducts();
 	void showAllPharmacies();
 	void showAllStaff();
 

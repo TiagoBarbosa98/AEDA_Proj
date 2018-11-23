@@ -51,6 +51,10 @@ void DataBase::showAllClients(){
 	printVector(clients);
 }
 
+void DataBase::showAllProducts(){
+	printVector(products);
+}
+
 void DataBase::showAllPharmacies(){
 	for(unsigned int i = 0; i < pharmacies.size();i++)
 		cout << pharmacies.at(i).getInfo()<< endl;
@@ -59,6 +63,19 @@ void DataBase::showAllPharmacies(){
 void DataBase::showAllStaff(){
 	for(unsigned int i = 0; i < staff.size();i++)
 		cout << staff.at(i).getInfo()<< endl;
+}
+
+void DataBase::addProduct(){
+	/*string name, description;
+	int medicine, code, prescription;
+	float price, iva, disc;
+	cout << "Name: ";
+	getline(cin, name);
+	cout << "Description: ";
+	getline(cin, description);
+	cout << "Code: ";
+	//getline(cin, code);*/
+
 }
 
 void DataBase::addClient(){

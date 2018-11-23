@@ -11,13 +11,6 @@
 
 using namespace std;
 
-int main(){
-	DataBase d("Products.txt", "Clients.txt","Pharmacies.txt", "Staff.txt", "Sales.txt");
-	d.addStaffMember();
-	d.writeToStaffFile();
-	return 0;
-}
-/*
 int checkBoundaries(int linf, int lsup) {
 	int nr;
 
@@ -33,6 +26,81 @@ int checkBoundaries(int linf, int lsup) {
 	return nr;
 }
 
+void productsMenu(DataBase d){
+
+	int op = 0;
+	while(op != 4){
+		cout << "|                PRODUCTS MENU                     |" << endl;
+		cout << "|                                                  |" << endl;
+		cout << "|        Type your option:                         |" << endl;
+		cout << "|     1) List Products                             |" << endl;
+		cout << "|     2) Add Product                               |" << endl;
+		cout << "|     3) Remove Product                            |" << endl;
+		cout << "|     4) Exit                                      |" << endl;
+		cout << "|    Option: ";
+		op = checkBoundaries(1, 4);
+		switch(op){
+		case 1:
+			cout << "Listing Products" << endl;
+			d.showAllProducts();
+			break;
+		case 2:
+			cout << "Adding Product" << endl;
+			d.addProduct();
+			break;
+		case 3:
+			cout << "Removing Product" << endl;
+			//TODO: REMOVE PRODUCT, SE NÃO EXISTIR THROW EXCEPTION
+			break;
+		default:
+			break;
+		}
+	}
+}
+
+void mainMenu(DataBase d){
+
+	int op = 0;
+	while(op != 5){
+		cout << "|                  MAIN MENU                       |" << endl;
+		cout << "|                                                  |" << endl;
+		cout << "|        Type your option:                         |" << endl;
+		cout << "|     1) Manage Pharmacy                           |" << endl;
+		cout << "|     2) Manage Staff                              |" << endl;
+		cout << "|     3) Manage Clients                            |" << endl;
+		cout << "|     4) Manage Products                           |" << endl;
+		cout << "|     5) Exit                                      |" << endl;
+		cout << "|    Option: ";
+		op = checkBoundaries(1, 5);
+		switch(op){
+		case 1:
+			cout << "Placeholder Pharmacy Menu" << endl;
+			break;
+		case 2:
+			cout << "Placeholder Staff Menu" << endl;
+			break;
+		case 3:
+			cout << "Placeholder Clients Menu" << endl;
+			break;
+		case 4:
+			productsMenu(d);
+			break;
+		default:
+			cout << "Goodbye!" << endl;
+			break;
+		}
+
+	}
+
+}
+
+int main(){
+	DataBase d("Products.txt", "Clients.txt","Pharmacies.txt", "Staff.txt", "Sales.txt");
+	mainMenu(d);
+	return 0;
+}
+
+/*
 void mainMenu(DataBase d) {
 	int choice;
 

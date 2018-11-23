@@ -23,6 +23,7 @@ public:
 	const string& getName() const;
 	float getPrice() const;
 	friend ostream & operator << (ostream & os, const Product & p);
+	friend istream & operator >>(istream & is, const Product & p);
 	float getTotalPrice() const;
 	bool getMedicine() const;
 
