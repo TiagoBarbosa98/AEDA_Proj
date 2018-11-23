@@ -192,27 +192,32 @@ void DataBase::openStaffFile(){
 	infich.open(staffFile);
 	if (!infich.fail()) {
 
-		string name, address, salary, pharmacy, pos, id, garbage;
+		while(!infich.eof()){
 
-		getline(infich, name);
-		getline(infich, address);
-		getline(infich, id);
-		getline(infich, salary);
-		getline(infich, pharmacy);
-		getline(infich, pos);
+			string name, address, salary, pharmacy, pos, id, garbage;
 
-		name = parse(name);
-		address = parse(address);
-		salary = parse(salary);
-		pharmacy = parse(pharmacy);
-		pos = parse(pos);
-		id = parse(id);
+			getline(infich, name);
+			getline(infich, address);
+			getline(infich, id);
+			getline(infich, salary);
+			getline(infich, pharmacy);
+			getline(infich, pos);
 
-		int sal = stoi(salary);
-		int nc = stoi(id);
+			name = parse(name);
+			address = parse(address);
+			salary = parse(salary);
+			pharmacy = parse(pharmacy);
+			pos = parse(pos);
+			id = parse(id);
 
-		StaffMember s(name, address, nc, sal, pharmacy, pos);
-		staff.push_back(s);
+			int sal = stoi(salary);
+			int nc = stoi(id);
+
+			StaffMember s(name, address, nc, sal, pharmacy, pos);
+			staff.push_back(s);
+
+			getline(infich, garbage);
+		}
 
 	}else {
 		throw ErrorOpeningFile(staffFile);
