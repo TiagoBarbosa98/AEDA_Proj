@@ -71,7 +71,8 @@ void DataBase::addClient(){
 	getline(cin, addr);
 	cout << "Identification Number: ";
 	contribNo = checkForInt();
-	Client * cli = new Client(n, addr, contribNo);
+	vector<unsigned int> h;
+	Client * cli = new Client(n, addr, contribNo, h);
 	clients.push_back(*cli);
 }
 
@@ -113,6 +114,7 @@ void DataBase::addStaffMember(){
 }
 
 
+
 /*   OPEN FILES  */
 
 string DataBase::parse(string in){
@@ -125,28 +127,75 @@ string DataBase::parse(string in){
 
 }
 
+Sale DataBase::getSale(unsigned int code){
+	//possivel excecao aqui
+	for(unsigned int i = 0; i < sales.size(); i++){
+		if(sales[i].getCode() == code){
+			return sales[i];
+		}
+	}
+	return Sale();
+}
+
+/*
+string DataBase::parseProductSale(string in){
+	string get = parseStaff(in);
+
+	string out;
+	return out;
+}
+*/
+
+void DataBase::openSalesFile(){
+	ifstream infich;
+		string salen, date, prod, garbage;
+
+		infich.open(clientsFile);
+		if (!infich.fail()) {
+			getline(infich, salen);
+			getline(infich, date);
+			getline(infich, garbage);
+			getline(infich, prod);
+
+			salen = parse(salen);
+		}
+}
+
 void DataBase::openClientsFile(){
 	ifstream infich;
-	char aux;
-	string textLine,adress, name;
+	string name, addr, cn, garbage;
 	unsigned int contribNo;
 
 	infich.open(clientsFile);
 	if (!infich.fail()) {
+		while(!infich.eof()){
+			string n, addr, cn, sale;
+			unsigned int saleI, cnI;
 
-		while (getline(infich, textLine)) {
+			getline(infich, name);
+			getline(infich, addr);
+			getline(infich, cn);
+			getline(infich, garbage);
+			getline(infich, sale);
 
-			istringstream cardStream (textLine);
+			name = parse(name);
+			addr = parse(addr);
+			cn = parse(cn);
+			cnI = stoi(cn);
 
+			vector<unsigned int > tmp;
+			while(sale.size() > 1 & !infich.eof()){
+				sale = parseStaff(sale);
+				saleI = stoi(sale);
 
-				name = readComplexString(cardStream, ';');
+				tmp.push_back(saleI);
 
-			adress = readComplexString(cardStream, ';');
-
-			cardStream >> contribNo >> aux;
-
-			clients.push_back(Client(name,adress,contribNo));
+				getline(infich, sale);
+			}
+			Client c(name, addr, cnI, tmp);
+			clients.push_back(c);
 		}
+
 	}else {
 		throw ErrorOpeningFile(clientsFile);
 	}
@@ -312,6 +361,16 @@ void DataBase::openStaffFile(){
 
 }
 
+
+void DataBase::openPrescriptionFile() {
+	ifstream infich;
+	string number, doctor, client, garbage, prod;
+		//TODO change file
+		infich.open(staffFile);
+		if (!infich.fail()) {
+		}
+}
+
 void DataBase::writeToProductsFile() {
 	writeToFile(productsFile, products);
 }
@@ -331,21 +390,5 @@ void DataBase::writeToSalesFile(){
 	writeToFile(salesFile, sales);
 }
 
-string DataBase::readComplexString (istringstream &ss, char separate) {
-	string final, auxString;
-	char aux;
-
-	do {
-		ss >> auxString;
-		final += auxString;
-		ss.get(aux);
-		ss.get(aux);
-
-		if (aux != separate) {
-			final += " ";
-			ss.unget();
-		}
-	} while (aux != separate);
-
-	return final;
+void DataBase::writeToPrescriptionFile() {
 }

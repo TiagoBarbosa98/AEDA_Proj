@@ -22,6 +22,7 @@ public:
 	const string& getClient() const;
 	const string& getDoctor() const;
 	vector<int> getProducts() const;
+	friend ostream &operator<<(ostream &os, const Prescription &p);
 
 	//adds the product with code c to products
 	void addProduct(int c);

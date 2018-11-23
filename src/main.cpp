@@ -15,11 +15,21 @@ using namespace std;
 
 int main(){
 
-	DataBase d("Products.txt", "Clients.txt", "TextFiles/Pharmacies.txt", "TextFiles/Staff.txt", "Sales.txt");
-	d.addStaffMember();
-	d.addStaffMember();
-	d.openPharmaciesFile();
-	d.showAllPharmacies();
+	DataBase d("TextFiles/Products.txt", "TextFiles/Clients.txt", "TextFiles/Pharmacies.txt", "TextFiles/Staff.txt", "TextFiles/Sales.txt");
+	/*Product *p = new Product("name", "sup", 1, 1, 1, false);
+	Product *q = new Product("name", "sup", 1, 1, 1, false);
+	vector<pair<Product*, unsigned int>> temp;
+	pair<Product*, unsigned int> l;
+	l.first = p;
+	l.second = 3;
+	temp.push_back(l);
+	l.first = q;
+	l.second = 3;
+	temp.push_back(l);
+	Sale s(temp);
+
+	cout << s << endl;*/
+	d.openClientsFile();
 	return 0;
 }
 /*

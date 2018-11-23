@@ -3,6 +3,7 @@
 #include <vector>
 #include "Person.h"
 #include "Client.h"
+#include "Sale.h"
 #include <iostream>
 #include <fstream>
 
@@ -13,7 +14,7 @@ class Person;
 class Client:  public Person{
 	vector<unsigned int> history;
 public:
-	Client(string n, string addr,  unsigned int  contribNo);
+	Client(string n, string addr,  unsigned int  contribNo, vector<unsigned int> history);
 	vector<unsigned int> getHistory();
 	friend ostream& operator <<(ostream& os, const Client& c);
 

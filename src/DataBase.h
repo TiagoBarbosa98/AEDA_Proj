@@ -43,6 +43,7 @@ public:
 	void addClient();
 	void addFarmacy();
 	void addStaffMember();
+	void addSale();
 
 	void showAllClients();
 	void showAllPharmacies();
@@ -52,19 +53,23 @@ public:
 
 	string readComplexString (istringstream &ss, char separate);
 	void openClientsFile ();
-	void openPharmaciesFile();
-	void openStaffFile();
-	void openProductsFile();
+	void openPharmaciesFile(); //
+	void openStaffFile(); //
+	void openProductsFile(); //
 	void openSalesFile();
+	void openPrescriptionFile();
 	void writeToClientsFile();
 	void writeToPharmaciesFile();
 	void writeToStaffFile();
 	void writeToSalesFile();
 	void writeToProductsFile();
+	void writeToPrescriptionFile();
 
 	string parse(string in);
 	string parseStaff(string in);
+	string parseProductSale(string sale);
 	StaffMember getStaffM(string name);
+	Sale getSale(unsigned int code);
 
 	//Utilities
 	int checkForInt(){

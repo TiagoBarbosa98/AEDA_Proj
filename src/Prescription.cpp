@@ -27,3 +27,14 @@ const string& Prescription::getClient() const {
 void Prescription::addProduct(int c){
 	products.push_back(c);
 }
+
+ostream &operator<<(ostream &os, const Prescription &p){
+	os << "Number: " << p.number <<
+			"\nClient: " << p.client <<
+			"\nDoctor who prescribed: " << p.doctor <<
+			"\nProducts id's:\n";
+	for(unsigned int i = 0; i < p.products.size(); i++){
+		os << "  -" << p.products[i] << endl;
+	}
+	return os;
+}
