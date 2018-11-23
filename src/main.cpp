@@ -14,8 +14,10 @@ using namespace std;
 
 int main(){
 	DataBase d("Products.txt", "Clients.txt","Pharmacies.txt", "TextFiles/Staff.txt", "Sales.txt");
-	d.openProductsFile();
-	cout << d.getProducts()[0]->getName() <<d.getProducts()[2]->getName();
+	string in;
+	getline(cin, in);
+	string out = d.parseStaff(in);
+	cout << out;
 	return 0;
 }
 /*

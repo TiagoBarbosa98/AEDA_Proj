@@ -163,29 +163,38 @@ void DataBase::openClientsFile(){
 
 }
 
+string DataBase::parseStaff(string in){
+	int pos = in.find_first_of('-', 0);
+
+	string final = in.substr(pos + 1, in.size() - pos);
+
+	return final;
+}
+
+
+/*
 void DataBase::openPharmaciesFile(){
 	ifstream infich;
-	string textLine,adress, name, manager="joao";
 
-	infich.open(clientsFile);
-	if (!infich.fail()) {
+		infich.open(productsFile);
+		if (!infich.fail()) {
+			string name, address, manager, garbage, staffName;
 
-		while (getline(infich, textLine)) {
+			getline(infich, name);
+			getline(infich, address);
+			getline(infich, manager);
+			getline(infich, garbage);
+			getline(infich, staffName);
 
-			istringstream cardStream (textLine);
+			name = parse(name);
+			address = parse(address);
+			manager = parse(manager);
 
-			name = readComplexString(cardStream, ';');
-
-			adress = readComplexString(cardStream, ';');
-
-			//   manager = readComplexString(cardStream, ' ');
-
-			pharmacies.push_back(Pharmacy(name,adress,manager));
+			while(staffName.size() > 1){
+				staffName = parseStaff(staffName);
+			}
 		}
-	}else {
-		throw ErrorOpeningFile(pharmaciesFile);
-	}
-}
+}*/
 
 void DataBase::openProductsFile(){
 	ifstream infich;

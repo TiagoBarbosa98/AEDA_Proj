@@ -63,6 +63,7 @@ public:
 	void writeToProductsFile();
 
 	string parse(string in);
+	string parseStaff(string in);
 
 	//Utilities
 	int checkForInt(){
