@@ -262,7 +262,6 @@ void DataBase::closeStaffFile() {
 	saveData.close();
 }
 
-/*TODO
 string DataBase::readComplexString (istringstream &ss, char separate) {
 	string final, auxString;
 	char aux;
@@ -281,4 +280,4 @@ string DataBase::readComplexString (istringstream &ss, char separate) {
 
 	return final;
 }
-*/
+

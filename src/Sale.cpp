@@ -39,7 +39,8 @@ ostream & operator << (ostream & os, const Sale & m){
 	os << "Date: " << m.date->tm_mday << "/" << m.date->tm_mon + 1 << "/" << 1900 + m.date->tm_year << " " << m.date->tm_hour << ":" << m.date->tm_min << endl;
 	os << "Products: " << endl;
 	for (vector<pair<Product, unsigned int>>::const_iterator it = m.prodQtt.begin(); it != m.prodQtt.end(); it++)
-		os << (*it).first.getName() << " " << (*it).second << endl;
+		os << (*it).first.getName() << "\t\t\t\t " << (*it).second << endl;
+		//if (it->first.)
 	os << endl;
 	return os;
 }

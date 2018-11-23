@@ -13,6 +13,10 @@ float Medicine::getDiscount() const {
 	return discount;
 }
 
+float Medicine::getPriceWithDiscount() const{
+	return getPrice() - getDiscount()*getPrice();
+}
+
 bool Medicine::isNoReceipt() const {
 	return noReceipt;
 }

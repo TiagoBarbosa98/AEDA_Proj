@@ -17,6 +17,7 @@ public:
 	Medicine(string name, string description, float price, float iva, int code, float discount, bool noReceipt);
 	virtual ~Medicine();
 	float getDiscount() const;
+	float getPriceWithDiscount() const;
 	bool isNoReceipt() const;
 	friend ostream & operator << (ostream & os, const Medicine & m);
 };
