@@ -1,13 +1,10 @@
 #include "DataBase.h"
-
+#include "Medicine.h"
 DataBase::DataBase() {
 	// TODO Auto-generated constructor stub
 
 }
 
-void DataBase::setSail(vector<Sale*> s){
-	this->sales = s;
-}
 
 DataBase::DataBase(string productsFile, string clientsFile, string pharmaciesFile, string staffFile, string salesFile){
 	this->productsFile = productsFile;
@@ -89,10 +86,7 @@ void DataBase::addPrescription(){
 }
 
 void DataBase::showAllProducts(){
-	for(unsigned int i = 0; i < products.size(); i++){
-		if(!products.at(i)->getMedicine())cout << *products.at(i);
-		else cout << * static_cast<Medicine *>(products.at(i));
-	}
+	printVector(products);
 }
 
 Product DataBase::getProductByName(string name) const{
@@ -176,8 +170,7 @@ void DataBase::removeClient(){
 }
 
 void DataBase::showAllSales(){
-	for(unsigned int i = 0; i < sales.size(); i++)
-		cout << *sales.at(i);
+	printVector(sales);
 
 }
 
@@ -206,14 +199,14 @@ void DataBase::addSale(){
 		}
 	}
 
-	sales.push_back(s);
+	sales.push_back(*s);
 }
 
 void DataBase::removeSale(){
 	cout << "Enter Sale code: " << endl;
 	int c = checkForType<int>();
-	for(vector<Sale*>::iterator it = sales.begin(); it != sales.end(); it++){
-		if((*it)->getCode() == c) {
+	for(vector<Sale>::iterator it = sales.begin(); it != sales.end(); it++){
+		if((it)->getCode() == c) {
 			sales.erase(it);
 			return;
 		}
@@ -289,7 +282,7 @@ void DataBase::removeStaffMember(){
 }
 
 
-/*   OPEN FILES  */
+/*   OPEN FILES
 
 string DataBase::parse(string in){
 
@@ -347,6 +340,7 @@ StaffMember DataBase::getStaffM(string name){
 	}
 	return StaffMember();
 }
+
 void DataBase::openPharmaciesFile(){
 	ifstream infich;
 
@@ -367,7 +361,7 @@ void DataBase::openPharmaciesFile(){
 				manager = parse(manager);
 
 				vector<StaffMember> tmp;
-				while(staffName.size() > 1 & !infich.eof()){
+				while(staffName.size() > 1 && !infich.eof()){
 					staffName = parseStaff(staffName);
 					StaffMember s = getStaffM(staffName);
 					tmp.push_back(s);
@@ -524,4 +518,4 @@ string DataBase::readComplexString (istringstream &ss, char separate) {
 	} while (aux != separate);
 
 	return final;
-}
+}*/

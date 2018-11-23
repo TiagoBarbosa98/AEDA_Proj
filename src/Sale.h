@@ -7,24 +7,84 @@
 #include <tuple>
 #include "Product.h"
 
+
 using namespace std;
 
+/**
+ * @brief 
+ * 
+ */
 class Sale {
 private:
+/**
+ * @brief 
+ * 
+ */
 	tm *date;
+	/**
+	 * @brief 
+	 * 
+	 */
 	static unsigned int lastCode;
+	/**
+	 * @brief 
+	 * 
+	 */
 	unsigned int code;
+	/**
+	 * @brief 
+	 * 
+	 */
 	vector<tuple<string , unsigned int, unsigned int>> prodPriceQtt;
 public:
+/**
+ * @brief Construct a new Sale object
+ * 
+ */
 	Sale();
-	virtual ~Sale();
+	/**
+	 * @brief Destroy the Sale object
+	 * 
+	 */
+	/**
+	 * @brief Construct a new Sale object
+	 * 
+	 * @param cart 
+	 */
 	Sale(vector<tuple<string , unsigned int, unsigned int>> cart);
 	//Getters and setters
+	/**
+	 * @brief Get the Date object
+	 * 
+	 * @return tm* 
+	 */
 	tm * getDate() const;
+	/**
+	 * @brief Get the Code object
+	 * 
+	 * @return unsigned int 
+	 */
 	unsigned int getCode() const;
+	/**
+	 * @brief Get the Prod Qtt object
+	 * 
+	 * @return const vector<pair<Product, unsigned int> >& 
+	 */
+	/**
+	 * @brief 
+	 * 
+	 * @param os 
+	 * @param s 
+	 * @return ostream& 
+	 */
 	friend ostream & operator << (ostream & os,  Sale & s);
-	void addProdPriceQtt(Product p, int qtt);
-	string getInfo() const;
+	/**
+	 * @brief 
+	 * 
+	 * @param p 
+	 * @param qtt 
+	 */
+	void addProdPriceQtt(Product p, int q);
 	//adds a new product to prodQtt
 
 };

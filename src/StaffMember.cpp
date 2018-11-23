@@ -1,14 +1,12 @@
 #include "StaffMember.h"
 #include "Person.h"
 
-StaffMember::StaffMember(string n, string addr, unsigned int cN, unsigned int sal, string ph, string pos):Person(n, addr, cN) {
+StaffMember::StaffMember(string n, string addr, unsigned int contribNo, unsigned int sal , string ph, string pos):Person(n, addr, contribNo) {
 	salary = sal;
 	pharmacy = ph;
 	position = pos;
 }
 
-StaffMember::StaffMember(): Person("error", "error", 0){
-}
 
 unsigned int StaffMember::getSalary() const{
 	return salary;

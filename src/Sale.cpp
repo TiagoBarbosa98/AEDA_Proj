@@ -48,7 +48,3 @@ ostream & operator << (ostream & os, Sale & m){
 }
 
 
-Sale::~Sale() {
-	// TODO Auto-generated destructor stub
-}
-

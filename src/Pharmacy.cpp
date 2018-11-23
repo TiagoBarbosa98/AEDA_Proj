@@ -31,14 +31,6 @@ string Pharmacy::getManager() const{
 
 
 
-string Pharmacy::getInfo() const{
-	stringstream ss;
-	ss << Entity::getInfo() << ", " << this->getManager();
-	printVector(staff);
-	return ss.str();
-}
-
-
 
 ostream & operator <<(ostream &os, const Pharmacy &p){
 	const Entity *e = &p;
