@@ -6,29 +6,17 @@
 #include <fstream>
 #include "Sale.h"
 #include "Product.h"
+#include "Prescription.h"
 #include "Medicine.h"
 #include "DataBase.h"
 
 using namespace std;
 
 int main(){
-	//DataBase d("products.txt", "clients.txt","pharmacies.txt", "staff.txt");
-	//mainMenu(d);
-	Medicine benurom("Benurom", "Paracetemol", 2, 0.06, 69, 0.25, false);
-	Medicine brufen("Brufen", "Ibuprofen", 20, 0.06, 21, 0.1, false);
-	Product toothbrush("TeethBrush by Col-gate", "TEETHBRUSH", 10, 20, 30, false);
-	vector<pair<Product *, unsigned int>> v;
-	v.push_back(pair<Product *, unsigned int> (&benurom, 3));
-	v.push_back(pair<Product *, unsigned int> (&brufen, 2));
-	v.push_back(pair<Product *, unsigned int> (&toothbrush, 1));
-	Sale *s1 = new Sale(v);
-	//cout << s1->getProdQtt().at(0).first.getPriceWithDiscount();
-	/*ofstream myfile;
-	myfile.open("Products.txt");
-	myfile << benurom << endl;
-	myfile << brufen << endl;
-	myfile << toothbrush << endl;
-	myfile.close();*/
+	vector<string> v;
+	v.push_back("Benurom");
+	v.push_back("Gaviscon");
+	Prescription *s1 = new Prescription(0, "Joao Vitor", "Dr. Rotiv OaoJ", v);
 	cout << *s1;
 	return 0;
 }
