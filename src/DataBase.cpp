@@ -303,7 +303,7 @@ void DataBase::openPharmaciesFile(){
 				manager = parse(manager);
 
 				vector<StaffMember> tmp;
-				while(staffName.size() > 1 & !infich.eof()){
+				while(staffName.size() > 1 && !infich.eof()){
 					staffName = parseStaff(staffName);
 					StaffMember s = getStaffM(staffName);
 					tmp.push_back(s);

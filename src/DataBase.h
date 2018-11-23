@@ -16,23 +16,50 @@
 #include "StaffMember.h"
 #include "Prescription.h"
 #include "Sale.h"
-#include "Medicine.h"
-
+/**
+ * @brief 
+ * 
+ */
 class DataBase {
 private:
-	string productsFile, clientsFile, pharmaciesFile, staffFile, salesFile;
+/**
+ * @brief 
+ * 
+ */
+	string productsFile, clientsFile, pharmaciesFile, staffFile;
+	/**
+	 * @brief 
+	 * 
+	 */
 	vector<Product* > products;
+	/**
+	 * @brief 
+	 * 
+	 */
 	vector<Client> clients;
+/**
+ * @brief 
+ * 
+ */
 	vector<Pharmacy> pharmacies;
+	/**
+	 * @brief 
+	 * 
+	 */
 	vector<StaffMember> staff;
+	/**
+	 * @brief 
+	 * 
+	 */
 	vector<Prescription> prescriptions;
-	vector<Sale *> sales;
+	/**
+	 * @brief 
+	 * 
+	 */
+	vector<Sale> sales;
 public:
 	DataBase();
-	//TODO: REMOVE AFTER TESTING
-	void setSail(vector<Sale *> s);
-	DataBase(string prodFile, string cliFile, string pharmFile, string staffFile);
-	DataBase(string productsFile, string clientsFile, string pharmaciesFile, string staffFile, string salesFile);
+	DataBase(string productsFile, string clientsFile, string pharmaciesFile, string staffFile);
 	virtual ~DataBase();
 
 	//Getters
@@ -41,62 +68,27 @@ public:
 	const vector<Product*>& getProducts() const;
 	vector<Prescription> getPrescriptions() const;
 	vector<StaffMember> getStaff() const;
-
 	void addClient();
 	void addFarmacy();
 	void addStaffMember();
-	void addProduct();
-	void addSale();
-
-	void removeProduct();
-	void removeClient();
+	//adding elem to vector v
+	template<class T>
+	void addElement(T elem, vector<T> &v){
+		v.push_back(elem);
+	}
 
 	void showAllClients();
-	void showAllProducts();
 	void showAllPharmacies();
 	void showAllStaff();
-	void showAllSales();
-
-	void readProductsFile();
 
 	string readComplexString (istringstream &ss, char separate);
+	void openproductsFile();
 	void openClientsFile ();
-	void openPharmaciesFile();
-	void openStaffFile();
-	void openProductsFile();
-	void openSalesFile();
-	void writeToClientsFile();
-	void writeToPharmaciesFile();
-	void writeToStaffFile();
-	void writeToSalesFile();
-	void writeToProductsFile();
-
-
-	Product getProductByName(string name) const;
-
-	string parse(string in);
-	string parseStaff(string in);
-	StaffMember getStaffM(string name);
-
-
-	template<class T>
-	void writeToFile(string fileName, vector<T> v){
-		ofstream saveData;
-
-		saveData.open(fileName, ios::out | ios::trunc);
-
-		if (saveData.fail()){
-			//TODOthrow ErrorOpeningFile (fileName);
-		}
-
-		for (unsigned int i = 0; i < v.size(); i++) {
-
-			saveData << v[i] << endl;
-		}
-		saveData << endl;
-
-		saveData.close();
-	}
+	void openpharmaciesFile();
+	void openstaffFile();
+	void closeClientsFile();
+	void closePharmaciesFile();
+	void closeStaffFile();
 
 };
 
@@ -109,17 +101,6 @@ public:
     string getFileName () {
         return nameFile;
     }
-};
-
-class ItemDoesNotExist{
-	string item;
-public:
-	ItemDoesNotExist(string i){
-		item = i;
-	}
-	void printMsg(){
-		cout << item << " does not exist in Database." << endl;
-	}
 };
 
 

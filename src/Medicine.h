@@ -11,15 +11,13 @@ private:
 	 * fazer desta forma)
 	 */
 	//true if the medicine can be sold without a receipt
-	bool prescription;
+	bool noReceipt;
 public:
 	Medicine();
-	Medicine(string name, string description, float price, float iva, int code, float discount, bool pres);
+	Medicine(string name, string description, float price, float iva, int code, float discount, bool noReceipt);
 	virtual ~Medicine();
 	float getDiscount() const;
-	float getPriceWithDiscount() const;
 	bool isNoReceipt() const;
-	bool prescriptionRequired() const;
 	friend ostream & operator << (ostream & os, const Medicine & m);
 };
 
