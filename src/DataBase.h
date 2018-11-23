@@ -57,11 +57,23 @@ public:
 	string readComplexString (istringstream &ss, char separate);
 	void openproductsFile();
 	void openClientsFile ();
-	void openpharmaciesFile();
-	void openstaffFile();
+	void openPharmaciesFile();
+	void openStaffFile();
 	void closeClientsFile();
 	void closePharmaciesFile();
 	void closeStaffFile();
+	void closeSalesFile();
+
+	//Utilities
+	int checkForInt(){
+		int input;
+		cin >> input;
+		while(cin.fail()){
+			cout << "Your input is not a valid number, please try again.\n"
+			cin >> input;
+		}
+		return input;
+	}
 
 };
 

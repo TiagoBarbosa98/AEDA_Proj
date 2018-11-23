@@ -10,5 +10,14 @@ string Client::getInfo() const{
 	stringstream ss;
 	ss << Person::getInfo();
 	return ss.str();
-}
 
+	ostream& operator <<(ostream& os, const Client& c) {
+	const Person *p = &c;
+	os << *p;
+	os << "Purchases made:\n";
+	for(unsigned int i = 0; i < c.history.size(); i++){
+		os << c.history[i] << endl;
+	}
+	return os;
+}
+}

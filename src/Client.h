@@ -16,6 +16,7 @@ public:
 	Client(string n, string addr,  unsigned int  contribNo);
 	vector<unsigned int> getHistory();
 	string getInfo() const;
+	friend ostream& operator <<(ostream& os, const Client& c);
 
 };
 
