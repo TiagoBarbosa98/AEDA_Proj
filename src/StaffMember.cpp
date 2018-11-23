@@ -1,14 +1,16 @@
 #include "StaffMember.h"
 #include "Person.h"
 
-StaffMember::StaffMember(string n, string addr, unsigned int cN, unsigned int sal, string ph, string pos):Person(n, addr, cN) {
+StaffMember::StaffMember(string n, string addr, unsigned int contribNo, unsigned int sal , string ph, string pos):Person(n, addr, contribNo) {
 	salary = sal;
 	pharmacy = ph;
 	position = pos;
 }
 
-StaffMember::StaffMember(): Person("error", "error", 0){
+StaffMember::StaffMember(): Person("error", "error", 60), salary(1), pharmacy("error"), position("error"){
+
 }
+
 
 unsigned int StaffMember::getSalary() const{
 	return salary;
@@ -34,13 +36,6 @@ void StaffMember::setSalary(unsigned int ns){
 	salary = ns;
 }
 
-string StaffMember::getInfo() const{
-	stringstream ss;
-	ss << Person::getInfo() << "salary: " << this->getSalary();
-	ss << "pharmacy name: " <<  this->getPharmacy();
-	ss << "position: " << this->getPosition();
-	return ss.str();
-}
 
 ostream& operator<<(ostream &os, const StaffMember &s){
 	const Person *p = &s;
@@ -51,7 +46,7 @@ ostream& operator<<(ostream &os, const StaffMember &s){
 
 	return os;
 }
-
+/*
 istream& operator>>(istream &is, StaffMember &s){
 	string name, address, salary, pharmacy, pos, id, garbage;
 	string name2, address2, salary2, pharmacy2, pos2, id2;
@@ -97,4 +92,4 @@ istream& operator>>(istream &is, StaffMember &s){
 	s.setNc(nc);
 
 	return is;
-}
+}*/

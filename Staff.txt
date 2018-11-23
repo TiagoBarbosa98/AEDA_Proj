@@ -1,0 +1,8 @@
+Name: 3
+Address: 3
+Identification number: 3
+Salary: 3
+Works for: 3 Pharmacy
+Works as: 3
+
+

@@ -50,3 +50,7 @@ ostream& operator <<(ostream& os, const Product& p) {
 
 	return os;
 }
+
+
+
+

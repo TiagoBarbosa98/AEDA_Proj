@@ -1,4 +1,5 @@
 #include "DataBase.h"
+#include "PrintsNSorts.h"
 
 DataBase::DataBase() {
 	// TODO Auto-generated constructor stub
@@ -52,13 +53,91 @@ void DataBase::showAllClients(){
 }
 
 void DataBase::showAllPharmacies(){
-	for(unsigned int i = 0; i < pharmacies.size();i++)
-		cout << pharmacies.at(i) << endl;
+	printVector(pharmacies);
 }
 
 void DataBase::showAllStaff(){
-	for(unsigned int i = 0; i < staff.size();i++)
-		cout << staff.at(i).getInfo()<< endl;
+	printVector(staff);
+}
+
+void DataBase::showAllPrescriptions(){
+	printVector(prescriptions);
+}
+
+void DataBase::addPrescription(){
+	cout << "Number: " << endl;
+	int n = checkForType<int>();
+	cout << "Physician: " << endl;
+	string dr;
+	cin.ignore();
+	getline(cin, dr);
+	cout << "Pacient: " << endl;
+	string c;
+	cin.ignore();
+	getline(cin, c);
+	string p;
+	cout << "For: " << endl;
+	cin.ignore();
+	getline(cin, p);
+	Prescription p1(n, c, dr, p);
+	prescriptions.push_back(p1);
+
+}
+
+void DataBase::showAllProducts(){
+	printVector(products);
+}
+
+Product DataBase::getProductByName(string name) const{
+	for(vector<Product*>::const_iterator it = products.begin(); it != products.end(); it++)
+		if((*it)->getName() == name) return (*(*it));
+	throw ItemDoesNotExist(name);
+}
+
+void DataBase::addProduct(){
+	Product * p1;
+	string name, description, medicine, prescription;
+	int code;
+	float price, iva, disc;
+	medicine = 5;
+	cout << "Name: " << endl;
+	cin.ignore();
+	getline(cin, name);
+	cout << "Description: " << endl;
+	getline(cin, description);
+	cout << "Code: " << endl;
+	code = checkForType<int>();
+	cout << "Price: " << endl;
+	price = checkForType<float>();
+	cout << "IVA: " << endl;
+	iva = checkForType<float>();
+	cout << "Medicine (y/n): " << endl;
+	cin.ignore();
+	getline(cin, medicine);
+	if(medicine != "y") p1 = new Product(name, description, price, iva, code, false);
+	else{
+		cout << "Discount: " << endl;
+		disc = checkForType<float>();
+		cout << "Prescription Required (y/n): " << endl;
+		cin.ignore();
+		getline(cin, prescription);
+		if(prescription == "y") p1 = new Medicine(name, description, price, iva, code, disc, true);
+		else p1 = new Medicine(name, description, price, iva, code, disc, false);
+	}
+	products.push_back(p1);
+}
+
+void DataBase::removeProduct(){
+	cout << "Enter Product Name: " << endl;
+	cin.ignore();
+	string name;
+	getline(cin, name);
+	for(vector<Product *>::iterator it = products.begin(); it != products.end(); it++)
+		if ((*it)->getName() == name){
+			products.erase(it);
+			return;
+		}
+	throw ItemDoesNotExist (name);
 }
 
 void DataBase::addClient(){
@@ -66,28 +145,102 @@ void DataBase::addClient(){
 	string addr;
 	unsigned int  contribNo;
 	cout  << "Name: ";
+	cin.ignore();
 	getline(cin, n);
 	cout << "Address: ";
 	getline(cin, addr);
 	cout << "Identification Number: ";
-	contribNo = checkForInt();
+	contribNo = checkForType<int>();
 	vector<unsigned int> h;
 	Client * cli = new Client(n, addr, contribNo, h);
 	clients.push_back(*cli);
 }
 
-void DataBase::addFarmacy(){
+void DataBase::removeClient(){
+	cout << "Enter client name: " << endl;
+	cin.ignore();
+	string name;
+	getline(cin, name);
+	for(vector<Client>::iterator it = clients.begin(); it != clients.end(); it++)
+		if(it->getName() == name){
+			clients.erase(it);
+			return;
+		}
+	throw ItemDoesNotExist(name);
+}
+
+void DataBase::showAllSales(){
+	printVector(sales);
+
+}
+
+void DataBase::addSale(){
+	Sale *s = new Sale();
+	int op = 0;
+	while(op != 2){
+		cout << "1) Add Product " << endl;
+		cout << "2) Finish " << endl;
+		op = checkForType<int>();
+		if(op != 1) continue;
+		string pname;
+		cout << "Product Name: " << endl;
+		cin.ignore();
+		getline(cin, pname);
+		try{
+			Product p = getProductByName(pname);
+			cout << "Quantity: " << endl;
+			int q = checkForType<int>();
+			s->addProdPriceQtt(p, q);
+
+		}
+		catch(ItemDoesNotExist & e){
+			e.printMsg();
+			continue;
+		}
+	}
+
+	sales.push_back(*s);
+}
+
+void DataBase::removeSale(){
+	cout << "Enter Sale code: " << endl;
+	int c = checkForType<int>();
+	for(vector<Sale>::iterator it = sales.begin(); it != sales.end(); it++){
+		if((it)->getCode() == c) {
+			sales.erase(it);
+			return;
+		}
+	}
+	throw ItemDoesNotExist("Sale");
+}
+
+void DataBase::addPharmacy(){
 	string n;
 	string addr;
 	string m;
 	cout  << "Name: ";
+	cin.ignore();
 	getline(cin, n);
-	cout << "address: ";
+	cout << "Address: ";
 	getline(cin, addr);
-	cout << "manager: ";
+	cout << "Manager: ";
 	getline(cin, m);
 	Pharmacy f(n, addr, m);
 	pharmacies.push_back(f);
+}
+
+void DataBase::removePharmacy(){
+	cout << "Name: " << endl;
+	cin.ignore();
+	string name;
+	getline(cin, name);
+	for(vector<Pharmacy>::iterator it = pharmacies.begin(); it != pharmacies.end(); it++){
+		if(it->getName() == name){
+			pharmacies.erase(it);
+			return;
+		}
+	}
+	throw ItemDoesNotExist (name);
 }
 
 void DataBase::addStaffMember(){
@@ -97,13 +250,14 @@ void DataBase::addStaffMember(){
 	string ph;
 	string pos;
 	cout  << "name: ";
+	cin.ignore();
 	getline(cin, n);
 	cout << "adress: ";
 	getline(cin, addr);
 	cout << "contrib number: ";
-	cN = checkForInt();
+	cN = checkForType<int>();
 	cout << "salary: ";
-	sal = checkForInt();
+	sal = checkForType<int>();
 	cin.ignore();
 	cout  << "pharmacy: ";
 	getline(cin, ph);
@@ -111,6 +265,20 @@ void DataBase::addStaffMember(){
 	getline(cin,pos);
 	StaffMember f(n, addr, cN,sal,ph, pos);
 	staff.push_back(f);
+}
+
+void DataBase::removeStaffMember(){
+	cout << "Enter name: " << endl;
+	cin.ignore();
+	string name;
+	getline(cin, name);
+	for(vector<StaffMember>::iterator it = staff.begin(); it != staff.end(); it++){
+		if(it->getName() == name) {
+			staff.erase(it);
+			return;
+		}
+	}
+	throw ItemDoesNotExist(name);
 }
 
 
@@ -137,14 +305,6 @@ Sale DataBase::getSale(unsigned int code){
 	return Sale();
 }
 
-/*
-string DataBase::parseProductSale(string in){
-	string get = parseStaff(in);
-
-	string out;
-	return out;
-}
-*/
 
 void DataBase::openSalesFile(){
 	ifstream infich;

@@ -17,13 +17,6 @@ bool Person::operator< (const Person & p){
 }
 
 
-string Person::getInfo() const{
-	stringstream ss;
-	ss << Entity::getInfo()  << ", " << this->getContribNo();
-	return ss.str();
-}
-
-
 ostream& operator <<(ostream &os, const Person &p){
 	const Entity *e = &p;
 	os << *e;

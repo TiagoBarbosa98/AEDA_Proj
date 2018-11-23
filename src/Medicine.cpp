@@ -24,10 +24,6 @@ bool Medicine::prescriptionRequired() const {
 
 }
 
-Medicine::~Medicine() {
-	// TODO Auto-generated destructor stub
-}
-
 ostream & operator << (ostream & os, const Medicine & m){
 	const Product *l = &m;
 	os << *l;

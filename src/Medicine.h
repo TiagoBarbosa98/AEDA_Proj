@@ -14,11 +14,10 @@ private:
 	bool prescription;
 public:
 	Medicine();
-	Medicine(string name, string description, float price, float iva, int code, float discount, bool pres);
-	virtual ~Medicine();
+	Medicine(string name, string description, float price, float iva, int code, float discount, bool noReceipt);
 	float getDiscount() const;
-	float getPriceWithDiscount() const;
 	bool isNoReceipt() const;
+	float getPriceWithDiscount() const;
 	bool prescriptionRequired() const;
 	friend ostream & operator << (ostream & os, const Medicine & m);
 };

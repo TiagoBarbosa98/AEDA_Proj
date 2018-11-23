@@ -4,26 +4,87 @@
 #include <string>
 #include <vector>
 #include <ctime>
+#include <tuple>
 #include "Product.h"
+
 
 using namespace std;
 
+/**
+ * @brief 
+ * 
+ */
 class Sale {
 private:
+/**
+ * @brief 
+ * 
+ */
 	tm *date;
+	/**
+	 * @brief 
+	 * 
+	 */
 	static unsigned int lastCode;
+	/**
+	 * @brief 
+	 * 
+	 */
 	unsigned int code;
-	vector<pair<Product *, unsigned int>> prodQtt;
+	/**
+	 * @brief 
+	 * 
+	 */
+	vector<tuple<string , unsigned int, unsigned int>> prodPriceQtt;
 public:
+/**
+ * @brief Construct a new Sale object
+ * 
+ */
 	Sale();
-	virtual ~Sale();
-	Sale(vector<pair<Product *, unsigned int>> cart);
+	/**
+	 * @brief Destroy the Sale object
+	 * 
+	 */
+	/**
+	 * @brief Construct a new Sale object
+	 * 
+	 * @param cart 
+	 */
+	Sale(vector<tuple<string , unsigned int, unsigned int>> cart);
 	//Getters and setters
+	/**
+	 * @brief Get the Date object
+	 * 
+	 * @return tm* 
+	 */
 	tm * getDate() const;
+	/**
+	 * @brief Get the Code object
+	 * 
+	 * @return unsigned int 
+	 */
 	unsigned int getCode() const;
-	const vector<pair<Product *, unsigned int> >& getProdQtt() const;
+	/**
+	 * @brief Get the Prod Qtt object
+	 * 
+	 * @return const vector<pair<Product, unsigned int> >& 
+	 */
+	/**
+	 * @brief 
+	 * 
+	 * @param os 
+	 * @param s 
+	 * @return ostream& 
+	 */
 	friend ostream & operator << (ostream & os,  Sale & s);
-	void addProdQtt(Product * p, int qtt);
+	/**
+	 * @brief 
+	 * 
+	 * @param p 
+	 * @param qtt 
+	 */
+	void addProdPriceQtt(Product p, int q);
 	//adds a new product to prodQtt
 
 };

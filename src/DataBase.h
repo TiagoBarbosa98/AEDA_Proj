@@ -41,17 +41,29 @@ public:
 	vector<StaffMember> getStaff() const;
 
 	void addClient();
-	void addFarmacy();
+	void addPharmacy();
 	void addStaffMember();
 	void addSale();
+	void addPrescription();
+	void addProduct();
+
+	void removeProduct();
+	void removeSale();
+	void removeClient();
+	void removePharmacy();
+	void removeStaffMember();
 
 	void showAllClients();
 	void showAllPharmacies();
 	void showAllStaff();
+	void showAllSales();
+	void showAllPrescriptions();
+	void showAllProducts();
 
 	void readProductsFile();
 
-	string readComplexString (istringstream &ss, char separate);
+	Product getProductByName(string name) const;
+
 	void openClientsFile ();
 	void openPharmaciesFile(); //
 	void openStaffFile(); //
@@ -117,5 +129,11 @@ public:
     }
 };
 
+class ItemDoesNotExist{
+	string item;
+public:
+	ItemDoesNotExist(string n){item = n;}
+	void printMsg(){cout << item << " does not exist in Database.";}
+};
 
 #endif /* SRC_DATABASE_H_ */

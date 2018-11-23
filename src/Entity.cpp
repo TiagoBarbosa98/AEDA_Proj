@@ -26,9 +26,4 @@ ostream & operator <<(ostream &os, const Entity & e){
 
 	return os;
 }
-string Entity::getInfo() const{
-stringstream ss;
-ss << this->getName() << ", " << this->getAddress()<<'\n';
-return ss.str();
-}
 
