@@ -57,13 +57,35 @@ void DataBase::showAllClients(){
 }
 
 void DataBase::showAllPharmacies(){
-	for(unsigned int i = 0; i < pharmacies.size();i++)
-		cout << pharmacies.at(i) << endl;
+	printVector(pharmacies);
 }
 
 void DataBase::showAllStaff(){
-	for(unsigned int i = 0; i < staff.size();i++)
-		cout << staff.at(i).getInfo()<< endl;
+	printVector(staff);
+}
+
+void DataBase::showAllPrescriptions(){
+	printVector(prescriptions);
+}
+
+void DataBase::addPrescription(){
+	cout << "Number: " << endl;
+	int n = checkForType<int>();
+	cout << "Physician: " << endl;
+	string dr;
+	cin.ignore();
+	getline(cin, dr);
+	cout << "Pacient: " << endl;
+	string c;
+	cin.ignore();
+	getline(cin, c);
+	string p;
+	cout << "For: " << endl;
+	cin.ignore();
+	getline(cin, p);
+	Prescription p1(n, c, dr, p);
+	prescriptions.push_back(p1);
+
 }
 
 void DataBase::showAllProducts(){
@@ -187,18 +209,45 @@ void DataBase::addSale(){
 	sales.push_back(s);
 }
 
-void DataBase::addFarmacy(){
+void DataBase::removeSale(){
+	cout << "Enter Sale code: " << endl;
+	int c = checkForType<int>();
+	for(vector<Sale*>::iterator it = sales.begin(); it != sales.end(); it++){
+		if((*it)->getCode() == c) {
+			sales.erase(it);
+			return;
+		}
+	}
+	throw ItemDoesNotExist("Sale");
+}
+
+void DataBase::addPharmacy(){
 	string n;
 	string addr;
 	string m;
 	cout  << "Name: ";
+	cin.ignore();
 	getline(cin, n);
-	cout << "address: ";
+	cout << "Address: ";
 	getline(cin, addr);
-	cout << "manager: ";
+	cout << "Manager: ";
 	getline(cin, m);
 	Pharmacy f(n, addr, m);
 	pharmacies.push_back(f);
+}
+
+void DataBase::removePharmacy(){
+	cout << "Name: " << endl;
+	cin.ignore();
+	string name;
+	getline(cin, name);
+	for(vector<Pharmacy>::iterator it = pharmacies.begin(); it != pharmacies.end(); it++){
+		if(it->getName() == name){
+			pharmacies.erase(it);
+			return;
+		}
+	}
+	throw ItemDoesNotExist (name);
 }
 
 void DataBase::addStaffMember(){
@@ -208,6 +257,7 @@ void DataBase::addStaffMember(){
 	string ph;
 	string pos;
 	cout  << "name: ";
+	cin.ignore();
 	getline(cin, n);
 	cout << "adress: ";
 	getline(cin, addr);
@@ -222,6 +272,20 @@ void DataBase::addStaffMember(){
 	getline(cin,pos);
 	StaffMember f(n, addr, cN,sal,ph, pos);
 	staff.push_back(f);
+}
+
+void DataBase::removeStaffMember(){
+	cout << "Enter name: " << endl;
+	cin.ignore();
+	string name;
+	getline(cin, name);
+	for(vector<StaffMember>::iterator it = staff.begin(); it != staff.end(); it++){
+		if(it->getName() == name) {
+			staff.erase(it);
+			return;
+		}
+	}
+	throw ItemDoesNotExist(name);
 }
 
 

@@ -43,19 +43,24 @@ public:
 	vector<StaffMember> getStaff() const;
 
 	void addClient();
-	void addFarmacy();
+	void addPharmacy();
 	void addStaffMember();
 	void addProduct();
 	void addSale();
+	void addPrescription();
 
 	void removeProduct();
 	void removeClient();
+	void removeSale();
+	void removeStaffMember();
+	void removePharmacy();
 
 	void showAllClients();
 	void showAllProducts();
 	void showAllPharmacies();
 	void showAllStaff();
 	void showAllSales();
+	void showAllPrescriptions();
 
 	void readProductsFile();
 

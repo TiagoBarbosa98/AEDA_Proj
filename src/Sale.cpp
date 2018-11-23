@@ -24,8 +24,7 @@ tm * Sale::getDate() const{
 
 
 unsigned int Sale::getCode() const{
-	//return code;
-	return 420;
+	return code;
 }
 
 void Sale::addProdPriceQtt(Product p, int q){
