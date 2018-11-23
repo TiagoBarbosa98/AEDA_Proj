@@ -70,7 +70,7 @@ void DataBase::addClient(){
 	cout << "Address: ";
 	getline(cin, addr);
 	cout << "Identification Number: ";
-	cin >> contribNo;
+	contribNo = checkForInt();
 	Client * cli = new Client(n, addr, contribNo);
 	clients.push_back(*cli);
 }
@@ -80,11 +80,11 @@ void DataBase::addFarmacy(){
 	string addr;
 	string m;
 	cout  << "Name: ";
-	cin >> n;
-	cout << "adDress: ";
-	cin >> addr;
+	getline(cin, n);
+	cout << "address: ";
+	getline(cin, addr);
 	cout << "manager: ";
-	cin >> m;
+	getline(cin, m);
 	Pharmacy f(n, addr, m);
 	pharmacies.push_back(f);
 }
@@ -96,17 +96,18 @@ void DataBase::addStaffMember(){
 	string ph;
 	string pos;
 	cout  << "name: ";
-	cin >> n;
+	getline(cin, n);
 	cout << "adress: ";
-	cin >> addr;
+	getline(cin, addr);
 	cout << "contrib number: ";
-	cin >> cN;
+	cN = checkForInt();
 	cout << "salary: ";
-	cin >> sal;
+	sal = checkForInt();
+	cin.ignore();
 	cout  << "pharmacy: ";
-	cin >> ph;
+	getline(cin, ph);
 	cout << "position: ";
-	cin >> pos;
+	getline(cin,pos);
 	StaffMember f(n, addr, cN,sal,ph, pos);
 	staff.push_back(f);
 }
@@ -292,4 +293,3 @@ string DataBase::readComplexString (istringstream &ss, char separate) {
 
 	return final;
 }
-
