@@ -14,8 +14,8 @@ using namespace std;
 
 int main(){
 	DataBase d("Products.txt", "Clients.txt","Pharmacies.txt", "TextFiles/Staff.txt", "Sales.txt");
-	d.openStaffFile();
-	cout << d.getStaff()[0] << d.getStaff()[1];
+	d.openProductsFile();
+	cout << d.getProducts()[0]->getName() <<d.getProducts()[2]->getName();
 	return 0;
 }
 /*

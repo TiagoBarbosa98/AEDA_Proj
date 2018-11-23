@@ -124,6 +124,17 @@ void DataBase::readProductsFile(){
 }
 
 /*   OPEN FILES  */
+
+string DataBase::parse(string in){
+
+	int pos = in.find_first_of(':', 0);
+
+	string final = in.substr(pos + 2, in.size() - pos);
+
+	return final;
+
+}
+
 void DataBase::openClientsFile(){
 	ifstream infich;
 	char aux;
@@ -176,14 +187,71 @@ void DataBase::openPharmaciesFile(){
 	}
 }
 
-string DataBase::parse(string in){
+void DataBase::openProductsFile(){
+	ifstream infich;
 
-	int pos = in.find_first_of(':', 0);
+	infich.open(productsFile);
+	if (!infich.fail()) {
 
-	string final = in.substr(pos + 2, in.size() - pos);
+		while(!infich.eof()){
 
-	return final;
+			string name, desc, c, disc, p, m, presc, garbage;
+			int code;
+			float discount, price;
+			bool medicine;
+			bool prescr;
 
+			getline(infich, name);
+			getline(infich, c);
+			getline(infich, p);
+			getline(infich, desc);
+			getline(infich, m);
+
+
+			name = parse(name);
+			c = parse(c);
+			p = parse(p);
+			desc = parse(desc);
+			m = parse(m);
+
+			code = stoi(c);
+			price = stof(p);
+
+			if(m == "1")
+				medicine = true;
+			else
+				medicine = false;
+
+			//checking if prod is medicine and getting rest of info if it is
+			getline(infich, disc);
+			if(disc.size() > 1){
+				getline(infich, presc);
+
+				disc = parse(disc);
+				presc = parse(presc);
+
+				discount = stof(disc);
+				if(presc == "1")
+					prescr = true;
+				else
+					prescr = false;
+
+				getline(infich, garbage);
+
+				//Medicine::Medicine(string n, string desc, float p, float iva, int c, float disc, bool nr)
+				Product *prod = new Medicine(name, desc, price, 0, code, discount, prescr);
+				products.push_back(prod);
+			}
+			else{
+				Product *prod = new Product(name, desc, price, 0, code, medicine);
+				products.push_back(prod);
+			}
+
+		}
+
+	}else {
+		throw ErrorOpeningFile(productsFile);
+	}
 }
 
 void DataBase::openStaffFile(){
@@ -225,13 +293,6 @@ void DataBase::openStaffFile(){
 
 }
 
-/*
-this->productsFile = productsFile;
-	this->clientsFile = clientsFile;
-	this->pharmaciesFile = pharmaciesFile;
-	this->staffFile = staffFile;
-	this->salesFile = salesFile;
-	*/
 void DataBase::writeToProductsFile() {
 	writeToFile(productsFile, products);
 }

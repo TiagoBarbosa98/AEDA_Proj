@@ -16,6 +16,7 @@
 #include "StaffMember.h"
 #include "Prescription.h"
 #include "Sale.h"
+#include "Medicine.h"
 
 class DataBase {
 private:
@@ -54,6 +55,7 @@ public:
 	void openPharmaciesFile();
 	void openStaffFile();
 	void openProductsFile();
+	void openSalesFile();
 	void writeToClientsFile();
 	void writeToPharmaciesFile();
 	void writeToStaffFile();
@@ -64,13 +66,16 @@ public:
 
 	//Utilities
 	int checkForInt(){
-		int input;
-		cin >> input;
-		while(cin.fail()){
-			cout << "Your input is not a valid number, please try again.\n";
-			cin >> input;
-		}
-		return input;
+		int nr;
+		cin >> nr;
+
+			while (cin.fail()) {
+				cin.clear();
+				cin.ignore(numeric_limits<streamsize>::max(), '\n');
+				cout << "Invalid input, try again: ";
+				cin >> nr;
+			}
+			return nr;
 	}
 
 	template<class T>
