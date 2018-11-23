@@ -45,8 +45,15 @@ ostream & operator <<(ostream &os, const Pharmacy &p){
 	os << "Manager: " << p.manager
 		 << "\nStaff: \n";
 	for(unsigned int i = 0; i < p.staff.size(); i++){
-		os << "\      " << p.staff[i].getName() << endl;
+		os << "  -" << p.staff[i].getName() << endl;
 	}
 
 	return os;
+}
+
+istream & operator >>(istream &is, Pharmacy &p){
+	string line;
+	getline(is, line);
+	istringstream iss(line);
+	return is;
 }

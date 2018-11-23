@@ -16,6 +16,7 @@
 #include "StaffMember.h"
 #include "Prescription.h"
 #include "Sale.h"
+#include "Medicine.h"
 
 class DataBase {
 private:
@@ -44,6 +45,8 @@ public:
 	void addStaffMember();
 	void addProduct();
 
+	void removeProduct();
+
 	void showAllClients();
 	void showAllProducts();
 	void showAllPharmacies();
@@ -52,25 +55,20 @@ public:
 	void readProductsFile();
 
 	string readComplexString (istringstream &ss, char separate);
-	void openproductsFile();
 	void openClientsFile ();
 	void openPharmaciesFile();
 	void openStaffFile();
+	void openProductsFile();
+	void openSalesFile();
 	void writeToClientsFile();
 	void writeToPharmaciesFile();
 	void writeToStaffFile();
 	void writeToSalesFile();
+	void writeToProductsFile();
 
-	//Utilities
-	int checkForInt(){
-		int input;
-		cin >> input;
-		while(cin.fail()){
-			cout << "Your input is not a valid number, please try again.\n";
-			cin >> input;
-		}
-		return input;
-	}
+	string parse(string in);
+	string parseStaff(string in);
+
 
 	template<class T>
 	void writeToFile(string fileName, vector<T> v){
@@ -102,6 +100,17 @@ public:
     string getFileName () {
         return nameFile;
     }
+};
+
+class ItemDoesNotExist{
+	string item;
+public:
+	ItemDoesNotExist(string i){
+		item = i;
+	}
+	void printMsg(){
+		cout << item << " does not exist in Database." << endl;
+	}
 };
 
 

@@ -63,3 +63,18 @@ template<class T>
 void quickSort(vector<T> &arr){
     quickSort(arr, 0, arr.size()-1);
 }
+
+//Utilities
+template <class T>
+T checkForType(){
+		T nr;
+		cin >> nr;
+
+			while (cin.fail()) {
+				cin.clear();
+				cin.ignore(numeric_limits<streamsize>::max(), '\n');
+				cout << "Invalid input, try again: ";
+				cin >> nr;
+			}
+			return nr;
+	}

@@ -52,7 +52,11 @@ void DataBase::showAllClients(){
 }
 
 void DataBase::showAllProducts(){
-	printVector(products);
+	//printVector(products);
+	for(unsigned int i = 0; i < products.size(); i++){
+		if(!products.at(i)->getMedicine())cout << *products.at(i);
+		else cout << * static_cast<Medicine *>(products.at(i));
+	}
 }
 
 void DataBase::showAllPharmacies(){
@@ -66,16 +70,49 @@ void DataBase::showAllStaff(){
 }
 
 void DataBase::addProduct(){
-	/*string name, description;
-	int medicine, code, prescription;
+	Product * p1;
+	string name, description, medicine, prescription;
+	int code;
 	float price, iva, disc;
-	cout << "Name: ";
+	medicine = 5;
+	cout << "Name: " << endl;
+	cin.ignore();
 	getline(cin, name);
-	cout << "Description: ";
+	cout << "Description: " << endl;
 	getline(cin, description);
-	cout << "Code: ";
-	//getline(cin, code);*/
+	cout << "Code: " << endl;
+	code = checkForType<int>();
+	cout << "Price: " << endl;
+	price = checkForType<float>();
+	cout << "IVA: " << endl;
+	iva = checkForType<float>();
+	cout << "Medicine (y/n): " << endl;
+	cin.ignore();
+	getline(cin, medicine);
+	if(medicine != "y") p1 = new Product(name, description, price, iva, code, false);
+	else{
+		cout << "Discount: " << endl;
+		disc = checkForType<float>();
+		cout << "Prescription Required (y/n): " << endl;
+		cin.ignore();
+		getline(cin, prescription);
+		if(prescription == "y") p1 = new Medicine(name, description, price, iva, code, disc, true);
+		else p1 = new Medicine(name, description, price, iva, code, disc, false);
+	}
+	products.push_back(p1);
+}
 
+void DataBase::removeProduct(){
+	cout << "Enter Product Name: " << endl;
+	cin.ignore();
+	string name;
+	getline(cin, name);
+	for(vector<Product *>::iterator it = products.begin(); it != products.end(); it++)
+		if ((*it)->getName() == name){
+			products.erase(it);
+			return;
+		}
+	throw ItemDoesNotExist (name);
 }
 
 void DataBase::addClient(){
@@ -87,7 +124,7 @@ void DataBase::addClient(){
 	cout << "Address: ";
 	getline(cin, addr);
 	cout << "Identification Number: ";
-	contribNo = checkForInt();
+	contribNo = checkForType<int>();
 	Client * cli = new Client(n, addr, contribNo);
 	clients.push_back(*cli);
 }
@@ -117,9 +154,9 @@ void DataBase::addStaffMember(){
 	cout << "adress: ";
 	getline(cin, addr);
 	cout << "contrib number: ";
-	cN = checkForInt();
+	cN = checkForType<int>();
 	cout << "salary: ";
-	sal = checkForInt();
+	sal = checkForType<int>();
 	cin.ignore();
 	cout  << "pharmacy: ";
 	getline(cin, ph);
@@ -141,6 +178,17 @@ void DataBase::readProductsFile(){
 }
 
 /*   OPEN FILES  */
+
+string DataBase::parse(string in){
+
+	int pos = in.find_first_of(':', 0);
+
+	string final = in.substr(pos + 2, in.size() - pos);
+
+	return final;
+
+}
+
 void DataBase::openClientsFile(){
 	ifstream infich;
 	char aux;
@@ -167,83 +215,150 @@ void DataBase::openClientsFile(){
 		throw ErrorOpeningFile(clientsFile);
 	}
 
-	/*ifstream myReadFile;
-	myReadFile.open("t.txt");
-	string output;
-
-	while(getline(myReadFile, output)){
-		cout << output << endl;
-
-		int pos = output.find_first_of(" ", 0);
-
-		string final = output.substr(pos + 1, output.size() - pos);
-		cout << final << endl;
-	}*/
 }
 
+string DataBase::parseStaff(string in){
+	int pos = in.find_first_of('-', 0);
+
+	string final = in.substr(pos + 1, in.size() - pos);
+
+	return final;
+}
+
+
+/*
 void DataBase::openPharmaciesFile(){
 	ifstream infich;
-	string textLine,adress, name, manager="joao";
 
-	infich.open(clientsFile);
+		infich.open(productsFile);
+		if (!infich.fail()) {
+			string name, address, manager, garbage, staffName;
+
+			getline(infich, name);
+			getline(infich, address);
+			getline(infich, manager);
+			getline(infich, garbage);
+			getline(infich, staffName);
+
+			name = parse(name);
+			address = parse(address);
+			manager = parse(manager);
+
+			while(staffName.size() > 1){
+				staffName = parseStaff(staffName);
+			}
+		}
+}*/
+
+void DataBase::openProductsFile(){
+	ifstream infich;
+
+	infich.open(productsFile);
 	if (!infich.fail()) {
 
-		while (getline(infich, textLine)) {
+		while(!infich.eof()){
 
-			istringstream cardStream (textLine);
+			string name, desc, c, disc, p, m, presc, garbage;
+			int code;
+			float discount, price;
+			bool medicine;
+			bool prescr;
 
-			name = readComplexString(cardStream, ';');
+			getline(infich, name);
+			getline(infich, c);
+			getline(infich, p);
+			getline(infich, desc);
+			getline(infich, m);
 
-			adress = readComplexString(cardStream, ';');
 
-			//   manager = readComplexString(cardStream, ' ');
+			name = parse(name);
+			c = parse(c);
+			p = parse(p);
+			desc = parse(desc);
+			m = parse(m);
 
-			pharmacies.push_back(Pharmacy(name,adress,manager));
+			code = stoi(c);
+			price = stof(p);
+
+			if(m == "1")
+				medicine = true;
+			else
+				medicine = false;
+
+			//checking if prod is medicine and getting rest of info if it is
+			getline(infich, disc);
+			if(disc.size() > 1){
+				getline(infich, presc);
+
+				disc = parse(disc);
+				presc = parse(presc);
+
+				discount = stof(disc);
+				if(presc == "1")
+					prescr = true;
+				else
+					prescr = false;
+
+				getline(infich, garbage);
+
+				//Medicine::Medicine(string n, string desc, float p, float iva, int c, float disc, bool nr)
+				Product *prod = new Medicine(name, desc, price, 0, code, discount, prescr);
+				products.push_back(prod);
+			}
+			else{
+				Product *prod = new Product(name, desc, price, 0, code, medicine);
+				products.push_back(prod);
+			}
+
 		}
+
 	}else {
-		throw ErrorOpeningFile(pharmaciesFile);
+		throw ErrorOpeningFile(productsFile);
 	}
 }
 
 void DataBase::openStaffFile(){
 	ifstream infich;
-	string textLine,adress, name,ph,pos;
-	unsigned int contribNo,sal;
-	char aux;
 
-	infich.open(clientsFile);
+	infich.open(staffFile);
 	if (!infich.fail()) {
 
-		while (getline(infich, textLine)) {
+		while(!infich.eof()){
 
-			istringstream cardStream (textLine);
+			string name, address, salary, pharmacy, pos, id, garbage;
 
-			name = readComplexString(cardStream, ';');
+			getline(infich, name);
+			getline(infich, address);
+			getline(infich, id);
+			getline(infich, salary);
+			getline(infich, pharmacy);
+			getline(infich, pos);
 
-			adress = readComplexString(cardStream, ';');
+			name = parse(name);
+			address = parse(address);
+			salary = parse(salary);
+			pharmacy = parse(pharmacy);
+			pos = parse(pos);
+			id = parse(id);
 
-			cardStream >> contribNo >> aux;
+			int sal = stoi(salary);
+			int nc = stoi(id);
 
-			cardStream >> sal >> aux;
+			StaffMember s(name, address, nc, sal, pharmacy, pos);
+			staff.push_back(s);
 
-			ph = readComplexString(cardStream, ';');
-
-			pos = readComplexString(cardStream, ';');
-
-			staff.push_back(StaffMember(name,adress,contribNo,sal,ph,pos));
+			getline(infich, garbage);
 		}
+
 	}else {
-		throw ErrorOpeningFile(pharmaciesFile);
+		throw ErrorOpeningFile(staffFile);
 	}
+
 }
 
-/*
-this->productsFile = productsFile;
-	this->clientsFile = clientsFile;
-	this->pharmaciesFile = pharmaciesFile;
-	this->staffFile = staffFile;
-	this->salesFile = salesFile;
-	*/
+void DataBase::writeToProductsFile() {
+	writeToFile(productsFile, products);
+}
 void DataBase::writeToPharmaciesFile() {
 	writeToFile(pharmaciesFile, pharmacies);
 }

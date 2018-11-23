@@ -8,6 +8,7 @@
 #include "Product.h"
 #include "Medicine.h"
 #include "DataBase.h"
+#include "Entity.h"
 
 using namespace std;
 
@@ -50,7 +51,8 @@ void productsMenu(DataBase d){
 			break;
 		case 3:
 			cout << "Removing Product" << endl;
-			//TODO: REMOVE PRODUCT, SE NÃO EXISTIR THROW EXCEPTION
+			try {d.removeProduct();}
+			catch (ItemDoesNotExist & e){ e.printMsg();}
 			break;
 		default:
 			break;

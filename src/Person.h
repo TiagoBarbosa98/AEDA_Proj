@@ -14,6 +14,9 @@ public:
 	bool operator< (const Person & p);
 	virtual string getInfo() const;
 	friend ostream& operator <<(ostream &os, const Person &p);
+	void setNc(unsigned int Nc){
+		this->contribNo = Nc;
+	}
 };
 
 
