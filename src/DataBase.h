@@ -42,11 +42,6 @@ public:
 	void addClient();
 	void addFarmacy();
 	void addStaffMember();
-	//adding elem to vector v
-	template<class T>
-	void addElement(T elem, vector<T> &v){
-		v.push_back(elem);
-	}
 
 	void showAllClients();
 	void showAllPharmacies();
@@ -59,10 +54,10 @@ public:
 	void openClientsFile ();
 	void openPharmaciesFile();
 	void openStaffFile();
-	void closeClientsFile();
-	void closePharmaciesFile();
-	void closeStaffFile();
-	void closeSalesFile();
+	void writeToClientsFile();
+	void writeToPharmaciesFile();
+	void writeToStaffFile();
+	void writeToSalesFile();
 
 	//Utilities
 	int checkForInt(){
@@ -73,6 +68,25 @@ public:
 			cin >> input;
 		}
 		return input;
+	}
+
+	template<class T>
+	void writeToFile(string fileName, vector<T> v){
+		ofstream saveData;
+
+		saveData.open(fileName, ios::out | ios::trunc);
+
+		if (saveData.fail()){
+			//TODOthrow ErrorOpeningFile (fileName);
+		}
+
+		for (unsigned int i = 0; i < v.size(); i++) {
+
+			saveData << v[i] << endl;
+		}
+		saveData << endl;
+
+		saveData.close();
 	}
 
 };

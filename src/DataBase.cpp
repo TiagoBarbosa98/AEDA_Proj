@@ -220,63 +220,27 @@ void DataBase::openStaffFile(){
 	}
 }
 
-
-void DataBase::closePharmaciesFile() {
-	ofstream saveData;
-
-	saveData.open(pharmaciesFile, ios::out | ios::trunc);
-
-	if (saveData.fail()){
-		throw ErrorOpeningFile (pharmaciesFile);
-	}
-
-	for (unsigned int i = 0; i < pharmacies.size(); i++) {
-
-		saveData << pharmacies[i] << endl;
-	}
-	saveData << endl;
-
-	saveData.close();
+/*
+this->productsFile = productsFile;
+	this->clientsFile = clientsFile;
+	this->pharmaciesFile = pharmaciesFile;
+	this->staffFile = staffFile;
+	this->salesFile = salesFile;
+	*/
+void DataBase::writeToPharmaciesFile() {
+	writeToFile(pharmaciesFile, pharmacies);
 }
 
-void DataBase::closeClientsFile() {
-	ofstream saveData;
-
-	saveData.open(clientsFile, ios::out | ios::trunc);
-
-	if (saveData.fail()){
-		throw ErrorOpeningFile (clientsFile);
-	}
-
-	for (unsigned int i = 0; i < clients.size(); i++) {
-
-		saveData << clients[i] << endl;
-	}
-	saveData << endl;
-
-	saveData.close();
+void DataBase::writeToClientsFile() {
+	writeToFile(clientsFile, clients);
 }
 
-void DataBase::closeStaffFile() {
-	ofstream saveData;
-
-	saveData.open(staffFile, ios::out | ios::trunc);
-
-	if (saveData.fail()){
-		throw ErrorOpeningFile (staffFile);
-	}
-
-	for (unsigned int i = 0; i < staff.size(); i++) {
-
-		saveData << staff[i] << endl;
-	}
-	saveData << endl;
-
-	saveData.close();
+void DataBase::writeToStaffFile() {
+	writeToFile(staffFile, staff);
 }
 
-void DataBase::closeSalesFile(){
-
+void DataBase::writeToSalesFile(){
+	writeToFile(salesFile, sales);
 }
 
 string DataBase::readComplexString (istringstream &ss, char separate) {
