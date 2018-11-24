@@ -56,4 +56,22 @@ ostream & operator << (ostream & os, Sale & m){
 	return os;
 }
 
+string Sale::display(){
+	string out;
+
+	out = out + "Sale Number: " + to_string(code) + "\n" +
+			"Date: " + to_string(date->tm_mday) + "/" + to_string(date->tm_mon + 1) + "/" + to_string(1900) + to_string(date->tm_year) + " ";
+	if (date->tm_hour < 10) out = out + "0";
+		out + to_string(date->tm_hour) + ":";
+	if(date->tm_min < 0) out = out + "0";
+	out = out + to_string(date->tm_min) + "\n";
+	out = out + "Price: " + to_string(price) + "\n";
+	out = out + "Products: \n";
+	for(unsigned int i = 0; i < prodPriceQtt.size(); i++){
+			out = out + "-Product: " +get<0>(prodPriceQtt.at(i)) + ", Quantity: " + to_string(get<1>(prodPriceQtt.at(i)))  +  ", Total Price: " + to_string(get<2>(prodPriceQtt.at(i))) + "\n";
+		}
+
+	return out;
+}
+
 

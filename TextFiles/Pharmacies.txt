@@ -1,12 +1,12 @@
 Name: Coco
 Address: Coco
 Manager: joao de melo
-Staff:
+Staff: 
   -Juicy
 
 Name: po
 Address: ky
 Manager: joao de melo
-Staff:
+Staff: 
   -Chumasso
-  -Boi
+  -error

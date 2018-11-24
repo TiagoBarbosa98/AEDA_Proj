@@ -11,7 +11,7 @@ DataBase::DataBase(string productsFile, string clientsFile, string pharmaciesFil
 	this->staffFile = staffFile;
 	this->salesFile = salesFile;
 	this->prescFile = prescFile;
-/*
+
 	try {
 		openProductsFile();
 		openStaffFile();
@@ -23,7 +23,7 @@ DataBase::DataBase(string productsFile, string clientsFile, string pharmaciesFil
 		cout << "Error opening the file " << name.getFileName() << endl
 				<< "No data was imported.\n";
 
-	}*/
+	}
 }
 
 DataBase::~DataBase() {
@@ -345,6 +345,7 @@ void DataBase::openSalesFile(){
 
 		infich.open(salesFile);
 		if (!infich.fail()) {
+			while(!infich.eof()){
 			getline(infich, salen);
 			getline(infich, date);
 			getline(infich, sprice);
@@ -384,9 +385,8 @@ void DataBase::openSalesFile(){
 			tm *time = &date2;
 
 			Sale s(time, tmp, totalprice);
-			cout << s;
-			//sales.push_back(s);
-
+			sales.push_back(s);
+			}
 		}else {
 			throw ErrorOpeningFile(salesFile);
 		}
@@ -621,23 +621,25 @@ void DataBase::openPrescriptionFile() {
 }
 
 void DataBase::writeToProductsFile() {
-	writeToFile(productsFile, products);
+	writeToProductsFile2(productsFile);
 }
 void DataBase::writeToPharmaciesFile() {
-	writeToFile(pharmaciesFile, pharmacies);
+	writeToFileW(pharmaciesFile, pharmacies);
 }
 
 void DataBase::writeToClientsFile() {
-	writeToFile(clientsFile, clients);
+	writeToFileW(clientsFile, clients);
 }
 
 void DataBase::writeToStaffFile() {
-	writeToFile(staffFile, staff);
+	writeToFileW(staffFile, staff);
 }
 
 void DataBase::writeToSalesFile(){
-	writeToFile(salesFile, sales);
+	writeToSales(salesFile);
+	//writeToFileW(salesFile, sales);
 }
 
 void DataBase::writeToPrescriptionFile() {
+	writeToFileW(prescFile, prescriptions);
 }

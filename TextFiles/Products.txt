@@ -1,21 +1,21 @@
 Name: Benurom
 Code: 1
-Price: 2
+Price: 2.000000
 Description: Paracetemol
 Medicine: 1
-Price with discount: 1.5
+Discount: 1.500000
 Prescription Required: 0
 
 Name: Brufen
 Code: 2
-Price: 20
+Price: 20.000000
 Description: Ibuprofen
 Medicine: 1
-Price with discount: 18
+Discount: 18.000000
 Prescription Required: 0
 
 Name: TeethBrush by Col-gate
 Code: 3
-Price: 10
+Price: 10.000000
 Description: TEETHBRUSH
 Medicine: 0

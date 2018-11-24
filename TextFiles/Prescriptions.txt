@@ -1,0 +1,9 @@
+Number: 1
+Doctor who prescribed: Pork
+Pacient: José
+Product: Benurom
+
+Number: 2
+Doctor who prescribed: Chumasso
+Pacient: Toni
+Product: Benurom

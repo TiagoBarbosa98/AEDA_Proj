@@ -1,15 +1,15 @@
 Name: lel
 Address: poop
-Nc: 999
-Purchases:
+Identification number: 999
+Purchases id's:
   -1
   -2
   -3
 
 Name: grgr
 Address: mnmnm
-Nc: 11
-Purchases:
+Identification number: 11
+Purchases id's:
   -9
   -5
   -3

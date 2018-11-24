@@ -30,6 +30,8 @@ public:
 	DataBase(string productsFile, string clientsFile, string pharmaciesFile, string staffFile, string salesFile, string prescFile);
 	virtual ~DataBase();
 
+	vector<Sale> getSales(){return sales;}
+
 	//Getters
 	vector<Client> getClients() const;
 	vector<Pharmacy> getPharmacies() const;
@@ -82,8 +84,7 @@ public:
 	tm parseDate(string in);
 
 
-	template<class T>
-	void writeToFile(string fileName, vector<T> v){
+	void writeToSales(string fileName){
 		ofstream saveData;
 
 		saveData.open(fileName);
@@ -92,13 +93,75 @@ public:
 			//throw ErrorOpeningFile(fileName);
 		}
 
-		for (unsigned int i = 0; i < v.size(); i++) {
-
-			saveData << v[i] << endl;
+		for(int i = 0; i < sales.size(); i++){
+			if(i != sales.size() - 1)
+				saveData << sales[i] << endl;
+			else
+				saveData << sales[i];
 		}
 
 		saveData.close();
 	}
+
+
+	template<class T>
+	void writeToFileW(string fileName, vector<T> v){
+		ofstream saveData;
+
+		saveData.open(fileName);
+
+		if (saveData.fail()){
+			cout << "poop";
+			//throw ErrorOpeningFile(fileName);
+		}
+
+		for (unsigned int i = 0; i < v.size(); i++) {
+
+			if(i != v.size() - 1)
+				saveData << v[i]  << endl;
+			else
+				saveData << v[i];
+		}
+
+		saveData.close();
+	}
+
+	void writeToProductsFile2(string fileName){
+		ofstream saveData;
+
+		saveData.open(fileName);
+
+		if (saveData.fail()){
+			//throw ErrorOpeningFile(fileName);
+		}
+
+		for(unsigned int i = 0; i < products.size(); i++){
+			if(i != products.size() - 1)
+				saveData << products[i]->display() << endl;
+			else
+				saveData << products[i]->display();
+
+		}
+
+		saveData.close();
+	}
+	template<class T>
+		void writeToFile(string fileName, vector<T> v){
+			ofstream saveData;
+
+			saveData.open(fileName);
+
+			if (saveData.fail()){
+				//throw ErrorOpeningFile(fileName);
+			}
+
+			for (unsigned int i = 0; i < v.size(); i++) {
+
+				saveData << v[i] << endl;
+			}
+
+			saveData.close();
+		}
 
 };
 

@@ -90,6 +90,8 @@ public:
 	void addProdPriceQtt(Product p, int q);
 	//adds a new product to prodQtt
 
+	string display();
+
 };
 
 #endif /* SRC_SALE_H_ */

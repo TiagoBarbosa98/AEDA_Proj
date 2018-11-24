@@ -43,12 +43,15 @@ void pharmaciesMenu(DataBase & d){
 		op = checkBoundaries(1, 4);
 		switch(op){
 		case 1:
+			cout << endl;
 			d.showAllPharmacies();
 			break;
 		case 2:
+			cout << endl;
 			d.addPharmacy();
 			break;
 		case 3:
+			cout << endl;
 			try{d.removePharmacy();}
 			catch(ItemDoesNotExist & e){e.printMsg();}
 			break;
@@ -72,12 +75,15 @@ void staffMenu(DataBase & d){
 		op = checkBoundaries(1, 4);
 		switch(op){
 		case 1:
+			cout << endl;
 			d.showAllStaff();
 			break;
 		case 2:
+			cout << endl;
 			d.addStaffMember();
 			break;
 		case 3:
+			cout << endl;
 			try{d.removeStaffMember();}
 			catch(ItemDoesNotExist & e){e.printMsg();}
 			break;
@@ -101,14 +107,17 @@ void clientsMenu(DataBase & d){
 		op = checkBoundaries(1, 4);
 		switch(op){
 		case 1:
+			cout << endl;
 			cout << "Listing Clients" << endl;
 			d.showAllClients();
 			break;
 		case 2:
+			cout << endl;
 			cout << "Adding Client" << endl;
 			d.addClient();
 			break;
 		case 3:
+			cout << endl;
 			cout << "Removing Client" << endl;
 			try {d.removeClient();}
 			catch (ItemDoesNotExist & e){ e.printMsg();}
@@ -136,14 +145,17 @@ void productsMenu(DataBase & d){
 		op = checkBoundaries(1, 4);
 		switch(op){
 		case 1:
+			cout << endl;
 			cout << "Listing Products" << endl;
 			d.showAllProducts();
 			break;
 		case 2:
+			cout << endl;
 			cout << "Adding Product" << endl;
 			d.addProduct();
 			break;
 		case 3:
+			cout << endl;
 			cout << "Removing Product" << endl;
 			try {d.removeProduct();}
 			catch (ItemDoesNotExist & e){ e.printMsg();}
@@ -169,14 +181,17 @@ void salesMenu(DataBase & d){
 			op = checkBoundaries(1, 4);
 			switch(op){
 			case 1:
+				cout << endl;
 				cout << "Listing Sales" << endl;
 				d.showAllSales();
 				break;
 			case 2:
+				cout << endl;
 				cout << "Adding Sale" << endl;
 				d.addSale();
 				break;
 			case 3:
+				cout << endl;
 				cout << "Removing Sale" << endl;
 				try {d.removeSale();}
 				catch (ItemDoesNotExist & e){ e.printMsg();}
@@ -201,9 +216,11 @@ void prescriptionsMenu(DataBase & d){
 		op = checkBoundaries(1, 3);
 		switch(op){
 		case 1:
+			cout << endl;
 			d.showAllPrescriptions();
 			break;
 		case 2:
+			cout << endl;
 			d.addPrescription();
 			break;
 		default:
@@ -231,25 +248,32 @@ void mainMenu(DataBase & d){
 		op = checkBoundaries(1, 7);
 		switch(op){
 		case 1:
+			cout << endl;
 			pharmaciesMenu(d);
 			break;
 		case 2:
+			cout << endl;
 			staffMenu(d);
 			break;
 		case 3:
+			cout << endl;
 			clientsMenu(d);
 			break;
 		case 4:
+			cout << endl;
 			productsMenu(d);
 			break;
 		case 5:
+			cout << endl;
 			salesMenu(d);
 			break;
 		case 6:
+			cout << endl;
 			prescriptionsMenu(d);
 			break;
 			break;
 		default:
+			cout << endl;
 			cout << "Goodbye!" << endl;
 			break;
 		}
@@ -259,7 +283,7 @@ void mainMenu(DataBase & d){
 }
 
 int main(){
-	/*cout << "Do you wish to import data from existing Data Base (y/n)?\n";
+	cout << "Do you wish to import data from existing Data Base (y/n)?\n";
 	string in;
 	cin >> in;
 	DataBase * d;
@@ -267,10 +291,8 @@ int main(){
 		d = new DataBase("TextFiles/Products.txt", "TextFiles/Clients.txt","TextFiles/Pharmacies.txt", "TextFiles/Staff.txt", "TextFiles/Sales.txt", "TextFiles/Prescriptions.txt");
 	else
 		d = new DataBase();
+	mainMenu(*d);
 
-	mainMenu(*d);*/
-	DataBase *d = new DataBase("TextFiles/Products.txt", "TextFiles/Clients.txt","TextFiles/Pharmacies.txt", "TextFiles/Staff.txt", "TextFiles/Sales.txt", "TextFiles/Prescriptions.txt");
-	d->openSalesFile();
 	return 0;
 }
 
