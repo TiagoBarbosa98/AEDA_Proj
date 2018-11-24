@@ -35,7 +35,9 @@ private:
 	 * @brief 
 	 * 
 	 */
-	vector<tuple<string , unsigned int, unsigned int>> prodPriceQtt;
+	vector<tuple<string , unsigned int, float>> prodPriceQtt;
+
+	float price;
 public:
 /**
  * @brief Construct a new Sale object
@@ -51,7 +53,8 @@ public:
 	 * 
 	 * @param cart 
 	 */
-	Sale(vector<tuple<string , unsigned int, unsigned int>> cart);
+	Sale(vector<tuple<string , unsigned int, float>> cart);
+	Sale(tm *time, vector<tuple<string , unsigned int, float>> cart, float price);
 	//Getters and setters
 	/**
 	 * @brief Get the Date object

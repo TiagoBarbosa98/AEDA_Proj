@@ -5,6 +5,7 @@
 #include <vector>
 #include <fstream>
 #include <sstream>
+#include <ctime>
 
 #include "Product.h"
 #include "Pharmacy.h"
@@ -75,19 +76,20 @@ public:
 
 	string parse(string in);
 	string parseStaff(string in);
-	string parseProductSale(string sale);
+	string parseProduct(string in);
 	StaffMember getStaffM(string name);
 	Sale getSale(unsigned int code);
+	tm parseDate(string in);
 
 
 	template<class T>
 	void writeToFile(string fileName, vector<T> v){
 		ofstream saveData;
 
-		saveData.open(fileName, ios::out | ios::trunc);
+		saveData.open(fileName);
 
 		if (saveData.fail()){
-			//TODOthrow ErrorOpeningFile (fileName);
+			//throw ErrorOpeningFile(fileName);
 		}
 
 		for (unsigned int i = 0; i < v.size(); i++) {
@@ -115,7 +117,7 @@ class ItemDoesNotExist{
 	string item;
 public:
 	ItemDoesNotExist(string n){item = n;}
-	void printMsg(){cout << item << " does not exist in Database.";}
+	void printMsg(){cout << item << " does not exist in Database, try again.\n\n";}
 };
 
 #endif /* SRC_DATABASE_H_ */

@@ -259,11 +259,18 @@ void mainMenu(DataBase & d){
 }
 
 int main(){
-	DataBase * d = new DataBase("TextFiles/Products.txt", "TextFiles/Clients.txt","TextFiles/Pharmacies.txt", "TextFiles/Staff.txt", "TextFiles/Sales.txt", "TextFiles/Prescriptions.txt");
-	d->openProductsFile();
-	d->showAllProducts();
-	mainMenu(*d);
+	/*cout << "Do you wish to import data from existing Data Base (y/n)?\n";
+	string in;
+	cin >> in;
+	DataBase * d;
+	if(in == "Y" || in == "y" || in == "yes" || in == "Yes")
+		d = new DataBase("TextFiles/Products.txt", "TextFiles/Clients.txt","TextFiles/Pharmacies.txt", "TextFiles/Staff.txt", "TextFiles/Sales.txt", "TextFiles/Prescriptions.txt");
+	else
+		d = new DataBase();
 
+	mainMenu(*d);*/
+	DataBase *d = new DataBase("TextFiles/Products.txt", "TextFiles/Clients.txt","TextFiles/Pharmacies.txt", "TextFiles/Staff.txt", "TextFiles/Sales.txt", "TextFiles/Prescriptions.txt");
+	d->openSalesFile();
 	return 0;
 }
 
