@@ -1,0 +1,14 @@
+Number: 1
+Doctor who prescribed: Dr. Bayard
+Pacient: Sippin Purp
+Product: Sauce
+
+Number: 2
+Doctor who prescribed: Who?
+Pacient: What?
+Product: When
+
+Number: 3
+Doctor who prescribed: Dr. Dre
+Pacient: M&M
+Product: IDK

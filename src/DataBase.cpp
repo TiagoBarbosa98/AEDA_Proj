@@ -2,7 +2,12 @@
 #include "PrintsNSorts.h"
 
 DataBase::DataBase() {
-	// TODO Auto-generated constructor stub
+	productsFile = "TextFiles/Products.txt";
+	clientsFile = "TextFiles/Clients.txt";
+	pharmaciesFile = "TextFiles/Pharmacies.txt";
+	staffFile = "TextFiles/Staff.txt";
+	salesFile = "TextFiles/Sales.txt";
+	prescFile = "TextFiles/Prescriptions.txt";
 
 }
 DataBase::DataBase(string productsFile, string clientsFile, string pharmaciesFile, string staffFile, string salesFile, string prescFile){
@@ -12,17 +17,19 @@ DataBase::DataBase(string productsFile, string clientsFile, string pharmaciesFil
 	this->staffFile = staffFile;
 	this->salesFile = salesFile;
 	this->prescFile = prescFile;
-/*
+
 	try {
-		//  openproductsFile();
+		openProductsFile();
+		openStaffFile();
+		openSalesFile();
 		openClientsFile();
-		openpharmaciesFile();
-		openstaffFile();
+		openPharmaciesFile();
+		openPrescriptionFile();
 	} catch (ErrorOpeningFile &name) {
 		cout << "Error opening the file " << name.getFileName() << endl
-				<< "No data was imported\n";
+				<< "No data was imported.\n";
 
-	}*/
+	}
 }
 
 DataBase::~DataBase() {
@@ -71,7 +78,7 @@ void DataBase::showAllSales(){
 
 void DataBase::addPrescription(){
 	cout << "Number: " << endl;
-	int n = checkForType<int>();
+	int n = checkForType<unsigned int>();
 	cout << "Physician: " << endl;
 	string dr;
 	cin.ignore();
@@ -111,7 +118,7 @@ void DataBase::addProduct(){
 	cout << "Description: " << endl;
 	getline(cin, description);
 	cout << "Code: " << endl;
-	code = checkForType<int>();
+	code = checkForType<unsigned int>();
 	cout << "Price: " << endl;
 	price = checkForType<float>();
 	cout << "IVA: " << endl;
@@ -155,7 +162,7 @@ void DataBase::addClient(){
 	cout << "Address: ";
 	getline(cin, addr);
 	cout << "Identification Number: ";
-	contribNo = checkForType<int>();
+	contribNo = checkForType<unsigned int>();
 	vector<unsigned int> h;
 	Client * cli = new Client(n, addr, contribNo, h);
 	clients.push_back(*cli);
@@ -181,7 +188,7 @@ void DataBase::addSale(){
 	while(op != 2){
 		cout << "1) Add Product " << endl;
 		cout << "2) Finish " << endl;
-		op = checkForType<int>();
+		op = checkForType<unsigned int>();
 		if(op != 1) continue;
 		string pname;
 		cout << "Product Name: " << endl;
@@ -190,7 +197,7 @@ void DataBase::addSale(){
 		try{
 			Product p = getProductByName(pname);
 			cout << "Quantity: " << endl;
-			int q = checkForType<int>();
+			int q = checkForType<unsigned int>();
 			s->addProdPriceQtt(p, q);
 
 		}
@@ -205,7 +212,7 @@ void DataBase::addSale(){
 
 void DataBase::removeSale(){
 	cout << "Enter Sale code: " << endl;
-	int c = checkForType<int>();
+	int c = checkForType<unsigned int>();
 	for(vector<Sale>::iterator it = sales.begin(); it != sales.end(); it++){
 		if((it)->getCode() == c) {
 			sales.erase(it);
@@ -256,9 +263,9 @@ void DataBase::addStaffMember(){
 	cout << "adress: ";
 	getline(cin, addr);
 	cout << "contrib number: ";
-	cN = checkForType<int>();
+	cN = checkForType<unsigned int>();
 	cout << "salary: ";
-	sal = checkForType<int>();
+	sal = checkForType<unsigned int>();
 	cin.ignore();
 	cout  << "pharmacy: ";
 	getline(cin, ph);
@@ -306,19 +313,88 @@ Sale DataBase::getSale(unsigned int code){
 	return Sale();
 }
 
+tm DataBase::parseDate(string in) {
+	tm date;
+	string d, m, y, h, min, garb;
+
+	unsigned int day = 1, month = 1, year = 1, hour = 1, mins = 1;
+
+	istringstream iss(in);
+	getline(iss, d, '/');
+	getline(iss, m, '/');
+	getline(iss, y, ' ');
+	getline(iss, h, ':');
+	getline(iss, min);
+	day = stoi(d);
+	month = stoi(m);
+	year = stoi(y);
+	hour = stoi(h);
+	mins = stoi(min);
+
+	date.tm_mday = day;
+	date.tm_mon = month - 1;
+	date.tm_year = year - 1900;
+	date.tm_hour = hour;
+	date.tm_min = mins;
+
+	return date;
+}
+
+
 //TODO
 void DataBase::openSalesFile(){
 	ifstream infich;
-		string salen, date, prod, garbage;
+	string salen, date, prod, garbage, sprice;
+	string prodName, prodQtt, prodPrice;
+	int number, qtt;
+	float price, totalprice;
 
-		infich.open(clientsFile);
+		infich.open(salesFile);
 		if (!infich.fail()) {
+			while(!infich.eof()){
 			getline(infich, salen);
 			getline(infich, date);
+			getline(infich, sprice);
 			getline(infich, garbage);
 			getline(infich, prod);
 
 			salen = parse(salen);
+			date = parse(date);
+			sprice = parse(sprice);
+
+			number = stoi(salen);
+			totalprice = stof(sprice);
+
+			vector<tuple<string, unsigned int, float>> tmp;
+			//while(!infich.eof() && prod.size() > 1);{
+			while(true){
+				istringstream iss(prod);
+				getline(iss, garbage, ' ');
+				getline(iss, prodName, ',');
+				getline(iss, garbage, ':');
+				getline(iss, garbage, ' ');
+				getline(iss, prodQtt, ',');
+				getline(iss, garbage, ':');
+				getline(iss, garbage, ' ');
+				getline(iss, prodPrice);
+
+				price = stof(prodPrice);
+				qtt = stoi(prodQtt);
+
+				tuple<string, unsigned int, float>t(prodName, qtt, price);
+				tmp.push_back(t);
+				getline(infich, prod);
+				if(infich.eof() || prod.size() < 1)
+					break;
+			}
+			tm date2 = parseDate(date);
+			tm *time = &date2;
+
+			Sale s(time, tmp, totalprice);
+			sales.push_back(s);
+			}
+		}else {
+			throw ErrorOpeningFile(salesFile);
 		}
 }
 
@@ -551,23 +627,25 @@ void DataBase::openPrescriptionFile() {
 }
 
 void DataBase::writeToProductsFile() {
-	writeToFile(productsFile, products);
+	writeToProductsFile2(productsFile);
 }
 void DataBase::writeToPharmaciesFile() {
-	writeToFile(pharmaciesFile, pharmacies);
+	writeToFileW(pharmaciesFile, pharmacies);
 }
 
 void DataBase::writeToClientsFile() {
-	writeToFile(clientsFile, clients);
+	writeToFileW(clientsFile, clients);
 }
 
 void DataBase::writeToStaffFile() {
-	writeToFile(staffFile, staff);
+	writeToFileW(staffFile, staff);
 }
 
 void DataBase::writeToSalesFile(){
-	writeToFile(salesFile, sales);
+	writeToSales(salesFile);
+	//writeToFileW(salesFile, sales);
 }
 
 void DataBase::writeToPrescriptionFile() {
+	writeToFileW(prescFile, prescriptions);
 }

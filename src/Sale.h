@@ -18,8 +18,10 @@ class Sale {
 private:
 	tm *date;/** < @brief Time and Date of Sale*/
 	static unsigned int lastCode; /** < @brief Code of the last sale in the system*/
-	eunsigned int code; /** < @brief Code of the Sale*/
-	vector<tuple<string , unsigned int, unsigned int>> prodPriceQtt;/** < @brief Vector containing a tuples of product names, price paid and quantity. */
+	unsigned int code; /** < @brief Code of the Sale*/
+	vector<tuple<string , unsigned int, float>> prodPriceQtt;/** < @brief Vector containing a tuples of product names, price paid and quantity. */
+
+	float price;
 public:
 /**
  * @brief Construct a new Sale object
@@ -35,7 +37,8 @@ public:
 	 * 
 	 * @param cart 
 	 */
-	Sale(vector<tuple<string , unsigned int, unsigned int>> cart);
+	Sale(vector<tuple<string , unsigned int, float>> cart);
+	Sale(tm *time, vector<tuple<string , unsigned int, float>> cart, float price);
 	//Getters and setters
 	/**
 	 * @brief Get the Date object
@@ -64,6 +67,8 @@ public:
 	 * @param qtt quantity
 	 */
 	void addProdPriceQtt(Product p, int q);
+
+	string display();
 
 };
 

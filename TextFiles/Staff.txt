@@ -1,13 +1,20 @@
-Name: Juicy
-Address: 3
-Identification number: 3
-Salary: 3
-Works for: 3
-Works as: 3
+Name:  Joao Melo
+Address: Rua do Mel-o
+Identification number: 123456789
+Salary: 1000
+Works for: Do Mel-o
+Works as: Manager
 
-Name: Chumasso
-Address: 4
-Identification number: 4
-Salary: 4
-Works for: 4
-Works as: 4
+Name: Pedro Melo
+Address: Rua do Mel
+Identification number: 12345678
+Salary: 999
+Works for: Do Mel-o
+Works as: Secretary of Cleanning
+
+Name: Tiago Melo
+Address: Rua do Me
+Identification number: 1234567
+Salary: 998
+Works for: Do Mel-o
+Works as: Secretary of Donuts

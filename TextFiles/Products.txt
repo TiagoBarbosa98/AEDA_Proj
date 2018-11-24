@@ -1,21 +1,37 @@
 Name: Benurom
-Code: 1
-Price: 2
+Code: 0
+Price: 2.120000
 Description: Paracetemol
 Medicine: 1
-Price with discount: 1.5
+Discount: 0.000000
 Prescription Required: 0
 
 Name: Brufen
-Code: 2
-Price: 20
+Code: 1
+Price: 2.120000
 Description: Ibuprofen
 Medicine: 1
-Price with discount: 18
+Discount: 0.000000
 Prescription Required: 0
 
-Name: TeethBrush by Col-gate
+Name: Telfast
+Code: 2
+Price: 3.300000
+Description: Anti-histamin
+Medicine: 1
+Discount: 0.000000
+Prescription Required: 0
+
+Name: Oxycontin
 Code: 3
-Price: 10
-Description: TEETHBRUSH
+Price: 100.000000
+Description: Pain Killer
+Medicine: 1
+Discount: 0.250000
+Prescription Required: 1
+
+Name: Dr. Bayard
+Code: 420
+Price: 0.050000
+Description: *Cough, cough* Candy
 Medicine: 0

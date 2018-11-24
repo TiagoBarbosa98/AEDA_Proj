@@ -1,15 +1,9 @@
-Name: lel
-Address: poop
-Nc: 999
-Purchases:
-  -1
-  -2
-  -3
+Name: Marian Closca
+Address: Asfhij
+Identification number: 1
+Purchases id's:
 
-Name: grgr
-Address: mnmnm
-Nc: 11
-Purchases:
-  -9
-  -5
-  -3
+Name: Tiago Barros
+Address: Rua de 4
+Identification number: 2
+Purchases id's:

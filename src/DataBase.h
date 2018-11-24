@@ -5,6 +5,7 @@
 #include <vector>
 #include <fstream>
 #include <sstream>
+#include <ctime>
 
 #include "Product.h"
 #include "Pharmacy.h"
@@ -68,6 +69,9 @@ public:
 	/**
 	 * @brief Gets clients vector
 	 */
+	vector<Sale> getSales(){return sales;}
+
+	//Getters
 	vector<Client> getClients() const;
 
 	/**
@@ -281,7 +285,7 @@ public:
 	 */
 	string parseProductSale(string sale);
 
-
+	string parseProduct(string in);
 	/**
 	 * @brief      Gets the staff Member with name name.
 	 *
@@ -299,6 +303,27 @@ public:
 	 * @return     The staff code.
 	 */	
 	Sale getSale(unsigned int code);
+	tm parseDate(string in);
+
+
+	void writeToSales(string fileName){
+		ofstream saveData;
+
+		saveData.open(fileName);
+
+		if (saveData.fail()){
+			//throw ErrorOpeningFile(fileName);
+		}
+
+		for(int i = 0; i < sales.size(); i++){
+			if(i != sales.size() - 1)
+				saveData << sales[i] << endl;
+			else
+				saveData << sales[i];
+		}
+
+		saveData.close();
+	}
 
 
 
@@ -312,18 +337,42 @@ public:
 	 * @param v			vector to be written
 	 */
 	template<class T>
-	void writeToFile(string fileName, vector<T> v){
+	void writeToFileW(string fileName, vector<T> v){
 		ofstream saveData;
 
-		saveData.open(fileName, ios::out | ios::trunc);
+		saveData.open(fileName);
 
 		if (saveData.fail()){
-			//TODOthrow ErrorOpeningFile (fileName);
+			cout << "poop";
+			//throw ErrorOpeningFile(fileName);
 		}
 
 		for (unsigned int i = 0; i < v.size(); i++) {
 
-			saveData << v[i] << endl;
+			if(i != v.size() - 1)
+				saveData << v[i]  << endl;
+			else
+				saveData << v[i];
+		}
+
+		saveData.close();
+	}
+
+	void writeToProductsFile2(string fileName){
+		ofstream saveData;
+
+		saveData.open(fileName);
+
+		if (saveData.fail()){
+			//throw ErrorOpeningFile(fileName);
+		}
+
+		for(unsigned int i = 0; i < products.size(); i++){
+			if(i != products.size() - 1)
+				saveData << products[i]->display() << endl;
+			else
+				saveData << products[i]->display();
+
 		}
 
 		saveData.close();
@@ -373,9 +422,8 @@ public:
 	 */
 	ItemDoesNotExist(string n){item = n;}
 
-	/*
-	 */
-	void printMsg(){cout << item << " does not exist in Database.";}
+
+	void printMsg(){cout << item << " does not exist in Database, try again.\n\n";}
 };
 
 #endif /* SRC_DATABASE_H_ */
