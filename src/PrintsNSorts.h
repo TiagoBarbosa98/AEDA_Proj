@@ -3,7 +3,12 @@
 #include <algorithm>
 using namespace std;
 
-//Will print the elements of any vector
+// @brief Will print the elements of any vector
+//
+// @param[in]  v     Vector to be printed
+//
+// @tparam     T     Type of Vector to be printed
+//
 template<class T>
 void printVector(const vector<T> &v){
 	for(T element: v){
@@ -14,11 +19,18 @@ void printVector(const vector<T> &v){
 
 //Sorts the elements of a vector using QuickSort algorithm
 
-/* This function takes last element as pivot, places
-   the pivot element at its correct position in sorted
-    array, and places all smaller (smaller than pivot)
-   to left of pivot and all greater elements to right
-   of pivot */
+/** This function takes last element as pivot, places the pivot element at its
+ correct position in sorted array, and places all smaller (smaller than pivot)
+ to left of pivot and all greater elements to right of pivot
+
+ @param      arr   The arrgument
+ @param[in]  low   The low
+ @param[in]  high  The high
+
+ @tparam     T     Type of vector
+
+ @return     new index for sort
+*/
 template<class T>
 int partition (vector<T> &arr, int low, int high)
 {
@@ -39,10 +51,14 @@ int partition (vector<T> &arr, int low, int high)
     return (i + 1);
 }
  
-/* The main function that implements QuickSort
- arr[] --> Array to be sorted,
-  low  --> Starting index,
-  high  --> Ending index */
+/** @brief The main function that implements QuickSort arr[] --> Array to be sorted, low --> Starting index, high  --> Ending index
+
+ @param      arr   The vector
+ @param[in]  low   The low
+ @param[in]  high  The high
+
+ @tparam     T     type of vector
+*/
 template<class T>
 void quickSort(vector<T> &arr, int low, int high)
 {
@@ -59,12 +75,24 @@ void quickSort(vector<T> &arr, int low, int high)
     }
 }
 
+/**
+ * @brief      calls  quicksort(Arr, Low, High)
+ *
+ * @param      arr   The Vector
+ *
+ * @tparam     T    type of vector
+ */
 template<class T>
 void quickSort(vector<T> &arr){
     quickSort(arr, 0, arr.size()-1);
 }
 
-//Utilities
+
+// @brief      checks if an input is of the wanted type, if so returns the input
+// @tparam     T     Type to be checkf for
+//
+// @return     the input
+//
 template <class T>
 T checkForType(){
 		T nr;

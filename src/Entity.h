@@ -48,11 +48,11 @@ public:
 	 */
 	void setAddress(string naddr);
 	/**
-	 * @brief 
+	 * @brief Overload outstream operator << to write an Entity to an Oustream.
 	 * 
-	 * @param os 
-	 * @param e 
-	 * @return ostream& 
+	 * @param os outstream
+	 * @param e Entity to be written
+	 * @return outstream
 	 */
 	friend ostream & operator <<(ostream &os, const Entity & e);
 	

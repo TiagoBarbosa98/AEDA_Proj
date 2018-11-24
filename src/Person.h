@@ -5,7 +5,9 @@
 
 using namespace std;
 /*
- * @class Person Class that represents a Person where is stored the person's  tax number
+ * @class      Person Class that represents a Person where is stored the person's tax number
+ *
+ * @brief      Class for person.
  */
 class Person:public Entity{
 	unsigned int contribNo;/** < @brief tax number of the Person */
@@ -34,14 +36,26 @@ public:
 	
 	bool operator==(const Person & p);
 	/**
-	 * @brief compares two person's name
-	 * 
-	 * @param p person to compare to
-	 * @return true if Person's name is alphabetical smaller than to p's name
-	 * @return false if Person's name isn't alphabetical smaller than to p's name
+	 * @brief      compares two person's name
+	 *
+	 * @param      p     person to compare to
+	 *
+	 * @return     true if Person's name is alphabetical smaller than to p's
+	 *             name
+	 * @return     false if Person's name isn't alphabetical smaller than to p's name
 	 */
 	bool operator< (const Person & p);
 
+
+	/**
+	 * @brief writes Person p to outstream os
+	 * 
+	 * @param 		os	outstream
+	 * 
+	 * param   		p  Person Obj. to write
+	 * 
+	 * @return     outstream
+	 */
 	friend ostream& operator <<(ostream &os, const Person &p);
 };
 

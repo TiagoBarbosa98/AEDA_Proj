@@ -57,24 +57,40 @@ public:
 	string getProduct() const;
 	friend ostream &operator<<(ostream &os, const Prescription &p);
 
-	//adds the product with code c to products
-	void setClient(string c);
-	void setDr(string c);
-	void setProduct(string c);
-	friend ostream & operator <<(ostream &os, const Prescription &p);
+	
 	/**
-	 * @brief Get the Products object
+	 * @brief      Sets the client.
 	 *
-	 * @return vector<int> Prescription's products
+	 * @param  c     Client Name
 	 */
-	vector<int> getProducts() const;
+	void setClient(string c);
 
-/**
- * @brief adds the product with number c to products
- *
- * @param c number of the product
- */
-	void addProduct(int c);
+	/**
+	 * @brief      Sets the Doctor
+	 *
+	 * @param  c     Doctor Name
+	 */
+	void setDr(string c);
+	/**
+	 * @brief      Sets the Product
+	 *
+	 * @param      c     Product Name
+	 */
+	void setProduct(string c);
+
+
+	/**
+	 * @brief Overload ostream << operator to write Prescripiton to an outstream
+	 * 
+	 * @param 		os 		Outstream
+	 * 
+	 * @param 		p		Prescription to be written
+	 * 
+	 * @return     Outstream
+	 *
+	 */
+	friend ostream & operator <<(ostream &os, const Prescription &p);
+
 };
 
 #endif /* SRC_RECEIPT_H_ */

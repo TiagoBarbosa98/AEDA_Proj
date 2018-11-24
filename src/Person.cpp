@@ -16,7 +16,6 @@ bool Person::operator< (const Person & p){
 	return getName() < p.getName();
 }
 
-
 ostream& operator <<(ostream &os, const Person &p){
 	const Entity *e = &p;
 	os << *e;

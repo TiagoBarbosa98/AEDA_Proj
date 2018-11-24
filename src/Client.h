@@ -26,17 +26,21 @@ public:
  */
  Client(string n, string addr,  unsigned int  contribNo, vector<unsigned int> history);
 	/**
-	 * @brief Get the History object
+	 * @brief      Get the History object
 	 *
-	 * @return vector<unsigned int> Client's purchases history
+	 * @return     vector<unsigned int> Client's purchases history
 	 */
 	vector<unsigned int> getHistory();
+	
 	/**
-	 * @brief Get the Info object
+	 * @brief 		Overload outstream operator << to write a Client to an outstream
 	 * 
-	 * @return string prints all the the Clientsr's information
+	 * @param 		os 		Outstream
+	 * 
+	 * @param 		c 		Client to be written
+	 * 
+	 * @return outstream
 	 */
-	string getInfo() const;
 	friend ostream& operator <<(ostream& os, const Client& c);
 
 };

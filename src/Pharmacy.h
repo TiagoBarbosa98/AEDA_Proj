@@ -70,6 +70,15 @@ public:
 	 */
 	void removeStaff(StaffMember s);
 	
+	/**
+	 * @brief Overload outstream operator << to write a Pharmacy to an outstream
+	 * 
+	 * @param    		os 		Outstream
+	 * 
+	 * @param 			p		Pharmacy to be written
+	 * 
+	 * @return     Outstream
+	 */
 	friend ostream & operator <<(ostream &os, const Pharmacy &p);
 
 };

@@ -14,7 +14,7 @@ private:
 	float price;/** < @brief Price of the Product */
 	float iva;/** < @brief Iva of the Product */
 	int code;/** < @brief Code of the Product */
-	bool medicine;
+	bool medicine; /** < @brief Wether or not the Product is Medicine*/
 
 public:
 /**
@@ -84,10 +84,25 @@ public:
 	 */
 	float getTotalPrice() const;
 
+	/**
+	 * @brief  Write product info to string.
+	 * 
+	 * @return String with product info.
+	 */
 	virtual string display() const;
 
+	/*
+	 * @brief Get's wether or not the calling product is Medicine
+	 * 
+	 * @param true if calling obj. is Medicine.
+	 */
 	bool getMedicine() const;
 
+	/*
+	 * @brief represents getMedicine() in a string format
+	 * 
+	 * @return string with getMedicine() value.
+	 */
 	string med() const;
 
 };

@@ -11,31 +11,15 @@
 using namespace std;
 
 /**
- * @brief 
+ * @class Sale class.
  * 
  */
 class Sale {
 private:
-/**
- * @brief 
- * 
- */
-	tm *date;
-	/**
-	 * @brief 
-	 * 
-	 */
-	static unsigned int lastCode;
-	/**
-	 * @brief 
-	 * 
-	 */
-	unsigned int code;
-	/**
-	 * @brief 
-	 * 
-	 */
-	vector<tuple<string , unsigned int, unsigned int>> prodPriceQtt;
+	tm *date;/** < @brief Time and Date of Sale*/
+	static unsigned int lastCode; /** < @brief Code of the last sale in the system*/
+	eunsigned int code; /** < @brief Code of the Sale*/
+	vector<tuple<string , unsigned int, unsigned int>> prodPriceQtt;/** < @brief Vector containing a tuples of product names, price paid and quantity. */
 public:
 /**
  * @brief Construct a new Sale object
@@ -56,36 +40,30 @@ public:
 	/**
 	 * @brief Get the Date object
 	 * 
-	 * @return tm* 
+	 * @return tm* time and date
 	 */
 	tm * getDate() const;
 	/**
 	 * @brief Get the Code object
 	 * 
-	 * @return unsigned int 
+	 * @return unsigned int code
 	 */
 	unsigned int getCode() const;
 	/**
-	 * @brief Get the Prod Qtt object
+	 * @brief Write sale to Outstream
 	 * 
-	 * @return const vector<pair<Product, unsigned int> >& 
-	 */
-	/**
-	 * @brief 
-	 * 
-	 * @param os 
-	 * @param s 
+	 * @param os outstream
+	 * @param s Sale to be written
 	 * @return ostream& 
 	 */
 	friend ostream & operator << (ostream & os,  Sale & s);
 	/**
 	 * @brief 
 	 * 
-	 * @param p 
-	 * @param qtt 
+	 * @param p product to be add
+	 * @param qtt quantity
 	 */
 	void addProdPriceQtt(Product p, int q);
-	//adds a new product to prodQtt
 
 };
 

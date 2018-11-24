@@ -70,6 +70,15 @@ public:
 	 */
 	void setPosition(string pos);
 
+	/**
+	 * @brief Overload write operator << to write a StaffMembers info to an outstream
+	 * 
+	 * @param 		os 		outstream
+	 * 
+	 * @param 		s		StaffMember to be written
+	 * 
+	 * @return     Outstream
+	 */
 	friend ostream& operator<<(ostream &os, const StaffMember &s);
 };
 
