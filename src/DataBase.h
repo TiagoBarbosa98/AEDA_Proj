@@ -79,19 +79,6 @@ public:
 	StaffMember getStaffM(string name);
 	Sale getSale(unsigned int code);
 
-	//Utilities
-	int checkForInt(){
-		int nr;
-		cin >> nr;
-
-			while (cin.fail()) {
-				cin.clear();
-				cin.ignore(numeric_limits<streamsize>::max(), '\n');
-				cout << "Invalid input, try again: ";
-				cin >> nr;
-			}
-			return nr;
-	}
 
 	template<class T>
 	void writeToFile(string fileName, vector<T> v){

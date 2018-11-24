@@ -78,11 +78,9 @@ void DataBase::addPrescription(){
 	getline(cin, dr);
 	cout << "Pacient: " << endl;
 	string c;
-	cin.ignore();
 	getline(cin, c);
 	string p;
 	cout << "For: " << endl;
-	cin.ignore();
 	getline(cin, p);
 	Prescription p1(n, c, dr, p);
 	prescriptions.push_back(p1);
