@@ -1,7 +1,6 @@
 #include "DataBase.h"
 #include "PrintsNSorts.h"
 
-
 DataBase::DataBase(): clientsA(Client()){
 	productsFile = "TextFiles/Products.txt";
 	clientsFile = "TextFiles/Clients.txt";
@@ -249,12 +248,42 @@ void DataBase::removePharmacy(){
 	string name;
 	getline(cin, name);
 	for(vector<Pharmacy>::iterator it = pharmacies.begin(); it != pharmacies.end(); it++){
-		if(it->getName() == name){
+		if(it->getName().compare(name) == 0){
+			it->setStaffPhToNone();
+			vector<StaffMember*> staffm = it->getStaff();
 			pharmacies.erase(it);
+
+			cout << "Successful deletion. Would you like to relocate the staff from this pharmacy?";
+			string in;
+			cin >> in;
+			if(in == "Y" || in == "y" || in == "yes" || in == "Yes"){
+				assignStaff(staffm);
+			}
 			return;
 		}
 	}
 	throw ItemDoesNotExist (name);
+}
+
+void DataBase::assignStaff(vector<StaffMember*> members){
+	for(unsigned int i = 0; i < members.size(); i++){
+		StaffMember *currentStaff = members[i];
+		cout << currentStaff->getName() << " goes to Pharmacy:\n";
+		string in;
+		cin.ignore();
+		getline(cin, in);
+		members[i]->setPharmacy(in);
+
+		for(unsigned int j = 0; j < pharmacies.size(); j++){
+			if(pharmacies[j].getName() == in){
+				pharmacies[j].addStaff(members[i]);
+				cout << endl << endl;
+				return;
+			}
+		}
+
+		throw(ItemDoesNotExist(in));
+	}
 }
 
 void DataBase::addStaffMember(){
@@ -279,6 +308,14 @@ void DataBase::addStaffMember(){
 	getline(cin,pos);
 	StaffMember f(n, addr, cN,sal,ph, pos);
 	staff.push_back(f);
+
+	//TODO add to pharmacy
+	for(unsigned int i = 0; i < pharmacies.size(); i++){
+		if(pharmacies[i].getName() == ph){
+			StaffMember *fptr = &f;
+			pharmacies[i].addStaff(fptr);
+		}
+	}
 }
 
 void DataBase::removeStaffMember(){
@@ -286,12 +323,21 @@ void DataBase::removeStaffMember(){
 	cin.ignore();
 	string name;
 	getline(cin, name);
+
+	//TODO test
+	for(unsigned int i = 0; i < pharmacies.size(); i++){
+		if(pharmacies[i].removeStaff(name)){
+			cout << "name found";
+			break;
+		}
+	}
 	for(vector<StaffMember>::iterator it = staff.begin(); it != staff.end(); it++){
 		if(it->getName() == name) {
 			staff.erase(it);
 			return;
 		}
 	}
+
 	throw ItemDoesNotExist(name);
 }
 
@@ -456,14 +502,15 @@ string DataBase::parseStaff(string in){
 }
 
 
-StaffMember DataBase::getStaffM(string name){
+StaffMember* DataBase::getStaffM(string name){
 	//possivel excecao aqui
 	for(unsigned int i = 0; i < staff.size(); i++){
 		if(staff[i].getName() == name){
-			return staff[i];
+			StaffMember *sptr = &staff[i];
+			return sptr;
 		}
 	}
-	return StaffMember();
+	return  new StaffMember();
 }
 void DataBase::openPharmaciesFile(){
 	ifstream infich;
@@ -484,11 +531,11 @@ void DataBase::openPharmaciesFile(){
 				address = parse(address);
 				manager = parse(manager);
 
-				vector<StaffMember> tmp;
+				vector<StaffMember*> tmp;
 				while(staffName.size() > 1 & !infich.eof()){
 					staffName = parseStaff(staffName);
-					StaffMember s = getStaffM(staffName);
-					tmp.push_back(s);
+					StaffMember *ptrS = getStaffM(staffName);
+					tmp.push_back(ptrS);
 					getline(infich, staffName);
 				}
 				Pharmacy pharm(name, address, manager, tmp);

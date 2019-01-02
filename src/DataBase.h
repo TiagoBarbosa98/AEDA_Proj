@@ -6,6 +6,8 @@
 #include <fstream>
 #include <sstream>
 #include <ctime>
+#include <iostream>
+using namespace std;
 
 #include "Product.h"
 #include "Pharmacy.h"
@@ -295,7 +297,7 @@ public:
 	 *
 	 * @return     The staff member.
 	 */
-	StaffMember getStaffM(string name);
+	StaffMember* getStaffM(string name);
 
 	/**
 	 * @brief      Gets the sala with code code.
@@ -394,6 +396,9 @@ public:
 
 
 	void showClientsWithMostPurchases();
+
+	//after pharmacy is deleted ask if the user wants to relocate staff
+	void assignStaff(vector<StaffMember*> members);
 };
 
 /**

@@ -11,7 +11,7 @@ using namespace std;
  */
 class Pharmacy: public Entity{
 	string manager;/** < @brief Manager of the Pharmacy */
-	vector<StaffMember> staff;/** < @brief Staff of the Pharmacy (all the members working in that Pharmacy) */
+	vector<StaffMember*> staff;/** < @brief Staff of the Pharmacy (all the members working in that Pharmacy) */
 public:
 /**
  * @brief Construct a new Pharmacy object
@@ -28,7 +28,7 @@ public:
  	 * @param addr The adress of the Pharmacy to be created
 	 * @param sl All of the staff members of the Pharmacy to be created
 	 */
-	Pharmacy(string n, string addr, string manager, vector<StaffMember> sl);
+	Pharmacy(string n, string addr, string manager, vector<StaffMember*> sl);
 
 	/* get and set methods */
 
@@ -37,7 +37,7 @@ public:
 	 * 
 	 * @return vector<StaffMember> the staff members of the Pharmacy
 	 */
-	vector<StaffMember> getStaff() const;
+	vector<StaffMember*> getStaff() const;
 	/**
 	 * @brief Get the Manager object
 	 * 
@@ -62,7 +62,7 @@ public:
 	 * 
 	 * @param s new Staff Member to be added
 	 */
-	void addStaff(StaffMember s);
+	void addStaff(StaffMember *s);
 	/**
 	 * @brief removes the Staff Member s the vector with all the Staff Members
 	 * 
@@ -80,6 +80,15 @@ public:
 	 * @return     Outstream
 	 */
 	friend ostream & operator <<(ostream &os, const Pharmacy &p);
+
+	//when deleting a pharmacy, sets the staff's pharmacy to none
+	bool operator ==(const Pharmacy &p) const;
+
+	void setStaffPhToNone();
+
+	bool removeStaff(string name);
+
+	bool containsStaff(string name);
 
 };
 

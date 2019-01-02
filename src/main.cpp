@@ -300,11 +300,22 @@ int main(){
 		d = new DataBase();
 	mainMenu(*d);
 */
+	/*
+	StaffMember *m = new StaffMember();
+	StaffMember *m2 = new StaffMember();
 
-	vector<unsigned int> m;
+	Pharmacy p("pi", "me", "mr");
+	p.addStaff(m);
+	p.addStaff(m2);
+	cout << p;*/
+
 	DataBase *d = new DataBase();
 	d->openClientsFile();
-	d->showClientsWithMostPurchases();
+	d->openStaffFile();
+	d->openPharmaciesFile();
+	d->removePharmacy();
+	d->showAllStaff();
+
 	return 0;
 }
 

@@ -1,4 +1,13 @@
 Name: Do Mel-o
 Address: Rua do M
 Manager: Joao Melo
-Staff: 
+Staff:
+	-Pedro Melo
+	-Tiago Melo
+	-Joao Melo
+	
+Name: Bruh
+Address: Rua do M
+Manager: Joao Melo
+Staff:
+	-Jonas

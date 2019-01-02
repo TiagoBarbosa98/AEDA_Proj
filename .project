@@ -3,6 +3,7 @@
 	<name>AEDA_Proj</name>
 	<comment></comment>
 	<projects>
+		<project>AEDA_Proj</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

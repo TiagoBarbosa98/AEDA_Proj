@@ -21,3 +21,14 @@ Purchases id's:
 	-3
 	-3
 	-1
+	
+Name: Marianewe Closca
+Address: Asfhij
+Identification number: 1
+District: Porto
+Purchases id's:
+	-3
+	-3
+	-1
+	-44
+	-88

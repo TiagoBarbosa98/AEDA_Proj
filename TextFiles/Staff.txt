@@ -1,4 +1,4 @@
-Name:  Joao Melo
+Name: Joao Melo
 Address: Rua do Mel-o
 Identification number: 123456789
 Salary: 1000
@@ -17,4 +17,11 @@ Address: Rua do Me
 Identification number: 1234567
 Salary: 998
 Works for: Do Mel-o
+Works as: Secretary of Donuts
+
+Name: Jonas
+Address: Rua do Me
+Identification number: 1234567
+Salary: 998
+Works for: Bruh
 Works as: Secretary of Donuts

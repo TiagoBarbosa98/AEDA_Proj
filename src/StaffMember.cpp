@@ -11,7 +11,6 @@ StaffMember::StaffMember(): Person("error", "error", 60), salary(1), pharmacy("e
 
 }
 
-
 unsigned int StaffMember::getSalary() const{
 	return salary;
 }
