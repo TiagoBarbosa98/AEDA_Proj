@@ -5,6 +5,7 @@
 #include <limits>
 #include <fstream>
 #include "Sale.h"
+#include "BST.h"
 #include "Product.h"
 #include "Medicine.h"
 #include "DataBase.h"
@@ -289,7 +290,7 @@ void mainMenu(DataBase & d){
 }
 
 int main(){
-	cout << "Do you wish to import data from existing Data Base (y/n)?\n";
+	/*cout << "Do you wish to import data from existing Data Base (y/n)?\n";
 	string in;
 	cin >> in;
 	DataBase * d;
@@ -298,7 +299,12 @@ int main(){
 	else
 		d = new DataBase();
 	mainMenu(*d);
+*/
 
+	vector<unsigned int> m;
+	DataBase *d = new DataBase();
+	d->openClientsFile();
+	d->showClientsWithMostPurchases();
 	return 0;
 }
 

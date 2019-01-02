@@ -14,6 +14,7 @@
 #include "Prescription.h"
 #include "Sale.h"
 #include "Medicine.h"
+#include "BST.h"
 
 class DataBase {
 private:
@@ -24,6 +25,7 @@ private:
 	vector<StaffMember> staff;/** @brief vector for staff*/
 	vector<Prescription> prescriptions;/** @brief vector for prescriptions*/
 	vector<Sale> sales;/** @brief vector for sales*/
+	BST<Client> clientsA;
 public:
 
 	/**
@@ -33,34 +35,34 @@ public:
 
 	/**
 	 * @brief      Constructs the object.
-	 * 
+	 *
 	 * @param prodFile 		products File
-	 * 
+	 *
 	 * @param cliFile		clients File
-	 * 
+	 *
 	 * @param pharmFile		pharmacies File
-	 * 
+	 *
 	 * @param staffFile		staff File
 	 */
 	DataBase(string prodFile, string cliFile, string pharmFile, string staffFile);
 
 	/**
 	 * @brief      Constructs the object.
-	 * 
+	 *
 	 * @param productsFile 		products File
-	 * 
+	 *
 	 * @param clientsFile		clients File
-	 * 
+	 *
 	 * @param pharmaciesFile		pharmacies File
-	 * 
+	 *
 	 * @param staffFile		staff File
-	 * 
+	 *
 	 * @param salesFile 	sales File
-	 * 
+	 *
 	 * @param prescFile 	prescriptions File
 	 */
 	DataBase(string productsFile, string clientsFile, string pharmaciesFile, string staffFile, string salesFile, string prescFile);
-	
+
 	/*
 	 * @brief Destructor
 	 */
@@ -187,9 +189,9 @@ public:
 
 	/*
 	 * @brief Function to get a product from DB by its name
-	 * 
+	 *
 	 * @param 	name 	The name
-	 * 
+	 *
 	 * @return     said product
 	 */
 	Product getProductByName(string name) const;
@@ -258,9 +260,9 @@ public:
 
 	/*
 	 * @brief parses a string
-	 * 
+	 *
 	 * @param in 	said string
-	 * 
+	 *
 	 * @return parsed string
 	 */
 	string parse(string in);
@@ -268,9 +270,9 @@ public:
 
 	/*
 	 * @brief parses a string with staff member
-	 * 
+	 *
 	 * @param in 	said string
-	 * 
+	 *
 	 * @return parsed string
 	 */
 	string parseStaff(string in);
@@ -278,9 +280,9 @@ public:
 
 	/*
 	 * @brief parses a string with products for a sale
-	 * 
+	 *
 	 * @param sale 	said string
-	 * 
+	 *
 	 * @return parsed string
 	 */
 	string parseProductSale(string sale);
@@ -301,9 +303,11 @@ public:
 	 * @param      code The code
 	 *
 	 * @return     The staff code.
-	 */	
+	 */
 	Sale getSale(unsigned int code);
 	tm parseDate(string in);
+
+
 
 
 	void writeToSales(string fileName){
@@ -329,11 +333,11 @@ public:
 
 	/*
 	 * @brief template to write to files a vector
-	 * 
+	 *
 	 * @tparam T		type of vector
-	 * 
+	 *
 	 * @param fileName	name of File
-	 * 
+	 *
 	 * @param v			vector to be written
 	 */
 	template<class T>
@@ -378,6 +382,18 @@ public:
 		saveData.close();
 	}
 
+
+	//TODO PART 2
+	void showAllClientsA();
+
+	//search clients in specific district
+	void searchClientsByDistrict(string district);
+
+	//search client by nc, print info about that client
+	void getClientInfo(unsigned int nc);
+
+
+	void showClientsWithMostPurchases();
 };
 
 /**

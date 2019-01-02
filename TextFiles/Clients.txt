@@ -1,9 +1,23 @@
-Name: Marian Closca
-Address: Asfhij
-Identification number: 1
+Name: Peroso
+Address: Rua de 4
+Identification number: 4
+District: Braga
 Purchases id's:
+	-1
 
 Name: Tiago Barros
 Address: Rua de 4
 Identification number: 2
+District: Porto
 Purchases id's:
+	-111
+	-88
+	
+Name: Marian Closca
+Address: Asfhij
+Identification number: 1
+District: Porto
+Purchases id's:
+	-3
+	-3
+	-1

@@ -1,7 +1,8 @@
 #include "DataBase.h"
 #include "PrintsNSorts.h"
 
-DataBase::DataBase() {
+
+DataBase::DataBase(): clientsA(Client()){
 	productsFile = "TextFiles/Products.txt";
 	clientsFile = "TextFiles/Clients.txt";
 	pharmaciesFile = "TextFiles/Pharmacies.txt";
@@ -10,7 +11,8 @@ DataBase::DataBase() {
 	prescFile = "TextFiles/Prescriptions.txt";
 
 }
-DataBase::DataBase(string productsFile, string clientsFile, string pharmaciesFile, string staffFile, string salesFile, string prescFile){
+
+DataBase::DataBase(string productsFile, string clientsFile, string pharmaciesFile, string staffFile, string salesFile, string prescFile): clientsA(Client()){
 	this->productsFile = productsFile;
 	this->clientsFile = clientsFile;
 	this->pharmaciesFile = pharmaciesFile;
@@ -155,17 +157,21 @@ void DataBase::removeProduct(){
 void DataBase::addClient(){
 	string n;
 	string addr;
+	string dis;
 	unsigned int  contribNo;
 	cout  << "Name: ";
 	cin.ignore();
 	getline(cin, n);
+	cout << "District: ";
+	getline(cin, dis);
 	cout << "Address: ";
 	getline(cin, addr);
 	cout << "Identification Number: ";
 	contribNo = checkForType<unsigned int>();
 	vector<unsigned int> h;
-	Client * cli = new Client(n, addr, contribNo, h);
+	Client * cli = new Client(n, dis, addr, contribNo, h);
 	clients.push_back(*cli);
+	clientsA.insert(*cli);
 }
 
 void DataBase::removeClient(){
@@ -400,8 +406,7 @@ void DataBase::openSalesFile(){
 
 void DataBase::openClientsFile(){
 	ifstream infich;
-	string name, addr, cn, garbage;
-	unsigned int contribNo;
+	string name, addr, cn, garbage, dis = "ejwio sw ";
 
 	infich.open(clientsFile);
 	if (!infich.fail()) {
@@ -412,6 +417,7 @@ void DataBase::openClientsFile(){
 			getline(infich, name);
 			getline(infich, addr);
 			getline(infich, cn);
+			getline(infich, dis);
 			getline(infich, garbage);
 			getline(infich, sale);
 
@@ -419,6 +425,7 @@ void DataBase::openClientsFile(){
 			addr = parse(addr);
 			cn = parse(cn);
 			cnI = stoi(cn);
+			dis = parse(dis);
 
 			vector<unsigned int > tmp;
 			while(sale.size() > 1 & !infich.eof()){
@@ -429,8 +436,9 @@ void DataBase::openClientsFile(){
 
 				getline(infich, sale);
 			}
-			Client c(name, addr, cnI, tmp);
+			Client c(name, dis, addr, cnI, tmp);
 			clients.push_back(c);
+			clientsA.insert(c);
 		}
 
 	}else {
@@ -649,3 +657,87 @@ void DataBase::writeToSalesFile(){
 void DataBase::writeToPrescriptionFile() {
 	writeToFileW(prescFile, prescriptions);
 }
+
+void DataBase::showAllClientsA(){
+	BSTItrIn<Client> itr(clientsA);
+	while(!itr.isAtEnd()){
+		cout << itr.retrieve() << endl;
+		itr.advance();
+	}
+}
+
+void DataBase::searchClientsByDistrict(string dis){
+	BSTItrIn<Client> itr(clientsA);
+	cout << "District " << dis << " clients:\n\n";
+	while(!itr.isAtEnd()){
+		if(itr.retrieve().getDistrict() == dis){
+			cout << "  " << itr.retrieve() << endl;
+		}
+		itr.advance();
+	}
+}
+
+void DataBase::getClientInfo(unsigned int nc) {
+	vector<unsigned int> l;
+	Client toFind("", "", "", nc, l);
+	Client notFound("", "", "", 0, l);
+
+	//This isnt working for some reason TODO
+	Client res = clientsA.find(toFind);
+
+	if(res == notFound){
+		cout << "No client with such identification number.\n";
+	}
+	else
+		cout << res;
+}
+
+void DataBase::showClientsWithMostPurchases() {
+	Client c1, c2, c3;
+	BST<Client> clTemp = clientsA;
+	BSTItrIn<Client> clItr(clTemp);
+	BSTItrIn<Client> clItr2(clTemp);
+	BSTItrIn<Client> clItr3(clTemp);
+
+	c1 = clItr.retrieve();
+	clItr.advance();
+
+	while(!clItr.isAtEnd()){
+		if(clItr.retrieve().getHistory().size() > c1.getHistory().size()){
+			c1 = clItr.retrieve();
+		}
+		clItr.advance();
+	}
+
+	cout << "Top 3 clients with most purchases made.\n\n";
+	cout << "1. " << c1 << "\n2. ";
+	clTemp.remove(c1);
+	///////////////////////////////
+
+	c2 = clItr2.retrieve();
+	clItr2.advance();
+
+	while(!clItr2.isAtEnd()){
+		if(clItr2.retrieve().getHistory().size() > c2.getHistory().size()){
+			c2 = clItr2.retrieve();
+		}
+		clItr2.advance();
+	}
+	cout << c2 << "\n3. ";
+	clTemp.remove(c2);
+	///////////////////////////
+
+	c3 = clItr3.retrieve();
+	clItr3.advance();
+
+	while(!clItr3.isAtEnd()){
+		if(clItr3.retrieve().getHistory().size() > c3.getHistory().size()){
+			c3 = clItr3.retrieve();
+		}
+		clItr3.advance();
+	}
+	cout << c3 << endl;
+
+}
+
+
