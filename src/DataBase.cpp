@@ -10,6 +10,27 @@ DataBase::DataBase(): clientsA(Client()){
 	prescFile = "TextFiles/Prescriptions.txt";
 
 }
+productPriorityQueue DataBase::getProduct() const{
+	return stock;
+}
+void DataBase::printProducts() const {
+
+    if (stock.empty()) {
+        cout << "There are no products.\n";
+        return;
+    }
+    cout << "PRODUCTS SUMMARY\n\n";
+
+    cout << std::left;
+    cout << setw(13) << "Technician ID" << setw(3) << " " << setw(30) << "Name" << setw(3) << " " << setw(13)
+         << "Models" << endl;
+    productPriorityQueue prod = stock;
+
+    while (!prod.empty()) {
+        prod.top()->display();
+        prod.pop();
+    }
+}
 
 DataBase::DataBase(string productsFile, string clientsFile, string pharmaciesFile, string staffFile, string salesFile, string prescFile): clientsA(Client()){
 	this->productsFile = productsFile;

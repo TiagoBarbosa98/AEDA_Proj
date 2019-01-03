@@ -40,7 +40,9 @@ float Product::getTotalPrice() const{
 bool Product::getMedicine() const{
 	return medicine;
 }
-
+float Product::getQuantity() const{
+	return quantity;
+}
 ostream& operator <<(ostream& os, const Product& p) {
 	os << "Name: " << p.name << endl;
 	os << "Code: " << p.code << endl;
@@ -49,6 +51,10 @@ ostream& operator <<(ostream& os, const Product& p) {
 	os << "Medicine: " << p.medicine << endl;
 
 	return os;
+}
+
+bool Product::operator<(const Product &prod1) const {
+    return (this->getQuantity() < prod1.getQuantity());
 }
 
 string Product::display() const {

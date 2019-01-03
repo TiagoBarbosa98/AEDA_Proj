@@ -6,7 +6,9 @@
 #include <fstream>
 #include <sstream>
 #include <ctime>
-#include <iostream>
+#include <queue>
+#include <iomanip>
+
 using namespace std;
 
 #include "Product.h"
@@ -18,6 +20,13 @@ using namespace std;
 #include "Medicine.h"
 #include "BST.h"
 
+struct ProductCompare {
+    bool operator()(Product *t1, Product *t2) {
+        return t1->getQuantity() > t2->getQuantity();
+    }
+};
+typedef priority_queue<Product *, vector<Product *>, ProductCompare> productPriorityQueue;
+
 class DataBase {
 private:
 	string prescFile, productsFile, clientsFile, pharmaciesFile, staffFile, salesFile; /** @brief files names*/
@@ -28,8 +37,10 @@ private:
 	vector<Prescription> prescriptions;/** @brief vector for prescriptions*/
 	vector<Sale> sales;/** @brief vector for sales*/
 	BST<Client> clientsA;
+	productPriorityQueue stock;
 public:
-
+	productPriorityQueue getProduct() const;
+	void printProducts() const;
 	/**
 	 * @brief      Constructs the object.
 	 */
@@ -183,6 +194,7 @@ public:
 	 * @brief function for displaying all products on screen
 	 */
 	void showAllProducts();
+
 
 	/*
 	 * @brief function for reading products file

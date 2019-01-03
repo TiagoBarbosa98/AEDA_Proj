@@ -12,6 +12,7 @@ using namespace std;
 class Pharmacy: public Entity{
 	string manager;/** < @brief Manager of the Pharmacy */
 	vector<StaffMember*> staff;/** < @brief Staff of the Pharmacy (all the members working in that Pharmacy) */
+
 public:
 /**
  * @brief Construct a new Pharmacy object

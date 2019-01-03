@@ -134,14 +134,15 @@ void clientsMenu(DataBase & d){
 void productsMenu(DataBase & d){
 
 	int op = 0;
-	while(op != 4){
+	while(op != 5){
 		cout << "|                PRODUCTS MENU                     |" << endl;
 		cout << "|                                                  |" << endl;
 		cout << "|        Type your option:                         |" << endl;
 		cout << "|     1) List Products                             |" << endl;
 		cout << "|     2) Add Product                               |" << endl;
 		cout << "|     3) Remove Product                            |" << endl;
-		cout << "|     4) Exit                                      |" << endl;
+		cout << "|     4) Order by stock                            |" << endl;
+		cout << "|     5) Exit                                      |" << endl;
 		cout << "|    Option: ";
 		op = checkBoundaries(1, 4);
 		switch(op){
@@ -160,6 +161,11 @@ void productsMenu(DataBase & d){
 			cout << "Removing Product" << endl;
 			try {d.removeProduct();}
 			catch (ItemDoesNotExist & e){ e.printMsg();}
+			break;
+		case 4:
+			cout << endl;
+			cout << "Order by stock" << endl;
+			d.printProducts();
 			break;
 		default:
 			break;
@@ -290,7 +296,7 @@ void mainMenu(DataBase & d){
 }
 
 int main(){
-	/*cout << "Do you wish to import data from existing Data Base (y/n)?\n";
+	cout << "Do you wish to import data from existing Data Base (y/n)?\n";
 	string in;
 	cin >> in;
 	DataBase * d;
@@ -299,7 +305,7 @@ int main(){
 	else
 		d = new DataBase();
 	mainMenu(*d);
-*/
+
 	/*
 	StaffMember *m = new StaffMember();
 	StaffMember *m2 = new StaffMember();
@@ -308,14 +314,14 @@ int main(){
 	p.addStaff(m);
 	p.addStaff(m2);
 	cout << p;*/
-
+/*
 	DataBase *d = new DataBase();
 	d->openClientsFile();
 	d->openStaffFile();
 	d->openPharmaciesFile();
 	d->removePharmacy();
 	d->showAllStaff();
-
+*/
 	return 0;
 }
 

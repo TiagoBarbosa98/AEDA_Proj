@@ -98,6 +98,7 @@ public:
 	 */
 	bool getMedicine() const;
 
+	float getQuantity() const;
 	/*
 	 * @brief represents getMedicine() in a string format
 	 * 
@@ -105,6 +106,7 @@ public:
 	 */
 	string med() const;
 
+	bool operator<(const Product &prod1) const;
 };
 
 
