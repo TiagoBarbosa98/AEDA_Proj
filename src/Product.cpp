@@ -9,8 +9,8 @@ Product::~Product() {
 	// TODO Auto-generated destructor stub
 }
 
-Product::Product(string n, string d, float p, float iva, int c, bool m)
-: name(n), description(d), price(p), iva(iva), code(c), medicine(m){}
+Product::Product(string n, string d, float p, float q, float iva, int c, bool m)
+: name(n), description(d), price(p), quantity(q), iva(iva), code(c), medicine(m){}
 
 
 int Product::getCode() const {
@@ -56,6 +56,7 @@ string Product::display() const {
 	out = "Name: " + name +
 			"\nCode: " + to_string(code) +
 			"\nPrice: " + to_string(getTotalPrice()) +
+			"\nQuantity: " + to_string(quantity) +
 			"\nDescription: " + description +
 			"\nMedicine: " + med() + "\n";
 	return out;

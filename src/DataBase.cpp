@@ -111,7 +111,7 @@ void DataBase::addProduct(){
 	Product * p1;
 	string name, description, medicine, prescription;
 	int code;
-	float price, iva, disc;
+	float price, quantity, iva, disc;
 	medicine = 5;
 	cout << "Name: " << endl;
 	cin.ignore();
@@ -122,20 +122,22 @@ void DataBase::addProduct(){
 	code = checkForType<unsigned int>();
 	cout << "Price: " << endl;
 	price = checkForType<float>();
+	cout << "Quantity: " << endl;
+	quantity = checkForType<float>();
 	cout << "IVA: " << endl;
 	iva = checkForType<float>();
 	cout << "Medicine (y/n): " << endl;
 	cin.ignore();
 	getline(cin, medicine);
-	if(medicine != "y") p1 = new Product(name, description, price, iva, code, false);
+	if(medicine != "y") p1 = new Product(name, description, price, quantity, iva, code, false);
 	else{
 		cout << "Discount: " << endl;
 		disc = checkForType<float>();
 		cout << "Prescription Required (y/n): " << endl;
 		cin.ignore();
 		getline(cin, prescription);
-		if(prescription == "y") p1 = new Medicine(name, description, price, iva, code, disc, true);
-		else p1 = new Medicine(name, description, price, iva, code, disc, false);
+		if(prescription == "y") p1 = new Medicine(name, description, price, quantity, iva, code, disc, true);
+		else p1 = new Medicine(name, description, price, quantity,  iva, code, disc, false);
 	}
 	products.push_back(p1);
 }
@@ -555,15 +557,16 @@ void DataBase::openProductsFile(){
 
 		while(!infich.eof()){
 
-			string name, desc, c, disc, p, m, presc, garbage;
+			string name, desc, c, disc, p, q, m, presc, garbage;
 			int code;
-			float discount, price;
+			float discount, price, quantity;
 			bool medicine;
 			bool prescr;
 
 			getline(infich, name);
 			getline(infich, c);
 			getline(infich, p);
+			getline(infich, q);
 			getline(infich, desc);
 			getline(infich, m);
 
@@ -571,11 +574,13 @@ void DataBase::openProductsFile(){
 			name = parse(name);
 			c = parse(c);
 			p = parse(p);
+			q = parse(q);
 			desc = parse(desc);
 			m = parse(m);
 
 			code = stoi(c);
 			price = stof(p);
+			quantity = stof(q);
 
 			if(m == "1")
 				medicine = true;
@@ -598,11 +603,11 @@ void DataBase::openProductsFile(){
 
 				getline(infich, garbage);
 
-				Product *prod = new Medicine(name, desc, price, 0, code, discount, prescr);
+				Product *prod = new Medicine(name, desc, price,quantity, 0, code, discount, prescr);
 				products.push_back(prod);
 			}
 			else{
-				Product *prod = new Product(name, desc, price, 0, code, medicine);
+				Product *prod = new Product(name, desc, price, quantity, 0, code, medicine);
 				products.push_back(prod);
 			}
 

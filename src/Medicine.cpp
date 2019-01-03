@@ -6,8 +6,8 @@ Medicine::Medicine() {
 
 }
 
-Medicine::Medicine(string n, string desc, float p, float iva, int c, float disc, bool nr)
-: Product(n, desc, p, iva, c, true), discount(disc), prescription(nr){}
+Medicine::Medicine(string n, string desc, float p, float q, float iva, int c, float disc, bool nr)
+: Product(n, desc, p,q, iva, c, true), discount(disc), prescription(nr){}
 
 
 float Medicine::getDiscount() const {
