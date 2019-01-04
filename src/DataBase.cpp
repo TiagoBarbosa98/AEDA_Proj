@@ -267,10 +267,10 @@ void DataBase::addPharmacy(){
 
 void DataBase::removePharmacy(){
 	showPharmaciesNames();
-	cout << "Pharmacy to remove name: " << endl;
-	cin.ignore();
+	cout << "Pharmacy to remove: " << endl;
 	string name;
 	getline(cin, name);
+	cout << endl;
 	for(vector<Pharmacy>::iterator it = pharmacies.begin(); it != pharmacies.end(); it++){
 		if(it->getName() == name){
 			it->setStaffPhToNone();
@@ -284,7 +284,6 @@ void DataBase::removePharmacy(){
 			if(in == "Y" || in == "y" || in == "yes" || in == "Yes"){
 				assignStaff(staffm);
 			}
-			cout << "\nReallocation complete!\n";
 			return;
 		}
 		else{
@@ -295,45 +294,25 @@ void DataBase::removePharmacy(){
 	throw ItemDoesNotExist (name);
 }
 
-void DataBase::assignStaff(vector<StaffMember*> members){
-	for(unsigned int i = 0; i < members.size(); i++){
-		StaffMember *currentStaff = members[i];
-
-		cout << currentStaff->getName() << " goes to Pharmacy:\n";
-
-		string in = checkPhName();
-		members[i]->setPharmacy(in);
-
-		for(unsigned int j = 0; j < pharmacies.size(); j++){
-			if(pharmacies[j].getName() == in){
-				pharmacies[j].addStaff(members[i]);
-				cout << endl << endl;
-				break;
-			}
-		}
-
-	}
-}
-
 void DataBase::addStaffMember(){
 	string n;
 	string addr;
 	unsigned int cN, sal;
 	string ph;
 	string pos;
-	cout  << "name: ";
+	cout  << "Name: ";
 	cin.ignore();
 	getline(cin, n);
-	cout << "adress: ";
+	cout << "Address: ";
 	getline(cin, addr);
-	cout << "contrib number: ";
+	cout << "Identification Number: ";
 	cN = checkForType<unsigned int>();
 	cout << "salary: ";
 	sal = checkForType<unsigned int>();
 	cin.ignore();
-	cout  << "pharmacy: ";
-	getline(cin, ph);
-	cout << "position: ";
+	cout  << "Pharmacy: ";
+	checkPhName();
+	cout << "Position: ";
 	getline(cin,pos);
 	StaffMember f(n, addr, cN,sal,ph, pos);
 	staff.push_back(f);
@@ -348,15 +327,17 @@ void DataBase::addStaffMember(){
 }
 
 void DataBase::removeStaffMember(){
-	cout << "Enter name: " << endl;
-	cin.ignore();
+	cout << "Staff to be removed (type None to cancel): " << endl;
 	string name;
 	getline(cin, name);
+
+	if(name == "None")
+		return;
 
 	//TODO test
 	for(unsigned int i = 0; i < pharmacies.size(); i++){
 		if(pharmacies[i].removeStaff(name)){
-			cout << "name found";
+			cout << "name found\n\n";
 			break;
 		}
 	}
@@ -820,10 +801,12 @@ void DataBase::showClientsWithMostPurchases() {
 }
 
 void DataBase::showStaffWithoutPh(){
+	cout << "Staff with no current pharmacy:\n";
 	for(unsigned int i = 0; i < staff.size(); i++){
 		if(staff[i].getPharmacy() == "None")
 			cout << "  -" << staff[i].getName() << endl;
 	}
+	cout << endl;
 }
 
 string DataBase::checkPhName(){
@@ -839,7 +822,7 @@ string DataBase::checkPhName(){
 		getline(cin, in);
 
 		for(unsigned int i = 0; i < pharmacies.size(); i++){
-			if(in == pharmacies[i].getName()){
+			if(in == pharmacies[i].getName() || in == "None"){
 				return in;
 			}
 		}
@@ -847,12 +830,48 @@ string DataBase::checkPhName(){
 	}
 }
 
+void DataBase::assignStaff(vector<StaffMember*> members){
+	for(unsigned int i = 0; i < members.size(); i++){
+		StaffMember *currentStaff = members[i];
+
+		cout << currentStaff->getName() << " goes to Pharmacy (type None to not assign):\n";
+
+		string in = checkPhName();
+		members[i]->setPharmacy(in);
+		cout << endl << endl;
+
+		for(unsigned int j = 0; j < pharmacies.size(); j++){
+			if(pharmacies[j].getName() == in){
+				pharmacies[j].addStaff(members[i]);
+				break;
+			}
+		}
+
+	}
+	cout << "\nAllocation complete!\n\n";
+}
+
 void DataBase::showPharmaciesNames(){
-	cout << "Available pharmacies: ";
+	cout << "Available pharmacies:\n";
 		for(unsigned int i = 0; i < pharmacies.size(); i++){
-				cout << pharmacies[i].getName() << "; ";
+				cout << pharmacies[i].getName() << "\n";
 			}
 		cout << endl << endl;
+}
+
+void DataBase::assignStaffWithNoPh(){
+	vector<StaffMember*> members;
+
+	showStaffWithoutPh();
+	showPharmaciesNames();
+
+	for(unsigned int i = 0; i < staff.size(); i++){
+		if(staff[i].getPharmacy() == "None"){
+			StaffMember *sptr = &staff[i];
+			members.push_back(sptr);
+		}
+	}
+	assignStaff(members);
 }
 
 

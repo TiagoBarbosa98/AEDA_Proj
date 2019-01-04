@@ -29,10 +29,11 @@ void Pharmacy::removeStaff(StaffMember s){
 }
 
 bool Pharmacy::removeStaff(string name){
+	vector<StaffMember*>::iterator it = staff.begin();
 
-	for(unsigned int i = 0; i < staff.size(); i++){
-		if(staff[i]->getName() == name){
-			staff.erase(staff.begin() + i);
+	for(; it != staff.end(); it++){
+		if((*it)->getName() == name){
+			staff.erase(it);
 			return true;
 		}
 	}

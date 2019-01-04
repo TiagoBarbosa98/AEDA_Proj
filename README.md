@@ -14,7 +14,9 @@
 
 TODO
 Atualizar Client(escrever e ler ficheiros)
-Apagar trabalhadores, quando uma farmacia é apagada (etc.)
+Apagar trabalhadores, quando uma farmacia ï¿½ apagada (etc.)
 Podiamos fazer uma parte do menu com estatisticas...? Tipo farmacias com mais vendas, distritos com mais clientes etc.
-Ao fazer compra e ao escolher produto, ter em conta a qtt do produto (diminuir qtt quando é comprado ou ate nao poder fazer a compra porque nao ha qtt suficiente)
+Ao fazer compra e ao escolher produto, ter em conta a qtt do produto (diminuir qtt quando ï¿½ comprado ou ate nao poder fazer a compra porque nao ha qtt suficiente)
 Tratar n. contribuinte iguais (nao podem haver 2 pessoas com o mesmo)
+
+Corrigir RemoveStaffMember 

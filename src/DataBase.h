@@ -406,10 +406,9 @@ public:
 	//search client by nc, print info about that client
 	void getClientInfo(unsigned int nc);
 
-
 	void showClientsWithMostPurchases();
 
-	//after pharmacy is deleted ask if the user wants to relocate staff
+	//user assigns staff in vector members to existing pharmacies
 	void assignStaff(vector<StaffMember*> members);
 
 	//shows staff with no current pharmacy assigned
@@ -422,6 +421,9 @@ public:
 	void assignStaffWithNoPh();
 
 	void showPharmaciesNames();
+
+	//TODO
+	void changeClientInfo();
 
 };
 

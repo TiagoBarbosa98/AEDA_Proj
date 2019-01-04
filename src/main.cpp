@@ -319,7 +319,11 @@ int main(){
 	d->openClientsFile();
 	d->openStaffFile();
 	d->openPharmaciesFile();
-	d->removePharmacy();
+	d->showAllPharmacies();
+	d->removeStaffMember();
+	d->showAllPharmacies();
+	d->showAllStaff();
+
 
 	return 0;
 }
