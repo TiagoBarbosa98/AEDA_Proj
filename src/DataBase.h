@@ -411,7 +411,20 @@ public:
 
 	//after pharmacy is deleted ask if the user wants to relocate staff
 	void assignStaff(vector<StaffMember*> members);
+
+	//shows staff with no current pharmacy assigned
+	void showStaffWithoutPh();
+
+	//asks for pharmacy name until a correct one is given
+	string checkPhName();
+
+	//TODO
+	void assignStaffWithNoPh();
+
+	void showPharmaciesNames();
+
 };
+
 
 /**
  * @brief      Class for error opening file.

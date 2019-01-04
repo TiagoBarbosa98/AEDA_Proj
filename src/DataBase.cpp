@@ -266,22 +266,29 @@ void DataBase::addPharmacy(){
 }
 
 void DataBase::removePharmacy(){
-	cout << "Name: " << endl;
+	showPharmaciesNames();
+	cout << "Pharmacy to remove name: " << endl;
 	cin.ignore();
 	string name;
 	getline(cin, name);
 	for(vector<Pharmacy>::iterator it = pharmacies.begin(); it != pharmacies.end(); it++){
-		if(it->getName().compare(name) == 0){
+		if(it->getName() == name){
 			it->setStaffPhToNone();
 			vector<StaffMember*> staffm = it->getStaff();
 			pharmacies.erase(it);
 
-			cout << "Successful deletion. Would you like to relocate the staff from this pharmacy?";
+			cout << "Successful deletion. Would you like to relocate the staff from this pharmacy (y/n)?\n";
 			string in;
 			cin >> in;
+			cin.ignore(1000, '\n');
 			if(in == "Y" || in == "y" || in == "yes" || in == "Yes"){
 				assignStaff(staffm);
 			}
+			cout << "\nReallocation complete!\n";
+			return;
+		}
+		else{
+			cout << "No pharmacies with that name are available.\n";
 			return;
 		}
 	}
@@ -291,21 +298,20 @@ void DataBase::removePharmacy(){
 void DataBase::assignStaff(vector<StaffMember*> members){
 	for(unsigned int i = 0; i < members.size(); i++){
 		StaffMember *currentStaff = members[i];
+
 		cout << currentStaff->getName() << " goes to Pharmacy:\n";
-		string in;
-		cin.ignore();
-		getline(cin, in);
+
+		string in = checkPhName();
 		members[i]->setPharmacy(in);
 
 		for(unsigned int j = 0; j < pharmacies.size(); j++){
 			if(pharmacies[j].getName() == in){
 				pharmacies[j].addStaff(members[i]);
 				cout << endl << endl;
-				return;
+				break;
 			}
 		}
 
-		throw(ItemDoesNotExist(in));
 	}
 }
 
@@ -811,6 +817,42 @@ void DataBase::showClientsWithMostPurchases() {
 	}
 	cout << c3 << endl;
 
+}
+
+void DataBase::showStaffWithoutPh(){
+	for(unsigned int i = 0; i < staff.size(); i++){
+		if(staff[i].getPharmacy() == "None")
+			cout << "  -" << staff[i].getName() << endl;
+	}
+}
+
+string DataBase::checkPhName(){
+	if(pharmacies.empty()){
+		cout << "There are no pharmacies available yet. Please create one first.\n\n";
+		return "None";
+	}
+
+	string in;
+	//bool accepted = false;
+
+	while(true){
+		getline(cin, in);
+
+		for(unsigned int i = 0; i < pharmacies.size(); i++){
+			if(in == pharmacies[i].getName()){
+				return in;
+			}
+		}
+		cout << "No pharmacies with that name are available. Try again.\n";
+	}
+}
+
+void DataBase::showPharmaciesNames(){
+	cout << "Available pharmacies: ";
+		for(unsigned int i = 0; i < pharmacies.size(); i++){
+				cout << pharmacies[i].getName() << "; ";
+			}
+		cout << endl << endl;
 }
 
 

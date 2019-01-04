@@ -296,7 +296,7 @@ void mainMenu(DataBase & d){
 }
 
 int main(){
-	cout << "Do you wish to import data from existing Data Base (y/n)?\n";
+	/*cout << "Do you wish to import data from existing Data Base (y/n)?\n";
 	string in;
 	cin >> in;
 	DataBase * d;
@@ -306,22 +306,21 @@ int main(){
 		d = new DataBase();
 	mainMenu(*d);
 
-	/*
+
 	StaffMember *m = new StaffMember();
 	StaffMember *m2 = new StaffMember();
 
 	Pharmacy p("pi", "me", "mr");
 	p.addStaff(m);
 	p.addStaff(m2);
-	cout << p;*/
-/*
+	cout << p;
+	*/
 	DataBase *d = new DataBase();
 	d->openClientsFile();
 	d->openStaffFile();
 	d->openPharmaciesFile();
 	d->removePharmacy();
-	d->showAllStaff();
-*/
+
 	return 0;
 }
 
