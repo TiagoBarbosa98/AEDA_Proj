@@ -20,27 +20,19 @@ using namespace std;
 #include "Medicine.h"
 #include "BST.h"
 
-struct ProductCompare {
-    bool operator()(Product *t1, Product *t2) {
-        return t1->getQuantity() > t2->getQuantity();
-    }
-};
-typedef priority_queue<Product *, vector<Product *>, ProductCompare> productPriorityQueue;
-
 class DataBase {
 private:
 	string prescFile, productsFile, clientsFile, pharmaciesFile, staffFile, salesFile; /** @brief files names*/
-	vector<Product* > products; /** @brief vector for products*/
+	//vector<Product* > products; /** @brief vector for products*/
 	vector<Client> clients;/** @brief vector for clients*/
 	vector<Pharmacy> pharmacies;/** @brief vector for pharmacies*/
 	vector<StaffMember> staff;/** @brief vector for staff*/
 	vector<Prescription> prescriptions;/** @brief vector for prescriptions*/
 	vector<Sale> sales;/** @brief vector for sales*/
 	BST<Client> clientsA;
-	productPriorityQueue stock;
+	priority_queue <Product> products;
 public:
-	productPriorityQueue getProduct() const;
-	void printProducts() const;
+	priority_queue<Product> getProducts() const;
 	/**
 	 * @brief      Constructs the object.
 	 */
@@ -97,7 +89,7 @@ public:
 	/**
 	 * @brief Gets products vector
 	 */
-	const vector<Product*>& getProducts() const;
+//	const vector<Product*>& getProducts() const;
 
 	/**
 	 * @brief Gets prescriptions vector
@@ -208,7 +200,7 @@ public:
 	 *
 	 * @return     said product
 	 */
-	Product getProductByName(string name) const;
+	Product getProductByName(string name);
 
 
 	/*
@@ -382,16 +374,25 @@ public:
 		saveData.open(fileName);
 
 		if (saveData.fail()){
-			//throw ErrorOpeningFile(fileName);
+		//	throw ErrorOpeningFile(fileName);
 		}
 
-		for(unsigned int i = 0; i < products.size(); i++){
+		while (!products.empty()) {
+			Product p = products.top();
+
+			saveData << p.display();
+
+			saveData << endl;
+
+			products.pop();
+		}
+	/*	for(unsigned int i = 0; i < products.size(); i++){
 			if(i != products.size() - 1)
 				saveData << products[i]->display() << endl;
 			else
 				saveData << products[i]->display();
 
-		}
+		}*/
 
 		saveData.close();
 	}

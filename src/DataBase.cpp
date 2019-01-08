@@ -10,27 +10,6 @@ DataBase::DataBase(): clientsA(Client()){
 	prescFile = "TextFiles/Prescriptions.txt";
 
 }
-productPriorityQueue DataBase::getProduct() const{
-	return stock;
-}
-void DataBase::printProducts() const {
-
-    if (stock.empty()) {
-        cout << "There are no products.\n";
-        return;
-    }
-    cout << "PRODUCTS SUMMARY\n\n";
-
-    cout << std::left;
-    cout << setw(13) << "Technician ID" << setw(3) << " " << setw(30) << "Name" << setw(3) << " " << setw(13)
-         << "Models" << endl;
-    productPriorityQueue prod = stock;
-
-    while (!prod.empty()) {
-        prod.top()->display();
-        prod.pop();
-    }
-}
 
 DataBase::DataBase(string productsFile, string clientsFile, string pharmaciesFile, string staffFile, string salesFile, string prescFile): clientsA(Client()){
 	this->productsFile = productsFile;
@@ -66,7 +45,7 @@ vector<Pharmacy> DataBase::getPharmacies() const {
 	return pharmacies;
 }
 
-const vector<Product*>& DataBase::getProducts() const {
+priority_queue<Product> DataBase::getProducts() const {
 	return products;
 }
 
@@ -117,19 +96,44 @@ void DataBase::addPrescription(){
 }
 
 void DataBase::showAllProducts(){
-	for(unsigned int i = 0; i < products.size(); i++){
-		cout << products[i]->display() << endl;
+	priority_queue <Product> temporary;
+	while (!products.empty()) {
+		cout << products.top() << endl << endl;
+		temporary.push(products.top());
+		products.pop();
+	}
+
+	while (!temporary.empty()) {
+		products.push(temporary.top());
+		temporary.pop();
 	}
 }
 
-Product DataBase::getProductByName(string name) const{
-	for(vector<Product*>::const_iterator it = products.begin(); it != products.end(); it++)
-		if((*it)->getName() == name) return (*(*it));
+Product DataBase::getProductByName(string name){
+	priority_queue <Product> temporary, temporary2;
+
+	while (!products.empty()) {
+		temporary.push(products.top());
+		temporary2.push(products.top());
+		products.pop();
+	}
+
+	while (!temporary2.empty()) {
+		products.push(temporary2.top());
+	}
+
+	while (!temporary.empty()) {
+
+		if (temporary.top().getName() == name)
+			return temporary.top();
+
+		temporary.pop();
+	}
 	throw ItemDoesNotExist(name);
 }
 
 void DataBase::addProduct(){
-	Product * p1;
+	Product p1;
 	string name, description, medicine, prescription;
 	int code;
 	float price, quantity, iva, disc;
@@ -150,30 +154,49 @@ void DataBase::addProduct(){
 	cout << "Medicine (y/n): " << endl;
 	cin.ignore();
 	getline(cin, medicine);
-	if(medicine != "y") p1 = new Product(name, description, price, quantity, iva, code, false);
+	if(medicine != "y") Product p1(name, description, price, quantity, iva, code, false);
 	else{
 		cout << "Discount: " << endl;
 		disc = checkForType<float>();
 		cout << "Prescription Required (y/n): " << endl;
 		cin.ignore();
 		getline(cin, prescription);
-		if(prescription == "y") p1 = new Medicine(name, description, price, quantity, iva, code, disc, true);
-		else p1 = new Medicine(name, description, price, quantity,  iva, code, disc, false);
+		if(prescription == "y") Medicine p1(name, description, price, quantity, iva, code, disc, true);
+		else Medicine p1(name, description, price, quantity,  iva, code, disc, false);
 	}
-	products.push_back(p1);
+	products.push(p1);
 }
 
 void DataBase::removeProduct(){
+	priority_queue <Product> temporary;
 	cout << "Enter Product Name: " << endl;
 	cin.ignore();
 	string name;
 	getline(cin, name);
-	for(vector<Product *>::iterator it = products.begin(); it != products.end(); it++)
-		if ((*it)->getName() == name){
-			products.erase(it);
-			return;
+	bool found = false;
+
+	Product p = products.top();
+
+	while (!products.empty()) {
+
+		if (products.top().getName() == name) {
+			p = products.top();
+			products.pop();
+			found = true;
 		}
-	throw ItemDoesNotExist (name);
+		else {
+			temporary.push(products.top());
+			products.pop();
+		}
+	}
+
+	while (!temporary.empty()) {
+		products.push(temporary.top());
+		temporary.pop();
+	}
+
+	if (!found)
+		throw ItemDoesNotExist (name);
 }
 
 void DataBase::addClient(){
@@ -611,12 +634,12 @@ void DataBase::openProductsFile(){
 
 				getline(infich, garbage);
 
-				Product *prod = new Medicine(name, desc, price,quantity, 0, code, discount, prescr);
-				products.push_back(prod);
+				Medicine prod(name, desc, price,quantity, 0, code, discount, prescr);
+				products.push(prod);
 			}
 			else{
-				Product *prod = new Product(name, desc, price, quantity, 0, code, medicine);
-				products.push_back(prod);
+				Product prod(name, desc, price, quantity, 0, code, medicine);
+				products.push(prod);
 			}
 
 		}
