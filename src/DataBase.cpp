@@ -148,7 +148,7 @@ void DataBase::addProduct(){
 	cout << "Price: " << endl;
 	price = checkForType<float>();
 	cout << "Quantity: " << endl;
-	quantity = checkForType<float>();
+	quantity = checkForType<int>();
 	cout << "IVA: " << endl;
 	iva = checkForType<float>();
 	cout << "Medicine (y/n): " << endl;
@@ -382,7 +382,7 @@ string DataBase::parse(string in){
 
 	int pos = in.find_first_of(':', 0);
 
-	string final = in.substr(pos + 2, in.size() - pos);
+	string final = in.substr(pos + 1, in.size() - pos);
 
 	return final;
 
@@ -588,9 +588,10 @@ void DataBase::openProductsFile(){
 
 		while(!infich.eof()){
 
-			string name, desc, c, disc, p, q, m, presc, garbage;
-			int code;
-			float discount, price, quantity;
+			string name, desc, c, disc, p, m, presc, garbage;
+			string q;
+			int code, quantity;
+			float discount, price;
 			bool medicine;
 			bool prescr;
 
@@ -610,8 +611,9 @@ void DataBase::openProductsFile(){
 			m = parse(m);
 
 			code = stoi(c);
-			price = stof(p);
-			quantity = stof(q);
+			quantity = 0; // stoi(q);
+			price = 2;// stof(p);
+			
 
 			if(m == "1")
 				medicine = true;

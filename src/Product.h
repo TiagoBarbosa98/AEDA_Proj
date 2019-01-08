@@ -15,7 +15,7 @@ private:
 	float iva;/** < @brief Iva of the Product */
 	int code;/** < @brief Code of the Product */
 	bool medicine; /** < @brief Wether or not the Product is Medicine*/
-	float quantity;
+	int quantity;
 public:
 /**
  * @brief Construct a new Product object
@@ -31,7 +31,7 @@ public:
 	 * @param iva The iva of the Product to be created
 	 * @param code The code of the Product to be created
 	 */
-	Product(string name, string description, float price, float quantity, float iva, int code, bool m);
+	Product(string name, string description, float price, int quantity, float iva, int code, bool m);
 	/**
 	 * @brief Destroy the Product object
 	 * 
@@ -98,7 +98,7 @@ public:
 	 */
 	bool getMedicine() const;
 
-	float getQuantity() const;
+	int getQuantity() const;
 	/*
 	 * @brief represents getMedicine() in a string format
 	 * 

@@ -32,7 +32,7 @@ public:
 	 * 
 	 * @param noReceipt If said Medicine requeires a prescription
 	 */
-	Medicine(string name, string description, float price, float quantity, float iva, int code, float discount, bool noReceipt);
+	Medicine(string name, string description, float price, int quantity, float iva, int code, float discount, bool noReceipt);
 	
 	/**
 	 * @brief Gets the Discount
