@@ -233,32 +233,70 @@ void DataBase::removeClient(){
 }
 
 
-void DataBase::addSale(){
+void DataBase::addSale() {
 	Sale *s = new Sale();
 	int op = 0;
-	while(op != 2){
+	while (op != 2) {
 		cout << "1) Add Product " << endl;
 		cout << "2) Finish " << endl;
 		op = checkForType<unsigned int>();
-		if(op != 1) continue;
+		if (op != 1) continue;
 		string pname;
 		cout << "Product Name: " << endl;
 		cin.ignore();
 		getline(cin, pname);
-		try{
+		try {
 			Product p = getProductByName(pname);
 			cout << "Quantity: " << endl;
 			int q = checkForType<unsigned int>();
 			s->addProdPriceQtt(p, q);
-
+			removeQuantity(pname, q);
 		}
-		catch(ItemDoesNotExist & e){
+		catch (ItemDoesNotExist & e) {
 			e.printMsg();
 			continue;
 		}
 	}
 
 	sales.push_back(*s);
+}
+
+void DataBase::removeQuantity(string name, int quantity) {
+	priority_queue <Product> temporary2;
+	priority_queue <Product> temporary;
+
+	while (!products.empty()) {
+		temporary.push(products.top());
+		products.pop();
+	}
+
+	while (!temporary.empty()) {
+
+		if (temporary.top().getName() == name) {
+			if (temporary.top().getQuantity() > quantity) {
+				int n = temporary.top().getQuantity();
+				string name = temporary.top().getName();
+				int c = temporary.top().getCode();
+				string desc = temporary.top().getDescription();
+				float i = temporary.top().getIva();
+				bool m = temporary.top().getMedicine();
+				float p = temporary.top().getPrice();
+				float tp = temporary.top().getTotalPrice();
+				Product productNew(name, desc, p, n, i, c, m);
+				temporary.pop();
+				temporary.push(productNew);
+			}
+			else {
+				cout << "Not enough" << endl;
+			}
+		}
+		temporary2.push(temporary.top());
+		temporary.pop();
+	}
+	while (!temporary2.empty()) {
+		products.push(temporary2.top());
+		temporary2.pop();
+	}
 }
 
 void DataBase::removeSale(){
