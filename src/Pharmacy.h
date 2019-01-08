@@ -52,11 +52,11 @@ public:
 	 */
 	string getInfo() const;
 	/**
-	 * @brief Set the Manager object
+	 * @brief Sets the manager variable to a new one
 	 * 
-	 * @param m new Pharmacy's manager
+	 * @param name Name of the new manager
 	 */
-	void setManager(StaffMember m); //Manager has to exist in list
+	void setManager(string name); //Manager has to exist in list
 	
 	/**
 	 * @brief adds the Staff Member s the vector with all the Staff Members
@@ -85,6 +85,7 @@ public:
 	//when deleting a pharmacy, sets the staff's pharmacy to none
 	bool operator ==(const Pharmacy &p) const;
 
+	//sets all the staff's pharmacy from this pharmacy to None
 	void setStaffPhToNone();
 
 	bool removeStaff(string name);

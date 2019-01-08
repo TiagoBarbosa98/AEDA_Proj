@@ -165,7 +165,7 @@ void productsMenu(DataBase & d){
 		case 4:
 			cout << endl;
 			cout << "Order by stock" << endl;
-			d.printProducts();
+			//d.printProducts();
 			break;
 		default:
 			break;
@@ -319,11 +319,8 @@ int main(){
 	d->openClientsFile();
 	d->openStaffFile();
 	d->openPharmaciesFile();
-	d->showAllPharmacies();
 	d->removeStaffMember();
 	d->showAllPharmacies();
-	d->showAllStaff();
-
 
 	return 0;
 }

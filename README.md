@@ -19,4 +19,8 @@ Podiamos fazer uma parte do menu com estatisticas...? Tipo farmacias com mais ve
 Ao fazer compra e ao escolher produto, ter em conta a qtt do produto (diminuir qtt quando � comprado ou ate nao poder fazer a compra porque nao ha qtt suficiente)
 Tratar n. contribuinte iguais (nao podem haver 2 pessoas com o mesmo)
 
-Corrigir RemoveStaffMember 
+Corrigir RemoveStaffMember
+
+Apresentaçao:
+- Remover farmacia
+- Estatisticas 

@@ -233,7 +233,6 @@ public:
 	 */
 	void openPrescriptionFile();
 
-
 	/*
 	 * @brief function to write to clients file
 	 */
@@ -312,9 +311,6 @@ public:
 	 */
 	Sale getSale(unsigned int code);
 	tm parseDate(string in);
-
-
-
 
 	void writeToSales(string fileName){
 		ofstream saveData;
@@ -418,13 +414,17 @@ public:
 	//asks for pharmacy name until a correct one is given
 	string checkPhName();
 
-	//TODO
+	//assigns all staff with no current pharmacy
 	void assignStaffWithNoPh();
 
+	//shows available pharmacies names
 	void showPharmaciesNames();
 
 	//TODO
-	void changeClientInfo();
+	//asks user to change pharmacy info, e.g. change name, add a staff member
+	void changePharmacyInfo();
+
+	bool isPharmacy(string name);
 
 };
 

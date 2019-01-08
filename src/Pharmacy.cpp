@@ -44,7 +44,6 @@ string Pharmacy::getManager() const{
 	return manager;
 }
 
-
 ostream & operator <<(ostream &os, const Pharmacy &p){
 	const Entity *e = &p;
 	os << *e;
@@ -73,4 +72,16 @@ bool Pharmacy::containsStaff(string name) {
 			return true;
 	}
 	return false;
+}
+
+void Pharmacy::setManager(string name) {
+
+	for(unsigned int i = 0; i < staff.size(); i++){
+		if(name == staff[i]->getName()){
+			this->manager = staff[i]->getName();
+			staff[i]->setPosition("Manager");
+			cout << "New Manager set!\n\n";
+		}
+	}
+	cout << "No staff member was found with that name.\n\n";
 }

@@ -330,11 +330,11 @@ void DataBase::addStaffMember(){
 	getline(cin, addr);
 	cout << "Identification Number: ";
 	cN = checkForType<unsigned int>();
-	cout << "salary: ";
+	cout << "Salary: ";
 	sal = checkForType<unsigned int>();
 	cin.ignore();
 	cout  << "Pharmacy: ";
-	checkPhName();
+	ph = checkPhName();
 	cout << "Position: ";
 	getline(cin,pos);
 	StaffMember f(n, addr, cN,sal,ph, pos);
@@ -360,10 +360,11 @@ void DataBase::removeStaffMember(){
 	//TODO test
 	for(unsigned int i = 0; i < pharmacies.size(); i++){
 		if(pharmacies[i].removeStaff(name)){
-			cout << "name found\n\n";
+			cout << "Name found\n\n";
 			break;
 		}
 	}
+
 	for(vector<StaffMember>::iterator it = staff.begin(); it != staff.end(); it++){
 		if(it->getName() == name) {
 			staff.erase(it);
@@ -382,7 +383,7 @@ string DataBase::parse(string in){
 
 	int pos = in.find_first_of(':', 0);
 
-	string final = in.substr(pos + 1, in.size() - pos);
+	string final = in.substr(pos + 2, in.size() - pos);
 
 	return final;
 
@@ -410,11 +411,35 @@ tm DataBase::parseDate(string in) {
 	getline(iss, y, ' ');
 	getline(iss, h, ':');
 	getline(iss, min);
+
+	stringstream convert;
+	convert << d;
+	convert >> day;
+	convert.clear();
+
+	convert << m;
+	convert >> month;
+	convert.clear();
+
+	convert << y;
+	convert >> year;
+	convert.clear();
+
+	convert << h;
+	convert >> hour;
+	convert.clear();
+
+	convert << min;
+	convert >> mins;
+	convert.clear();
+
+	/*
 	day = stoi(d);
 	month = stoi(m);
 	year = stoi(y);
 	hour = stoi(h);
 	mins = stoi(min);
+	*/
 
 	date.tm_mday = day;
 	date.tm_mon = month - 1;
@@ -466,7 +491,7 @@ void DataBase::openSalesFile(){
 				price = stof(prodPrice);
 				qtt = stoi(prodQtt);
 
-				tuple<string, unsigned int, float>t(prodName, qtt, price);
+				tuple<string, unsigned int, float>t(prodName, price, qtt);
 				tmp.push_back(t);
 				getline(infich, prod);
 				if(infich.eof() || prod.size() < 1)
@@ -565,10 +590,11 @@ void DataBase::openPharmaciesFile(){
 				manager = parse(manager);
 
 				vector<StaffMember*> tmp;
-				while(staffName.size() > 1 & !infich.eof()){
+				while(staffName.size() > 1 && !infich.eof()){
 					staffName = parseStaff(staffName);
 					StaffMember *ptrS = getStaffM(staffName);
 					tmp.push_back(ptrS);
+
 					getline(infich, staffName);
 				}
 				Pharmacy pharm(name, address, manager, tmp);
@@ -622,7 +648,7 @@ void DataBase::openProductsFile(){
 
 			//checking if prod is medicine and getting rest of info if it is
 			getline(infich, disc);
-			if(disc.size() > 1 & !infich.eof()){
+			if(disc.size() > 4 && !infich.eof()){
 				getline(infich, presc);
 
 				disc = parse(disc);
@@ -797,7 +823,7 @@ void DataBase::showClientsWithMostPurchases() {
 	cout << "Top 3 clients with most purchases made.\n\n";
 	cout << "1. " << c1 << "\n2. ";
 	clTemp.remove(c1);
-	///////////////////////////////
+	////////////////////////////////////////////////////////////
 
 	c2 = clItr2.retrieve();
 	clItr2.advance();
@@ -810,7 +836,7 @@ void DataBase::showClientsWithMostPurchases() {
 	}
 	cout << c2 << "\n3. ";
 	clTemp.remove(c2);
-	///////////////////////////
+	////////////////////////////////////////////////////////////
 
 	c3 = clItr3.retrieve();
 	clItr3.advance();
@@ -841,7 +867,6 @@ string DataBase::checkPhName(){
 	}
 
 	string in;
-	//bool accepted = false;
 
 	while(true){
 		getline(cin, in);
@@ -878,10 +903,10 @@ void DataBase::assignStaff(vector<StaffMember*> members){
 
 void DataBase::showPharmaciesNames(){
 	cout << "Available pharmacies:\n";
-		for(unsigned int i = 0; i < pharmacies.size(); i++){
-				cout << pharmacies[i].getName() << "\n";
-			}
-		cout << endl << endl;
+	for(unsigned int i = 0; i < pharmacies.size(); i++){
+		cout << pharmacies[i].getName() << "\n";
+	}
+	cout << endl << endl;
 }
 
 void DataBase::assignStaffWithNoPh(){
@@ -897,6 +922,53 @@ void DataBase::assignStaffWithNoPh(){
 		}
 	}
 	assignStaff(members);
+}
+
+void DataBase::changePharmacyInfo(){
+	cout << "All pharmacies:\n";
+	showAllPharmacies();
+
+	string in;
+	cout << "Which pharmacy would you like to modify?\nName(type None to cancel): ";
+	in = checkPhName();
+
+	if(in == "None")
+		return;
+
+	string ans;
+	for(unsigned int i = 0; i < pharmacies.size(); i++){
+		if(in == pharmacies[i].getName()){
+			cout << "Change Name(type No to remain unaltered): ";
+			getline(cin, ans);
+			if(ans != "No" && ans != "no")
+				pharmacies[i].setName(ans);
+
+
+			cout << "\nChange Address(type No to remain unaltered): ";
+			getline(cin, ans);
+			if(ans != "No" && ans != "no")
+				pharmacies[i].setAddress(ans);
+
+
+			cout << "\nChange Manager from current staff.";
+
+			if(ans != "No" && ans != "no"){
+				cout << "Staff's Names:\n";
+				for(unsigned int i = 0; i < pharmacies[i].getStaff().size(); i++){
+					cout << "-" << pharmacies[i].getStaff()[i]->getName() << endl;
+				}
+				cout << "New Manager (type No to remain unaltered):";
+				getline(cin, ans);
+				pharmacies[i].setManager(ans);
+			}
+
+			cout << "\nAdd Staff(type No to remain unaltered): ";
+			getline(cin, ans);
+			if(ans != "No" && ans != "no"){
+
+			}
+		}
+	}
 }
 
 
