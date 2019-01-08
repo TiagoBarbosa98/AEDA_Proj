@@ -320,11 +320,14 @@ int main(){
 	d->openStaffFile();
 	d->openPharmaciesFile();
 	d->openProductsFile();
-	//d->showAllPharmacies();
-	//d->removeStaffMember();
-	//d->showAllPharmacies();
+	d->openSalesFile();
+	d->openPrescriptionFile();
+	d->showAllPharmacies();
 	d->showAllProducts();
-	//d->showAllClientsA();
+	d->showAllClientsA();
+	d->showAllSales();
+	d->showAllStaff();
+	d->showAllPrescriptions();
 
 	return 0;
 }
