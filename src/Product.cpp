@@ -47,7 +47,7 @@ ostream& operator <<(ostream& os, const Product& p) {
 	os << "Name: " << p.name << endl;
 	os << "Code: " << p.code << endl;
 	os << "Price: " << p.getTotalPrice() << endl;
-	os << "Quantity: " << p.getQuantity() << endl;//TODO price or price + iva?
+	os << "Quantity: " << p.getQuantity() << endl;
 	os << "Description: " << p.description << endl;
 	os << "Medicine: " << p.medicine << endl;
 
@@ -63,7 +63,7 @@ string Product::display() const {
 	out = "Name: " + name +
 			"\nCode: " + to_string(code) +
 			"\nPrice: " + to_string(getTotalPrice()) +
-			"\nQuantity: " + to_string(quantity) +
+			"\nQuantity: " + to_string(getQuantity()) +
 			"\nDescription: " + description +
 			"\nMedicine: " + med() + "\n";
 	return out;

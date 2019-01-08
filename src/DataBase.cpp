@@ -135,8 +135,8 @@ Product DataBase::getProductByName(string name){
 void DataBase::addProduct(){
 	Product p1;
 	string name, description, medicine, prescription;
-	int code;
-	float price, quantity, iva, disc;
+	int code,quantity;
+	float price, iva, disc;
 	medicine = 5;
 	cout << "Name: " << endl;
 	cin.ignore();
@@ -608,26 +608,24 @@ void DataBase::openPharmaciesFile(){
 
 void DataBase::openProductsFile(){
 	ifstream infich;
+	string name, code, price, quantity, descript, medicine, presc;
+	char aux;
 
 	infich.open(productsFile);
 	if (!infich.fail()) {
+		
+		int code, quantity;
+		float discount, price;
+		bool medicine;
+		bool prescr;
 
-		while(!infich.eof()){
-
-			string name, desc, c, disc, p, m, presc, garbage;
-			string q;
-			int code, quantity;
-			float discount, price;
-			bool medicine;
-			bool prescr;
-
-			getline(infich, name);
+		while(getline(infich, name)){
+/*
 			getline(infich, c);
 			getline(infich, p);
 			getline(infich, q);
 			getline(infich, desc);
 			getline(infich, m);
-
 
 			name = parse(name);
 			c = parse(c);
@@ -636,10 +634,22 @@ void DataBase::openProductsFile(){
 			desc = parse(desc);
 			m = parse(m);
 
-			code = stoi(c);
-			quantity = 0; // stoi(q);
-			price = 2;// stof(p);
+			cout << name << endl;
+			cout << c << endl;
+			cout << p << endl;
+			cout << q << endl;
+			cout << desc << endl;
+			cout << m << endl;
+
+			code =  stoi(c);
+			quantity = stoi(q);
+			price = stof(p);
+
+			cout << name << endl;
+			cout << code << endl;
+			cout << price << endl;
 			
+			*/
 
 			if(m == "1")
 				medicine = true;
