@@ -55,7 +55,7 @@ ostream& operator <<(ostream& os, const Product& p) {
 }
 
 bool Product::operator<(const Product &prod1) const {
-    return (this->getQuantity() < prod1.getQuantity());
+    return (this->getQuantity() > prod1.getQuantity());
 }
 
 string Product::display() const {
@@ -75,3 +75,9 @@ string Product::med() const {
 	else
 		return "0";
 }
+
+
+void Product::setQuantity(int q) {
+		this->quantity=q;
+}
+

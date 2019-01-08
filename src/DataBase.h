@@ -32,6 +32,7 @@ private:
 	BST<Client> clientsA;
 	priority_queue <Product> products;
 public:
+	void lessProductsThan();
 	priority_queue<Product> getProducts() const;
 	/**
 	 * @brief      Constructs the object.

@@ -606,21 +606,21 @@ void DataBase::openPharmaciesFile(){
 		}
 }
 
-void DataBase::openProductsFile(){
+void DataBase::openProductsFile() {
 	ifstream infich;
-	string name, code, price, quantity, descript, medicine, presc;
-	char aux;
 
 	infich.open(productsFile);
 	if (!infich.fail()) {
-		
+		string name, desc, c, disc, p, m, presc, garbage;
+		string q;
 		int code, quantity;
 		float discount, price;
 		bool medicine;
 		bool prescr;
 
-		while(getline(infich, name)){
-/*
+		while (!infich.eof()) {
+
+			getline(infich, name);
 			getline(infich, c);
 			getline(infich, p);
 			getline(infich, q);
@@ -634,59 +634,50 @@ void DataBase::openProductsFile(){
 			desc = parse(desc);
 			m = parse(m);
 
-			cout << name << endl;
-			cout << c << endl;
-			cout << p << endl;
-			cout << q << endl;
-			cout << desc << endl;
-			cout << m << endl;
-
-			code =  stoi(c);
+			code = stoi(c);
 			quantity = stoi(q);
 			price = stof(p);
 
-			cout << name << endl;
-			cout << code << endl;
-			cout << price << endl;
-			
-			*/
-
-			if(m == "1")
+			if (m == "1") {
 				medicine = true;
-			else
+			}
+			else {
 				medicine = false;
-
+			}
 			//checking if prod is medicine and getting rest of info if it is
 			getline(infich, disc);
-			if(disc.size() > 4 && !infich.eof()){
+
+			if (disc.size() > 1 & !infich.eof()) {
 				getline(infich, presc);
 
 				disc = parse(disc);
 				presc = parse(presc);
 
 				discount = stof(disc);
-				if(presc == "1")
+				if (presc == "1")
 					prescr = true;
 				else
 					prescr = false;
 
 				getline(infich, garbage);
 
-				Medicine prod(name, desc, price,quantity, 0, code, discount, prescr);
+				Medicine prod(name, desc, price, quantity, 0, code, discount, prescr);
 				products.push(prod);
 			}
-			else{
+			else {
+
 				Product prod(name, desc, price, quantity, 0, code, medicine);
 				products.push(prod);
 			}
+			name.clear();
 
 		}
 
-	}else {
+	}
+	else {
 		throw ErrorOpeningFile(productsFile);
 	}
 }
-
 void DataBase::openStaffFile(){
 	ifstream infich;
 
@@ -981,4 +972,30 @@ void DataBase::changePharmacyInfo(){
 	}
 }
 
+void DataBase::lessProductsThan() {
 
+	cout << "N: " << endl;
+	int n;
+	cin >> n;
+
+	priority_queue <Product> temporary, temporary2;
+
+	while (!products.empty()) {
+		temporary.push(products.top());
+		temporary2.push(products.top());
+		products.pop();
+	}
+
+	while (!temporary2.empty()) {
+		products.push(temporary2.top());
+		temporary2.pop();
+	}
+
+	while (!temporary.empty()) {
+
+		if (temporary.top().getQuantity() < n) {
+			cout << temporary.top().getName() << endl;
+		}
+		temporary.pop();
+	}
+}

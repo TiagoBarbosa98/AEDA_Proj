@@ -7,14 +7,14 @@ unsigned int Sale::lastCode = 0;
 Sale::Sale():code(++lastCode){
 	// TODO Auto-generated constructor stub
 	time_t now = time(0);
-	date = localtime(&now);
+	date = 0;
 	price = 0;
 
 }
 
 Sale::Sale(vector<tuple<string, unsigned int, float>>cart):code(++lastCode){
 	time_t now = time(0);
-	date = localtime(&now);
+	date = 0;
 	prodPriceQtt = cart;
 	this->price = 0;
 }
