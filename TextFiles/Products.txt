@@ -1,7 +1,7 @@
 Name: Benurom
 Code: 0
 Price: 2.120000
-Description: Paracetemol
+Quantity: 2Description: Paracetemol
 Medicine: 1
 Discount: 0.000000
 Prescription Required: 0
@@ -9,6 +9,7 @@ Prescription Required: 0
 Name: Brufen
 Code: 1
 Price: 2.120000
+Quantity: 2
 Description: Ibuprofen
 Medicine: 1
 Discount: 0.000000
@@ -16,7 +17,8 @@ Prescription Required: 0
 
 Name: Telfast
 Code: 2
-Price: 3.300000
+Price: 3.300000Quantity: 2
+
 Description: Anti-histamin
 Medicine: 1
 Discount: 0.000000
@@ -24,7 +26,8 @@ Prescription Required: 0
 
 Name: Oxycontin
 Code: 3
-Price: 100.000000
+Price: 100.000000Quantity: 2
+
 Description: Pain Killer
 Medicine: 1
 Discount: 0.250000
@@ -32,6 +35,8 @@ Prescription Required: 1
 
 Name: Dr. Bayard
 Code: 420
-Price: 0.050000
+Price: 0.050000Quantity: 2
+
+Quantity: 2
 Description: *Cough, cough* Candy
 Medicine: 0
