@@ -1,34 +1,33 @@
 Name: Peroso
 Address: Rua de 4
-Identification number: 4
+Identification number: 1
 District: Braga
 Purchases id's:
-	-1
+  -1
 
 Name: Tiago Barros
 Address: Rua de 4
 Identification number: 2
 District: Porto
 Purchases id's:
-	-111
-	-88
-	
+  -111
+  -88
+
 Name: Marian Closca
 Address: Asfhij
-Identification number: 1
+Identification number: 3
 District: Porto
 Purchases id's:
-	-3
-	-3
-	-1
-	
+  -3
+  -3
+  -1
+
 Name: Marianewe Closca
 Address: Asfhij
-Identification number: 1
+Identification number: 4
 District: Porto
 Purchases id's:
-	-3
-	-3
-	-1
-	-44
-	-88
+  -3
+  -3
+  -1
+  -44

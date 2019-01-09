@@ -7,6 +7,7 @@
 #include <sstream>
 #include <ctime>
 #include <queue>
+#include <unordered_set>
 #include <iomanip>
 
 using namespace std;
@@ -20,9 +21,24 @@ using namespace std;
 #include "Medicine.h"
 #include "BST.h"
 
+struct stringHash{
+	int operator() (const string & s) const
+	{
+		return s.size();
+	}
+	
+	bool operator() (const string & s1, const string & s2) const
+	{
+		return s1 == s2;
+	}
+};
+
+typedef unordered_set<string, stringHash, stringHash> filesHT;
+
 class DataBase {
 private:
 	string prescFile, productsFile, clientsFile, pharmaciesFile, staffFile, salesFile; /** @brief files names*/
+	filesHT files;
 	//vector<Product* > products; /** @brief vector for products*/
 	vector<Client> clients;/** @brief vector for clients*/
 	vector<Pharmacy> pharmacies;/** @brief vector for pharmacies*/

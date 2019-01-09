@@ -8,6 +8,12 @@ DataBase::DataBase(): clientsA(Client()){
 	staffFile = "TextFiles/Staff.txt";
 	salesFile = "TextFiles/Sales.txt";
 	prescFile = "TextFiles/Prescriptions.txt";
+	files.insert("TextFiles/Products.txt");
+	files.insert("TextFiles/Clients.txt");
+	files.insert("TextFiles/Pharmacies.txt");
+	files.insert("TextFiles/Staff.txt");
+	files.insert("TextFiles/Sales.txt");
+	files.insert("TextFiles/Prescriptions.txt");
 
 }
 
@@ -18,7 +24,12 @@ DataBase::DataBase(string productsFile, string clientsFile, string pharmaciesFil
 	this->staffFile = staffFile;
 	this->salesFile = salesFile;
 	this->prescFile = prescFile;
-
+	files.insert("TextFiles/Products.txt");
+	files.insert("TextFiles/Clients.txt");
+	files.insert("TextFiles/Pharmacies.txt");
+	files.insert("TextFiles/Staff.txt");
+	files.insert("TextFiles/Sales.txt");
+	files.insert("TextFiles/Prescriptions.txt");
 	try {
 		openProductsFile();
 		openStaffFile();
@@ -529,9 +540,10 @@ void DataBase::openSalesFile(){
 
 void DataBase::openClientsFile(){
 	ifstream infich;
+	unordered_set<string>::iterator it = files.find(clientsFile);
 	string name, addr, cn, garbage, dis = "ejwio sw ";
 
-	infich.open(clientsFile);
+	infich.open(*it);
 	if (!infich.fail()) {
 		while(!infich.eof()){
 			string n, addr, cn, sale;
@@ -591,8 +603,8 @@ StaffMember* DataBase::getStaffM(string name){
 }
 void DataBase::openPharmaciesFile(){
 	ifstream infich;
-
-		infich.open(pharmaciesFile);
+	unordered_set<string>::iterator it = files.find(pharmaciesFile);
+		infich.open(*it);
 		if (!infich.fail()) {
 
 			while(!infich.eof()){
@@ -626,8 +638,10 @@ void DataBase::openPharmaciesFile(){
 
 void DataBase::openProductsFile(){
 	ifstream infich;
+	unordered_set<string>::iterator it;
+	it = files.find(productsFile);
 
-	infich.open(productsFile);
+	infich.open(*it);
 	if (!infich.fail()) {
 		string name, desc, c, disc, p, m, presc, garbage;
 		string q;
@@ -697,7 +711,9 @@ void DataBase::openProductsFile(){
 void DataBase::openStaffFile(){
 	ifstream infich;
 
-	infich.open(staffFile);
+	unordered_set<string>::iterator it = files.find(staffFile);
+
+	infich.open(*it);
 	if (!infich.fail()) {
 
 		while(!infich.eof()){
@@ -738,7 +754,8 @@ void DataBase::openPrescriptionFile() {
 	ifstream infich;
 	string number, doctor, client, garbage, prod;
 		//TODO change file
-	infich.open(prescFile);
+	unordered_set<string>::iterator it = files.find(prescFile);
+	infich.open(*it);
 	if (!infich.fail()) {
 		while(!infich.eof()){
 			getline(infich, number);

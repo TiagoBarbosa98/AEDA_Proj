@@ -141,7 +141,7 @@ void productsMenu(DataBase & d){
 		cout << "|     1) List Products                             |" << endl;
 		cout << "|     2) Add Product                               |" << endl;
 		cout << "|     3) Remove Product                            |" << endl;
-		cout << "|     4) Show less tha N                           |" << endl;
+		cout << "|     4) Show less than N                          |" << endl;
 		cout << "|     5) Exit                                      |" << endl;
 		cout << "|    Option: ";
 		op = checkBoundaries(1, 5);
