@@ -1,16 +1,18 @@
 #include "Product.h"
 
 Product::Product() {
-	// TODO Auto-generated constructor stub
-
 }
 
-Product::~Product() {
-	// TODO Auto-generated destructor stub
-}
 
-Product::Product(string n, string d, float p, int q, float iva, int c, bool m)
-: name(n), description(d), price(p), quantity(q), iva(iva), code(c), medicine(m){}
+Product::Product(string n, string d, float p, int q, float iva, int c, bool m){
+	this->name = n;
+	this->description = d;
+	this->price = p;
+	this->quantity = q;
+	this->iva = iva;
+	this->code = c;
+	this->medicine = m;
+}
 
 
 int Product::getCode() const {
@@ -33,14 +35,14 @@ float Product::getPrice() const {
 	return price;
 }
 
-float Product::getTotalPrice() const{
+float Product::getTotalPrice() const {
 	return price + price * iva;
 }
 
-bool Product::getMedicine() const{
+bool Product::getMedicine() const {
 	return medicine;
 }
-int Product::getQuantity() const{
+int Product::getQuantity() const {
 	return quantity;
 }
 ostream& operator <<(ostream& os, const Product& p) {
@@ -74,10 +76,5 @@ string Product::med() const {
 		return "1";
 	else
 		return "0";
-}
-
-
-void Product::setQuantity(int q) {
-		this->quantity=q;
 }
 

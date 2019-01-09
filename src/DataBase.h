@@ -32,8 +32,9 @@ private:
 	BST<Client> clientsA;
 	priority_queue <Product> products;
 public:
+	string parsestr(string in);
 	void lessProductsThan();
-	priority_queue<Product> getProducts() const;
+	bool removeQuantity(string name, int quantity);
 	/**
 	 * @brief      Constructs the object.
 	 */
@@ -234,6 +235,7 @@ public:
 	 */
 	void openPrescriptionFile();
 
+
 	/*
 	 * @brief function to write to clients file
 	 */
@@ -313,6 +315,9 @@ public:
 	Sale getSale(unsigned int code);
 	tm parseDate(string in);
 
+
+
+
 	void writeToSales(string fileName){
 		ofstream saveData;
 
@@ -331,8 +336,6 @@ public:
 
 		saveData.close();
 	}
-
-
 
 	/*
 	 * @brief template to write to files a vector
@@ -368,20 +371,33 @@ public:
 	void writeToProductsFile2(string fileName){
 		ofstream saveData;
 
+		priority_queue <Product> temporary, temporary2;
+
+		while (!products.empty()) {
+			temporary.push(products.top());
+			temporary2.push(products.top());
+			products.pop();
+		}
+
+		while (!temporary2.empty()) {
+			products.push(temporary2.top());
+			temporary2.pop();
+		}
+
 		saveData.open(fileName);
 
 		if (saveData.fail()){
 		//	throw ErrorOpeningFile(fileName);
 		}
+		
 
-		while (!products.empty()) {
-			Product p = products.top();
-
+		while (!temporary.empty()) {
+			Product p = temporary.top();
 			saveData << p.display();
-
+			
 			saveData << endl;
 
-			products.pop();
+			temporary.pop();
 		}
 	/*	for(unsigned int i = 0; i < products.size(); i++){
 			if(i != products.size() - 1)
