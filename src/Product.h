@@ -36,7 +36,6 @@ public:
 	 * @brief Destroy the Product object
 	 * 
 	 */
-	virtual ~Product();
 
 	/* get and set methods */
 	/**
@@ -99,7 +98,6 @@ public:
 	bool getMedicine() const;
 
 	int getQuantity() const;
-	void setQuantity(int q);
 	/*
 	 * @brief represents getMedicine() in a string format
 	 * 

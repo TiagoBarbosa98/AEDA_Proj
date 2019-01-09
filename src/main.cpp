@@ -141,10 +141,10 @@ void productsMenu(DataBase & d){
 		cout << "|     1) List Products                             |" << endl;
 		cout << "|     2) Add Product                               |" << endl;
 		cout << "|     3) Remove Product                            |" << endl;
-		cout << "|     4) Order by stock                            |" << endl;
+		cout << "|     4) Show less tha N                           |" << endl;
 		cout << "|     5) Exit                                      |" << endl;
 		cout << "|    Option: ";
-		op = checkBoundaries(1, 4);
+		op = checkBoundaries(1, 5);
 		switch(op){
 		case 1:
 			cout << endl;
@@ -164,8 +164,8 @@ void productsMenu(DataBase & d){
 			break;
 		case 4:
 			cout << endl;
-			cout << "Order by stock" << endl;
-			d.showAllProducts();
+			cout << "Show products with less than N in stock" << endl;
+			d.lessProductsThan();
 			break;
 		default:
 			break;
@@ -296,7 +296,7 @@ void mainMenu(DataBase & d){
 }
 
 int main(){
-	/*cout << "Do you wish to import data from existing Data Base (y/n)?\n";
+	cout << "Do you wish to import data from existing Data Base (y/n)?\n";
 	string in;
 	cin >> in;
 	DataBase * d;
@@ -306,7 +306,7 @@ int main(){
 		d = new DataBase();
 	mainMenu(*d);
 
-
+	/*
 	StaffMember *m = new StaffMember();
 	StaffMember *m2 = new StaffMember();
 
@@ -315,19 +315,17 @@ int main(){
 	p.addStaff(m2);
 	cout << p;
 	*/
-	DataBase *d = new DataBase();
+	/*DataBase *d = new DataBase();
 	d->openClientsFile();
 	d->openStaffFile();
 	d->openPharmaciesFile();
 	d->openProductsFile();
-	d->openSalesFile();
-	d->openPrescriptionFile();
+	//d->removeStaffMember();
+	d->showAllPharmacies();
 	d->showAllPharmacies();
 	d->showAllProducts();
-	d->showAllClientsA();
-	d->showAllSales();
-	d->showAllStaff();
-	d->showAllPrescriptions();
+	//d->showAllClientsA();
+	d->lessProductsThan();*/
 
 	return 0;
 }

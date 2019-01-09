@@ -45,9 +45,6 @@ vector<Pharmacy> DataBase::getPharmacies() const {
 	return pharmacies;
 }
 
-priority_queue<Product> DataBase::getProducts() const {
-	return products;
-}
 
 vector<Prescription> DataBase::getPrescriptions() const {
 	return prescriptions;
@@ -111,7 +108,6 @@ void DataBase::showAllProducts(){
 
 Product DataBase::getProductByName(string name){
 	priority_queue <Product> temporary, temporary2;
-
 	while (!products.empty()) {
 		temporary.push(products.top());
 		temporary2.push(products.top());
@@ -120,12 +116,14 @@ Product DataBase::getProductByName(string name){
 
 	while (!temporary2.empty()) {
 		products.push(temporary2.top());
+		temporary2.pop();
 	}
 
 	while (!temporary.empty()) {
-
-		if (temporary.top().getName() == name)
+		if (temporary.top().getName() == name) {
 			return temporary.top();
+			break;
+		}
 
 		temporary.pop();
 	}
@@ -154,17 +152,17 @@ void DataBase::addProduct(){
 	cout << "Medicine (y/n): " << endl;
 	cin.ignore();
 	getline(cin, medicine);
-	if(medicine != "y") Product p1(name, description, price, quantity, iva, code, false);
-	else{
+	if(medicine == "n") 
+		products.push(Product(name, description, price, quantity, iva, code, false));
+	else if (medicine == "y"){
 		cout << "Discount: " << endl;
 		disc = checkForType<float>();
 		cout << "Prescription Required (y/n): " << endl;
 		cin.ignore();
 		getline(cin, prescription);
 		if(prescription == "y") Medicine p1(name, description, price, quantity, iva, code, disc, true);
-		else Medicine p1(name, description, price, quantity,  iva, code, disc, false);
+		products.push(Medicine(name, description, price, quantity,  iva, code, disc, false));
 	}
-	products.push(p1);
 }
 
 void DataBase::removeProduct(){
@@ -233,35 +231,40 @@ void DataBase::removeClient(){
 }
 
 
-void DataBase::addSale() {
+void DataBase::addSale(){
+	bool sale = false;
 	Sale *s = new Sale();
 	int op = 0;
-	while (op != 2) {
+	while(op != 2){
 		cout << "1) Add Product " << endl;
 		cout << "2) Finish " << endl;
 		op = checkForType<unsigned int>();
-		if (op != 1) continue;
+		if(op != 1) continue;
 		string pname;
 		cout << "Product Name: " << endl;
 		cin.ignore();
 		getline(cin, pname);
-		try {
+		try{
 			Product p = getProductByName(pname);
 			cout << "Quantity: " << endl;
 			int q = checkForType<unsigned int>();
-			s->addProdPriceQtt(p, q);
-			removeQuantity(pname, q);
+			if (!removeQuantity(pname, q))
+				continue;
+			else
+				s->addProdPriceQtt(p, q);
+			sale = true;
+			
 		}
-		catch (ItemDoesNotExist & e) {
+		catch(ItemDoesNotExist & e){
 			e.printMsg();
 			continue;
 		}
 	}
-
-	sales.push_back(*s);
+	if(sale)
+		sales.push_back(*s);
 }
 
-void DataBase::removeQuantity(string name, int quantity) {
+bool DataBase::removeQuantity(string name, int quantity) {
 	priority_queue <Product> temporary2;
 	priority_queue <Product> temporary;
 
@@ -273,8 +276,8 @@ void DataBase::removeQuantity(string name, int quantity) {
 	while (!temporary.empty()) {
 
 		if (temporary.top().getName() == name) {
-			if (temporary.top().getQuantity() > quantity) {
-				int n = temporary.top().getQuantity();
+			if(temporary.top().getQuantity() >= quantity){
+				int n = temporary.top().getQuantity() - quantity;
 				string name = temporary.top().getName();
 				int c = temporary.top().getCode();
 				string desc = temporary.top().getDescription();
@@ -288,6 +291,7 @@ void DataBase::removeQuantity(string name, int quantity) {
 			}
 			else {
 				cout << "Not enough" << endl;
+				return false;
 			}
 		}
 		temporary2.push(temporary.top());
@@ -297,6 +301,7 @@ void DataBase::removeQuantity(string name, int quantity) {
 		products.push(temporary2.top());
 		temporary2.pop();
 	}
+	return true;
 }
 
 void DataBase::removeSale(){
@@ -368,11 +373,11 @@ void DataBase::addStaffMember(){
 	getline(cin, addr);
 	cout << "Identification Number: ";
 	cN = checkForType<unsigned int>();
-	cout << "Salary: ";
+	cout << "salary: ";
 	sal = checkForType<unsigned int>();
 	cin.ignore();
 	cout  << "Pharmacy: ";
-	ph = checkPhName();
+	checkPhName();
 	cout << "Position: ";
 	getline(cin,pos);
 	StaffMember f(n, addr, cN,sal,ph, pos);
@@ -398,11 +403,10 @@ void DataBase::removeStaffMember(){
 	//TODO test
 	for(unsigned int i = 0; i < pharmacies.size(); i++){
 		if(pharmacies[i].removeStaff(name)){
-			cout << "Name found\n\n";
+			cout << "name found\n\n";
 			break;
 		}
 	}
-
 	for(vector<StaffMember>::iterator it = staff.begin(); it != staff.end(); it++){
 		if(it->getName() == name) {
 			staff.erase(it);
@@ -421,11 +425,12 @@ string DataBase::parse(string in){
 
 	int pos = in.find_first_of(':', 0);
 
-	string final = in.substr(pos + 2, in.size() - pos);
+	string final = in.substr(pos + 2,in.size() - pos);
 
 	return final;
 
 }
+
 
 Sale DataBase::getSale(unsigned int code){
 	//possivel excecao aqui
@@ -449,35 +454,11 @@ tm DataBase::parseDate(string in) {
 	getline(iss, y, ' ');
 	getline(iss, h, ':');
 	getline(iss, min);
-
-	stringstream convert;
-	convert << d;
-	convert >> day;
-	convert.clear();
-
-	convert << m;
-	convert >> month;
-	convert.clear();
-
-	convert << y;
-	convert >> year;
-	convert.clear();
-
-	convert << h;
-	convert >> hour;
-	convert.clear();
-
-	convert << min;
-	convert >> mins;
-	convert.clear();
-
-	/*
 	day = stoi(d);
 	month = stoi(m);
 	year = stoi(y);
-	hour = stoi(h);
-	mins = stoi(min);
-	*/
+	hour = 2;
+	mins = 2;
 
 	date.tm_mday = day;
 	date.tm_mon = month - 1;
@@ -529,7 +510,7 @@ void DataBase::openSalesFile(){
 				price = stof(prodPrice);
 				qtt = stoi(prodQtt);
 
-				tuple<string, unsigned int, float>t(prodName, price, qtt);
+				tuple<string, unsigned int, float>t(prodName, qtt, price);
 				tmp.push_back(t);
 				getline(infich, prod);
 				if(infich.eof() || prod.size() < 1)
@@ -628,11 +609,10 @@ void DataBase::openPharmaciesFile(){
 				manager = parse(manager);
 
 				vector<StaffMember*> tmp;
-				while(staffName.size() > 1 && !infich.eof()){
+				while(staffName.size() > 1 & !infich.eof()){
 					staffName = parseStaff(staffName);
 					StaffMember *ptrS = getStaffM(staffName);
 					tmp.push_back(ptrS);
-
 					getline(infich, staffName);
 				}
 				Pharmacy pharm(name, address, manager, tmp);
@@ -644,7 +624,7 @@ void DataBase::openPharmaciesFile(){
 		}
 }
 
-void DataBase::openProductsFile() {
+void DataBase::openProductsFile(){
 	ifstream infich;
 
 	infich.open(productsFile);
@@ -656,9 +636,8 @@ void DataBase::openProductsFile() {
 		bool medicine;
 		bool prescr;
 
-		while (!infich.eof()) {
+		while(getline(infich, name)){
 
-			getline(infich, name);
 			getline(infich, c);
 			getline(infich, p);
 			getline(infich, q);
@@ -672,50 +651,49 @@ void DataBase::openProductsFile() {
 			desc = parse(desc);
 			m = parse(m);
 
-			code = stoi(c);
+			string newName;
+			code =  stoi(c);
 			quantity = stoi(q);
 			price = stof(p);
-
+			
 			if (m == "1") {
 				medicine = true;
 			}
 			else {
 				medicine = false;
 			}
-			//checking if prod is medicine and getting rest of info if it is
-			getline(infich, disc);
+				//checking if prod is medicine and getting rest of info if it is
+				getline(infich, disc);
+				
+				if (disc.size() > 1 & !infich.eof()) {
+					getline(infich, presc);
 
-			if (disc.size() > 1 & !infich.eof()) {
-				getline(infich, presc);
+					disc = parse(disc);
+					presc = parse(presc);
 
-				disc = parse(disc);
-				presc = parse(presc);
+					discount = stof(disc);
+					if (presc == "1")
+						prescr = true;
+					else
+						prescr = false;
 
-				discount = stof(disc);
-				if (presc == "1")
-					prescr = true;
-				else
-					prescr = false;
+					getline(infich, garbage);
 
-				getline(infich, garbage);
-
-				Medicine prod(name, desc, price, quantity, 0, code, discount, prescr);
-				products.push(prod);
-			}
-			else {
-
+					Medicine prod(name, desc, price, quantity, 0, code, discount, prescr);
+					products.push(prod);
+				}
+			else{
+				
 				Product prod(name, desc, price, quantity, 0, code, medicine);
 				products.push(prod);
 			}
-			name.clear();
-
 		}
 
-	}
-	else {
+	}else {
 		throw ErrorOpeningFile(productsFile);
 	}
 }
+
 void DataBase::openStaffFile(){
 	ifstream infich;
 
@@ -862,7 +840,7 @@ void DataBase::showClientsWithMostPurchases() {
 	cout << "Top 3 clients with most purchases made.\n\n";
 	cout << "1. " << c1 << "\n2. ";
 	clTemp.remove(c1);
-	////////////////////////////////////////////////////////////
+	///////////////////////////////
 
 	c2 = clItr2.retrieve();
 	clItr2.advance();
@@ -875,7 +853,7 @@ void DataBase::showClientsWithMostPurchases() {
 	}
 	cout << c2 << "\n3. ";
 	clTemp.remove(c2);
-	////////////////////////////////////////////////////////////
+	///////////////////////////
 
 	c3 = clItr3.retrieve();
 	clItr3.advance();
@@ -906,6 +884,7 @@ string DataBase::checkPhName(){
 	}
 
 	string in;
+	//bool accepted = false;
 
 	while(true){
 		getline(cin, in);
@@ -942,10 +921,10 @@ void DataBase::assignStaff(vector<StaffMember*> members){
 
 void DataBase::showPharmaciesNames(){
 	cout << "Available pharmacies:\n";
-	for(unsigned int i = 0; i < pharmacies.size(); i++){
-		cout << pharmacies[i].getName() << "\n";
-	}
-	cout << endl << endl;
+		for(unsigned int i = 0; i < pharmacies.size(); i++){
+				cout << pharmacies[i].getName() << "\n";
+			}
+		cout << endl << endl;
 }
 
 void DataBase::assignStaffWithNoPh(){
@@ -963,55 +942,9 @@ void DataBase::assignStaffWithNoPh(){
 	assignStaff(members);
 }
 
-void DataBase::changePharmacyInfo(){
-	cout << "All pharmacies:\n";
-	showAllPharmacies();
-
-	string in;
-	cout << "Which pharmacy would you like to modify?\nName(type None to cancel): ";
-	in = checkPhName();
-
-	if(in == "None")
-		return;
-
-	string ans;
-	for(unsigned int i = 0; i < pharmacies.size(); i++){
-		if(in == pharmacies[i].getName()){
-			cout << "Change Name(type No to remain unaltered): ";
-			getline(cin, ans);
-			if(ans != "No" && ans != "no")
-				pharmacies[i].setName(ans);
-
-
-			cout << "\nChange Address(type No to remain unaltered): ";
-			getline(cin, ans);
-			if(ans != "No" && ans != "no")
-				pharmacies[i].setAddress(ans);
-
-
-			cout << "\nChange Manager from current staff.";
-
-			if(ans != "No" && ans != "no"){
-				cout << "Staff's Names:\n";
-				for(unsigned int i = 0; i < pharmacies[i].getStaff().size(); i++){
-					cout << "-" << pharmacies[i].getStaff()[i]->getName() << endl;
-				}
-				cout << "New Manager (type No to remain unaltered):";
-				getline(cin, ans);
-				pharmacies[i].setManager(ans);
-			}
-
-			cout << "\nAdd Staff(type No to remain unaltered): ";
-			getline(cin, ans);
-			if(ans != "No" && ans != "no"){
-
-			}
-		}
-	}
-}
 
 void DataBase::lessProductsThan() {
-
+	
 	cout << "N: " << endl;
 	int n;
 	cin >> n;
@@ -1028,12 +961,15 @@ void DataBase::lessProductsThan() {
 		products.push(temporary2.top());
 		temporary2.pop();
 	}
-
+	bool found = false;
 	while (!temporary.empty()) {
 
 		if (temporary.top().getQuantity() < n) {
 			cout << temporary.top().getName() << endl;
+			found = true;
 		}
 		temporary.pop();
 	}
+	if (!found)
+		cout << "No product with stock lower than " << n << "." << endl;
 }
