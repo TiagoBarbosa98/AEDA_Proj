@@ -11,7 +11,7 @@ using namespace std;
  */
 class Pharmacy: public Entity{
 	string manager;/** < @brief Manager of the Pharmacy */
-	vector<StaffMember*> staff;/** < @brief Staff of the Pharmacy (all the members working in that Pharmacy) */
+	vector<StaffMember> staff;/** < @brief Staff of the Pharmacy (all the members working in that Pharmacy) */
 
 public:
 /**
@@ -29,7 +29,7 @@ public:
  	 * @param addr The adress of the Pharmacy to be created
 	 * @param sl All of the staff members of the Pharmacy to be created
 	 */
-	Pharmacy(string n, string addr, string manager, vector<StaffMember*> sl);
+	Pharmacy(string n, string addr, string manager, vector<StaffMember> sl);
 
 	/* get and set methods */
 
@@ -38,7 +38,8 @@ public:
 	 * 
 	 * @return vector<StaffMember> the staff members of the Pharmacy
 	 */
-	vector<StaffMember*> getStaff() const;
+	//vector<StaffMember*> getStaff() const;
+	vector<StaffMember> getStaff() const;
 	/**
 	 * @brief Get the Manager object
 	 * 
@@ -63,7 +64,8 @@ public:
 	 * 
 	 * @param s new Staff Member to be added
 	 */
-	void addStaff(StaffMember *s);
+	//void addStaff(StaffMember *s);
+	void addStaff(StaffMember s);
 	/**
 	 * @brief removes the Staff Member s the vector with all the Staff Members
 	 * 
@@ -82,15 +84,44 @@ public:
 	 */
 	friend ostream & operator <<(ostream &os, const Pharmacy &p);
 
-	//when deleting a pharmacy, sets the staff's pharmacy to none
+	/**
+	* @brief Compares two pharmacies and
+	*
+	* @param p Pharmacy to be compared with
+	*
+	* @return Boolean value of whether they're equal or not
+	*/
 	bool operator ==(const Pharmacy &p) const;
 
-	//sets all the staff's pharmacy from this pharmacy to None
+	/**
+	* @brief Sets the pharmacy variable of the StaffMember 's from this
+	* pharmacy to None. Used when deleting a Pharmacy
+	*/
 	void setStaffPhToNone();
 
+	/**
+	 * @brief Removes a certain StaffMember from this pharmacy
+	 *
+	 * @param name Name of the staff to be removed
+	 *
+	 * @return Boolean value of whether it was removed or not
+	 */
 	bool removeStaff(string name);
 
+	/**
+	 * @brief Checks if a StaffMember with a certain name exists in
+	 * this Pharmacy
+	 *
+	 * @param name Name of the staff to be checked
+	 *
+	 * @return Boolean value of whether it contains the StaffMember or not
+	 */
 	bool containsStaff(string name);
+
+	/**
+	 * @brief Displays the names of the StaffMember 's from this Pharmacy
+	 */
+	void showStaffsName();
 
 };
 

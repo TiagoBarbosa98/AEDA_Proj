@@ -15,12 +15,12 @@ string Entity::getName() const{
 
 void Entity::setName(string nn){
 	this->name = nn;
-	cout << "New name set!\n\n";
+	cout << "New name set!\n";
 }
 
 void Entity::setAddress(string naddr){
 	this->address = naddr;
-	cout << "New address set!\n\n";
+	cout << "New address set!\n";
 }
 
 ostream & operator <<(ostream &os, const Entity & e){

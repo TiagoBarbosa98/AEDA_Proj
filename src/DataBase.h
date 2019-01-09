@@ -427,33 +427,88 @@ public:
 	}
 
 
-	//TODO PART 2
+	/**
+	 * @brief Displays all the clients in the DataBase
+	 */
 	void showAllClientsA();
 
-	//search clients in specific district
-	void searchClientsByDistrict(string district);
+	/**
+	 * @brief Displays all clients from a specific district
+	 *
+	 * @param district Name of the district we want to show the clients from
+	 */
+	void showClientsByDistrict(string district);
 
-	//search client by nc, print info about that client
+	/**
+	* @brief Displays the client with specific id info
+	*
+	* @param nc Id of the client
+	*/
 	void getClientInfo(unsigned int nc);
 
+	/**
+	* @brief Looks for a Client in the DataBase with specific id and returns it
+	*
+	* @param nc Id of the Client
+	*
+	* @return The Client object we want to get
+	*/
+	Client clientExists(unsigned int nc);
+
+	/**
+	 * @brief Displays the clients on the top 3 of most purchases made
+	 */
 	void showClientsWithMostPurchases();
 
-	//user assigns staff in vector members to existing pharmacies
-	void assignStaff(vector<StaffMember*> members);
+	/**
+	 * @brief Asks the user to assign some StaffMember 's to existing Pharmacy 's
+	 *
+	 * @param members Vector containing the StaffMember 's to be assigned
+	 */
+	void assignStaff(vector<StaffMember> members);
 
-	//shows staff with no current pharmacy assigned
-	void showStaffWithoutPh();
-
-	//asks for pharmacy name until a correct one is given
-	string checkPhName();
-
-	//TODO
+	/**
+	 * @brief Asks the user to assign all StaffMember 's in the DataBase
+	 * with no Pharmacy assigned
+	 */
 	void assignStaffWithNoPh();
 
+	/**
+	 * @brief Displays all StaffMember 's in the DataBase
+	 * with no Pharmacy assigned
+	 */
+	void showStaffWithoutPh();
+
+	/**
+	 * @brief Keeps asking the user for the name of a Pharmacy until
+	 * an existing one is given
+	 *
+	 * return String with an existing Pharmacy name
+	 */
+	string checkPhName();
+
+	/**
+	 * @brief Displays the names of the pharmacies available in the DB
+	 */
 	void showPharmaciesNames();
 
 	//TODO
-	void changeClientInfo();
+	/**
+	 * @brief Asks the user edit a Pharmacy 's info
+	 */
+	void changePharmacyInfo();
+
+	/**
+	 * @brief Searches through pharmacies vector and removes the StaffMember
+	 * with a specific name from one of those pharmacies
+	 *
+	 * @param name Name of the staff to be removed
+	 */
+	void removeStaffM(string name);
+
+	void staffPhToNone(string name);
+
+	//bool isPharmacy(string name);
 
 };
 
