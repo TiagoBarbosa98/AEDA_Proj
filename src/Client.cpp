@@ -1,8 +1,8 @@
 #include "Client.h"
 
 Client::Client(string n, string dis, string addr,  unsigned int  contribNo, vector<unsigned int> h):Person(n, addr, contribNo), history(h), district(dis){}
-Client::Client(): Person("", "", 0){
-}
+Client::Client(): Person("", "", 0){}
+Client::Client(unsigned int nc): Person("", "", nc){}
 
 vector<unsigned int> Client::getHistory() const{
 	return history;

@@ -41,7 +41,7 @@ int partition (vector<T> &arr, int low, int high)
     {
         // If current element is smaller than or
         // equal to pivot
-        if (arr[j] <= pivot)
+        if (arr[j] < pivot)
         {
             i++;    // increment index of smaller element
             iter_swap(arr.begin() + i, arr.begin() + j);
@@ -95,14 +95,16 @@ void quickSort(vector<T> &arr){
 //
 template <class T>
 T checkForType(){
-		T nr;
-		cin >> nr;
+	T nr;
+	cin >> nr;
 
-			while (cin.fail()) {
-				cin.clear();
-				cin.ignore(numeric_limits<streamsize>::max(), '\n');
-				cout << "Invalid input, try again: ";
-				cin >> nr;
-			}
-			return nr;
+	while (cin.fail()) {
+		cin.clear();
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
+		cout << "Invalid input, try again: ";
+		cin >> nr;
 	}
+	cin.clear();
+	cin.ignore(numeric_limits<streamsize>::max(), '\n');
+	return nr;
+}

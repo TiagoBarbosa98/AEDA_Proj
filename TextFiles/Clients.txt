@@ -24,7 +24,7 @@ Purchases id's:
 	
 Name: Marianewe Closca
 Address: Asfhij
-Identification number: 1
+Identification number: 11
 District: Porto
 Purchases id's:
 	-3

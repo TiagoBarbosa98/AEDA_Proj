@@ -7,7 +7,7 @@ StaffMember::StaffMember(string n, string addr, unsigned int contribNo, unsigned
 	position = pos;
 }
 
-StaffMember::StaffMember(): Person("error", "error", 60), salary(1), pharmacy("error"), position("error"){
+StaffMember::StaffMember(): Person("error", "error", 0), salary(1), pharmacy("error"), position("error"){
 
 }
 

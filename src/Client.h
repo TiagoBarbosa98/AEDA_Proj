@@ -28,6 +28,7 @@ public:
  */
  Client(string n, string dis, string addr,  unsigned int  contribNo, vector<unsigned int> history);
  Client();
+ Client(unsigned int nc);
 	/**
 	 * @brief      Get the History object
 	 *
