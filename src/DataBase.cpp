@@ -965,7 +965,7 @@ void DataBase::lessProductsThan() {
 	while (!temporary.empty()) {
 
 		if (temporary.top().getQuantity() < n) {
-			cout << temporary.top().getName() << endl;
+			cout << temporary.top() << endl;
 			found = true;
 		}
 		temporary.pop();
