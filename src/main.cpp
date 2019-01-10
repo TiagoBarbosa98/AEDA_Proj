@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 #include <iostream>
 #include <string>
 #include <fstream>
@@ -27,6 +27,8 @@ int checkBoundaries(int linf, int lsup) {
 		cout << "Invalid input, try again: ";
 		cin >> nr;
 	}
+	cin.clear();
+	cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
 	return nr;
 }
@@ -40,9 +42,10 @@ void pharmaciesMenu(DataBase & d){
 		cout << "|     1) List Pharmacies                           |" << endl;
 		cout << "|     2) Add Pharmacy                              |" << endl;
 		cout << "|     3) Remove Pharmacy                           |" << endl;
-		cout << "|     4) Exit                                      |" << endl;
+		cout << "|     4) Edit Pharmacy info                        |" << endl;
+		cout << "|     5) Exit                                      |" << endl;
 		cout << "|    Option: ";
-		op = checkBoundaries(1, 4);
+		op = checkBoundaries(1, 5);
 		switch(op){
 		case 1:
 			cout << endl;
@@ -57,8 +60,12 @@ void pharmaciesMenu(DataBase & d){
 			try{d.removePharmacy();}
 			catch(ItemDoesNotExist & e){e.printMsg();}
 			break;
-		default:
+		case 4:
+			cout << endl;
+			d.changePharmacyInfo();
 			break;
+		default:
+			return;
 		}
 	}
 }
@@ -72,9 +79,10 @@ void staffMenu(DataBase & d){
 		cout << "|     1) List Staff                                |" << endl;
 		cout << "|     2) Add Staff                                 |" << endl;
 		cout << "|     3) Remove Staff                              |" << endl;
-		cout << "|     4) Exit                                      |" << endl;
+		cout << "|     4) Assign staff with no current pharmacy     |" << endl;
+		cout << "|     5) Exit                                      |" << endl;
 		cout << "|    Option: ";
-		op = checkBoundaries(1, 4);
+		op = checkBoundaries(1, 5);
 		switch(op){
 		case 1:
 			cout << endl;
@@ -89,8 +97,12 @@ void staffMenu(DataBase & d){
 			try{d.removeStaffMember();}
 			catch(ItemDoesNotExist & e){e.printMsg();}
 			break;
-		default:
+		case 4:
+			cout << endl;
+			d.assignStaffWithNoPh();
 			break;
+		default:
+			return;
 		}
 	}
 }
@@ -104,14 +116,17 @@ void clientsMenu(DataBase & d){
 		cout << "|     1) List Clients                              |" << endl;
 		cout << "|     2) Add Client                                |" << endl;
 		cout << "|     3) Remove Client                             |" << endl;
-		cout << "|     4) Exit                                      |" << endl;
+		cout << "|     4) Show clients with most purchases made     |" << endl;
+		cout << "|     5) Show clients in a certain district        |" << endl;
+		cout << "|     6) Search client by ID                       |" << endl;
+		cout << "|     7) Exit                                      |" << endl;
 		cout << "|    Option: ";
-		op = checkBoundaries(1, 4);
+		op = checkBoundaries(1, 7);
 		switch(op){
 		case 1:
 			cout << endl;
 			cout << "Listing Clients" << endl;
-			d.showAllClients();
+			d.showAllClientsA();
 			break;
 		case 2:
 			cout << endl;
@@ -124,8 +139,20 @@ void clientsMenu(DataBase & d){
 			try {d.removeClient();}
 			catch (ItemDoesNotExist & e){ e.printMsg();}
 			break;
-		default:
+		case 4:
+			cout << endl;
+			d.showClientsWithMostPurchases();
 			break;
+		case 5:
+			cout << endl;
+			d.showClientsByDistrict();
+			break;
+		case 6:
+			cout << endl;
+			d.getClientInfo();
+			break;
+		default:
+			return;
 
 		}
 
@@ -169,7 +196,7 @@ void productsMenu(DataBase & d){
 			d.lessProductsThan();
 			break;
 		default:
-			break;
+			return;
 		}
 	}
 }
@@ -205,7 +232,7 @@ void salesMenu(DataBase & d){
 				catch (ItemDoesNotExist & e){ e.printMsg();}
 				break;
 			default:
-				break;
+				return;
 			}
 		}
 
@@ -232,7 +259,7 @@ void prescriptionsMenu(DataBase & d){
 			d.addPrescription();
 			break;
 		default:
-			break;
+			return;
 		}
 
 	}

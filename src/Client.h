@@ -47,10 +47,29 @@ public:
 	 */
 	friend ostream& operator <<(ostream& os, const Client& c);
 
+	/**
+	 * @brief Operator overload of <
+	 *
+	 * @param c Client to compare this object to
+	 *
+	 * @return Boolean value -> true if this object is "smaller" than the other one
+	 */
 	bool operator <(const Client &c) const;
 
+	/**
+	 * @brief Operator overload of ==
+	 *
+	 * @param c Client to compare this object to
+	 *
+	 * @return Boolean value -> true if both objects are equal
+	 */
 	bool operator== (const Client & c) const;
 
+	/**
+	 * @brief Get function of the variable district
+	 *
+	 * @return The district name
+	 */
 	string getDistrict() const;
 };
 

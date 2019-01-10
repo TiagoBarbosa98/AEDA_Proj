@@ -3,11 +3,13 @@ Address: Rua do M
 Manager: Joao Melo
 Staff: 
   -Pedro Melo
-  -Tiago Melo
   -Joao Melo
+  -Lul
 
 Name: Bruh
 Address: Rua do M
-Manager: Joao Melo
+Manager: Jonas
 Staff: 
   -Jonas
+  -Tiago Melo
+  -Lul

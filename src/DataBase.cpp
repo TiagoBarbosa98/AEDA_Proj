@@ -825,9 +825,14 @@ void DataBase::showAllClientsA(){
 	}
 }
 
-void DataBase::showClientsByDistrict(string dis){
+void DataBase::showClientsByDistrict(){
+	string dis;
 	BSTItrIn<Client> itr(clientsA);
-	cout << "District " << dis << " clients:\n\n";
+
+	cout << "District name: ";
+	getline(cin, dis);
+	cout << "Clients from district " << dis << ":\n\n";
+
 	while(!itr.isAtEnd()){
 		if(itr.retrieve().getDistrict() == dis){
 			cout << itr.retrieve() << endl;
@@ -836,7 +841,11 @@ void DataBase::showClientsByDistrict(string dis){
 	}
 }
 
-void DataBase::getClientInfo(unsigned int nc) {
+void DataBase::getClientInfo() {
+	unsigned int nc;
+	cout << "Client ID: ";
+	nc = checkForType<unsigned int>();
+	cout << endl;
 	vector<unsigned int> l;
 	Client toFind("", "", "", nc, l);
 	Client notFound(0);
@@ -845,7 +854,7 @@ void DataBase::getClientInfo(unsigned int nc) {
 	Client res = clientsA.find(toFind);
 
 	if(clientExists(nc) == notFound){
-		cout << "No client with such identification number.\n";
+		cout << "No client with such identification number.\n\n";
 	}
 	else
 		cout << clientExists(nc);
@@ -910,6 +919,8 @@ void DataBase::showClientsWithMostPurchases() {
 	}
 	cout << c3 << endl;
 
+	cout << endl << endl;
+
 }
 
 void DataBase::showStaffWithoutPh(){
@@ -928,11 +939,17 @@ string DataBase::checkPhName(){
 	}
 
 	string in;
-	//bool accepted = false;
+	getline(cin, in);
+	for(unsigned int i = 0; i < pharmacies.size(); i++){
+		if(in == pharmacies[i].getName() || in == "None"){
+			return in;
+		}
+	}
 
 	while(true){
+		cin.clear();
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
 		getline(cin, in);
-
 		for(unsigned int i = 0; i < pharmacies.size(); i++){
 			if(in == pharmacies[i].getName() || in == "None"){
 				return in;
@@ -974,14 +991,19 @@ void DataBase::showPharmaciesNames(){
 void DataBase::assignStaffWithNoPh(){
 	vector<StaffMember> members;
 
-	showStaffWithoutPh();
-	showPharmaciesNames();
-
 	for(unsigned int i = 0; i < staff.size(); i++){
 		if(staff[i].getPharmacy() == "None"){
 			members.push_back(staff[i]);
 		}
 	}
+	if(members.size() < 1){
+		cout << "All staff members belong to a pharmacy already!\n\n";
+		return;
+	}
+
+	showStaffWithoutPh();
+	showPharmaciesNames();
+
 	assignStaff(members);
 }
 
@@ -991,7 +1013,7 @@ void DataBase::changePharmacyInfo(){
 
 	string in;
 	cout << "Which pharmacy would you like to modify?\nName(type None to cancel): ";
-	in = checkPhName();
+	getline(cin, in);
 	cout << endl;
 
 	if(in == "None")
@@ -1042,6 +1064,7 @@ void DataBase::changePharmacyInfo(){
 			return;
 		}
 	}
+	throw(ItemDoesNotExist(in));
 }
 
 void DataBase::removeStaffM(string name){

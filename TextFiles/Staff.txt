@@ -16,7 +16,7 @@ Name: Tiago Melo
 Address: Rua do Me
 Identification number: 1234567
 Salary: 998
-Works for: Do Mel-o
+Works for: Bruh
 Works as: Secretary of Donuts
 
 Name: Jonas
@@ -24,4 +24,11 @@ Address: Rua do Me
 Identification number: 1234567
 Salary: 998
 Works for: Bruh
-Works as: Secretary of Donuts
+Works as: Manager
+
+Name: Lul
+Address: Rua Coiso
+Identification number: 1234567
+Salary: 9666
+Works for: None
+Works as: Mochilas

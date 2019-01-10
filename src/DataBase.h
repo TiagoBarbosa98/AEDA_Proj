@@ -21,6 +21,9 @@ using namespace std;
 #include "Medicine.h"
 #include "BST.h"
 
+/*
+ * @brief Struct defining the hash functions
+ */
 struct stringHash{
 	int operator() (const string & s) const
 	{
@@ -45,14 +48,34 @@ private:
 	vector<StaffMember> staff;/** @brief vector for staff*/
 	vector<Prescription> prescriptions;/** @brief vector for prescriptions*/
 	vector<Sale> sales;/** @brief vector for sales*/
-	BST<Client> clientsA;
-	priority_queue <Product> products;
+	BST<Client> clientsA; /** @brief BST for the clients */
+	priority_queue <Product> products; /** @brief priority queue for the products*/
 public:
+	/*
+	 * @brief Parses a string given in order to help with other functions
+	 *
+	 * @param in String to be parsed
+	 *
+	 * @return The parsed string
+	 */
 	string parsestr(string in);
+
+	/**
+	 * @brief Checks and displays if there is a product with less products
+	 */
 	void lessProductsThan();
+
+	/*
+	 * @brief Removes quantity available from a certain product
+	 *
+	 * @param name Name of the product
+	 * @param quantity Quantity to be removed
+	 *
+	 * @return Boolean value for the success or insuccess of the function
+	 */
 	bool removeQuantity(string name, int quantity);
 	/**
-	 * @brief      Constructs the object.
+	 * @brief      Constructs the DataBase object.
 	 */
 	DataBase();
 
@@ -333,7 +356,11 @@ public:
 
 
 
-
+	/**
+	 * @brief Writes the info saved in the DataBase to the Sales file
+	 *
+	 * @param fileName Name of the file to be written to
+	 */
 	void writeToSales(string fileName){
 		ofstream saveData;
 
@@ -354,7 +381,7 @@ public:
 	}
 
 	/*
-	 * @brief template to write to files a vector
+	 * @brief template to write to vectors to files
 	 *
 	 * @tparam T		type of vector
 	 *
@@ -437,14 +464,14 @@ public:
 	 *
 	 * @param district Name of the district we want to show the clients from
 	 */
-	void showClientsByDistrict(string district);
+	void showClientsByDistrict();
 
 	/**
 	* @brief Displays the client with specific id info
 	*
 	* @param nc Id of the client
 	*/
-	void getClientInfo(unsigned int nc);
+	void getClientInfo();
 
 	/**
 	* @brief Looks for a Client in the DataBase with specific id and returns it
@@ -507,8 +534,6 @@ public:
 	void removeStaffM(string name);
 
 	void staffPhToNone(string name);
-
-	//bool isPharmacy(string name);
 
 };
 
