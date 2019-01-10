@@ -4,8 +4,8 @@
 #include <string>
 using namespace std;
 
-/*
- * @class Product Class that represents a prescription where are stored the number, client, doctor and products os the prescription
+/**
+ * @brief Product Class that represents a prescription where are stored the number, client, doctor and products os the prescription
  */
 class Product {
 private:

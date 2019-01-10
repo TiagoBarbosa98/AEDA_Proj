@@ -1,0 +1,19 @@
+<map id="clientsMenu" name="clientsMenu">
+<area shape="rect" id="node2" href="$main_8cpp.html#acae0cb71cc559b4b16c3bb6709724d97" title="checkBoundaries" alt="" coords="178,17,301,44"/>
+<area shape="rect" id="node3" href="$classDataBase.html#a0c83992321a456f8fa097ea5bbf4a093" title="Displays all the clients in the DataBase. " alt="" coords="399,220,583,247"/>
+<area shape="rect" id="node7" href="$classDataBase.html#a1eebe53a8f3c83af5d75d3a83590ca01" title="DataBase::addClient" alt="" coords="168,321,311,348"/>
+<area shape="rect" id="node9" href="$classDataBase.html#a9fb1b3625b3431d09b4b64a13bbb1e0f" title="DataBase::removeClient" alt="" coords="157,68,322,95"/>
+<area shape="rect" id="node12" href="$classItemDoesNotExist.html#ac043ce235a565e8766cf55b32a2aa80c" title="ItemDoesNotExist::printMsg" alt="" coords="145,372,333,399"/>
+<area shape="rect" id="node13" href="$classDataBase.html#ab87e9a50f26c934790774b0bf0d62a51" title="Displays the clients on the top 3 of most purchases made. " alt="" coords="397,53,584,94"/>
+<area shape="rect" id="node15" href="$classDataBase.html#a2016794a78b86df19676ea9aba3114bc" title="Displays all clients from a specific district. " alt="" coords="381,271,600,297"/>
+<area shape="rect" id="node17" href="$classDataBase.html#aa613181e1960fa22305feae26560960b" title="Displays the client with specific id info. " alt="" coords="158,169,321,196"/>
+<area shape="rect" id="node4" href="$classBSTItrIn.html#a6f9a43217862c263a9bf15b9a08b889a" title="BSTItrIn::isAtEnd" alt="" coords="649,220,775,247"/>
+<area shape="rect" id="node5" href="$classBSTItrIn.html#a434375a2d263bf132ab3c4ac878af8ef" title="BSTItrIn::retrieve" alt="" coords="651,119,773,145"/>
+<area shape="rect" id="node6" href="$classBSTItrIn.html#ac772d3ebbac748c5f8cf9bc659f2e32c" title="BSTItrIn::advance" alt="" coords="648,169,776,196"/>
+<area shape="rect" id="node8" href="$classBST.html#a2b117df6521c7d61dac75ff2c938bae7" title="BST::insert" alt="" coords="447,321,535,348"/>
+<area shape="rect" id="node10" href="$classDataBase.html#a8575c65a7f0d76352e4b37604562fbc2" title="Looks for a Client in the DataBase with specific id and returns it. " alt="" coords="413,119,569,145"/>
+<area shape="rect" id="node11" href="$classBST.html#a6f01a0b44daf82a42022b6eb4c0df7a2" title="BST::remove" alt="" coords="663,5,761,32"/>
+<area shape="rect" id="node14" href="$classClient.html#a5a2d79bb60bb1846a14263d156654c36" title="Get the History object. " alt="" coords="650,60,774,87"/>
+<area shape="rect" id="node16" href="$classClient.html#aa6acbbfc2c1717d7303a3db86ac22058" title="Get function of the variable district. " alt="" coords="650,271,774,297"/>
+<area shape="rect" id="node18" href="$classBST.html#aaf4eb6869f68db0069534f7b2dfbe53b" title="BST::find" alt="" coords="452,169,529,196"/>
+</map>

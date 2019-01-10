@@ -1,0 +1,6 @@
+<map id="DataBase::assignStaff" name="DataBase::assignStaff">
+<area shape="rect" id="node2" href="$classDataBase.html#af3c7f6a88b927dbd01b34121eefabe4d" title="Gets the staff Member with name name. " alt="" coords="227,5,372,32"/>
+<area shape="rect" id="node3" href="$classEntity.html#a438837d2be5b221fd9aafc323c46f08a" title="Get the Name object. " alt="" coords="241,56,358,83"/>
+<area shape="rect" id="node4" href="$classDataBase.html#a33b218c5674029a4696a44d710f88aa6" title="Keeps asking the user for the name of a Pharmacy until an existing one is given. " alt="" coords="212,107,387,133"/>
+<area shape="rect" id="node5" href="$classStaffMember.html#a628c894f76e94a3a9370e610ccdf78fe" title="Set the Pharmacy object. " alt="" coords="208,157,391,184"/>
+</map>

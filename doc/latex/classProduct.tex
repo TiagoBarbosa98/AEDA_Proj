@@ -1,0 +1,346 @@
+\hypertarget{classProduct}{}\section{Product Class Reference}
+\label{classProduct}\index{Product@{Product}}
+
+
+\hyperlink{classProduct}{Product} Class that represents a prescription where are stored the number, client, doctor and products os the prescription.  
+
+
+
+
+{\ttfamily \#include $<$Product.\+h$>$}
+
+
+
+Inheritance diagram for Product\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=136pt]{classProduct__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classProduct_a847c1d85e67ce387166a597579a55135}{Product} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \hyperlink{classProduct}{Product} object. \end{DoxyCompactList}\item 
+\hyperlink{classProduct_af5787b56a6be5a1807ceb7999c6adb6a}{Product} (string \hyperlink{classProduct_acc9bddcf74112d85a6dc231db2269b8d}{name}, string \hyperlink{classProduct_ac39d552b24ce60549271a85aea3f5ed0}{description}, float \hyperlink{classProduct_ad1fd6ee6c8653bf81898668b1d01b05d}{price}, int \hyperlink{classProduct_a299430b8756aba9f6d44af46831791cc}{quantity}, float \hyperlink{classProduct_ac772b7a57928ccfdb02309bde2e4fa33}{iva}, int \hyperlink{classProduct_acf4c1bb9d62717e3b2ecaaf7ec5dffd7}{code}, bool m)
+\begin{DoxyCompactList}\small\item\em Construct a new \hyperlink{classProduct}{Product} object. \end{DoxyCompactList}\item 
+int \hyperlink{classProduct_ada9a32ed7891875b3ccd8e064aad6492}{get\+Code} () const
+\begin{DoxyCompactList}\small\item\em Destroy the \hyperlink{classProduct}{Product} object. \end{DoxyCompactList}\item 
+const string \& \hyperlink{classProduct_afffde8c14c3bca709543cea274d67e7c}{get\+Description} () const
+\begin{DoxyCompactList}\small\item\em Get the Description object. \end{DoxyCompactList}\item 
+float \hyperlink{classProduct_a50605c5d457a7400a8dd5a0848480297}{get\+Iva} () const
+\begin{DoxyCompactList}\small\item\em Get the Iva object. \end{DoxyCompactList}\item 
+const string \& \hyperlink{classProduct_acbf3d46720bb1a0d16e49663b73b803d}{get\+Name} () const
+\begin{DoxyCompactList}\small\item\em Get the Name object. \end{DoxyCompactList}\item 
+float \hyperlink{classProduct_a0aaea95b8d3241b3758246254b8575e2}{get\+Price} () const
+\begin{DoxyCompactList}\small\item\em Get the Price object. \end{DoxyCompactList}\item 
+float \hyperlink{classProduct_a732aca2574f7a39e3a90837e0240e81f}{get\+Total\+Price} () const
+\begin{DoxyCompactList}\small\item\em Get the Total Price object. \end{DoxyCompactList}\item 
+virtual string \hyperlink{classProduct_a2f411b12652a6b7b6194fcdbab3a1fb3}{display} () const
+\begin{DoxyCompactList}\small\item\em Write product info to string. \end{DoxyCompactList}\item 
+bool \hyperlink{classProduct_a3a703454d7777191ad9282b38bce15e1}{get\+Medicine} () const
+\item 
+int \hyperlink{classProduct_a6a449b90b669aa4380d229b44eca686f}{get\+Quantity} () const
+\item 
+string \hyperlink{classProduct_aa2ccc7b6aa44a0bf10694b18f910dfa1}{med} () const
+\item 
+bool \hyperlink{classProduct_add7a6d09de7f21ca5d8a0228461ad6ae}{operator$<$} (const \hyperlink{classProduct}{Product} \&prod1) const
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{classProduct_acc9bddcf74112d85a6dc231db2269b8d}{name}
+\item 
+string \hyperlink{classProduct_ac39d552b24ce60549271a85aea3f5ed0}{description}
+\begin{DoxyCompactList}\small\item\em Name of the \hyperlink{classProduct}{Product}. \end{DoxyCompactList}\item 
+float \hyperlink{classProduct_ad1fd6ee6c8653bf81898668b1d01b05d}{price}
+\begin{DoxyCompactList}\small\item\em Description of the \hyperlink{classProduct}{Product}. \end{DoxyCompactList}\item 
+float \hyperlink{classProduct_ac772b7a57928ccfdb02309bde2e4fa33}{iva}
+\begin{DoxyCompactList}\small\item\em Price of the \hyperlink{classProduct}{Product}. \end{DoxyCompactList}\item 
+int \hyperlink{classProduct_acf4c1bb9d62717e3b2ecaaf7ec5dffd7}{code}
+\begin{DoxyCompactList}\small\item\em Iva of the \hyperlink{classProduct}{Product}. \end{DoxyCompactList}\item 
+bool \hyperlink{classProduct_a2da08ec2fcf6b1d9383e42f6419b3a06}{medicine}
+\begin{DoxyCompactList}\small\item\em Code of the \hyperlink{classProduct}{Product}. \end{DoxyCompactList}\item 
+int \hyperlink{classProduct_a299430b8756aba9f6d44af46831791cc}{quantity}
+\begin{DoxyCompactList}\small\item\em Wether or not the \hyperlink{classProduct}{Product} is \hyperlink{classMedicine}{Medicine}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+ostream \& \hyperlink{classProduct_a8e60cf0623449094e3d8672262fe5420}{operator$<$$<$} (ostream \&os, const \hyperlink{classProduct}{Product} \&p)
+\begin{DoxyCompactList}\small\item\em prints all the the product\textquotesingle{}s information \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classProduct}{Product} Class that represents a prescription where are stored the number, client, doctor and products os the prescription. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classProduct_a847c1d85e67ce387166a597579a55135}\label{classProduct_a847c1d85e67ce387166a597579a55135}} 
+\index{Product@{Product}!Product@{Product}}
+\index{Product@{Product}!Product@{Product}}
+\subsubsection{\texorpdfstring{Product()}{Product()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Product\+::\+Product (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a new \hyperlink{classProduct}{Product} object. 
+
+\mbox{\Hypertarget{classProduct_af5787b56a6be5a1807ceb7999c6adb6a}\label{classProduct_af5787b56a6be5a1807ceb7999c6adb6a}} 
+\index{Product@{Product}!Product@{Product}}
+\index{Product@{Product}!Product@{Product}}
+\subsubsection{\texorpdfstring{Product()}{Product()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Product\+::\+Product (\begin{DoxyParamCaption}\item[{string}]{name,  }\item[{string}]{description,  }\item[{float}]{price,  }\item[{int}]{quantity,  }\item[{float}]{iva,  }\item[{int}]{code,  }\item[{bool}]{m }\end{DoxyParamCaption})}
+
+
+
+Construct a new \hyperlink{classProduct}{Product} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the \hyperlink{classProduct}{Product} to be created \\
+\hline
+{\em description} & The description of the \hyperlink{classProduct}{Product} to be created \\
+\hline
+{\em price} & The price of the \hyperlink{classProduct}{Product} to be created \\
+\hline
+{\em iva} & The iva of the \hyperlink{classProduct}{Product} to be created \\
+\hline
+{\em code} & The code of the \hyperlink{classProduct}{Product} to be created \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classProduct_a2f411b12652a6b7b6194fcdbab3a1fb3}\label{classProduct_a2f411b12652a6b7b6194fcdbab3a1fb3}} 
+\index{Product@{Product}!display@{display}}
+\index{display@{display}!Product@{Product}}
+\subsubsection{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily string Product\+::display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Write product info to string. 
+
+\begin{DoxyReturn}{Returns}
+String with product info. 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classMedicine_a42cabfcd2dd5f04b10e5a01d86f5ee60}{Medicine}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{classProduct_a2f411b12652a6b7b6194fcdbab3a1fb3_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classProduct_ada9a32ed7891875b3ccd8e064aad6492}\label{classProduct_ada9a32ed7891875b3ccd8e064aad6492}} 
+\index{Product@{Product}!get\+Code@{get\+Code}}
+\index{get\+Code@{get\+Code}!Product@{Product}}
+\subsubsection{\texorpdfstring{get\+Code()}{getCode()}}
+{\footnotesize\ttfamily int Product\+::get\+Code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Destroy the \hyperlink{classProduct}{Product} object. 
+
+Get the Code object
+
+\begin{DoxyReturn}{Returns}
+int \hyperlink{classProduct}{Product}\textquotesingle{}s code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProduct_afffde8c14c3bca709543cea274d67e7c}\label{classProduct_afffde8c14c3bca709543cea274d67e7c}} 
+\index{Product@{Product}!get\+Description@{get\+Description}}
+\index{get\+Description@{get\+Description}!Product@{Product}}
+\subsubsection{\texorpdfstring{get\+Description()}{getDescription()}}
+{\footnotesize\ttfamily const string \& Product\+::get\+Description (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the Description object. 
+
+\begin{DoxyReturn}{Returns}
+const string\& \hyperlink{classProduct}{Product}\textquotesingle{}s description 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProduct_a50605c5d457a7400a8dd5a0848480297}\label{classProduct_a50605c5d457a7400a8dd5a0848480297}} 
+\index{Product@{Product}!get\+Iva@{get\+Iva}}
+\index{get\+Iva@{get\+Iva}!Product@{Product}}
+\subsubsection{\texorpdfstring{get\+Iva()}{getIva()}}
+{\footnotesize\ttfamily float Product\+::get\+Iva (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the Iva object. 
+
+\begin{DoxyReturn}{Returns}
+float \hyperlink{classProduct}{Product}\textquotesingle{}s iva 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProduct_a3a703454d7777191ad9282b38bce15e1}\label{classProduct_a3a703454d7777191ad9282b38bce15e1}} 
+\index{Product@{Product}!get\+Medicine@{get\+Medicine}}
+\index{get\+Medicine@{get\+Medicine}!Product@{Product}}
+\subsubsection{\texorpdfstring{get\+Medicine()}{getMedicine()}}
+{\footnotesize\ttfamily bool Product\+::get\+Medicine (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classProduct_acbf3d46720bb1a0d16e49663b73b803d}\label{classProduct_acbf3d46720bb1a0d16e49663b73b803d}} 
+\index{Product@{Product}!get\+Name@{get\+Name}}
+\index{get\+Name@{get\+Name}!Product@{Product}}
+\subsubsection{\texorpdfstring{get\+Name()}{getName()}}
+{\footnotesize\ttfamily const string \& Product\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the Name object. 
+
+\begin{DoxyReturn}{Returns}
+const string\& \hyperlink{classProduct}{Product}\textquotesingle{}s name 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProduct_a0aaea95b8d3241b3758246254b8575e2}\label{classProduct_a0aaea95b8d3241b3758246254b8575e2}} 
+\index{Product@{Product}!get\+Price@{get\+Price}}
+\index{get\+Price@{get\+Price}!Product@{Product}}
+\subsubsection{\texorpdfstring{get\+Price()}{getPrice()}}
+{\footnotesize\ttfamily float Product\+::get\+Price (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the Price object. 
+
+\begin{DoxyReturn}{Returns}
+float \hyperlink{classProduct}{Product}\textquotesingle{}s price 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProduct_a6a449b90b669aa4380d229b44eca686f}\label{classProduct_a6a449b90b669aa4380d229b44eca686f}} 
+\index{Product@{Product}!get\+Quantity@{get\+Quantity}}
+\index{get\+Quantity@{get\+Quantity}!Product@{Product}}
+\subsubsection{\texorpdfstring{get\+Quantity()}{getQuantity()}}
+{\footnotesize\ttfamily int Product\+::get\+Quantity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classProduct_a732aca2574f7a39e3a90837e0240e81f}\label{classProduct_a732aca2574f7a39e3a90837e0240e81f}} 
+\index{Product@{Product}!get\+Total\+Price@{get\+Total\+Price}}
+\index{get\+Total\+Price@{get\+Total\+Price}!Product@{Product}}
+\subsubsection{\texorpdfstring{get\+Total\+Price()}{getTotalPrice()}}
+{\footnotesize\ttfamily float Product\+::get\+Total\+Price (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the Total Price object. 
+
+\begin{DoxyReturn}{Returns}
+float total price of the product with the iva added 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProduct_aa2ccc7b6aa44a0bf10694b18f910dfa1}\label{classProduct_aa2ccc7b6aa44a0bf10694b18f910dfa1}} 
+\index{Product@{Product}!med@{med}}
+\index{med@{med}!Product@{Product}}
+\subsubsection{\texorpdfstring{med()}{med()}}
+{\footnotesize\ttfamily string Product\+::med (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classProduct_add7a6d09de7f21ca5d8a0228461ad6ae}\label{classProduct_add7a6d09de7f21ca5d8a0228461ad6ae}} 
+\index{Product@{Product}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Product@{Product}}
+\subsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool Product\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \hyperlink{classProduct}{Product} \&}]{prod1 }\end{DoxyParamCaption}) const}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{classProduct_add7a6d09de7f21ca5d8a0228461ad6ae_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classProduct_a8e60cf0623449094e3d8672262fe5420}\label{classProduct_a8e60cf0623449094e3d8672262fe5420}} 
+\index{Product@{Product}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Product@{Product}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{os,  }\item[{const \hyperlink{classProduct}{Product} \&}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+prints all the the product\textquotesingle{}s information 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & \\
+\hline
+{\em p} & product \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ostream\& the information 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classProduct_acf4c1bb9d62717e3b2ecaaf7ec5dffd7}\label{classProduct_acf4c1bb9d62717e3b2ecaaf7ec5dffd7}} 
+\index{Product@{Product}!code@{code}}
+\index{code@{code}!Product@{Product}}
+\subsubsection{\texorpdfstring{code}{code}}
+{\footnotesize\ttfamily int Product\+::code\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Iva of the \hyperlink{classProduct}{Product}. 
+
+$<$ \mbox{\Hypertarget{classProduct_ac39d552b24ce60549271a85aea3f5ed0}\label{classProduct_ac39d552b24ce60549271a85aea3f5ed0}} 
+\index{Product@{Product}!description@{description}}
+\index{description@{description}!Product@{Product}}
+\subsubsection{\texorpdfstring{description}{description}}
+{\footnotesize\ttfamily string Product\+::description\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Name of the \hyperlink{classProduct}{Product}. 
+
+$<$ \mbox{\Hypertarget{classProduct_ac772b7a57928ccfdb02309bde2e4fa33}\label{classProduct_ac772b7a57928ccfdb02309bde2e4fa33}} 
+\index{Product@{Product}!iva@{iva}}
+\index{iva@{iva}!Product@{Product}}
+\subsubsection{\texorpdfstring{iva}{iva}}
+{\footnotesize\ttfamily float Product\+::iva\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Price of the \hyperlink{classProduct}{Product}. 
+
+$<$ \mbox{\Hypertarget{classProduct_a2da08ec2fcf6b1d9383e42f6419b3a06}\label{classProduct_a2da08ec2fcf6b1d9383e42f6419b3a06}} 
+\index{Product@{Product}!medicine@{medicine}}
+\index{medicine@{medicine}!Product@{Product}}
+\subsubsection{\texorpdfstring{medicine}{medicine}}
+{\footnotesize\ttfamily bool Product\+::medicine\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Code of the \hyperlink{classProduct}{Product}. 
+
+$<$ \mbox{\Hypertarget{classProduct_acc9bddcf74112d85a6dc231db2269b8d}\label{classProduct_acc9bddcf74112d85a6dc231db2269b8d}} 
+\index{Product@{Product}!name@{name}}
+\index{name@{name}!Product@{Product}}
+\subsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily string Product\+::name\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classProduct_ad1fd6ee6c8653bf81898668b1d01b05d}\label{classProduct_ad1fd6ee6c8653bf81898668b1d01b05d}} 
+\index{Product@{Product}!price@{price}}
+\index{price@{price}!Product@{Product}}
+\subsubsection{\texorpdfstring{price}{price}}
+{\footnotesize\ttfamily float Product\+::price\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Description of the \hyperlink{classProduct}{Product}. 
+
+$<$ \mbox{\Hypertarget{classProduct_a299430b8756aba9f6d44af46831791cc}\label{classProduct_a299430b8756aba9f6d44af46831791cc}} 
+\index{Product@{Product}!quantity@{quantity}}
+\index{quantity@{quantity}!Product@{Product}}
+\subsubsection{\texorpdfstring{quantity}{quantity}}
+{\footnotesize\ttfamily int Product\+::quantity\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Wether or not the \hyperlink{classProduct}{Product} is \hyperlink{classMedicine}{Medicine}. 
+
+$<$ 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{Product_8h}{Product.\+h}\item 
+src/\hyperlink{Product_8cpp}{Product.\+cpp}\end{DoxyCompactItemize}

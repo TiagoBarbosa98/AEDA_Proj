@@ -1,0 +1,252 @@
+\hypertarget{classPrescription}{}\section{Prescription Class Reference}
+\label{classPrescription}\index{Prescription@{Prescription}}
+
+
+\hyperlink{classPrescription}{Prescription} Class that represents a prescription where are stored the number, client, doctor and products os the prescription.  
+
+
+
+
+{\ttfamily \#include $<$Prescription.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPrescription_a8dce6fbdb5b57a18c45de8992bf5d600}{Prescription} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \hyperlink{classPrescription}{Prescription} object. \end{DoxyCompactList}\item 
+\hyperlink{classPrescription_a7be35e4e8ddb08878fd4fcbf308f9d2b}{Prescription} (int \hyperlink{classPrescription_a4b3dcfe55dff479143e63cf7778ffa12}{number}, string \hyperlink{classPrescription_a3a2d122c0229cd7985595cae3ab497c3}{client}, string \hyperlink{classPrescription_abf1e3c58a207e521294815884ffc6682}{doctor}, string \hyperlink{classPrescription_ab9556fbe876105624867e2f360617688}{product})
+\begin{DoxyCompactList}\small\item\em Construct a new \hyperlink{classPrescription}{Prescription} object. \end{DoxyCompactList}\item 
+virtual \hyperlink{classPrescription_a79779a7a4954ae3566411772a5313a88}{$\sim$\+Prescription} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \hyperlink{classPrescription}{Prescription} object. \end{DoxyCompactList}\item 
+int \hyperlink{classPrescription_a6a89f632894bee1e959973d26f0b4cc8}{get\+Number} () const
+\begin{DoxyCompactList}\small\item\em Get the Number object. \end{DoxyCompactList}\item 
+const string \& \hyperlink{classPrescription_aaf2631c310511731d1538b9129b1ad04}{get\+Client} () const
+\begin{DoxyCompactList}\small\item\em Get the \hyperlink{classClient}{Client} object. \end{DoxyCompactList}\item 
+const string \& \hyperlink{classPrescription_aba0ddace1c50e0f708d1f8e427263e0f}{get\+Doctor} () const
+\begin{DoxyCompactList}\small\item\em Get the Doctor object. \end{DoxyCompactList}\item 
+string \hyperlink{classPrescription_aca98893524a101d4b42fd5ef4ea1ed51}{get\+Product} () const
+\item 
+void \hyperlink{classPrescription_a2c0f9433fda32c1ef8d4e96ff3b965b0}{set\+Client} (string c)
+\begin{DoxyCompactList}\small\item\em Sets the client. \end{DoxyCompactList}\item 
+void \hyperlink{classPrescription_ac2623f2ff21c5b0b454913c66e5f40a0}{set\+Dr} (string c)
+\begin{DoxyCompactList}\small\item\em Sets the Doctor. \end{DoxyCompactList}\item 
+void \hyperlink{classPrescription_a2594567d8bbb03cf18710db571c0cb64}{set\+Product} (string c)
+\begin{DoxyCompactList}\small\item\em Sets the \hyperlink{classProduct}{Product}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classPrescription_a4b3dcfe55dff479143e63cf7778ffa12}{number}
+\item 
+string \hyperlink{classPrescription_a3a2d122c0229cd7985595cae3ab497c3}{client}
+\item 
+string \hyperlink{classPrescription_abf1e3c58a207e521294815884ffc6682}{doctor}
+\item 
+string \hyperlink{classPrescription_ab9556fbe876105624867e2f360617688}{product}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+ostream \& \hyperlink{classPrescription_a3daeb997a2f3f9666159cf018d0d1c28}{operator$<$$<$} (ostream \&os, const \hyperlink{classPrescription}{Prescription} \&p)
+\item 
+ostream \& \hyperlink{classPrescription_a3daeb997a2f3f9666159cf018d0d1c28}{operator$<$$<$} (ostream \&os, const \hyperlink{classPrescription}{Prescription} \&p)
+\begin{DoxyCompactList}\small\item\em Overload ostream $<$$<$ operator to write Prescripiton to an outstream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classPrescription}{Prescription} Class that represents a prescription where are stored the number, client, doctor and products os the prescription. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPrescription_a8dce6fbdb5b57a18c45de8992bf5d600}\label{classPrescription_a8dce6fbdb5b57a18c45de8992bf5d600}} 
+\index{Prescription@{Prescription}!Prescription@{Prescription}}
+\index{Prescription@{Prescription}!Prescription@{Prescription}}
+\subsubsection{\texorpdfstring{Prescription()}{Prescription()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Prescription\+::\+Prescription (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a new \hyperlink{classPrescription}{Prescription} object. 
+
+\mbox{\Hypertarget{classPrescription_a7be35e4e8ddb08878fd4fcbf308f9d2b}\label{classPrescription_a7be35e4e8ddb08878fd4fcbf308f9d2b}} 
+\index{Prescription@{Prescription}!Prescription@{Prescription}}
+\index{Prescription@{Prescription}!Prescription@{Prescription}}
+\subsubsection{\texorpdfstring{Prescription()}{Prescription()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Prescription\+::\+Prescription (\begin{DoxyParamCaption}\item[{int}]{number,  }\item[{string}]{client,  }\item[{string}]{doctor,  }\item[{string}]{product }\end{DoxyParamCaption})}
+
+
+
+Construct a new \hyperlink{classPrescription}{Prescription} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em number} & number of the \hyperlink{classPrescription}{Prescription} to be created \\
+\hline
+{\em client} & \hyperlink{classClient}{Client} that owns the prescription to be created \\
+\hline
+{\em doctor} & Doctor that wrote the prescription to be created \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPrescription_a79779a7a4954ae3566411772a5313a88}\label{classPrescription_a79779a7a4954ae3566411772a5313a88}} 
+\index{Prescription@{Prescription}!````~Prescription@{$\sim$\+Prescription}}
+\index{````~Prescription@{$\sim$\+Prescription}!Prescription@{Prescription}}
+\subsubsection{\texorpdfstring{$\sim$\+Prescription()}{~Prescription()}}
+{\footnotesize\ttfamily Prescription\+::$\sim$\+Prescription (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destroy the \hyperlink{classPrescription}{Prescription} object. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classPrescription_aaf2631c310511731d1538b9129b1ad04}\label{classPrescription_aaf2631c310511731d1538b9129b1ad04}} 
+\index{Prescription@{Prescription}!get\+Client@{get\+Client}}
+\index{get\+Client@{get\+Client}!Prescription@{Prescription}}
+\subsubsection{\texorpdfstring{get\+Client()}{getClient()}}
+{\footnotesize\ttfamily const string \& Prescription\+::get\+Client (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the \hyperlink{classClient}{Client} object. 
+
+\begin{DoxyReturn}{Returns}
+const string\& \hyperlink{classPrescription}{Prescription}\textquotesingle{}s \hyperlink{classClient}{Client} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPrescription_aba0ddace1c50e0f708d1f8e427263e0f}\label{classPrescription_aba0ddace1c50e0f708d1f8e427263e0f}} 
+\index{Prescription@{Prescription}!get\+Doctor@{get\+Doctor}}
+\index{get\+Doctor@{get\+Doctor}!Prescription@{Prescription}}
+\subsubsection{\texorpdfstring{get\+Doctor()}{getDoctor()}}
+{\footnotesize\ttfamily const string\& Prescription\+::get\+Doctor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the Doctor object. 
+
+\begin{DoxyReturn}{Returns}
+const string\& \hyperlink{classPrescription}{Prescription}\textquotesingle{}s Doctor 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPrescription_a6a89f632894bee1e959973d26f0b4cc8}\label{classPrescription_a6a89f632894bee1e959973d26f0b4cc8}} 
+\index{Prescription@{Prescription}!get\+Number@{get\+Number}}
+\index{get\+Number@{get\+Number}!Prescription@{Prescription}}
+\subsubsection{\texorpdfstring{get\+Number()}{getNumber()}}
+{\footnotesize\ttfamily int Prescription\+::get\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the Number object. 
+
+\begin{DoxyReturn}{Returns}
+int \hyperlink{classPrescription}{Prescription}\textquotesingle{}s number 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPrescription_aca98893524a101d4b42fd5ef4ea1ed51}\label{classPrescription_aca98893524a101d4b42fd5ef4ea1ed51}} 
+\index{Prescription@{Prescription}!get\+Product@{get\+Product}}
+\index{get\+Product@{get\+Product}!Prescription@{Prescription}}
+\subsubsection{\texorpdfstring{get\+Product()}{getProduct()}}
+{\footnotesize\ttfamily string Prescription\+::get\+Product (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classPrescription_a2c0f9433fda32c1ef8d4e96ff3b965b0}\label{classPrescription_a2c0f9433fda32c1ef8d4e96ff3b965b0}} 
+\index{Prescription@{Prescription}!set\+Client@{set\+Client}}
+\index{set\+Client@{set\+Client}!Prescription@{Prescription}}
+\subsubsection{\texorpdfstring{set\+Client()}{setClient()}}
+{\footnotesize\ttfamily void Prescription\+::set\+Client (\begin{DoxyParamCaption}\item[{string}]{c }\end{DoxyParamCaption})}
+
+
+
+Sets the client. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & \hyperlink{classClient}{Client} Name \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPrescription_ac2623f2ff21c5b0b454913c66e5f40a0}\label{classPrescription_ac2623f2ff21c5b0b454913c66e5f40a0}} 
+\index{Prescription@{Prescription}!set\+Dr@{set\+Dr}}
+\index{set\+Dr@{set\+Dr}!Prescription@{Prescription}}
+\subsubsection{\texorpdfstring{set\+Dr()}{setDr()}}
+{\footnotesize\ttfamily void Prescription\+::set\+Dr (\begin{DoxyParamCaption}\item[{string}]{c }\end{DoxyParamCaption})}
+
+
+
+Sets the Doctor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & Doctor Name \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPrescription_a2594567d8bbb03cf18710db571c0cb64}\label{classPrescription_a2594567d8bbb03cf18710db571c0cb64}} 
+\index{Prescription@{Prescription}!set\+Product@{set\+Product}}
+\index{set\+Product@{set\+Product}!Prescription@{Prescription}}
+\subsubsection{\texorpdfstring{set\+Product()}{setProduct()}}
+{\footnotesize\ttfamily void Prescription\+::set\+Product (\begin{DoxyParamCaption}\item[{string}]{c }\end{DoxyParamCaption})}
+
+
+
+Sets the \hyperlink{classProduct}{Product}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & \hyperlink{classProduct}{Product} Name \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classPrescription_a3daeb997a2f3f9666159cf018d0d1c28}\label{classPrescription_a3daeb997a2f3f9666159cf018d0d1c28}} 
+\index{Prescription@{Prescription}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Prescription@{Prescription}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{os,  }\item[{const \hyperlink{classPrescription}{Prescription} \&}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\Hypertarget{classPrescription_a3daeb997a2f3f9666159cf018d0d1c28}\label{classPrescription_a3daeb997a2f3f9666159cf018d0d1c28}} 
+\index{Prescription@{Prescription}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Prescription@{Prescription}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{os,  }\item[{const \hyperlink{classPrescription}{Prescription} \&}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Overload ostream $<$$<$ operator to write Prescripiton to an outstream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & Outstream\\
+\hline
+{\em p} & \hyperlink{classPrescription}{Prescription} to be written\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Outstream 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classPrescription_a3a2d122c0229cd7985595cae3ab497c3}\label{classPrescription_a3a2d122c0229cd7985595cae3ab497c3}} 
+\index{Prescription@{Prescription}!client@{client}}
+\index{client@{client}!Prescription@{Prescription}}
+\subsubsection{\texorpdfstring{client}{client}}
+{\footnotesize\ttfamily string Prescription\+::client\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPrescription_abf1e3c58a207e521294815884ffc6682}\label{classPrescription_abf1e3c58a207e521294815884ffc6682}} 
+\index{Prescription@{Prescription}!doctor@{doctor}}
+\index{doctor@{doctor}!Prescription@{Prescription}}
+\subsubsection{\texorpdfstring{doctor}{doctor}}
+{\footnotesize\ttfamily string Prescription\+::doctor\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPrescription_a4b3dcfe55dff479143e63cf7778ffa12}\label{classPrescription_a4b3dcfe55dff479143e63cf7778ffa12}} 
+\index{Prescription@{Prescription}!number@{number}}
+\index{number@{number}!Prescription@{Prescription}}
+\subsubsection{\texorpdfstring{number}{number}}
+{\footnotesize\ttfamily int Prescription\+::number\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPrescription_ab9556fbe876105624867e2f360617688}\label{classPrescription_ab9556fbe876105624867e2f360617688}} 
+\index{Prescription@{Prescription}!product@{product}}
+\index{product@{product}!Prescription@{Prescription}}
+\subsubsection{\texorpdfstring{product}{product}}
+{\footnotesize\ttfamily string Prescription\+::product\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{Prescription_8h}{Prescription.\+h}\item 
+src/\hyperlink{Prescription_8cpp}{Prescription.\+cpp}\end{DoxyCompactItemize}

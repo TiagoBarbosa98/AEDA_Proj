@@ -1,0 +1,346 @@
+\hypertarget{classPharmacy}{}\section{Pharmacy Class Reference}
+\label{classPharmacy}\index{Pharmacy@{Pharmacy}}
+
+
+\hyperlink{classPharmacy}{Pharmacy} Class that represents a \hyperlink{classPharmacy}{Pharmacy}.  
+
+
+
+
+{\ttfamily \#include $<$Pharmacy.\+h$>$}
+
+
+
+Inheritance diagram for Pharmacy\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=141pt]{classPharmacy__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Pharmacy\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=141pt]{classPharmacy__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPharmacy_ad12ac7a309d2e77742508ecc7bee4453}{Pharmacy} (string n, string addr, string \hyperlink{classPharmacy_a620e101128be08b27f4401d53cfc39e6}{manager})
+\begin{DoxyCompactList}\small\item\em Staff of the \hyperlink{classPharmacy}{Pharmacy} (all the members working in that \hyperlink{classPharmacy}{Pharmacy}) \end{DoxyCompactList}\item 
+\hyperlink{classPharmacy_adb2b31d515bdf655ac3a952320a09680}{Pharmacy} (string n, string addr, string \hyperlink{classPharmacy_a620e101128be08b27f4401d53cfc39e6}{manager}, vector$<$ \hyperlink{classStaffMember}{Staff\+Member} $>$ sl)
+\begin{DoxyCompactList}\small\item\em Construct a new \hyperlink{classPharmacy}{Pharmacy} object. \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{classStaffMember}{Staff\+Member} $>$ \hyperlink{classPharmacy_a030c21293a003be529663642a6825590}{get\+Staff} () const
+\begin{DoxyCompactList}\small\item\em Get the Staff object. \end{DoxyCompactList}\item 
+string \hyperlink{classPharmacy_acfa4217d82d6276e3e82991fdbb3fd13}{get\+Manager} () const
+\begin{DoxyCompactList}\small\item\em Get the Manager object. \end{DoxyCompactList}\item 
+string \hyperlink{classPharmacy_ac7e9631fe5f7e38e838a83a4118bbbf8}{get\+Info} () const
+\begin{DoxyCompactList}\small\item\em Get the Info object. \end{DoxyCompactList}\item 
+void \hyperlink{classPharmacy_a5c153e1ed72cfd0f824d43a1660c338d}{set\+Manager} (string \hyperlink{classEntity_afb45718695f537c330a463168616c262}{name})
+\begin{DoxyCompactList}\small\item\em Sets the manager variable to a new one. \end{DoxyCompactList}\item 
+void \hyperlink{classPharmacy_ac98f1404e96ea1560824afb612b1cab9}{add\+Staff} (\hyperlink{classStaffMember}{Staff\+Member} s)
+\begin{DoxyCompactList}\small\item\em adds the Staff Member s the vector with all the Staff Members \end{DoxyCompactList}\item 
+void \hyperlink{classPharmacy_ad1af6e62246f3060f922b4479d4d06bf}{remove\+Staff} (\hyperlink{classStaffMember}{Staff\+Member} s)
+\begin{DoxyCompactList}\small\item\em removes the Staff Member s the vector with all the Staff Members \end{DoxyCompactList}\item 
+bool \hyperlink{classPharmacy_acb5226880a626031aab93724949fa0e0}{operator==} (const \hyperlink{classPharmacy}{Pharmacy} \&p) const
+\begin{DoxyCompactList}\small\item\em Compares two pharmacies and. \end{DoxyCompactList}\item 
+void \hyperlink{classPharmacy_abdc810233f809eeab66fce0d443f1ba8}{set\+Staff\+Ph\+To\+None} ()
+\begin{DoxyCompactList}\small\item\em Sets the pharmacy variable of the \hyperlink{classStaffMember}{Staff\+Member} \textquotesingle{}s from this pharmacy to None. Used when deleting a \hyperlink{classPharmacy}{Pharmacy}. \end{DoxyCompactList}\item 
+bool \hyperlink{classPharmacy_a1fe770db0e60d644098750463cb2b8ee}{remove\+Staff} (string \hyperlink{classEntity_afb45718695f537c330a463168616c262}{name})
+\begin{DoxyCompactList}\small\item\em Removes a certain \hyperlink{classStaffMember}{Staff\+Member} from this pharmacy. \end{DoxyCompactList}\item 
+bool \hyperlink{classPharmacy_ababdb13d48f6e2c24e9a954f545bbeef}{contains\+Staff} (string \hyperlink{classEntity_afb45718695f537c330a463168616c262}{name})
+\begin{DoxyCompactList}\small\item\em Checks if a \hyperlink{classStaffMember}{Staff\+Member} with a certain name exists in this \hyperlink{classPharmacy}{Pharmacy}. \end{DoxyCompactList}\item 
+void \hyperlink{classPharmacy_addd2f907762d398ed28dba68eb4eaa66}{show\+Staffs\+Name} ()
+\begin{DoxyCompactList}\small\item\em Displays the names of the \hyperlink{classStaffMember}{Staff\+Member} \textquotesingle{}s from this \hyperlink{classPharmacy}{Pharmacy}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{classPharmacy_a620e101128be08b27f4401d53cfc39e6}{manager}
+\item 
+vector$<$ \hyperlink{classStaffMember}{Staff\+Member} $>$ \hyperlink{classPharmacy_a5b515f5ef98dc2babdc48b8c937688a9}{staff}
+\begin{DoxyCompactList}\small\item\em Manager of the \hyperlink{classPharmacy}{Pharmacy}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+ostream \& \hyperlink{classPharmacy_aa75a7da96c11bdada029ebe3ecb397d6}{operator$<$$<$} (ostream \&os, const \hyperlink{classPharmacy}{Pharmacy} \&p)
+\begin{DoxyCompactList}\small\item\em Overload outstream operator $<$$<$ to write a \hyperlink{classPharmacy}{Pharmacy} to an outstream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classPharmacy}{Pharmacy} Class that represents a \hyperlink{classPharmacy}{Pharmacy}. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPharmacy_ad12ac7a309d2e77742508ecc7bee4453}\label{classPharmacy_ad12ac7a309d2e77742508ecc7bee4453}} 
+\index{Pharmacy@{Pharmacy}!Pharmacy@{Pharmacy}}
+\index{Pharmacy@{Pharmacy}!Pharmacy@{Pharmacy}}
+\subsubsection{\texorpdfstring{Pharmacy()}{Pharmacy()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Pharmacy\+::\+Pharmacy (\begin{DoxyParamCaption}\item[{string}]{n,  }\item[{string}]{addr,  }\item[{string}]{manager }\end{DoxyParamCaption})}
+
+
+
+Staff of the \hyperlink{classPharmacy}{Pharmacy} (all the members working in that \hyperlink{classPharmacy}{Pharmacy}) 
+
+$<$ Construct a new \hyperlink{classPharmacy}{Pharmacy} object
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & The name of the \hyperlink{classPharmacy}{Pharmacy} to be created \\
+\hline
+{\em addr} & The adress of the \hyperlink{classPharmacy}{Pharmacy} to be created \\
+\hline
+{\em manager} & The manager of the \hyperlink{classPharmacy}{Pharmacy} to be created \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPharmacy_adb2b31d515bdf655ac3a952320a09680}\label{classPharmacy_adb2b31d515bdf655ac3a952320a09680}} 
+\index{Pharmacy@{Pharmacy}!Pharmacy@{Pharmacy}}
+\index{Pharmacy@{Pharmacy}!Pharmacy@{Pharmacy}}
+\subsubsection{\texorpdfstring{Pharmacy()}{Pharmacy()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Pharmacy\+::\+Pharmacy (\begin{DoxyParamCaption}\item[{string}]{n,  }\item[{string}]{addr,  }\item[{string}]{manager,  }\item[{vector$<$ \hyperlink{classStaffMember}{Staff\+Member} $>$}]{sl }\end{DoxyParamCaption})}
+
+
+
+Construct a new \hyperlink{classPharmacy}{Pharmacy} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & The name of the \hyperlink{classPharmacy}{Pharmacy} to be created \\
+\hline
+{\em addr} & The adress of the \hyperlink{classPharmacy}{Pharmacy} to be created \\
+\hline
+{\em sl} & All of the staff members of the \hyperlink{classPharmacy}{Pharmacy} to be created \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classPharmacy_ac98f1404e96ea1560824afb612b1cab9}\label{classPharmacy_ac98f1404e96ea1560824afb612b1cab9}} 
+\index{Pharmacy@{Pharmacy}!add\+Staff@{add\+Staff}}
+\index{add\+Staff@{add\+Staff}!Pharmacy@{Pharmacy}}
+\subsubsection{\texorpdfstring{add\+Staff()}{addStaff()}}
+{\footnotesize\ttfamily void Pharmacy\+::add\+Staff (\begin{DoxyParamCaption}\item[{\hyperlink{classStaffMember}{Staff\+Member}}]{s }\end{DoxyParamCaption})}
+
+
+
+adds the Staff Member s the vector with all the Staff Members 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & new Staff Member to be added \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPharmacy_ababdb13d48f6e2c24e9a954f545bbeef}\label{classPharmacy_ababdb13d48f6e2c24e9a954f545bbeef}} 
+\index{Pharmacy@{Pharmacy}!contains\+Staff@{contains\+Staff}}
+\index{contains\+Staff@{contains\+Staff}!Pharmacy@{Pharmacy}}
+\subsubsection{\texorpdfstring{contains\+Staff()}{containsStaff()}}
+{\footnotesize\ttfamily bool Pharmacy\+::contains\+Staff (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})}
+
+
+
+Checks if a \hyperlink{classStaffMember}{Staff\+Member} with a certain name exists in this \hyperlink{classPharmacy}{Pharmacy}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the staff to be checked\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean value of whether it contains the \hyperlink{classStaffMember}{Staff\+Member} or not 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{classPharmacy_ababdb13d48f6e2c24e9a954f545bbeef_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPharmacy_ac7e9631fe5f7e38e838a83a4118bbbf8}\label{classPharmacy_ac7e9631fe5f7e38e838a83a4118bbbf8}} 
+\index{Pharmacy@{Pharmacy}!get\+Info@{get\+Info}}
+\index{get\+Info@{get\+Info}!Pharmacy@{Pharmacy}}
+\subsubsection{\texorpdfstring{get\+Info()}{getInfo()}}
+{\footnotesize\ttfamily string Pharmacy\+::get\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the Info object. 
+
+\begin{DoxyReturn}{Returns}
+string prints all the the \hyperlink{classPharmacy}{Pharmacy}\textquotesingle{}s information 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPharmacy_acfa4217d82d6276e3e82991fdbb3fd13}\label{classPharmacy_acfa4217d82d6276e3e82991fdbb3fd13}} 
+\index{Pharmacy@{Pharmacy}!get\+Manager@{get\+Manager}}
+\index{get\+Manager@{get\+Manager}!Pharmacy@{Pharmacy}}
+\subsubsection{\texorpdfstring{get\+Manager()}{getManager()}}
+{\footnotesize\ttfamily string Pharmacy\+::get\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the Manager object. 
+
+\begin{DoxyReturn}{Returns}
+string the manager of the \hyperlink{classPharmacy}{Pharmacy} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPharmacy_a030c21293a003be529663642a6825590}\label{classPharmacy_a030c21293a003be529663642a6825590}} 
+\index{Pharmacy@{Pharmacy}!get\+Staff@{get\+Staff}}
+\index{get\+Staff@{get\+Staff}!Pharmacy@{Pharmacy}}
+\subsubsection{\texorpdfstring{get\+Staff()}{getStaff()}}
+{\footnotesize\ttfamily vector$<$ \hyperlink{classStaffMember}{Staff\+Member} $>$ Pharmacy\+::get\+Staff (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the Staff object. 
+
+\begin{DoxyReturn}{Returns}
+vector$<$\+Staff\+Member$>$ the staff members of the \hyperlink{classPharmacy}{Pharmacy} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPharmacy_acb5226880a626031aab93724949fa0e0}\label{classPharmacy_acb5226880a626031aab93724949fa0e0}} 
+\index{Pharmacy@{Pharmacy}!operator==@{operator==}}
+\index{operator==@{operator==}!Pharmacy@{Pharmacy}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Pharmacy\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{classPharmacy}{Pharmacy} \&}]{p }\end{DoxyParamCaption}) const}
+
+
+
+Compares two pharmacies and. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & \hyperlink{classPharmacy}{Pharmacy} to be compared with\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean value of whether they\textquotesingle{}re equal or not 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{classPharmacy_acb5226880a626031aab93724949fa0e0_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPharmacy_ad1af6e62246f3060f922b4479d4d06bf}\label{classPharmacy_ad1af6e62246f3060f922b4479d4d06bf}} 
+\index{Pharmacy@{Pharmacy}!remove\+Staff@{remove\+Staff}}
+\index{remove\+Staff@{remove\+Staff}!Pharmacy@{Pharmacy}}
+\subsubsection{\texorpdfstring{remove\+Staff()}{removeStaff()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Pharmacy\+::remove\+Staff (\begin{DoxyParamCaption}\item[{\hyperlink{classStaffMember}{Staff\+Member}}]{s }\end{DoxyParamCaption})}
+
+
+
+removes the Staff Member s the vector with all the Staff Members 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & Staff Member to be removed \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPharmacy_a1fe770db0e60d644098750463cb2b8ee}\label{classPharmacy_a1fe770db0e60d644098750463cb2b8ee}} 
+\index{Pharmacy@{Pharmacy}!remove\+Staff@{remove\+Staff}}
+\index{remove\+Staff@{remove\+Staff}!Pharmacy@{Pharmacy}}
+\subsubsection{\texorpdfstring{remove\+Staff()}{removeStaff()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Pharmacy\+::remove\+Staff (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})}
+
+
+
+Removes a certain \hyperlink{classStaffMember}{Staff\+Member} from this pharmacy. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the staff to be removed\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean value of whether it was removed or not 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPharmacy_a5c153e1ed72cfd0f824d43a1660c338d}\label{classPharmacy_a5c153e1ed72cfd0f824d43a1660c338d}} 
+\index{Pharmacy@{Pharmacy}!set\+Manager@{set\+Manager}}
+\index{set\+Manager@{set\+Manager}!Pharmacy@{Pharmacy}}
+\subsubsection{\texorpdfstring{set\+Manager()}{setManager()}}
+{\footnotesize\ttfamily void Pharmacy\+::set\+Manager (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})}
+
+
+
+Sets the manager variable to a new one. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the new manager \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{classPharmacy_a5c153e1ed72cfd0f824d43a1660c338d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPharmacy_abdc810233f809eeab66fce0d443f1ba8}\label{classPharmacy_abdc810233f809eeab66fce0d443f1ba8}} 
+\index{Pharmacy@{Pharmacy}!set\+Staff\+Ph\+To\+None@{set\+Staff\+Ph\+To\+None}}
+\index{set\+Staff\+Ph\+To\+None@{set\+Staff\+Ph\+To\+None}!Pharmacy@{Pharmacy}}
+\subsubsection{\texorpdfstring{set\+Staff\+Ph\+To\+None()}{setStaffPhToNone()}}
+{\footnotesize\ttfamily void Pharmacy\+::set\+Staff\+Ph\+To\+None (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Sets the pharmacy variable of the \hyperlink{classStaffMember}{Staff\+Member} \textquotesingle{}s from this pharmacy to None. Used when deleting a \hyperlink{classPharmacy}{Pharmacy}. 
+
+\mbox{\Hypertarget{classPharmacy_addd2f907762d398ed28dba68eb4eaa66}\label{classPharmacy_addd2f907762d398ed28dba68eb4eaa66}} 
+\index{Pharmacy@{Pharmacy}!show\+Staffs\+Name@{show\+Staffs\+Name}}
+\index{show\+Staffs\+Name@{show\+Staffs\+Name}!Pharmacy@{Pharmacy}}
+\subsubsection{\texorpdfstring{show\+Staffs\+Name()}{showStaffsName()}}
+{\footnotesize\ttfamily void Pharmacy\+::show\+Staffs\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Displays the names of the \hyperlink{classStaffMember}{Staff\+Member} \textquotesingle{}s from this \hyperlink{classPharmacy}{Pharmacy}. 
+
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classPharmacy_aa75a7da96c11bdada029ebe3ecb397d6}\label{classPharmacy_aa75a7da96c11bdada029ebe3ecb397d6}} 
+\index{Pharmacy@{Pharmacy}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Pharmacy@{Pharmacy}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{os,  }\item[{const \hyperlink{classPharmacy}{Pharmacy} \&}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Overload outstream operator $<$$<$ to write a \hyperlink{classPharmacy}{Pharmacy} to an outstream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & Outstream\\
+\hline
+{\em p} & \hyperlink{classPharmacy}{Pharmacy} to be written\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Outstream 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classPharmacy_a620e101128be08b27f4401d53cfc39e6}\label{classPharmacy_a620e101128be08b27f4401d53cfc39e6}} 
+\index{Pharmacy@{Pharmacy}!manager@{manager}}
+\index{manager@{manager}!Pharmacy@{Pharmacy}}
+\subsubsection{\texorpdfstring{manager}{manager}}
+{\footnotesize\ttfamily string Pharmacy\+::manager\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPharmacy_a5b515f5ef98dc2babdc48b8c937688a9}\label{classPharmacy_a5b515f5ef98dc2babdc48b8c937688a9}} 
+\index{Pharmacy@{Pharmacy}!staff@{staff}}
+\index{staff@{staff}!Pharmacy@{Pharmacy}}
+\subsubsection{\texorpdfstring{staff}{staff}}
+{\footnotesize\ttfamily vector$<$\hyperlink{classStaffMember}{Staff\+Member}$>$ Pharmacy\+::staff\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Manager of the \hyperlink{classPharmacy}{Pharmacy}. 
+
+$<$ 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{Pharmacy_8h}{Pharmacy.\+h}\item 
+src/\hyperlink{Pharmacy_8cpp}{Pharmacy.\+cpp}\end{DoxyCompactItemize}

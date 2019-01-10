@@ -1,0 +1,1122 @@
+\hypertarget{classDataBase}{}\section{Data\+Base Class Reference}
+\label{classDataBase}\index{Data\+Base@{Data\+Base}}
+
+
+Class containing all the general information and data structures about the other classes.  
+
+
+
+
+{\ttfamily \#include $<$Data\+Base.\+h$>$}
+
+
+
+Collaboration diagram for Data\+Base\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDataBase__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{classDataBase_ad34d05002555ed7e109fdcfdfbeb70b8}{parsestr} (string in)
+\begin{DoxyCompactList}\small\item\em priority queue for the products \end{DoxyCompactList}\item 
+void \hyperlink{classDataBase_a6255a0d9489dee6c6de802bcfff2d19e}{less\+Products\+Than} ()
+\begin{DoxyCompactList}\small\item\em Checks and displays if there is a product with less products. \end{DoxyCompactList}\item 
+bool \hyperlink{classDataBase_a780ad993953bd70eaee64df86d0f1974}{remove\+Quantity} (string name, int quantity)
+\item 
+\hyperlink{classDataBase_a9fbd4936704ce4de391f92e92a072074}{Data\+Base} ()
+\begin{DoxyCompactList}\small\item\em Constructs the \hyperlink{classDataBase}{Data\+Base} object. \end{DoxyCompactList}\item 
+\hyperlink{classDataBase_a5a9bd40e9026abb30082e3d0590054d4}{Data\+Base} (string prod\+File, string cli\+File, string pharm\+File, string \hyperlink{classDataBase_a2f564a52132d74186314695a7a0e3270}{staff\+File})
+\begin{DoxyCompactList}\small\item\em Constructs the object. \end{DoxyCompactList}\item 
+\hyperlink{classDataBase_a5e9a28cc8e7c0d468c8f5bbeaad3a594}{Data\+Base} (string \hyperlink{classDataBase_a24acb8bdda9293336f40a4b08741235e}{products\+File}, string \hyperlink{classDataBase_a7b52741a2183b8b3eba86534d02782e6}{clients\+File}, string \hyperlink{classDataBase_aa52765a56e1fefddb5b1cf638de3493e}{pharmacies\+File}, string \hyperlink{classDataBase_a2f564a52132d74186314695a7a0e3270}{staff\+File}, string \hyperlink{classDataBase_a8b16f4814de788f12e96163255aaa737}{sales\+File}, string \hyperlink{classDataBase_a7649e7e3eda974285c99e78c23829334}{presc\+File})
+\begin{DoxyCompactList}\small\item\em Constructs the object. \end{DoxyCompactList}\item 
+virtual \hyperlink{classDataBase_a9d4629e705ccaa4897e9650222a2a648}{$\sim$\+Data\+Base} ()
+\item 
+vector$<$ \hyperlink{classSale}{Sale} $>$ \hyperlink{classDataBase_a0c0c3efb8ee0d6e1a4b2d97b8d35feeb}{get\+Sales} ()
+\begin{DoxyCompactList}\small\item\em Gets clients vector. \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{classClient}{Client} $>$ \hyperlink{classDataBase_a9ad743bfac0c4b7b4a6f2eaa1d4e8160}{get\+Clients} () const
+\item 
+vector$<$ \hyperlink{classPharmacy}{Pharmacy} $>$ \hyperlink{classDataBase_a5c7fcbdcc70d9ac4e27188d39b8c9e1a}{get\+Pharmacies} () const
+\begin{DoxyCompactList}\small\item\em Gets pharmacies vector. \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{classPrescription}{Prescription} $>$ \hyperlink{classDataBase_a2c08363a2f1360996983fdd89760af37}{get\+Prescriptions} () const
+\begin{DoxyCompactList}\small\item\em Gets products vector. \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{classStaffMember}{Staff\+Member} $>$ \hyperlink{classDataBase_ad44eb614d0001979c6036e57af6b9e06}{get\+Staff} () const
+\begin{DoxyCompactList}\small\item\em Gets staff vector. \end{DoxyCompactList}\item 
+void \hyperlink{classDataBase_a1eebe53a8f3c83af5d75d3a83590ca01}{add\+Client} ()
+\item 
+void \hyperlink{classDataBase_a4a6fca7606a5734e623a3d8ea7c00fa4}{add\+Pharmacy} ()
+\item 
+void \hyperlink{classDataBase_aed28994adfb33442ffd3469496150da8}{add\+Staff\+Member} ()
+\item 
+void \hyperlink{classDataBase_a0fb00cab402248ffba3903cc1f19f6c2}{add\+Sale} ()
+\item 
+void \hyperlink{classDataBase_a82e38546b8cb54beffd3185a13a838aa}{add\+Prescription} ()
+\item 
+void \hyperlink{classDataBase_a654216132c946bdb05ec4ae866302259}{add\+Product} ()
+\item 
+void \hyperlink{classDataBase_a6be2328441f5fe20086a4f8b0002adee}{remove\+Product} ()
+\item 
+void \hyperlink{classDataBase_adba6b4fad6dcb329aae27d8f610edaac}{remove\+Sale} ()
+\item 
+void \hyperlink{classDataBase_a9fb1b3625b3431d09b4b64a13bbb1e0f}{remove\+Client} ()
+\item 
+void \hyperlink{classDataBase_af923ee9db26814bf9413afe95262a01d}{remove\+Pharmacy} ()
+\item 
+void \hyperlink{classDataBase_a26ab8f3d2cb6d78a5105e72c2377c21c}{remove\+Staff\+Member} ()
+\item 
+void \hyperlink{classDataBase_af4762294e1b25415f7de88f0e8d6d90f}{show\+All\+Clients} ()
+\item 
+void \hyperlink{classDataBase_ab00290f55389cd62d8ee5594ecf9a6b5}{show\+All\+Pharmacies} ()
+\item 
+void \hyperlink{classDataBase_aa1d2ae05f581ec45eb8da06e468aec30}{show\+All\+Staff} ()
+\item 
+void \hyperlink{classDataBase_abf8a64bd81ce3207862b0105d52f646f}{show\+All\+Sales} ()
+\item 
+void \hyperlink{classDataBase_a40a951f6f2c923ca315655956ab8e196}{show\+All\+Prescriptions} ()
+\item 
+void \hyperlink{classDataBase_a74dcc435917c328bd89aaf5fd3cb804d}{show\+All\+Products} ()
+\item 
+void \hyperlink{classDataBase_a32341ca202561239807fb5b3a1f96d13}{read\+Products\+File} ()
+\item 
+\hyperlink{classProduct}{Product} \hyperlink{classDataBase_ae83d4c612ff8d93b69ab1c05345cd62c}{get\+Product\+By\+Name} (string name)
+\item 
+void \hyperlink{classDataBase_a514959070d22346ea7ee212e51cab89f}{open\+Clients\+File} ()
+\item 
+void \hyperlink{classDataBase_a30cd564502803b00dbe575b0bd9376e6}{open\+Pharmacies\+File} ()
+\item 
+void \hyperlink{classDataBase_a22f0ad79cc0d695ac5c4cfb3c556f920}{open\+Staff\+File} ()
+\item 
+void \hyperlink{classDataBase_abcf98b385e2a76f71b602e791699dbb3}{open\+Products\+File} ()
+\item 
+void \hyperlink{classDataBase_a5b7842d4ca431e2edb592fadc16da4c6}{open\+Sales\+File} ()
+\item 
+void \hyperlink{classDataBase_a10c16844e17eae108e828390a92fb3b8}{open\+Prescription\+File} ()
+\item 
+void \hyperlink{classDataBase_a4d855ccf967f4f741646100d2c890ede}{write\+To\+Clients\+File} ()
+\item 
+void \hyperlink{classDataBase_aef0dc00d9d40159c361518e60e78f857}{write\+To\+Pharmacies\+File} ()
+\item 
+void \hyperlink{classDataBase_abc8c8d3116c6b3422d87ae781ba91538}{write\+To\+Staff\+File} ()
+\item 
+void \hyperlink{classDataBase_a62cb54f7bbcd213d71f604003298cd95}{write\+To\+Sales\+File} ()
+\item 
+void \hyperlink{classDataBase_a108ba0eb315d14ed6bc7181b98499318}{write\+To\+Products\+File} ()
+\item 
+void \hyperlink{classDataBase_a1435e1728598586503f199981b84a933}{write\+To\+Prescription\+File} ()
+\item 
+string \hyperlink{classDataBase_aa7cfe42e76e1d57c0adfb82d0c82f96e}{parse} (string in)
+\item 
+string \hyperlink{classDataBase_ae547604cf1c5a0c937139928a3a700b5}{parse\+Staff} (string in)
+\item 
+string \hyperlink{classDataBase_a5310a888c5c94fc87135b5cf8b9267f5}{parse\+Product\+Sale} (string sale)
+\item 
+string \hyperlink{classDataBase_ab0744d4be63a6db44fdcf21c22d61914}{parse\+Product} (string in)
+\item 
+\hyperlink{classStaffMember}{Staff\+Member} $\ast$ \hyperlink{classDataBase_af3c7f6a88b927dbd01b34121eefabe4d}{get\+StaffM} (string name)
+\begin{DoxyCompactList}\small\item\em Gets the staff Member with name name. \end{DoxyCompactList}\item 
+\hyperlink{classSale}{Sale} \hyperlink{classDataBase_af233d5e69141c780d6a7946b1810a7a6}{get\+Sale} (unsigned int code)
+\begin{DoxyCompactList}\small\item\em Gets the sala with code code. \end{DoxyCompactList}\item 
+tm \hyperlink{classDataBase_aa63ea6b1a96135acd1839ae9a0983d3f}{parse\+Date} (string in)
+\item 
+void \hyperlink{classDataBase_a0bf85b7fb0feb4fb1f6888ba58ebe2b2}{write\+To\+Sales} (string file\+Name)
+\begin{DoxyCompactList}\small\item\em Writes the info saved in the \hyperlink{classDataBase}{Data\+Base} to the Sales file. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\void \hyperlink{classDataBase_a136d789db1f6c1cd615dc1bdbe27557b}{write\+To\+FileW} (string file\+Name, vector$<$ T $>$ v)
+\item 
+void \hyperlink{classDataBase_aec542d0eb4b2c2d44abe5cefd25d2057}{write\+To\+Products\+File2} (string file\+Name)
+\item 
+void \hyperlink{classDataBase_a0c83992321a456f8fa097ea5bbf4a093}{show\+All\+ClientsA} ()
+\begin{DoxyCompactList}\small\item\em Displays all the clients in the \hyperlink{classDataBase}{Data\+Base}. \end{DoxyCompactList}\item 
+void \hyperlink{classDataBase_a2016794a78b86df19676ea9aba3114bc}{show\+Clients\+By\+District} ()
+\begin{DoxyCompactList}\small\item\em Displays all clients from a specific district. \end{DoxyCompactList}\item 
+void \hyperlink{classDataBase_aa613181e1960fa22305feae26560960b}{get\+Client\+Info} ()
+\begin{DoxyCompactList}\small\item\em Displays the client with specific id info. \end{DoxyCompactList}\item 
+\hyperlink{classClient}{Client} \hyperlink{classDataBase_a8575c65a7f0d76352e4b37604562fbc2}{client\+Exists} (unsigned int nc)
+\begin{DoxyCompactList}\small\item\em Looks for a \hyperlink{classClient}{Client} in the \hyperlink{classDataBase}{Data\+Base} with specific id and returns it. \end{DoxyCompactList}\item 
+void \hyperlink{classDataBase_ab87e9a50f26c934790774b0bf0d62a51}{show\+Clients\+With\+Most\+Purchases} ()
+\begin{DoxyCompactList}\small\item\em Displays the clients on the top 3 of most purchases made. \end{DoxyCompactList}\item 
+void \hyperlink{classDataBase_aecde8e08249b522ff9431c9feed57996}{assign\+Staff} (vector$<$ \hyperlink{classStaffMember}{Staff\+Member} $>$ members)
+\begin{DoxyCompactList}\small\item\em Asks the user to assign some \hyperlink{classStaffMember}{Staff\+Member} \textquotesingle{}s to existing \hyperlink{classPharmacy}{Pharmacy} \textquotesingle{}s. \end{DoxyCompactList}\item 
+void \hyperlink{classDataBase_a28237a8f74d11c092cf250d17c7997f1}{assign\+Staff\+With\+No\+Ph} ()
+\begin{DoxyCompactList}\small\item\em Asks the user to assign all \hyperlink{classStaffMember}{Staff\+Member} \textquotesingle{}s in the \hyperlink{classDataBase}{Data\+Base} with no \hyperlink{classPharmacy}{Pharmacy} assigned. \end{DoxyCompactList}\item 
+void \hyperlink{classDataBase_ab17fba12d1810b3548615b3ac0427850}{show\+Staff\+Without\+Ph} ()
+\begin{DoxyCompactList}\small\item\em Displays all \hyperlink{classStaffMember}{Staff\+Member} \textquotesingle{}s in the \hyperlink{classDataBase}{Data\+Base} with no \hyperlink{classPharmacy}{Pharmacy} assigned. \end{DoxyCompactList}\item 
+string \hyperlink{classDataBase_a33b218c5674029a4696a44d710f88aa6}{check\+Ph\+Name} ()
+\begin{DoxyCompactList}\small\item\em Keeps asking the user for the name of a \hyperlink{classPharmacy}{Pharmacy} until an existing one is given. \end{DoxyCompactList}\item 
+void \hyperlink{classDataBase_ac572ac9a3091e0adcef16ab79bfba7fb}{show\+Pharmacies\+Names} ()
+\begin{DoxyCompactList}\small\item\em Displays the names of the pharmacies available in the DB. \end{DoxyCompactList}\item 
+void \hyperlink{classDataBase_a9704dec1b0797bf3f6dc18a754a4a1b5}{change\+Pharmacy\+Info} ()
+\begin{DoxyCompactList}\small\item\em Asks the user edit a \hyperlink{classPharmacy}{Pharmacy} \textquotesingle{}s info. \end{DoxyCompactList}\item 
+void \hyperlink{classDataBase_a79dbf45f9b1a60fd5a29505f44e188e0}{remove\+StaffM} (string name)
+\begin{DoxyCompactList}\small\item\em Searches through pharmacies vector and removes the \hyperlink{classStaffMember}{Staff\+Member} with a specific name from one of those pharmacies. \end{DoxyCompactList}\item 
+void \hyperlink{classDataBase_a85445c22323399e318780faf36854c2f}{staff\+Ph\+To\+None} (string name)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{classDataBase_a7649e7e3eda974285c99e78c23829334}{presc\+File}
+\item 
+string \hyperlink{classDataBase_a24acb8bdda9293336f40a4b08741235e}{products\+File}
+\item 
+string \hyperlink{classDataBase_a7b52741a2183b8b3eba86534d02782e6}{clients\+File}
+\item 
+string \hyperlink{classDataBase_aa52765a56e1fefddb5b1cf638de3493e}{pharmacies\+File}
+\item 
+string \hyperlink{classDataBase_a2f564a52132d74186314695a7a0e3270}{staff\+File}
+\item 
+string \hyperlink{classDataBase_a8b16f4814de788f12e96163255aaa737}{sales\+File}
+\item 
+\hyperlink{DataBase_8h_a309f0ca910338932f751c46c6e5ccbbc}{files\+HT} \hyperlink{classDataBase_a576f0eac012d39fffb1064a5ea27ad08}{files}
+\begin{DoxyCompactList}\small\item\em files names \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{classClient}{Client} $>$ \hyperlink{classDataBase_aa5f93e5229c216c200681b551db2db77}{clients}
+\item 
+vector$<$ \hyperlink{classPharmacy}{Pharmacy} $>$ \hyperlink{classDataBase_ada5f113e22144b1b28775557e2a10f08}{pharmacies}
+\begin{DoxyCompactList}\small\item\em vector for clients \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{classStaffMember}{Staff\+Member} $>$ \hyperlink{classDataBase_a74729cf98d5b60cc2bfbac6c0fa00229}{staff}
+\begin{DoxyCompactList}\small\item\em vector for pharmacies \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{classPrescription}{Prescription} $>$ \hyperlink{classDataBase_a592b7e885d6708309c298406db68c505}{prescriptions}
+\begin{DoxyCompactList}\small\item\em vector for staff \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{classSale}{Sale} $>$ \hyperlink{classDataBase_a4e48e9c0e840c7f9febf3344c5a003ba}{sales}
+\begin{DoxyCompactList}\small\item\em vector for prescriptions \end{DoxyCompactList}\item 
+\hyperlink{classBST}{B\+ST}$<$ \hyperlink{classClient}{Client} $>$ \hyperlink{classDataBase_a9b3973c4282ee24f7769f4f735b4b898}{clientsA}
+\begin{DoxyCompactList}\small\item\em vector for sales \end{DoxyCompactList}\item 
+priority\+\_\+queue$<$ \hyperlink{classProduct}{Product} $>$ \hyperlink{classDataBase_a83dd84eb12b869e3e585fe965c414eef}{products}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classBST}{B\+ST} for the clients. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class containing all the general information and data structures about the other classes. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDataBase_a9fbd4936704ce4de391f92e92a072074}\label{classDataBase_a9fbd4936704ce4de391f92e92a072074}} 
+\index{Data\+Base@{Data\+Base}!Data\+Base@{Data\+Base}}
+\index{Data\+Base@{Data\+Base}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{Data\+Base()}{DataBase()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Data\+Base\+::\+Data\+Base (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructs the \hyperlink{classDataBase}{Data\+Base} object. 
+
+\mbox{\Hypertarget{classDataBase_a5a9bd40e9026abb30082e3d0590054d4}\label{classDataBase_a5a9bd40e9026abb30082e3d0590054d4}} 
+\index{Data\+Base@{Data\+Base}!Data\+Base@{Data\+Base}}
+\index{Data\+Base@{Data\+Base}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{Data\+Base()}{DataBase()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Data\+Base\+::\+Data\+Base (\begin{DoxyParamCaption}\item[{string}]{prod\+File,  }\item[{string}]{cli\+File,  }\item[{string}]{pharm\+File,  }\item[{string}]{staff\+File }\end{DoxyParamCaption})}
+
+
+
+Constructs the object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em prod\+File} & products File\\
+\hline
+{\em cli\+File} & clients File\\
+\hline
+{\em pharm\+File} & pharmacies File\\
+\hline
+{\em staff\+File} & staff File \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDataBase_a5e9a28cc8e7c0d468c8f5bbeaad3a594}\label{classDataBase_a5e9a28cc8e7c0d468c8f5bbeaad3a594}} 
+\index{Data\+Base@{Data\+Base}!Data\+Base@{Data\+Base}}
+\index{Data\+Base@{Data\+Base}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{Data\+Base()}{DataBase()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Data\+Base\+::\+Data\+Base (\begin{DoxyParamCaption}\item[{string}]{products\+File,  }\item[{string}]{clients\+File,  }\item[{string}]{pharmacies\+File,  }\item[{string}]{staff\+File,  }\item[{string}]{sales\+File,  }\item[{string}]{presc\+File }\end{DoxyParamCaption})}
+
+
+
+Constructs the object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em products\+File} & products File\\
+\hline
+{\em clients\+File} & clients File\\
+\hline
+{\em pharmacies\+File} & pharmacies File\\
+\hline
+{\em staff\+File} & staff File\\
+\hline
+{\em sales\+File} & sales File\\
+\hline
+{\em presc\+File} & prescriptions File \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDataBase_a5e9a28cc8e7c0d468c8f5bbeaad3a594_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDataBase_a9d4629e705ccaa4897e9650222a2a648}\label{classDataBase_a9d4629e705ccaa4897e9650222a2a648}} 
+\index{Data\+Base@{Data\+Base}!````~Data\+Base@{$\sim$\+Data\+Base}}
+\index{````~Data\+Base@{$\sim$\+Data\+Base}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{$\sim$\+Data\+Base()}{~DataBase()}}
+{\footnotesize\ttfamily Data\+Base\+::$\sim$\+Data\+Base (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classDataBase_a1eebe53a8f3c83af5d75d3a83590ca01}\label{classDataBase_a1eebe53a8f3c83af5d75d3a83590ca01}} 
+\index{Data\+Base@{Data\+Base}!add\+Client@{add\+Client}}
+\index{add\+Client@{add\+Client}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{add\+Client()}{addClient()}}
+{\footnotesize\ttfamily void Data\+Base\+::add\+Client (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=289pt]{classDataBase_a1eebe53a8f3c83af5d75d3a83590ca01_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDataBase_a4a6fca7606a5734e623a3d8ea7c00fa4}\label{classDataBase_a4a6fca7606a5734e623a3d8ea7c00fa4}} 
+\index{Data\+Base@{Data\+Base}!add\+Pharmacy@{add\+Pharmacy}}
+\index{add\+Pharmacy@{add\+Pharmacy}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{add\+Pharmacy()}{addPharmacy()}}
+{\footnotesize\ttfamily void Data\+Base\+::add\+Pharmacy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDataBase_a82e38546b8cb54beffd3185a13a838aa}\label{classDataBase_a82e38546b8cb54beffd3185a13a838aa}} 
+\index{Data\+Base@{Data\+Base}!add\+Prescription@{add\+Prescription}}
+\index{add\+Prescription@{add\+Prescription}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{add\+Prescription()}{addPrescription()}}
+{\footnotesize\ttfamily void Data\+Base\+::add\+Prescription (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDataBase_a654216132c946bdb05ec4ae866302259}\label{classDataBase_a654216132c946bdb05ec4ae866302259}} 
+\index{Data\+Base@{Data\+Base}!add\+Product@{add\+Product}}
+\index{add\+Product@{add\+Product}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{add\+Product()}{addProduct()}}
+{\footnotesize\ttfamily void Data\+Base\+::add\+Product (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDataBase_a0fb00cab402248ffba3903cc1f19f6c2}\label{classDataBase_a0fb00cab402248ffba3903cc1f19f6c2}} 
+\index{Data\+Base@{Data\+Base}!add\+Sale@{add\+Sale}}
+\index{add\+Sale@{add\+Sale}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{add\+Sale()}{addSale()}}
+{\footnotesize\ttfamily void Data\+Base\+::add\+Sale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDataBase_a0fb00cab402248ffba3903cc1f19f6c2_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDataBase_aed28994adfb33442ffd3469496150da8}\label{classDataBase_aed28994adfb33442ffd3469496150da8}} 
+\index{Data\+Base@{Data\+Base}!add\+Staff\+Member@{add\+Staff\+Member}}
+\index{add\+Staff\+Member@{add\+Staff\+Member}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{add\+Staff\+Member()}{addStaffMember()}}
+{\footnotesize\ttfamily void Data\+Base\+::add\+Staff\+Member (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDataBase_aed28994adfb33442ffd3469496150da8_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDataBase_aecde8e08249b522ff9431c9feed57996}\label{classDataBase_aecde8e08249b522ff9431c9feed57996}} 
+\index{Data\+Base@{Data\+Base}!assign\+Staff@{assign\+Staff}}
+\index{assign\+Staff@{assign\+Staff}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{assign\+Staff()}{assignStaff()}}
+{\footnotesize\ttfamily void Data\+Base\+::assign\+Staff (\begin{DoxyParamCaption}\item[{vector$<$ \hyperlink{classStaffMember}{Staff\+Member} $>$}]{members }\end{DoxyParamCaption})}
+
+
+
+Asks the user to assign some \hyperlink{classStaffMember}{Staff\+Member} \textquotesingle{}s to existing \hyperlink{classPharmacy}{Pharmacy} \textquotesingle{}s. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em members} & Vector containing the \hyperlink{classStaffMember}{Staff\+Member} \textquotesingle{}s to be assigned \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDataBase_aecde8e08249b522ff9431c9feed57996_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDataBase_a28237a8f74d11c092cf250d17c7997f1}\label{classDataBase_a28237a8f74d11c092cf250d17c7997f1}} 
+\index{Data\+Base@{Data\+Base}!assign\+Staff\+With\+No\+Ph@{assign\+Staff\+With\+No\+Ph}}
+\index{assign\+Staff\+With\+No\+Ph@{assign\+Staff\+With\+No\+Ph}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{assign\+Staff\+With\+No\+Ph()}{assignStaffWithNoPh()}}
+{\footnotesize\ttfamily void Data\+Base\+::assign\+Staff\+With\+No\+Ph (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Asks the user to assign all \hyperlink{classStaffMember}{Staff\+Member} \textquotesingle{}s in the \hyperlink{classDataBase}{Data\+Base} with no \hyperlink{classPharmacy}{Pharmacy} assigned. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDataBase_a28237a8f74d11c092cf250d17c7997f1_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDataBase_a9704dec1b0797bf3f6dc18a754a4a1b5}\label{classDataBase_a9704dec1b0797bf3f6dc18a754a4a1b5}} 
+\index{Data\+Base@{Data\+Base}!change\+Pharmacy\+Info@{change\+Pharmacy\+Info}}
+\index{change\+Pharmacy\+Info@{change\+Pharmacy\+Info}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{change\+Pharmacy\+Info()}{changePharmacyInfo()}}
+{\footnotesize\ttfamily void Data\+Base\+::change\+Pharmacy\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Asks the user edit a \hyperlink{classPharmacy}{Pharmacy} \textquotesingle{}s info. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDataBase_a9704dec1b0797bf3f6dc18a754a4a1b5_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDataBase_a33b218c5674029a4696a44d710f88aa6}\label{classDataBase_a33b218c5674029a4696a44d710f88aa6}} 
+\index{Data\+Base@{Data\+Base}!check\+Ph\+Name@{check\+Ph\+Name}}
+\index{check\+Ph\+Name@{check\+Ph\+Name}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{check\+Ph\+Name()}{checkPhName()}}
+{\footnotesize\ttfamily string Data\+Base\+::check\+Ph\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Keeps asking the user for the name of a \hyperlink{classPharmacy}{Pharmacy} until an existing one is given. 
+
+return String with an existing \hyperlink{classPharmacy}{Pharmacy} name \mbox{\Hypertarget{classDataBase_a8575c65a7f0d76352e4b37604562fbc2}\label{classDataBase_a8575c65a7f0d76352e4b37604562fbc2}} 
+\index{Data\+Base@{Data\+Base}!client\+Exists@{client\+Exists}}
+\index{client\+Exists@{client\+Exists}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{client\+Exists()}{clientExists()}}
+{\footnotesize\ttfamily \hyperlink{classClient}{Client} Data\+Base\+::client\+Exists (\begin{DoxyParamCaption}\item[{unsigned int}]{nc }\end{DoxyParamCaption})}
+
+
+
+Looks for a \hyperlink{classClient}{Client} in the \hyperlink{classDataBase}{Data\+Base} with specific id and returns it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nc} & Id of the \hyperlink{classClient}{Client}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{classClient}{Client} object we want to get 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{classDataBase_a8575c65a7f0d76352e4b37604562fbc2_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDataBase_aa613181e1960fa22305feae26560960b}\label{classDataBase_aa613181e1960fa22305feae26560960b}} 
+\index{Data\+Base@{Data\+Base}!get\+Client\+Info@{get\+Client\+Info}}
+\index{get\+Client\+Info@{get\+Client\+Info}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{get\+Client\+Info()}{getClientInfo()}}
+{\footnotesize\ttfamily void Data\+Base\+::get\+Client\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Displays the client with specific id info. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nc} & Id of the client \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDataBase_aa613181e1960fa22305feae26560960b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDataBase_a9ad743bfac0c4b7b4a6f2eaa1d4e8160}\label{classDataBase_a9ad743bfac0c4b7b4a6f2eaa1d4e8160}} 
+\index{Data\+Base@{Data\+Base}!get\+Clients@{get\+Clients}}
+\index{get\+Clients@{get\+Clients}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{get\+Clients()}{getClients()}}
+{\footnotesize\ttfamily vector$<$ \hyperlink{classClient}{Client} $>$ Data\+Base\+::get\+Clients (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classDataBase_a5c7fcbdcc70d9ac4e27188d39b8c9e1a}\label{classDataBase_a5c7fcbdcc70d9ac4e27188d39b8c9e1a}} 
+\index{Data\+Base@{Data\+Base}!get\+Pharmacies@{get\+Pharmacies}}
+\index{get\+Pharmacies@{get\+Pharmacies}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{get\+Pharmacies()}{getPharmacies()}}
+{\footnotesize\ttfamily vector$<$ \hyperlink{classPharmacy}{Pharmacy} $>$ Data\+Base\+::get\+Pharmacies (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets pharmacies vector. 
+
+\mbox{\Hypertarget{classDataBase_a2c08363a2f1360996983fdd89760af37}\label{classDataBase_a2c08363a2f1360996983fdd89760af37}} 
+\index{Data\+Base@{Data\+Base}!get\+Prescriptions@{get\+Prescriptions}}
+\index{get\+Prescriptions@{get\+Prescriptions}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{get\+Prescriptions()}{getPrescriptions()}}
+{\footnotesize\ttfamily vector$<$ \hyperlink{classPrescription}{Prescription} $>$ Data\+Base\+::get\+Prescriptions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets products vector. 
+
+Gets prescriptions vector \mbox{\Hypertarget{classDataBase_ae83d4c612ff8d93b69ab1c05345cd62c}\label{classDataBase_ae83d4c612ff8d93b69ab1c05345cd62c}} 
+\index{Data\+Base@{Data\+Base}!get\+Product\+By\+Name@{get\+Product\+By\+Name}}
+\index{get\+Product\+By\+Name@{get\+Product\+By\+Name}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{get\+Product\+By\+Name()}{getProductByName()}}
+{\footnotesize\ttfamily \hyperlink{classProduct}{Product} Data\+Base\+::get\+Product\+By\+Name (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDataBase_af233d5e69141c780d6a7946b1810a7a6}\label{classDataBase_af233d5e69141c780d6a7946b1810a7a6}} 
+\index{Data\+Base@{Data\+Base}!get\+Sale@{get\+Sale}}
+\index{get\+Sale@{get\+Sale}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{get\+Sale()}{getSale()}}
+{\footnotesize\ttfamily \hyperlink{classSale}{Sale} Data\+Base\+::get\+Sale (\begin{DoxyParamCaption}\item[{unsigned int}]{code }\end{DoxyParamCaption})}
+
+
+
+Gets the sala with code code. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em code} & The code\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The staff code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDataBase_a0c0c3efb8ee0d6e1a4b2d97b8d35feeb}\label{classDataBase_a0c0c3efb8ee0d6e1a4b2d97b8d35feeb}} 
+\index{Data\+Base@{Data\+Base}!get\+Sales@{get\+Sales}}
+\index{get\+Sales@{get\+Sales}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{get\+Sales()}{getSales()}}
+{\footnotesize\ttfamily vector$<$\hyperlink{classSale}{Sale}$>$ Data\+Base\+::get\+Sales (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets clients vector. 
+
+\mbox{\Hypertarget{classDataBase_ad44eb614d0001979c6036e57af6b9e06}\label{classDataBase_ad44eb614d0001979c6036e57af6b9e06}} 
+\index{Data\+Base@{Data\+Base}!get\+Staff@{get\+Staff}}
+\index{get\+Staff@{get\+Staff}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{get\+Staff()}{getStaff()}}
+{\footnotesize\ttfamily vector$<$ \hyperlink{classStaffMember}{Staff\+Member} $>$ Data\+Base\+::get\+Staff (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets staff vector. 
+
+\mbox{\Hypertarget{classDataBase_af3c7f6a88b927dbd01b34121eefabe4d}\label{classDataBase_af3c7f6a88b927dbd01b34121eefabe4d}} 
+\index{Data\+Base@{Data\+Base}!get\+StaffM@{get\+StaffM}}
+\index{get\+StaffM@{get\+StaffM}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{get\+Staff\+M()}{getStaffM()}}
+{\footnotesize\ttfamily \hyperlink{classStaffMember}{Staff\+Member} $\ast$ Data\+Base\+::get\+StaffM (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})}
+
+
+
+Gets the staff Member with name name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The staff member. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDataBase_a6255a0d9489dee6c6de802bcfff2d19e}\label{classDataBase_a6255a0d9489dee6c6de802bcfff2d19e}} 
+\index{Data\+Base@{Data\+Base}!less\+Products\+Than@{less\+Products\+Than}}
+\index{less\+Products\+Than@{less\+Products\+Than}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{less\+Products\+Than()}{lessProductsThan()}}
+{\footnotesize\ttfamily void Data\+Base\+::less\+Products\+Than (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks and displays if there is a product with less products. 
+
+\mbox{\Hypertarget{classDataBase_a514959070d22346ea7ee212e51cab89f}\label{classDataBase_a514959070d22346ea7ee212e51cab89f}} 
+\index{Data\+Base@{Data\+Base}!open\+Clients\+File@{open\+Clients\+File}}
+\index{open\+Clients\+File@{open\+Clients\+File}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{open\+Clients\+File()}{openClientsFile()}}
+{\footnotesize\ttfamily void Data\+Base\+::open\+Clients\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDataBase_a514959070d22346ea7ee212e51cab89f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDataBase_a30cd564502803b00dbe575b0bd9376e6}\label{classDataBase_a30cd564502803b00dbe575b0bd9376e6}} 
+\index{Data\+Base@{Data\+Base}!open\+Pharmacies\+File@{open\+Pharmacies\+File}}
+\index{open\+Pharmacies\+File@{open\+Pharmacies\+File}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{open\+Pharmacies\+File()}{openPharmaciesFile()}}
+{\footnotesize\ttfamily void Data\+Base\+::open\+Pharmacies\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDataBase_a30cd564502803b00dbe575b0bd9376e6_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDataBase_a10c16844e17eae108e828390a92fb3b8}\label{classDataBase_a10c16844e17eae108e828390a92fb3b8}} 
+\index{Data\+Base@{Data\+Base}!open\+Prescription\+File@{open\+Prescription\+File}}
+\index{open\+Prescription\+File@{open\+Prescription\+File}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{open\+Prescription\+File()}{openPrescriptionFile()}}
+{\footnotesize\ttfamily void Data\+Base\+::open\+Prescription\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDataBase_a10c16844e17eae108e828390a92fb3b8_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDataBase_abcf98b385e2a76f71b602e791699dbb3}\label{classDataBase_abcf98b385e2a76f71b602e791699dbb3}} 
+\index{Data\+Base@{Data\+Base}!open\+Products\+File@{open\+Products\+File}}
+\index{open\+Products\+File@{open\+Products\+File}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{open\+Products\+File()}{openProductsFile()}}
+{\footnotesize\ttfamily void Data\+Base\+::open\+Products\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{classDataBase_abcf98b385e2a76f71b602e791699dbb3_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDataBase_a5b7842d4ca431e2edb592fadc16da4c6}\label{classDataBase_a5b7842d4ca431e2edb592fadc16da4c6}} 
+\index{Data\+Base@{Data\+Base}!open\+Sales\+File@{open\+Sales\+File}}
+\index{open\+Sales\+File@{open\+Sales\+File}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{open\+Sales\+File()}{openSalesFile()}}
+{\footnotesize\ttfamily void Data\+Base\+::open\+Sales\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDataBase_a5b7842d4ca431e2edb592fadc16da4c6_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDataBase_a22f0ad79cc0d695ac5c4cfb3c556f920}\label{classDataBase_a22f0ad79cc0d695ac5c4cfb3c556f920}} 
+\index{Data\+Base@{Data\+Base}!open\+Staff\+File@{open\+Staff\+File}}
+\index{open\+Staff\+File@{open\+Staff\+File}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{open\+Staff\+File()}{openStaffFile()}}
+{\footnotesize\ttfamily void Data\+Base\+::open\+Staff\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{classDataBase_a22f0ad79cc0d695ac5c4cfb3c556f920_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDataBase_aa7cfe42e76e1d57c0adfb82d0c82f96e}\label{classDataBase_aa7cfe42e76e1d57c0adfb82d0c82f96e}} 
+\index{Data\+Base@{Data\+Base}!parse@{parse}}
+\index{parse@{parse}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{parse()}{parse()}}
+{\footnotesize\ttfamily string Data\+Base\+::parse (\begin{DoxyParamCaption}\item[{string}]{in }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDataBase_aa63ea6b1a96135acd1839ae9a0983d3f}\label{classDataBase_aa63ea6b1a96135acd1839ae9a0983d3f}} 
+\index{Data\+Base@{Data\+Base}!parse\+Date@{parse\+Date}}
+\index{parse\+Date@{parse\+Date}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{parse\+Date()}{parseDate()}}
+{\footnotesize\ttfamily tm Data\+Base\+::parse\+Date (\begin{DoxyParamCaption}\item[{string}]{in }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDataBase_ab0744d4be63a6db44fdcf21c22d61914}\label{classDataBase_ab0744d4be63a6db44fdcf21c22d61914}} 
+\index{Data\+Base@{Data\+Base}!parse\+Product@{parse\+Product}}
+\index{parse\+Product@{parse\+Product}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{parse\+Product()}{parseProduct()}}
+{\footnotesize\ttfamily string Data\+Base\+::parse\+Product (\begin{DoxyParamCaption}\item[{string}]{in }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDataBase_a5310a888c5c94fc87135b5cf8b9267f5}\label{classDataBase_a5310a888c5c94fc87135b5cf8b9267f5}} 
+\index{Data\+Base@{Data\+Base}!parse\+Product\+Sale@{parse\+Product\+Sale}}
+\index{parse\+Product\+Sale@{parse\+Product\+Sale}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{parse\+Product\+Sale()}{parseProductSale()}}
+{\footnotesize\ttfamily string Data\+Base\+::parse\+Product\+Sale (\begin{DoxyParamCaption}\item[{string}]{sale }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDataBase_ae547604cf1c5a0c937139928a3a700b5}\label{classDataBase_ae547604cf1c5a0c937139928a3a700b5}} 
+\index{Data\+Base@{Data\+Base}!parse\+Staff@{parse\+Staff}}
+\index{parse\+Staff@{parse\+Staff}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{parse\+Staff()}{parseStaff()}}
+{\footnotesize\ttfamily string Data\+Base\+::parse\+Staff (\begin{DoxyParamCaption}\item[{string}]{in }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDataBase_ad34d05002555ed7e109fdcfdfbeb70b8}\label{classDataBase_ad34d05002555ed7e109fdcfdfbeb70b8}} 
+\index{Data\+Base@{Data\+Base}!parsestr@{parsestr}}
+\index{parsestr@{parsestr}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{parsestr()}{parsestr()}}
+{\footnotesize\ttfamily string Data\+Base\+::parsestr (\begin{DoxyParamCaption}\item[{string}]{in }\end{DoxyParamCaption})}
+
+
+
+priority queue for the products 
+
+\mbox{\Hypertarget{classDataBase_a32341ca202561239807fb5b3a1f96d13}\label{classDataBase_a32341ca202561239807fb5b3a1f96d13}} 
+\index{Data\+Base@{Data\+Base}!read\+Products\+File@{read\+Products\+File}}
+\index{read\+Products\+File@{read\+Products\+File}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{read\+Products\+File()}{readProductsFile()}}
+{\footnotesize\ttfamily void Data\+Base\+::read\+Products\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDataBase_a9fb1b3625b3431d09b4b64a13bbb1e0f}\label{classDataBase_a9fb1b3625b3431d09b4b64a13bbb1e0f}} 
+\index{Data\+Base@{Data\+Base}!remove\+Client@{remove\+Client}}
+\index{remove\+Client@{remove\+Client}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{remove\+Client()}{removeClient()}}
+{\footnotesize\ttfamily void Data\+Base\+::remove\+Client (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDataBase_a9fb1b3625b3431d09b4b64a13bbb1e0f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDataBase_af923ee9db26814bf9413afe95262a01d}\label{classDataBase_af923ee9db26814bf9413afe95262a01d}} 
+\index{Data\+Base@{Data\+Base}!remove\+Pharmacy@{remove\+Pharmacy}}
+\index{remove\+Pharmacy@{remove\+Pharmacy}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{remove\+Pharmacy()}{removePharmacy()}}
+{\footnotesize\ttfamily void Data\+Base\+::remove\+Pharmacy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDataBase_af923ee9db26814bf9413afe95262a01d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDataBase_a6be2328441f5fe20086a4f8b0002adee}\label{classDataBase_a6be2328441f5fe20086a4f8b0002adee}} 
+\index{Data\+Base@{Data\+Base}!remove\+Product@{remove\+Product}}
+\index{remove\+Product@{remove\+Product}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{remove\+Product()}{removeProduct()}}
+{\footnotesize\ttfamily void Data\+Base\+::remove\+Product (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDataBase_a780ad993953bd70eaee64df86d0f1974}\label{classDataBase_a780ad993953bd70eaee64df86d0f1974}} 
+\index{Data\+Base@{Data\+Base}!remove\+Quantity@{remove\+Quantity}}
+\index{remove\+Quantity@{remove\+Quantity}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{remove\+Quantity()}{removeQuantity()}}
+{\footnotesize\ttfamily bool Data\+Base\+::remove\+Quantity (\begin{DoxyParamCaption}\item[{string}]{name,  }\item[{int}]{quantity }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDataBase_adba6b4fad6dcb329aae27d8f610edaac}\label{classDataBase_adba6b4fad6dcb329aae27d8f610edaac}} 
+\index{Data\+Base@{Data\+Base}!remove\+Sale@{remove\+Sale}}
+\index{remove\+Sale@{remove\+Sale}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{remove\+Sale()}{removeSale()}}
+{\footnotesize\ttfamily void Data\+Base\+::remove\+Sale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDataBase_a79dbf45f9b1a60fd5a29505f44e188e0}\label{classDataBase_a79dbf45f9b1a60fd5a29505f44e188e0}} 
+\index{Data\+Base@{Data\+Base}!remove\+StaffM@{remove\+StaffM}}
+\index{remove\+StaffM@{remove\+StaffM}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{remove\+Staff\+M()}{removeStaffM()}}
+{\footnotesize\ttfamily void Data\+Base\+::remove\+StaffM (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})}
+
+
+
+Searches through pharmacies vector and removes the \hyperlink{classStaffMember}{Staff\+Member} with a specific name from one of those pharmacies. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the staff to be removed \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDataBase_a79dbf45f9b1a60fd5a29505f44e188e0_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDataBase_a26ab8f3d2cb6d78a5105e72c2377c21c}\label{classDataBase_a26ab8f3d2cb6d78a5105e72c2377c21c}} 
+\index{Data\+Base@{Data\+Base}!remove\+Staff\+Member@{remove\+Staff\+Member}}
+\index{remove\+Staff\+Member@{remove\+Staff\+Member}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{remove\+Staff\+Member()}{removeStaffMember()}}
+{\footnotesize\ttfamily void Data\+Base\+::remove\+Staff\+Member (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDataBase_a26ab8f3d2cb6d78a5105e72c2377c21c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDataBase_af4762294e1b25415f7de88f0e8d6d90f}\label{classDataBase_af4762294e1b25415f7de88f0e8d6d90f}} 
+\index{Data\+Base@{Data\+Base}!show\+All\+Clients@{show\+All\+Clients}}
+\index{show\+All\+Clients@{show\+All\+Clients}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{show\+All\+Clients()}{showAllClients()}}
+{\footnotesize\ttfamily void Data\+Base\+::show\+All\+Clients (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=311pt]{classDataBase_af4762294e1b25415f7de88f0e8d6d90f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDataBase_a0c83992321a456f8fa097ea5bbf4a093}\label{classDataBase_a0c83992321a456f8fa097ea5bbf4a093}} 
+\index{Data\+Base@{Data\+Base}!show\+All\+ClientsA@{show\+All\+ClientsA}}
+\index{show\+All\+ClientsA@{show\+All\+ClientsA}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{show\+All\+Clients\+A()}{showAllClientsA()}}
+{\footnotesize\ttfamily void Data\+Base\+::show\+All\+ClientsA (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Displays all the clients in the \hyperlink{classDataBase}{Data\+Base}. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDataBase_a0c83992321a456f8fa097ea5bbf4a093_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDataBase_ab00290f55389cd62d8ee5594ecf9a6b5}\label{classDataBase_ab00290f55389cd62d8ee5594ecf9a6b5}} 
+\index{Data\+Base@{Data\+Base}!show\+All\+Pharmacies@{show\+All\+Pharmacies}}
+\index{show\+All\+Pharmacies@{show\+All\+Pharmacies}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{show\+All\+Pharmacies()}{showAllPharmacies()}}
+{\footnotesize\ttfamily void Data\+Base\+::show\+All\+Pharmacies (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{classDataBase_ab00290f55389cd62d8ee5594ecf9a6b5_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDataBase_a40a951f6f2c923ca315655956ab8e196}\label{classDataBase_a40a951f6f2c923ca315655956ab8e196}} 
+\index{Data\+Base@{Data\+Base}!show\+All\+Prescriptions@{show\+All\+Prescriptions}}
+\index{show\+All\+Prescriptions@{show\+All\+Prescriptions}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{show\+All\+Prescriptions()}{showAllPrescriptions()}}
+{\footnotesize\ttfamily void Data\+Base\+::show\+All\+Prescriptions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{classDataBase_a40a951f6f2c923ca315655956ab8e196_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDataBase_a74dcc435917c328bd89aaf5fd3cb804d}\label{classDataBase_a74dcc435917c328bd89aaf5fd3cb804d}} 
+\index{Data\+Base@{Data\+Base}!show\+All\+Products@{show\+All\+Products}}
+\index{show\+All\+Products@{show\+All\+Products}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{show\+All\+Products()}{showAllProducts()}}
+{\footnotesize\ttfamily void Data\+Base\+::show\+All\+Products (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDataBase_abf8a64bd81ce3207862b0105d52f646f}\label{classDataBase_abf8a64bd81ce3207862b0105d52f646f}} 
+\index{Data\+Base@{Data\+Base}!show\+All\+Sales@{show\+All\+Sales}}
+\index{show\+All\+Sales@{show\+All\+Sales}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{show\+All\+Sales()}{showAllSales()}}
+{\footnotesize\ttfamily void Data\+Base\+::show\+All\+Sales (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=305pt]{classDataBase_abf8a64bd81ce3207862b0105d52f646f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDataBase_aa1d2ae05f581ec45eb8da06e468aec30}\label{classDataBase_aa1d2ae05f581ec45eb8da06e468aec30}} 
+\index{Data\+Base@{Data\+Base}!show\+All\+Staff@{show\+All\+Staff}}
+\index{show\+All\+Staff@{show\+All\+Staff}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{show\+All\+Staff()}{showAllStaff()}}
+{\footnotesize\ttfamily void Data\+Base\+::show\+All\+Staff (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{classDataBase_aa1d2ae05f581ec45eb8da06e468aec30_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDataBase_a2016794a78b86df19676ea9aba3114bc}\label{classDataBase_a2016794a78b86df19676ea9aba3114bc}} 
+\index{Data\+Base@{Data\+Base}!show\+Clients\+By\+District@{show\+Clients\+By\+District}}
+\index{show\+Clients\+By\+District@{show\+Clients\+By\+District}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{show\+Clients\+By\+District()}{showClientsByDistrict()}}
+{\footnotesize\ttfamily void Data\+Base\+::show\+Clients\+By\+District (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Displays all clients from a specific district. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em district} & Name of the district we want to show the clients from \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDataBase_a2016794a78b86df19676ea9aba3114bc_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDataBase_ab87e9a50f26c934790774b0bf0d62a51}\label{classDataBase_ab87e9a50f26c934790774b0bf0d62a51}} 
+\index{Data\+Base@{Data\+Base}!show\+Clients\+With\+Most\+Purchases@{show\+Clients\+With\+Most\+Purchases}}
+\index{show\+Clients\+With\+Most\+Purchases@{show\+Clients\+With\+Most\+Purchases}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{show\+Clients\+With\+Most\+Purchases()}{showClientsWithMostPurchases()}}
+{\footnotesize\ttfamily void Data\+Base\+::show\+Clients\+With\+Most\+Purchases (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Displays the clients on the top 3 of most purchases made. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDataBase_ab87e9a50f26c934790774b0bf0d62a51_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDataBase_ac572ac9a3091e0adcef16ab79bfba7fb}\label{classDataBase_ac572ac9a3091e0adcef16ab79bfba7fb}} 
+\index{Data\+Base@{Data\+Base}!show\+Pharmacies\+Names@{show\+Pharmacies\+Names}}
+\index{show\+Pharmacies\+Names@{show\+Pharmacies\+Names}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{show\+Pharmacies\+Names()}{showPharmaciesNames()}}
+{\footnotesize\ttfamily void Data\+Base\+::show\+Pharmacies\+Names (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Displays the names of the pharmacies available in the DB. 
+
+\mbox{\Hypertarget{classDataBase_ab17fba12d1810b3548615b3ac0427850}\label{classDataBase_ab17fba12d1810b3548615b3ac0427850}} 
+\index{Data\+Base@{Data\+Base}!show\+Staff\+Without\+Ph@{show\+Staff\+Without\+Ph}}
+\index{show\+Staff\+Without\+Ph@{show\+Staff\+Without\+Ph}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{show\+Staff\+Without\+Ph()}{showStaffWithoutPh()}}
+{\footnotesize\ttfamily void Data\+Base\+::show\+Staff\+Without\+Ph (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Displays all \hyperlink{classStaffMember}{Staff\+Member} \textquotesingle{}s in the \hyperlink{classDataBase}{Data\+Base} with no \hyperlink{classPharmacy}{Pharmacy} assigned. 
+
+\mbox{\Hypertarget{classDataBase_a85445c22323399e318780faf36854c2f}\label{classDataBase_a85445c22323399e318780faf36854c2f}} 
+\index{Data\+Base@{Data\+Base}!staff\+Ph\+To\+None@{staff\+Ph\+To\+None}}
+\index{staff\+Ph\+To\+None@{staff\+Ph\+To\+None}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{staff\+Ph\+To\+None()}{staffPhToNone()}}
+{\footnotesize\ttfamily void Data\+Base\+::staff\+Ph\+To\+None (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDataBase_a4d855ccf967f4f741646100d2c890ede}\label{classDataBase_a4d855ccf967f4f741646100d2c890ede}} 
+\index{Data\+Base@{Data\+Base}!write\+To\+Clients\+File@{write\+To\+Clients\+File}}
+\index{write\+To\+Clients\+File@{write\+To\+Clients\+File}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{write\+To\+Clients\+File()}{writeToClientsFile()}}
+{\footnotesize\ttfamily void Data\+Base\+::write\+To\+Clients\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDataBase_a4d855ccf967f4f741646100d2c890ede_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDataBase_a136d789db1f6c1cd615dc1bdbe27557b}\label{classDataBase_a136d789db1f6c1cd615dc1bdbe27557b}} 
+\index{Data\+Base@{Data\+Base}!write\+To\+FileW@{write\+To\+FileW}}
+\index{write\+To\+FileW@{write\+To\+FileW}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{write\+To\+File\+W()}{writeToFileW()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void Data\+Base\+::write\+To\+FileW (\begin{DoxyParamCaption}\item[{string}]{file\+Name,  }\item[{vector$<$ T $>$}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classDataBase_aef0dc00d9d40159c361518e60e78f857}\label{classDataBase_aef0dc00d9d40159c361518e60e78f857}} 
+\index{Data\+Base@{Data\+Base}!write\+To\+Pharmacies\+File@{write\+To\+Pharmacies\+File}}
+\index{write\+To\+Pharmacies\+File@{write\+To\+Pharmacies\+File}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{write\+To\+Pharmacies\+File()}{writeToPharmaciesFile()}}
+{\footnotesize\ttfamily void Data\+Base\+::write\+To\+Pharmacies\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDataBase_aef0dc00d9d40159c361518e60e78f857_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDataBase_a1435e1728598586503f199981b84a933}\label{classDataBase_a1435e1728598586503f199981b84a933}} 
+\index{Data\+Base@{Data\+Base}!write\+To\+Prescription\+File@{write\+To\+Prescription\+File}}
+\index{write\+To\+Prescription\+File@{write\+To\+Prescription\+File}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{write\+To\+Prescription\+File()}{writeToPrescriptionFile()}}
+{\footnotesize\ttfamily void Data\+Base\+::write\+To\+Prescription\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDataBase_a1435e1728598586503f199981b84a933_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDataBase_a108ba0eb315d14ed6bc7181b98499318}\label{classDataBase_a108ba0eb315d14ed6bc7181b98499318}} 
+\index{Data\+Base@{Data\+Base}!write\+To\+Products\+File@{write\+To\+Products\+File}}
+\index{write\+To\+Products\+File@{write\+To\+Products\+File}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{write\+To\+Products\+File()}{writeToProductsFile()}}
+{\footnotesize\ttfamily void Data\+Base\+::write\+To\+Products\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDataBase_a108ba0eb315d14ed6bc7181b98499318_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDataBase_aec542d0eb4b2c2d44abe5cefd25d2057}\label{classDataBase_aec542d0eb4b2c2d44abe5cefd25d2057}} 
+\index{Data\+Base@{Data\+Base}!write\+To\+Products\+File2@{write\+To\+Products\+File2}}
+\index{write\+To\+Products\+File2@{write\+To\+Products\+File2}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{write\+To\+Products\+File2()}{writeToProductsFile2()}}
+{\footnotesize\ttfamily void Data\+Base\+::write\+To\+Products\+File2 (\begin{DoxyParamCaption}\item[{string}]{file\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDataBase_aec542d0eb4b2c2d44abe5cefd25d2057_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDataBase_a0bf85b7fb0feb4fb1f6888ba58ebe2b2}\label{classDataBase_a0bf85b7fb0feb4fb1f6888ba58ebe2b2}} 
+\index{Data\+Base@{Data\+Base}!write\+To\+Sales@{write\+To\+Sales}}
+\index{write\+To\+Sales@{write\+To\+Sales}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{write\+To\+Sales()}{writeToSales()}}
+{\footnotesize\ttfamily void Data\+Base\+::write\+To\+Sales (\begin{DoxyParamCaption}\item[{string}]{file\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Writes the info saved in the \hyperlink{classDataBase}{Data\+Base} to the Sales file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & Name of the file to be written to \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDataBase_a62cb54f7bbcd213d71f604003298cd95}\label{classDataBase_a62cb54f7bbcd213d71f604003298cd95}} 
+\index{Data\+Base@{Data\+Base}!write\+To\+Sales\+File@{write\+To\+Sales\+File}}
+\index{write\+To\+Sales\+File@{write\+To\+Sales\+File}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{write\+To\+Sales\+File()}{writeToSalesFile()}}
+{\footnotesize\ttfamily void Data\+Base\+::write\+To\+Sales\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDataBase_a62cb54f7bbcd213d71f604003298cd95_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDataBase_abc8c8d3116c6b3422d87ae781ba91538}\label{classDataBase_abc8c8d3116c6b3422d87ae781ba91538}} 
+\index{Data\+Base@{Data\+Base}!write\+To\+Staff\+File@{write\+To\+Staff\+File}}
+\index{write\+To\+Staff\+File@{write\+To\+Staff\+File}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{write\+To\+Staff\+File()}{writeToStaffFile()}}
+{\footnotesize\ttfamily void Data\+Base\+::write\+To\+Staff\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDataBase_abc8c8d3116c6b3422d87ae781ba91538_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classDataBase_aa5f93e5229c216c200681b551db2db77}\label{classDataBase_aa5f93e5229c216c200681b551db2db77}} 
+\index{Data\+Base@{Data\+Base}!clients@{clients}}
+\index{clients@{clients}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{clients}{clients}}
+{\footnotesize\ttfamily vector$<$\hyperlink{classClient}{Client}$>$ Data\+Base\+::clients\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDataBase_a9b3973c4282ee24f7769f4f735b4b898}\label{classDataBase_a9b3973c4282ee24f7769f4f735b4b898}} 
+\index{Data\+Base@{Data\+Base}!clientsA@{clientsA}}
+\index{clientsA@{clientsA}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{clientsA}{clientsA}}
+{\footnotesize\ttfamily \hyperlink{classBST}{B\+ST}$<$\hyperlink{classClient}{Client}$>$ Data\+Base\+::clientsA\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+vector for sales 
+
+\mbox{\Hypertarget{classDataBase_a7b52741a2183b8b3eba86534d02782e6}\label{classDataBase_a7b52741a2183b8b3eba86534d02782e6}} 
+\index{Data\+Base@{Data\+Base}!clients\+File@{clients\+File}}
+\index{clients\+File@{clients\+File}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{clients\+File}{clientsFile}}
+{\footnotesize\ttfamily string Data\+Base\+::clients\+File\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDataBase_a576f0eac012d39fffb1064a5ea27ad08}\label{classDataBase_a576f0eac012d39fffb1064a5ea27ad08}} 
+\index{Data\+Base@{Data\+Base}!files@{files}}
+\index{files@{files}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{files}{files}}
+{\footnotesize\ttfamily \hyperlink{DataBase_8h_a309f0ca910338932f751c46c6e5ccbbc}{files\+HT} Data\+Base\+::files\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+files names 
+
+\mbox{\Hypertarget{classDataBase_ada5f113e22144b1b28775557e2a10f08}\label{classDataBase_ada5f113e22144b1b28775557e2a10f08}} 
+\index{Data\+Base@{Data\+Base}!pharmacies@{pharmacies}}
+\index{pharmacies@{pharmacies}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{pharmacies}{pharmacies}}
+{\footnotesize\ttfamily vector$<$\hyperlink{classPharmacy}{Pharmacy}$>$ Data\+Base\+::pharmacies\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+vector for clients 
+
+\mbox{\Hypertarget{classDataBase_aa52765a56e1fefddb5b1cf638de3493e}\label{classDataBase_aa52765a56e1fefddb5b1cf638de3493e}} 
+\index{Data\+Base@{Data\+Base}!pharmacies\+File@{pharmacies\+File}}
+\index{pharmacies\+File@{pharmacies\+File}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{pharmacies\+File}{pharmaciesFile}}
+{\footnotesize\ttfamily string Data\+Base\+::pharmacies\+File\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDataBase_a7649e7e3eda974285c99e78c23829334}\label{classDataBase_a7649e7e3eda974285c99e78c23829334}} 
+\index{Data\+Base@{Data\+Base}!presc\+File@{presc\+File}}
+\index{presc\+File@{presc\+File}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{presc\+File}{prescFile}}
+{\footnotesize\ttfamily string Data\+Base\+::presc\+File\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDataBase_a592b7e885d6708309c298406db68c505}\label{classDataBase_a592b7e885d6708309c298406db68c505}} 
+\index{Data\+Base@{Data\+Base}!prescriptions@{prescriptions}}
+\index{prescriptions@{prescriptions}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{prescriptions}{prescriptions}}
+{\footnotesize\ttfamily vector$<$\hyperlink{classPrescription}{Prescription}$>$ Data\+Base\+::prescriptions\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+vector for staff 
+
+\mbox{\Hypertarget{classDataBase_a83dd84eb12b869e3e585fe965c414eef}\label{classDataBase_a83dd84eb12b869e3e585fe965c414eef}} 
+\index{Data\+Base@{Data\+Base}!products@{products}}
+\index{products@{products}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{products}{products}}
+{\footnotesize\ttfamily priority\+\_\+queue$<$\hyperlink{classProduct}{Product}$>$ Data\+Base\+::products\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\hyperlink{classBST}{B\+ST} for the clients. 
+
+\mbox{\Hypertarget{classDataBase_a24acb8bdda9293336f40a4b08741235e}\label{classDataBase_a24acb8bdda9293336f40a4b08741235e}} 
+\index{Data\+Base@{Data\+Base}!products\+File@{products\+File}}
+\index{products\+File@{products\+File}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{products\+File}{productsFile}}
+{\footnotesize\ttfamily string Data\+Base\+::products\+File\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDataBase_a4e48e9c0e840c7f9febf3344c5a003ba}\label{classDataBase_a4e48e9c0e840c7f9febf3344c5a003ba}} 
+\index{Data\+Base@{Data\+Base}!sales@{sales}}
+\index{sales@{sales}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{sales}{sales}}
+{\footnotesize\ttfamily vector$<$\hyperlink{classSale}{Sale}$>$ Data\+Base\+::sales\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+vector for prescriptions 
+
+\mbox{\Hypertarget{classDataBase_a8b16f4814de788f12e96163255aaa737}\label{classDataBase_a8b16f4814de788f12e96163255aaa737}} 
+\index{Data\+Base@{Data\+Base}!sales\+File@{sales\+File}}
+\index{sales\+File@{sales\+File}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{sales\+File}{salesFile}}
+{\footnotesize\ttfamily string Data\+Base\+::sales\+File\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDataBase_a74729cf98d5b60cc2bfbac6c0fa00229}\label{classDataBase_a74729cf98d5b60cc2bfbac6c0fa00229}} 
+\index{Data\+Base@{Data\+Base}!staff@{staff}}
+\index{staff@{staff}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{staff}{staff}}
+{\footnotesize\ttfamily vector$<$\hyperlink{classStaffMember}{Staff\+Member}$>$ Data\+Base\+::staff\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+vector for pharmacies 
+
+\mbox{\Hypertarget{classDataBase_a2f564a52132d74186314695a7a0e3270}\label{classDataBase_a2f564a52132d74186314695a7a0e3270}} 
+\index{Data\+Base@{Data\+Base}!staff\+File@{staff\+File}}
+\index{staff\+File@{staff\+File}!Data\+Base@{Data\+Base}}
+\subsubsection{\texorpdfstring{staff\+File}{staffFile}}
+{\footnotesize\ttfamily string Data\+Base\+::staff\+File\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{DataBase_8h}{Data\+Base.\+h}\item 
+src/\hyperlink{DataBase_8cpp}{Data\+Base.\+cpp}\end{DoxyCompactItemize}

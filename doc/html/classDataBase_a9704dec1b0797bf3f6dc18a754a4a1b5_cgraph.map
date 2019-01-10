@@ -1,0 +1,11 @@
+<map id="DataBase::changePharmacyInfo" name="DataBase::changePharmacyInfo">
+<area shape="rect" id="node2" href="$classDataBase.html#ab00290f55389cd62d8ee5594ecf9a6b5" title="DataBase::showAllPharmacies" alt="" coords="264,5,467,32"/>
+<area shape="rect" id="node4" href="$classDataBase.html#af3c7f6a88b927dbd01b34121eefabe4d" title="Gets the staff Member with name name. " alt="" coords="293,56,438,83"/>
+<area shape="rect" id="node5" href="$classStaffMember.html#afa7f9171f01d6d24ea25e0e458fca513" title="Set the Position object. " alt="" coords="280,107,451,133"/>
+<area shape="rect" id="node6" href="$classDataBase.html#aa1d2ae05f581ec45eb8da06e468aec30" title="DataBase::showAllStaff" alt="" coords="284,157,447,184"/>
+<area shape="rect" id="node7" href="$classEntity.html#a438837d2be5b221fd9aafc323c46f08a" title="Get the Name object. " alt="" coords="307,208,424,235"/>
+<area shape="rect" id="node8" href="$classDataBase.html#a79dbf45f9b1a60fd5a29505f44e188e0" title="Searches through pharmacies vector and removes the StaffMember with a specific name from one of those..." alt="" coords="280,259,451,285"/>
+<area shape="rect" id="node10" href="$classStaffMember.html#a628c894f76e94a3a9370e610ccdf78fe" title="Set the Pharmacy object. " alt="" coords="274,309,457,336"/>
+<area shape="rect" id="node3" href="$PrintsNSorts_8h.html#a5837010d189a7bf58768fd9efb808919" title="printVector" alt="" coords="560,81,645,108"/>
+<area shape="rect" id="node9" href="$classDataBase.html#a85445c22323399e318780faf36854c2f" title="DataBase::staffPhToNone" alt="" coords="515,259,691,285"/>
+</map>

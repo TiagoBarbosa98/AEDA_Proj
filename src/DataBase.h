@@ -21,7 +21,7 @@ using namespace std;
 #include "Medicine.h"
 #include "BST.h"
 
-/*
+/**
  * @brief Struct defining the hash functions
  */
 struct stringHash{
@@ -38,6 +38,10 @@ struct stringHash{
 
 typedef unordered_set<string, stringHash, stringHash> filesHT;
 
+/**
+ * @brief Class containing all the general information and data structures about
+ * the other classes
+ */
 class DataBase {
 private:
 	string prescFile, productsFile, clientsFile, pharmaciesFile, staffFile, salesFile; /** @brief files names*/
@@ -539,7 +543,7 @@ public:
 
 
 /**
- * @brief      Class for error opening file.
+ * @brief Class for error opening file.
  */
 class ErrorOpeningFile {
     string nameFile; /** <	@brief name of File*/

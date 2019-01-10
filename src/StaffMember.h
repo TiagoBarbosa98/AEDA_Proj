@@ -5,8 +5,8 @@
 #include <iostream>
 
 using namespace std;
-/*
- * @class StaffMember Class that represents a staff member from a pharmacy where are stored is salary and the position in that pharmacy
+/**
+ * @brief StaffMember Class that represents a staff member from a pharmacy where are stored is salary and the position in that pharmacy
  */
 class StaffMember: public Person{
 	unsigned int salary;/** < @brief Salary of the Staff Member */

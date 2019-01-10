@@ -1,0 +1,7 @@
+<map id="DataBase::removeClient" name="DataBase::removeClient">
+<area shape="rect" id="node2" href="$classDataBase.html#a8575c65a7f0d76352e4b37604562fbc2" title="Looks for a Client in the DataBase with specific id and returns it. " alt="" coords="219,56,375,83"/>
+<area shape="rect" id="node6" href="$classBST.html#a6f01a0b44daf82a42022b6eb4c0df7a2" title="BST::remove" alt="" coords="247,107,346,133"/>
+<area shape="rect" id="node3" href="$classBSTItrIn.html#a6f9a43217862c263a9bf15b9a08b889a" title="BSTItrIn::isAtEnd" alt="" coords="424,5,549,32"/>
+<area shape="rect" id="node4" href="$classBSTItrIn.html#a434375a2d263bf132ab3c4ac878af8ef" title="BSTItrIn::retrieve" alt="" coords="425,56,548,83"/>
+<area shape="rect" id="node5" href="$classBSTItrIn.html#ac772d3ebbac748c5f8cf9bc659f2e32c" title="BSTItrIn::advance" alt="" coords="423,107,551,133"/>
+</map>

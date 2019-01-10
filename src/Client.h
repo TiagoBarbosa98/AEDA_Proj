@@ -12,8 +12,8 @@ using namespace std;
 
 class Person;
 
-/*
- * @class Client Class that represents a client
+/**
+ * @brief Client Class that represents a client
  */
 class Client:  public Person{
 	vector<unsigned int> history; /** < @brief history of Clients purchases */

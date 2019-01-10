@@ -1,0 +1,8 @@
+<map id="productsMenu" name="productsMenu">
+<area shape="rect" id="node2" href="$main_8cpp.html#acae0cb71cc559b4b16c3bb6709724d97" title="checkBoundaries" alt="" coords="193,5,315,32"/>
+<area shape="rect" id="node3" href="$classDataBase.html#a74dcc435917c328bd89aaf5fd3cb804d" title="DataBase::showAllProducts" alt="" coords="161,56,347,83"/>
+<area shape="rect" id="node4" href="$classDataBase.html#a654216132c946bdb05ec4ae866302259" title="DataBase::addProduct" alt="" coords="177,107,331,133"/>
+<area shape="rect" id="node5" href="$classDataBase.html#a6be2328441f5fe20086a4f8b0002adee" title="DataBase::removeProduct" alt="" coords="166,157,342,184"/>
+<area shape="rect" id="node6" href="$classItemDoesNotExist.html#ac043ce235a565e8766cf55b32a2aa80c" title="ItemDoesNotExist::printMsg" alt="" coords="160,208,348,235"/>
+<area shape="rect" id="node7" href="$classDataBase.html#a6255a0d9489dee6c6de802bcfff2d19e" title="Checks and displays if there is a product with less products. " alt="" coords="157,259,351,285"/>
+</map>

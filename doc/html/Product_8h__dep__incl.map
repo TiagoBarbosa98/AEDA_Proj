@@ -1,0 +1,12 @@
+<map id="src/Product.h" name="src/Product.h">
+<area shape="rect" id="node2" href="$Sale_8h.html" title="src/Sale.h" alt="" coords="249,80,331,107"/>
+<area shape="rect" id="node5" href="$DataBase_8h.html" title="src/DataBase.h" alt="" coords="12,229,125,256"/>
+<area shape="rect" id="node7" href="$main_8cpp.html" title="src/main.cpp" alt="" coords="352,304,449,331"/>
+<area shape="rect" id="node9" href="$Medicine_8h.html" title="src/Medicine.h" alt="" coords="458,80,565,107"/>
+<area shape="rect" id="node10" href="$Medicine_8cpp.html" title="src/Medicine.cpp" alt="" coords="549,155,671,181"/>
+<area shape="rect" id="node11" href="$Product_8cpp.html" title="src/Product.cpp" alt="" coords="746,80,861,107"/>
+<area shape="rect" id="node3" href="$Client_8h.html" title="src/Client.h" alt="" coords="139,155,228,181"/>
+<area shape="rect" id="node8" href="$Sale_8cpp.html" title="src/Sale.cpp" alt="" coords="328,155,423,181"/>
+<area shape="rect" id="node4" href="$Client_8cpp.html" title="src/Client.cpp" alt="" coords="149,229,252,256"/>
+<area shape="rect" id="node6" href="$DataBase_8cpp.html" title="src/DataBase.cpp" alt="" coords="5,304,132,331"/>
+</map>

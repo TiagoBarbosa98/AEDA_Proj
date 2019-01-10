@@ -1,0 +1,7 @@
+<map id="DataBase::showClientsWithMostPurchases" name="DataBase::showClientsWithMostPurchases">
+<area shape="rect" id="node2" href="$classBSTItrIn.html#a434375a2d263bf132ab3c4ac878af8ef" title="BSTItrIn::retrieve" alt="" coords="243,5,365,32"/>
+<area shape="rect" id="node3" href="$classBSTItrIn.html#ac772d3ebbac748c5f8cf9bc659f2e32c" title="BSTItrIn::advance" alt="" coords="240,56,368,83"/>
+<area shape="rect" id="node4" href="$classBSTItrIn.html#a6f9a43217862c263a9bf15b9a08b889a" title="BSTItrIn::isAtEnd" alt="" coords="241,107,367,133"/>
+<area shape="rect" id="node5" href="$classClient.html#a5a2d79bb60bb1846a14263d156654c36" title="Get the History object. " alt="" coords="242,157,366,184"/>
+<area shape="rect" id="node6" href="$classBST.html#a6f01a0b44daf82a42022b6eb4c0df7a2" title="BST::remove" alt="" coords="255,208,353,235"/>
+</map>

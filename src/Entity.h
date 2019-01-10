@@ -6,8 +6,8 @@
 #include <sstream>
 
 using namespace std;
-/*
- * @class Entity Class that represents a entity(can be a Person or a Pharmacy) where are stored the name and address
+/**
+ * @brief Entity Class that represents a entity(can be a Person or a Pharmacy) where are stored the name and address
  */
 class Entity{
 	string name; /** < @brief name of the Entity */

@@ -1,0 +1,5 @@
+<map id="Person" name="Person">
+<area shape="rect" id="node3" href="$classClient.html" title="Client Class that represents a client. " alt="" coords="5,155,61,181"/>
+<area shape="rect" id="node4" href="$classStaffMember.html" title="StaffMember Class that represents a staff member from a pharmacy where are stored is salary and the p..." alt="" coords="86,155,183,181"/>
+<area shape="rect" id="node2" href="$classEntity.html" title="Entity Class that represents a entity(can be a Person or a Pharmacy) where are stored the name and ad..." alt="" coords="56,5,112,32"/>
+</map>

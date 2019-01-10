@@ -4,8 +4,9 @@
 #include <string>
 #include <vector>
 using namespace std;
-/*
- * @class Prescription Class that represents a prescription where are stored the number, client, doctor and products os the prescription
+
+/**
+ * @brief Prescription Class that represents a prescription where are stored the number, client, doctor and products os the prescription
  */
 class Prescription {
 	//numero, numero, cliente, medico e lista produtos

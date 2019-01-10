@@ -1,0 +1,7 @@
+<map id="Medicine::display" name="Medicine::display">
+<area shape="rect" id="node2" href="$classProduct.html#a2f411b12652a6b7b6194fcdbab3a1fb3" title="Write product info to string. " alt="" coords="177,56,293,83"/>
+<area shape="rect" id="node6" href="$classMedicine.html#a502f519c44cfb89071af6a920fb773e3" title="Medicine::prescr" alt="" coords="176,107,295,133"/>
+<area shape="rect" id="node3" href="$classProduct.html#a732aca2574f7a39e3a90837e0240e81f" title="Get the Total Price object. " alt="" coords="343,5,495,32"/>
+<area shape="rect" id="node4" href="$classProduct.html#a6a449b90b669aa4380d229b44eca686f" title="Product::getQuantity" alt="" coords="347,56,490,83"/>
+<area shape="rect" id="node5" href="$classProduct.html#aa2ccc7b6aa44a0bf10694b18f910dfa1" title="Product::med" alt="" coords="369,107,469,133"/>
+</map>

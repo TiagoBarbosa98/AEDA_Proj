@@ -1,0 +1,13 @@
+<map id="salesMenu" name="salesMenu">
+<area shape="rect" id="node2" href="$main_8cpp.html#acae0cb71cc559b4b16c3bb6709724d97" title="checkBoundaries" alt="" coords="161,31,283,57"/>
+<area shape="rect" id="node3" href="$classDataBase.html#abf8a64bd81ce3207862b0105d52f646f" title="DataBase::showAllSales" alt="" coords="139,81,305,108"/>
+<area shape="rect" id="node5" href="$classDataBase.html#a0fb00cab402248ffba3903cc1f19f6c2" title="DataBase::addSale" alt="" coords="155,132,289,159"/>
+<area shape="rect" id="node11" href="$classItemDoesNotExist.html#ac043ce235a565e8766cf55b32a2aa80c" title="ItemDoesNotExist::printMsg" alt="" coords="361,208,549,235"/>
+<area shape="rect" id="node12" href="$classDataBase.html#adba6b4fad6dcb329aae27d8f610edaac" title="DataBase::removeSale" alt="" coords="143,233,301,260"/>
+<area shape="rect" id="node4" href="$PrintsNSorts_8h.html#a5837010d189a7bf58768fd9efb808919" title="printVector" alt="" coords="412,5,497,32"/>
+<area shape="rect" id="node6" href="$classDataBase.html#ae83d4c612ff8d93b69ab1c05345cd62c" title="DataBase::getProductByName" alt="" coords="353,56,556,83"/>
+<area shape="rect" id="node7" href="$classDataBase.html#a780ad993953bd70eaee64df86d0f1974" title="DataBase::removeQuantity" alt="" coords="365,107,545,133"/>
+<area shape="rect" id="node8" href="$classSale.html#ad582ae56bc2aa780b428e31de213a192" title="Sale::addProdPriceQtt" alt="" coords="379,157,531,184"/>
+<area shape="rect" id="node9" href="$classProduct.html#acbf3d46720bb1a0d16e49663b73b803d" title="Get the Name object. " alt="" coords="604,132,732,159"/>
+<area shape="rect" id="node10" href="$classProduct.html#a0aaea95b8d3241b3758246254b8575e2" title="Get the Price object. " alt="" coords="607,183,729,209"/>
+</map>

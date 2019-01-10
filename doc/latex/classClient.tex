@@ -1,0 +1,222 @@
+\hypertarget{classClient}{}\section{Client Class Reference}
+\label{classClient}\index{Client@{Client}}
+
+
+\hyperlink{classClient}{Client} Class that represents a client.  
+
+
+
+
+{\ttfamily \#include $<$Client.\+h$>$}
+
+
+
+Inheritance diagram for Client\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=127pt]{classClient__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Client\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=127pt]{classClient__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classClient_ae054d039da064a80f3bde9e126a58e23}{Client} (string n, string dis, string addr, unsigned int \hyperlink{classPerson_a55eea8ffb71b88d84ea43a6be15a2eb4}{contrib\+No}, vector$<$ unsigned int $>$ \hyperlink{classClient_afceda4b2e1aa4cf7cb52478d5e679bad}{history})
+\begin{DoxyCompactList}\small\item\em Construct a new \hyperlink{classClient}{Client} object. \end{DoxyCompactList}\item 
+\hyperlink{classClient_ae51af7aa6b8f591496a8f6a4a87a14bf}{Client} ()
+\item 
+\hyperlink{classClient_a2df8218a19b72961a1301392e356711f}{Client} (unsigned int nc)
+\item 
+vector$<$ unsigned int $>$ \hyperlink{classClient_a5a2d79bb60bb1846a14263d156654c36}{get\+History} () const
+\begin{DoxyCompactList}\small\item\em Get the History object. \end{DoxyCompactList}\item 
+bool \hyperlink{classClient_ada079699bae9cf8b0b729c82f0940487}{operator$<$} (const \hyperlink{classClient}{Client} \&c) const
+\begin{DoxyCompactList}\small\item\em Operator overload of $<$. \end{DoxyCompactList}\item 
+bool \hyperlink{classClient_a7dfa59dc82c7ef516edc0eb6719b97f0}{operator==} (const \hyperlink{classClient}{Client} \&c) const
+\begin{DoxyCompactList}\small\item\em Operator overload of ==. \end{DoxyCompactList}\item 
+string \hyperlink{classClient_aa6acbbfc2c1717d7303a3db86ac22058}{get\+District} () const
+\begin{DoxyCompactList}\small\item\em Get function of the variable district. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ unsigned int $>$ \hyperlink{classClient_afceda4b2e1aa4cf7cb52478d5e679bad}{history}
+\item 
+string \hyperlink{classClient_a4f613c8876f65ad3de6435efc3e9f6a2}{district}
+\begin{DoxyCompactList}\small\item\em history of Clients purchases \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+ostream \& \hyperlink{classClient_ae8980b59fbd6f02e9ebd291446c37bef}{operator$<$$<$} (ostream \&os, const \hyperlink{classClient}{Client} \&c)
+\begin{DoxyCompactList}\small\item\em Overload outstream operator $<$$<$ to write a \hyperlink{classClient}{Client} to an outstream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classClient}{Client} Class that represents a client. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classClient_ae054d039da064a80f3bde9e126a58e23}\label{classClient_ae054d039da064a80f3bde9e126a58e23}} 
+\index{Client@{Client}!Client@{Client}}
+\index{Client@{Client}!Client@{Client}}
+\subsubsection{\texorpdfstring{Client()}{Client()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Client\+::\+Client (\begin{DoxyParamCaption}\item[{string}]{n,  }\item[{string}]{dis,  }\item[{string}]{addr,  }\item[{unsigned int}]{contrib\+No,  }\item[{vector$<$ unsigned int $>$}]{history }\end{DoxyParamCaption})}
+
+
+
+Construct a new \hyperlink{classClient}{Client} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & The name of the \hyperlink{classClient}{Client} be created \\
+\hline
+{\em addr} & The adress the \hyperlink{classClient}{Client} be created \\
+\hline
+{\em contrib\+No} & The tax number of the \hyperlink{classClient}{Client} to be created \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classClient_ae51af7aa6b8f591496a8f6a4a87a14bf}\label{classClient_ae51af7aa6b8f591496a8f6a4a87a14bf}} 
+\index{Client@{Client}!Client@{Client}}
+\index{Client@{Client}!Client@{Client}}
+\subsubsection{\texorpdfstring{Client()}{Client()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Client\+::\+Client (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classClient_a2df8218a19b72961a1301392e356711f}\label{classClient_a2df8218a19b72961a1301392e356711f}} 
+\index{Client@{Client}!Client@{Client}}
+\index{Client@{Client}!Client@{Client}}
+\subsubsection{\texorpdfstring{Client()}{Client()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Client\+::\+Client (\begin{DoxyParamCaption}\item[{unsigned int}]{nc }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classClient_aa6acbbfc2c1717d7303a3db86ac22058}\label{classClient_aa6acbbfc2c1717d7303a3db86ac22058}} 
+\index{Client@{Client}!get\+District@{get\+District}}
+\index{get\+District@{get\+District}!Client@{Client}}
+\subsubsection{\texorpdfstring{get\+District()}{getDistrict()}}
+{\footnotesize\ttfamily string Client\+::get\+District (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get function of the variable district. 
+
+\begin{DoxyReturn}{Returns}
+The district name 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classClient_a5a2d79bb60bb1846a14263d156654c36}\label{classClient_a5a2d79bb60bb1846a14263d156654c36}} 
+\index{Client@{Client}!get\+History@{get\+History}}
+\index{get\+History@{get\+History}!Client@{Client}}
+\subsubsection{\texorpdfstring{get\+History()}{getHistory()}}
+{\footnotesize\ttfamily vector$<$ unsigned int $>$ Client\+::get\+History (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the History object. 
+
+\begin{DoxyReturn}{Returns}
+vector$<$unsigned int$>$ \hyperlink{classClient}{Client}\textquotesingle{}s purchases history 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classClient_ada079699bae9cf8b0b729c82f0940487}\label{classClient_ada079699bae9cf8b0b729c82f0940487}} 
+\index{Client@{Client}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Client@{Client}}
+\subsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool Client\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \hyperlink{classClient}{Client} \&}]{c }\end{DoxyParamCaption}) const}
+
+
+
+Operator overload of $<$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & \hyperlink{classClient}{Client} to compare this object to\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean value -\/$>$ true if this object is \char`\"{}smaller\char`\"{} than the other one 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=293pt]{classClient_ada079699bae9cf8b0b729c82f0940487_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classClient_a7dfa59dc82c7ef516edc0eb6719b97f0}\label{classClient_a7dfa59dc82c7ef516edc0eb6719b97f0}} 
+\index{Client@{Client}!operator==@{operator==}}
+\index{operator==@{operator==}!Client@{Client}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Client\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{classClient}{Client} \&}]{c }\end{DoxyParamCaption}) const}
+
+
+
+Operator overload of ==. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & \hyperlink{classClient}{Client} to compare this object to\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean value -\/$>$ true if both objects are equal 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{classClient_a7dfa59dc82c7ef516edc0eb6719b97f0_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classClient_ae8980b59fbd6f02e9ebd291446c37bef}\label{classClient_ae8980b59fbd6f02e9ebd291446c37bef}} 
+\index{Client@{Client}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Client@{Client}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{os,  }\item[{const \hyperlink{classClient}{Client} \&}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Overload outstream operator $<$$<$ to write a \hyperlink{classClient}{Client} to an outstream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & Outstream\\
+\hline
+{\em c} & \hyperlink{classClient}{Client} to be written\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+outstream 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classClient_a4f613c8876f65ad3de6435efc3e9f6a2}\label{classClient_a4f613c8876f65ad3de6435efc3e9f6a2}} 
+\index{Client@{Client}!district@{district}}
+\index{district@{district}!Client@{Client}}
+\subsubsection{\texorpdfstring{district}{district}}
+{\footnotesize\ttfamily string Client\+::district\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+history of Clients purchases 
+
+$<$ \mbox{\Hypertarget{classClient_afceda4b2e1aa4cf7cb52478d5e679bad}\label{classClient_afceda4b2e1aa4cf7cb52478d5e679bad}} 
+\index{Client@{Client}!history@{history}}
+\index{history@{history}!Client@{Client}}
+\subsubsection{\texorpdfstring{history}{history}}
+{\footnotesize\ttfamily vector$<$unsigned int$>$ Client\+::history\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{Client_8h}{Client.\+h}\item 
+src/\hyperlink{Client_8cpp}{Client.\+cpp}\end{DoxyCompactItemize}

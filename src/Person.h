@@ -5,8 +5,8 @@
 #include <iostream>
 
 using namespace std;
-/*
- * @class      Person Class that represents a Person where is stored the person's tax number
+/**
+ * @brief      Person Class that represents a Person where is stored the person's tax number
  *
  * @brief      Class for person.
  */

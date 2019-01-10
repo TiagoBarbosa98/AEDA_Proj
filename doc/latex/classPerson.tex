@@ -1,0 +1,188 @@
+\hypertarget{classPerson}{}\section{Person Class Reference}
+\label{classPerson}\index{Person@{Person}}
+
+
+\hyperlink{classPerson}{Person} Class that represents a \hyperlink{classPerson}{Person} where is stored the person\textquotesingle{}s tax number.  
+
+
+
+
+{\ttfamily \#include $<$Person.\+h$>$}
+
+
+
+Inheritance diagram for Person\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{classPerson__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Person\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=127pt]{classPerson__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPerson_aa4a247daff8ad28db9caac292dd2522b}{Person} (string n, string addr, unsigned int \hyperlink{classPerson_a55eea8ffb71b88d84ea43a6be15a2eb4}{contrib\+No})
+\begin{DoxyCompactList}\small\item\em tax number of the \hyperlink{classPerson}{Person} \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classPerson_a8eb4c40211e1d1d3356d10df7f4ffcd7}{get\+Contrib\+No} () const
+\begin{DoxyCompactList}\small\item\em Get the Contrib No object. \end{DoxyCompactList}\item 
+bool \hyperlink{classPerson_a8b98ec6713875725a005f2b0ad19fa4c}{operator==} (const \hyperlink{classPerson}{Person} \&p)
+\begin{DoxyCompactList}\small\item\em compares two person\textquotesingle{}s tax numbers \end{DoxyCompactList}\item 
+bool \hyperlink{classPerson_aa61a8197d96d683b6c779a32382349cc}{operator$<$} (const \hyperlink{classPerson}{Person} \&p)
+\begin{DoxyCompactList}\small\item\em compares two person\textquotesingle{}s name \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \hyperlink{classPerson_a55eea8ffb71b88d84ea43a6be15a2eb4}{contrib\+No}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+ostream \& \hyperlink{classPerson_a520925d2df99c77933138568a48577dd}{operator$<$$<$} (ostream \&os, const \hyperlink{classPerson}{Person} \&p)
+\begin{DoxyCompactList}\small\item\em writes \hyperlink{classPerson}{Person} p to outstream os \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classPerson}{Person} Class that represents a \hyperlink{classPerson}{Person} where is stored the person\textquotesingle{}s tax number. 
+
+Class for person. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPerson_aa4a247daff8ad28db9caac292dd2522b}\label{classPerson_aa4a247daff8ad28db9caac292dd2522b}} 
+\index{Person@{Person}!Person@{Person}}
+\index{Person@{Person}!Person@{Person}}
+\subsubsection{\texorpdfstring{Person()}{Person()}}
+{\footnotesize\ttfamily Person\+::\+Person (\begin{DoxyParamCaption}\item[{string}]{n,  }\item[{string}]{addr,  }\item[{unsigned int}]{contrib\+No }\end{DoxyParamCaption})}
+
+
+
+tax number of the \hyperlink{classPerson}{Person} 
+
+$<$ Construct a new \hyperlink{classPerson}{Person} object
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & The name of the \hyperlink{classPerson}{Person} to be created \\
+\hline
+{\em addr} & The adress of the \hyperlink{classPerson}{Person} be created \\
+\hline
+{\em contrib\+No} & The tax number of the \hyperlink{classPerson}{Person} to be created \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classPerson_a8eb4c40211e1d1d3356d10df7f4ffcd7}\label{classPerson_a8eb4c40211e1d1d3356d10df7f4ffcd7}} 
+\index{Person@{Person}!get\+Contrib\+No@{get\+Contrib\+No}}
+\index{get\+Contrib\+No@{get\+Contrib\+No}!Person@{Person}}
+\subsubsection{\texorpdfstring{get\+Contrib\+No()}{getContribNo()}}
+{\footnotesize\ttfamily unsigned int Person\+::get\+Contrib\+No (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the Contrib No object. 
+
+\begin{DoxyReturn}{Returns}
+unsigned int person\textquotesingle{}s tax number 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPerson_aa61a8197d96d683b6c779a32382349cc}\label{classPerson_aa61a8197d96d683b6c779a32382349cc}} 
+\index{Person@{Person}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Person@{Person}}
+\subsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool Person\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \hyperlink{classPerson}{Person} \&}]{p }\end{DoxyParamCaption})}
+
+
+
+compares two person\textquotesingle{}s name 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & person to compare to\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if \hyperlink{classPerson}{Person}\textquotesingle{}s name is alphabetical smaller than to p\textquotesingle{}s name 
+
+false if \hyperlink{classPerson}{Person}\textquotesingle{}s name isn\textquotesingle{}t alphabetical smaller than to p\textquotesingle{}s name 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=299pt]{classPerson_aa61a8197d96d683b6c779a32382349cc_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPerson_a8b98ec6713875725a005f2b0ad19fa4c}\label{classPerson_a8b98ec6713875725a005f2b0ad19fa4c}} 
+\index{Person@{Person}!operator==@{operator==}}
+\index{operator==@{operator==}!Person@{Person}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Person\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{classPerson}{Person} \&}]{p }\end{DoxyParamCaption})}
+
+
+
+compares two person\textquotesingle{}s tax numbers 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & person to compare to \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if \hyperlink{classPerson}{Person}\textquotesingle{}s tax number is equal to p\textquotesingle{}s tax number 
+
+false if \hyperlink{classPerson}{Person}\textquotesingle{}s tax number ism\textquotesingle{}t equal to p\textquotesingle{}s tax number 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{classPerson_a8b98ec6713875725a005f2b0ad19fa4c_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classPerson_a520925d2df99c77933138568a48577dd}\label{classPerson_a520925d2df99c77933138568a48577dd}} 
+\index{Person@{Person}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Person@{Person}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{os,  }\item[{const \hyperlink{classPerson}{Person} \&}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+writes \hyperlink{classPerson}{Person} p to outstream os 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & outstream\\
+\hline
+\end{DoxyParams}
+param p \hyperlink{classPerson}{Person} Obj. to write
+
+\begin{DoxyReturn}{Returns}
+outstream 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classPerson_a55eea8ffb71b88d84ea43a6be15a2eb4}\label{classPerson_a55eea8ffb71b88d84ea43a6be15a2eb4}} 
+\index{Person@{Person}!contrib\+No@{contrib\+No}}
+\index{contrib\+No@{contrib\+No}!Person@{Person}}
+\subsubsection{\texorpdfstring{contrib\+No}{contribNo}}
+{\footnotesize\ttfamily unsigned int Person\+::contrib\+No\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{Person_8h}{Person.\+h}\item 
+src/\hyperlink{Person_8cpp}{Person.\+cpp}\end{DoxyCompactItemize}

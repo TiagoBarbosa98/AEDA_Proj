@@ -11,7 +11,7 @@
 using namespace std;
 
 /**
- * @class Sale class.
+ * @brief Sale class.
  * 
  */
 class Sale {

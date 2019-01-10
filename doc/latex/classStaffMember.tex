@@ -1,0 +1,250 @@
+\hypertarget{classStaffMember}{}\section{Staff\+Member Class Reference}
+\label{classStaffMember}\index{Staff\+Member@{Staff\+Member}}
+
+
+\hyperlink{classStaffMember}{Staff\+Member} Class that represents a staff member from a pharmacy where are stored is salary and the position in that pharmacy.  
+
+
+
+
+{\ttfamily \#include $<$Staff\+Member.\+h$>$}
+
+
+
+Inheritance diagram for Staff\+Member\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=153pt]{classStaffMember__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Staff\+Member\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=153pt]{classStaffMember__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classStaffMember_a1e9921baaffb1e708b77f3488c78684b}{Staff\+Member} (string n, string addr, unsigned int \hyperlink{classPerson_a55eea8ffb71b88d84ea43a6be15a2eb4}{contrib\+No}, unsigned int sal, string ph, string pos)
+\begin{DoxyCompactList}\small\item\em Position of the Staff Member in the \hyperlink{classPharmacy}{Pharmacy}. \end{DoxyCompactList}\item 
+\hyperlink{classStaffMember_ac29edb372cd676446075d72bbb0d7de6}{Staff\+Member} ()
+\item 
+unsigned int \hyperlink{classStaffMember_affc762af53afc6fcbb7c29a362de05bc}{get\+Salary} () const
+\begin{DoxyCompactList}\small\item\em Get the Salary object. \end{DoxyCompactList}\item 
+string \hyperlink{classStaffMember_a94c742e2577c13695fef27af507e153b}{get\+Pharmacy} () const
+\begin{DoxyCompactList}\small\item\em Get the \hyperlink{classPharmacy}{Pharmacy} object. \end{DoxyCompactList}\item 
+string \hyperlink{classStaffMember_a7ae61e5f21a3131f3ed6d9e2be0f445f}{get\+Position} () const
+\begin{DoxyCompactList}\small\item\em Get the Position object. \end{DoxyCompactList}\item 
+string \hyperlink{classStaffMember_ad9db2f7dc662950ea2e7e420285e5ea5}{get\+Info} () const
+\begin{DoxyCompactList}\small\item\em Get the Info object. \end{DoxyCompactList}\item 
+void \hyperlink{classStaffMember_ab2d7ec284f4c34d7951b3168106bf092}{set\+Salary} (unsigned int ns)
+\begin{DoxyCompactList}\small\item\em Set the Salary object. \end{DoxyCompactList}\item 
+void \hyperlink{classStaffMember_a628c894f76e94a3a9370e610ccdf78fe}{set\+Pharmacy} (string ph)
+\begin{DoxyCompactList}\small\item\em Set the \hyperlink{classPharmacy}{Pharmacy} object. \end{DoxyCompactList}\item 
+void \hyperlink{classStaffMember_afa7f9171f01d6d24ea25e0e458fca513}{set\+Position} (string pos)
+\begin{DoxyCompactList}\small\item\em Set the Position object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \hyperlink{classStaffMember_ae64ceda8a343e92fe577ae6cad878e6c}{salary}
+\item 
+string \hyperlink{classStaffMember_a20cb40d4d2b8b26070b853fb4ab68ddf}{pharmacy}
+\begin{DoxyCompactList}\small\item\em Salary of the Staff Member. \end{DoxyCompactList}\item 
+string \hyperlink{classStaffMember_a170b93cb78c310afcb87b24c5164a9b7}{position}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classPharmacy}{Pharmacy} where the Staff Member works. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+ostream \& \hyperlink{classStaffMember_a439f44a9fdf5a48fddf42d0929184c9a}{operator$<$$<$} (ostream \&os, const \hyperlink{classStaffMember}{Staff\+Member} \&s)
+\begin{DoxyCompactList}\small\item\em Overload write operator $<$$<$ to write a Staff\+Members info to an outstream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classStaffMember}{Staff\+Member} Class that represents a staff member from a pharmacy where are stored is salary and the position in that pharmacy. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classStaffMember_a1e9921baaffb1e708b77f3488c78684b}\label{classStaffMember_a1e9921baaffb1e708b77f3488c78684b}} 
+\index{Staff\+Member@{Staff\+Member}!Staff\+Member@{Staff\+Member}}
+\index{Staff\+Member@{Staff\+Member}!Staff\+Member@{Staff\+Member}}
+\subsubsection{\texorpdfstring{Staff\+Member()}{StaffMember()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Staff\+Member\+::\+Staff\+Member (\begin{DoxyParamCaption}\item[{string}]{n,  }\item[{string}]{addr,  }\item[{unsigned int}]{contrib\+No,  }\item[{unsigned int}]{sal,  }\item[{string}]{ph,  }\item[{string}]{pos }\end{DoxyParamCaption})}
+
+
+
+Position of the Staff Member in the \hyperlink{classPharmacy}{Pharmacy}. 
+
+$<$ Construct a new Staff Member object \begin{DoxyVerb}@param n The name of the Staff Member to be created
+@param addr The adress of the Staff Member to be created
+@param contribNo The tax number of the Staff Member to be created
+@param sal The Salary of the Staff Member to be created
+@param ph The Pharmacy where the Staff Member to be created works
+@param pos The Position of the Staff Member to be created\end{DoxyVerb}
+ \mbox{\Hypertarget{classStaffMember_ac29edb372cd676446075d72bbb0d7de6}\label{classStaffMember_ac29edb372cd676446075d72bbb0d7de6}} 
+\index{Staff\+Member@{Staff\+Member}!Staff\+Member@{Staff\+Member}}
+\index{Staff\+Member@{Staff\+Member}!Staff\+Member@{Staff\+Member}}
+\subsubsection{\texorpdfstring{Staff\+Member()}{StaffMember()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Staff\+Member\+::\+Staff\+Member (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classStaffMember_ad9db2f7dc662950ea2e7e420285e5ea5}\label{classStaffMember_ad9db2f7dc662950ea2e7e420285e5ea5}} 
+\index{Staff\+Member@{Staff\+Member}!get\+Info@{get\+Info}}
+\index{get\+Info@{get\+Info}!Staff\+Member@{Staff\+Member}}
+\subsubsection{\texorpdfstring{get\+Info()}{getInfo()}}
+{\footnotesize\ttfamily string Staff\+Member\+::get\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the Info object. 
+
+\begin{DoxyReturn}{Returns}
+string prints all the the Staff Member\textquotesingle{}s information 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classStaffMember_a94c742e2577c13695fef27af507e153b}\label{classStaffMember_a94c742e2577c13695fef27af507e153b}} 
+\index{Staff\+Member@{Staff\+Member}!get\+Pharmacy@{get\+Pharmacy}}
+\index{get\+Pharmacy@{get\+Pharmacy}!Staff\+Member@{Staff\+Member}}
+\subsubsection{\texorpdfstring{get\+Pharmacy()}{getPharmacy()}}
+{\footnotesize\ttfamily string Staff\+Member\+::get\+Pharmacy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the \hyperlink{classPharmacy}{Pharmacy} object. 
+
+\begin{DoxyReturn}{Returns}
+string Staff Member\textquotesingle{}s \hyperlink{classPharmacy}{Pharmacy} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classStaffMember_a7ae61e5f21a3131f3ed6d9e2be0f445f}\label{classStaffMember_a7ae61e5f21a3131f3ed6d9e2be0f445f}} 
+\index{Staff\+Member@{Staff\+Member}!get\+Position@{get\+Position}}
+\index{get\+Position@{get\+Position}!Staff\+Member@{Staff\+Member}}
+\subsubsection{\texorpdfstring{get\+Position()}{getPosition()}}
+{\footnotesize\ttfamily string Staff\+Member\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the Position object. 
+
+\begin{DoxyReturn}{Returns}
+string Staff Member\textquotesingle{}s Position 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classStaffMember_affc762af53afc6fcbb7c29a362de05bc}\label{classStaffMember_affc762af53afc6fcbb7c29a362de05bc}} 
+\index{Staff\+Member@{Staff\+Member}!get\+Salary@{get\+Salary}}
+\index{get\+Salary@{get\+Salary}!Staff\+Member@{Staff\+Member}}
+\subsubsection{\texorpdfstring{get\+Salary()}{getSalary()}}
+{\footnotesize\ttfamily unsigned int Staff\+Member\+::get\+Salary (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the Salary object. 
+
+\begin{DoxyReturn}{Returns}
+unsigned int Staff Member\textquotesingle{}s Salary 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classStaffMember_a628c894f76e94a3a9370e610ccdf78fe}\label{classStaffMember_a628c894f76e94a3a9370e610ccdf78fe}} 
+\index{Staff\+Member@{Staff\+Member}!set\+Pharmacy@{set\+Pharmacy}}
+\index{set\+Pharmacy@{set\+Pharmacy}!Staff\+Member@{Staff\+Member}}
+\subsubsection{\texorpdfstring{set\+Pharmacy()}{setPharmacy()}}
+{\footnotesize\ttfamily void Staff\+Member\+::set\+Pharmacy (\begin{DoxyParamCaption}\item[{string}]{ph }\end{DoxyParamCaption})}
+
+
+
+Set the \hyperlink{classPharmacy}{Pharmacy} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ph} & new Staff Member\textquotesingle{}s \hyperlink{classPharmacy}{Pharmacy} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classStaffMember_afa7f9171f01d6d24ea25e0e458fca513}\label{classStaffMember_afa7f9171f01d6d24ea25e0e458fca513}} 
+\index{Staff\+Member@{Staff\+Member}!set\+Position@{set\+Position}}
+\index{set\+Position@{set\+Position}!Staff\+Member@{Staff\+Member}}
+\subsubsection{\texorpdfstring{set\+Position()}{setPosition()}}
+{\footnotesize\ttfamily void Staff\+Member\+::set\+Position (\begin{DoxyParamCaption}\item[{string}]{pos }\end{DoxyParamCaption})}
+
+
+
+Set the Position object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & new Staff Member\textquotesingle{}s Position \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classStaffMember_ab2d7ec284f4c34d7951b3168106bf092}\label{classStaffMember_ab2d7ec284f4c34d7951b3168106bf092}} 
+\index{Staff\+Member@{Staff\+Member}!set\+Salary@{set\+Salary}}
+\index{set\+Salary@{set\+Salary}!Staff\+Member@{Staff\+Member}}
+\subsubsection{\texorpdfstring{set\+Salary()}{setSalary()}}
+{\footnotesize\ttfamily void Staff\+Member\+::set\+Salary (\begin{DoxyParamCaption}\item[{unsigned int}]{ns }\end{DoxyParamCaption})}
+
+
+
+Set the Salary object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ns} & new Staff Member\textquotesingle{}s Salary \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classStaffMember_a439f44a9fdf5a48fddf42d0929184c9a}\label{classStaffMember_a439f44a9fdf5a48fddf42d0929184c9a}} 
+\index{Staff\+Member@{Staff\+Member}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Staff\+Member@{Staff\+Member}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{os,  }\item[{const \hyperlink{classStaffMember}{Staff\+Member} \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Overload write operator $<$$<$ to write a Staff\+Members info to an outstream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & outstream\\
+\hline
+{\em s} & \hyperlink{classStaffMember}{Staff\+Member} to be written\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Outstream 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classStaffMember_a20cb40d4d2b8b26070b853fb4ab68ddf}\label{classStaffMember_a20cb40d4d2b8b26070b853fb4ab68ddf}} 
+\index{Staff\+Member@{Staff\+Member}!pharmacy@{pharmacy}}
+\index{pharmacy@{pharmacy}!Staff\+Member@{Staff\+Member}}
+\subsubsection{\texorpdfstring{pharmacy}{pharmacy}}
+{\footnotesize\ttfamily string Staff\+Member\+::pharmacy\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Salary of the Staff Member. 
+
+$<$ \mbox{\Hypertarget{classStaffMember_a170b93cb78c310afcb87b24c5164a9b7}\label{classStaffMember_a170b93cb78c310afcb87b24c5164a9b7}} 
+\index{Staff\+Member@{Staff\+Member}!position@{position}}
+\index{position@{position}!Staff\+Member@{Staff\+Member}}
+\subsubsection{\texorpdfstring{position}{position}}
+{\footnotesize\ttfamily string Staff\+Member\+::position\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\hyperlink{classPharmacy}{Pharmacy} where the Staff Member works. 
+
+$<$ \mbox{\Hypertarget{classStaffMember_ae64ceda8a343e92fe577ae6cad878e6c}\label{classStaffMember_ae64ceda8a343e92fe577ae6cad878e6c}} 
+\index{Staff\+Member@{Staff\+Member}!salary@{salary}}
+\index{salary@{salary}!Staff\+Member@{Staff\+Member}}
+\subsubsection{\texorpdfstring{salary}{salary}}
+{\footnotesize\ttfamily unsigned int Staff\+Member\+::salary\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{StaffMember_8h}{Staff\+Member.\+h}\item 
+src/\hyperlink{StaffMember_8cpp}{Staff\+Member.\+cpp}\end{DoxyCompactItemize}

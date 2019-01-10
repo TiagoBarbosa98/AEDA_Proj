@@ -6,8 +6,9 @@
 #include "StaffMember.h"
 
 using namespace std;
-/*
- * @class Pharmacy Class that represents a Pharmacy
+
+/**
+ * @brief Pharmacy Class that represents a Pharmacy
  */
 class Pharmacy: public Entity{
 	string manager;/** < @brief Manager of the Pharmacy */

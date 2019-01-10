@@ -1,0 +1,135 @@
+\hypertarget{PrintsNSorts_8h}{}\section{src/\+Prints\+N\+Sorts.h File Reference}
+\label{PrintsNSorts_8h}\index{src/\+Prints\+N\+Sorts.\+h@{src/\+Prints\+N\+Sorts.\+h}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+Include dependency graph for Prints\+N\+Sorts.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{PrintsNSorts_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{PrintsNSorts_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class T $>$ }\\void \hyperlink{PrintsNSorts_8h_a5837010d189a7bf58768fd9efb808919}{print\+Vector} (const vector$<$ T $>$ \&v)
+\item 
+{\footnotesize template$<$class T $>$ }\\int \hyperlink{PrintsNSorts_8h_a29fd290020732ac0864c4f157a29cca3}{partition} (vector$<$ T $>$ \&arr, int low, int high)
+\item 
+{\footnotesize template$<$class T $>$ }\\void \hyperlink{PrintsNSorts_8h_a3e4d14298b3da1f9e64adb8ae4547dcd}{quick\+Sort} (vector$<$ T $>$ \&arr, int low, int high)
+\begin{DoxyCompactList}\small\item\em The main function that implements Quick\+Sort arr\mbox{[}\mbox{]} --$>$ Array to be sorted, low --$>$ Starting index, high --$>$ Ending index. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\void \hyperlink{PrintsNSorts_8h_ac96a86ae64c66b9973e38aee47538de4}{quick\+Sort} (vector$<$ T $>$ \&arr)
+\begin{DoxyCompactList}\small\item\em calls quicksort(\+Arr, Low, High) \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\T \hyperlink{PrintsNSorts_8h_ac56fd5ea209eb8066eeabf6fa1c393f0}{check\+For\+Type} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{PrintsNSorts_8h_ac56fd5ea209eb8066eeabf6fa1c393f0}\label{PrintsNSorts_8h_ac56fd5ea209eb8066eeabf6fa1c393f0}} 
+\index{Prints\+N\+Sorts.\+h@{Prints\+N\+Sorts.\+h}!check\+For\+Type@{check\+For\+Type}}
+\index{check\+For\+Type@{check\+For\+Type}!Prints\+N\+Sorts.\+h@{Prints\+N\+Sorts.\+h}}
+\subsubsection{\texorpdfstring{check\+For\+Type()}{checkForType()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T check\+For\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{PrintsNSorts_8h_a29fd290020732ac0864c4f157a29cca3}\label{PrintsNSorts_8h_a29fd290020732ac0864c4f157a29cca3}} 
+\index{Prints\+N\+Sorts.\+h@{Prints\+N\+Sorts.\+h}!partition@{partition}}
+\index{partition@{partition}!Prints\+N\+Sorts.\+h@{Prints\+N\+Sorts.\+h}}
+\subsubsection{\texorpdfstring{partition()}{partition()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int partition (\begin{DoxyParamCaption}\item[{vector$<$ T $>$ \&}]{arr,  }\item[{int}]{low,  }\item[{int}]{high }\end{DoxyParamCaption})}
+
+This function takes last element as pivot, places the pivot element at its correct position in sorted array, and places all smaller (smaller than pivot) to left of pivot and all greater elements to right of pivot
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em arr} & The arrgument \\
+\hline
+\mbox{\tt in}  & {\em low} & The low \\
+\hline
+\mbox{\tt in}  & {\em high} & The high\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type of vector\\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+new index for sort 
+\end{DoxyReturn}
+\mbox{\Hypertarget{PrintsNSorts_8h_a5837010d189a7bf58768fd9efb808919}\label{PrintsNSorts_8h_a5837010d189a7bf58768fd9efb808919}} 
+\index{Prints\+N\+Sorts.\+h@{Prints\+N\+Sorts.\+h}!print\+Vector@{print\+Vector}}
+\index{print\+Vector@{print\+Vector}!Prints\+N\+Sorts.\+h@{Prints\+N\+Sorts.\+h}}
+\subsubsection{\texorpdfstring{print\+Vector()}{printVector()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void print\+Vector (\begin{DoxyParamCaption}\item[{const vector$<$ T $>$ \&}]{v }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{PrintsNSorts_8h_a3e4d14298b3da1f9e64adb8ae4547dcd}\label{PrintsNSorts_8h_a3e4d14298b3da1f9e64adb8ae4547dcd}} 
+\index{Prints\+N\+Sorts.\+h@{Prints\+N\+Sorts.\+h}!quick\+Sort@{quick\+Sort}}
+\index{quick\+Sort@{quick\+Sort}!Prints\+N\+Sorts.\+h@{Prints\+N\+Sorts.\+h}}
+\subsubsection{\texorpdfstring{quick\+Sort()}{quickSort()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void quick\+Sort (\begin{DoxyParamCaption}\item[{vector$<$ T $>$ \&}]{arr,  }\item[{int}]{low,  }\item[{int}]{high }\end{DoxyParamCaption})}
+
+
+
+The main function that implements Quick\+Sort arr\mbox{[}\mbox{]} --$>$ Array to be sorted, low --$>$ Starting index, high --$>$ Ending index. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em arr} & The vector \\
+\hline
+\mbox{\tt in}  & {\em low} & The low \\
+\hline
+\mbox{\tt in}  & {\em high} & The high\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & type of vector \\
+\hline
+\end{DoxyTemplParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{PrintsNSorts_8h_a3e4d14298b3da1f9e64adb8ae4547dcd_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{PrintsNSorts_8h_ac96a86ae64c66b9973e38aee47538de4}\label{PrintsNSorts_8h_ac96a86ae64c66b9973e38aee47538de4}} 
+\index{Prints\+N\+Sorts.\+h@{Prints\+N\+Sorts.\+h}!quick\+Sort@{quick\+Sort}}
+\index{quick\+Sort@{quick\+Sort}!Prints\+N\+Sorts.\+h@{Prints\+N\+Sorts.\+h}}
+\subsubsection{\texorpdfstring{quick\+Sort()}{quickSort()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void quick\+Sort (\begin{DoxyParamCaption}\item[{vector$<$ T $>$ \&}]{arr }\end{DoxyParamCaption})}
+
+
+
+calls quicksort(\+Arr, Low, High) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arr} & The Vector\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & type of vector \\
+\hline
+\end{DoxyTemplParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=319pt]{PrintsNSorts_8h_ac96a86ae64c66b9973e38aee47538de4_cgraph}
+\end{center}
+\end{figure}

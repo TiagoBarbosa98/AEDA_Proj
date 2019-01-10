@@ -1,0 +1,8 @@
+<map id="DataBase::removePharmacy" name="DataBase::removePharmacy">
+<area shape="rect" id="node2" href="$classDataBase.html#ac572ac9a3091e0adcef16ab79bfba7fb" title="Displays the names of the pharmacies available in the DB. " alt="" coords="244,15,432,57"/>
+<area shape="rect" id="node3" href="$classDataBase.html#aecde8e08249b522ff9431c9feed57996" title="Asks the user to assign some StaffMember &#39;s to existing Pharmacy &#39;s. " alt="" coords="261,81,415,108"/>
+<area shape="rect" id="node4" href="$classDataBase.html#af3c7f6a88b927dbd01b34121eefabe4d" title="Gets the staff Member with name name. " alt="" coords="499,5,644,32"/>
+<area shape="rect" id="node5" href="$classEntity.html#a438837d2be5b221fd9aafc323c46f08a" title="Get the Name object. " alt="" coords="513,56,630,83"/>
+<area shape="rect" id="node6" href="$classDataBase.html#a33b218c5674029a4696a44d710f88aa6" title="Keeps asking the user for the name of a Pharmacy until an existing one is given. " alt="" coords="484,107,659,133"/>
+<area shape="rect" id="node7" href="$classStaffMember.html#a628c894f76e94a3a9370e610ccdf78fe" title="Set the Pharmacy object. " alt="" coords="480,157,663,184"/>
+</map>

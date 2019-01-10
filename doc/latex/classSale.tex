@@ -1,0 +1,228 @@
+\hypertarget{classSale}{}\section{Sale Class Reference}
+\label{classSale}\index{Sale@{Sale}}
+
+
+\hyperlink{classSale}{Sale} class.  
+
+
+
+
+{\ttfamily \#include $<$Sale.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSale_a4b941c26295df31d639351b276a11956}{Sale} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \hyperlink{classSale}{Sale} object. \end{DoxyCompactList}\item 
+\hyperlink{classSale_a69f5e59b612e42837898b951ea08c3b7}{Sale} (vector$<$ tuple$<$ string, unsigned int, float $>$$>$ cart)
+\begin{DoxyCompactList}\small\item\em Destroy the \hyperlink{classSale}{Sale} object. \end{DoxyCompactList}\item 
+\hyperlink{classSale_ac832a81dfbb1a6130c4b50675c5533db}{Sale} (tm $\ast$time, vector$<$ tuple$<$ string, unsigned int, float $>$$>$ cart, float \hyperlink{classSale_a7fcb726755f9a802c21c1ecef5fc5753}{price})
+\item 
+tm $\ast$ \hyperlink{classSale_a7dbd53790d4cbd1d04163f3ace444122}{get\+Date} () const
+\begin{DoxyCompactList}\small\item\em Get the Date object. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classSale_a0f4f6f985ba28b31fc56adfac37bc952}{get\+Code} () const
+\begin{DoxyCompactList}\small\item\em Get the Code object. \end{DoxyCompactList}\item 
+void \hyperlink{classSale_ad582ae56bc2aa780b428e31de213a192}{add\+Prod\+Price\+Qtt} (\hyperlink{classProduct}{Product} p, int q)
+\item 
+string \hyperlink{classSale_af237ba4edbb4747b5d325fa7d60de179}{display} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+tm $\ast$ \hyperlink{classSale_a953e40805ef7b401caa1fc356c23772c}{date}
+\item 
+unsigned int \hyperlink{classSale_ad86ea33bedf6450d06a90442eca79053}{code}
+\begin{DoxyCompactList}\small\item\em Code of the last sale in the system. \end{DoxyCompactList}\item 
+vector$<$ tuple$<$ string, unsigned int, float $>$ $>$ \hyperlink{classSale_a968a0a80a79f28b918509af6f9c93821}{prod\+Price\+Qtt}
+\begin{DoxyCompactList}\small\item\em Code of the \hyperlink{classSale}{Sale}. \end{DoxyCompactList}\item 
+float \hyperlink{classSale_a7fcb726755f9a802c21c1ecef5fc5753}{price}
+\begin{DoxyCompactList}\small\item\em Vector containing a tuples of product names, price paid and quantity. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static unsigned int \hyperlink{classSale_aeebd444e8f864bd91a90e6d426dabc70}{last\+Code} = 0
+\begin{DoxyCompactList}\small\item\em Time and Date of \hyperlink{classSale}{Sale}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+ostream \& \hyperlink{classSale_a3dc1c9b3c685b4a1d9553083be9c3fbf}{operator$<$$<$} (ostream \&os, \hyperlink{classSale}{Sale} \&s)
+\begin{DoxyCompactList}\small\item\em Write sale to Outstream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classSale}{Sale} class. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSale_a4b941c26295df31d639351b276a11956}\label{classSale_a4b941c26295df31d639351b276a11956}} 
+\index{Sale@{Sale}!Sale@{Sale}}
+\index{Sale@{Sale}!Sale@{Sale}}
+\subsubsection{\texorpdfstring{Sale()}{Sale()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Sale\+::\+Sale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a new \hyperlink{classSale}{Sale} object. 
+
+\mbox{\Hypertarget{classSale_a69f5e59b612e42837898b951ea08c3b7}\label{classSale_a69f5e59b612e42837898b951ea08c3b7}} 
+\index{Sale@{Sale}!Sale@{Sale}}
+\index{Sale@{Sale}!Sale@{Sale}}
+\subsubsection{\texorpdfstring{Sale()}{Sale()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Sale\+::\+Sale (\begin{DoxyParamCaption}\item[{vector$<$ tuple$<$ string, unsigned int, float $>$$>$}]{cart }\end{DoxyParamCaption})}
+
+
+
+Destroy the \hyperlink{classSale}{Sale} object. 
+
+Construct a new \hyperlink{classSale}{Sale} object
+
+
+\begin{DoxyParams}{Parameters}
+{\em cart} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{classSale_a69f5e59b612e42837898b951ea08c3b7_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSale_ac832a81dfbb1a6130c4b50675c5533db}\label{classSale_ac832a81dfbb1a6130c4b50675c5533db}} 
+\index{Sale@{Sale}!Sale@{Sale}}
+\index{Sale@{Sale}!Sale@{Sale}}
+\subsubsection{\texorpdfstring{Sale()}{Sale()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Sale\+::\+Sale (\begin{DoxyParamCaption}\item[{tm $\ast$}]{time,  }\item[{vector$<$ tuple$<$ string, unsigned int, float $>$$>$}]{cart,  }\item[{float}]{price }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classSale_ad582ae56bc2aa780b428e31de213a192}\label{classSale_ad582ae56bc2aa780b428e31de213a192}} 
+\index{Sale@{Sale}!add\+Prod\+Price\+Qtt@{add\+Prod\+Price\+Qtt}}
+\index{add\+Prod\+Price\+Qtt@{add\+Prod\+Price\+Qtt}!Sale@{Sale}}
+\subsubsection{\texorpdfstring{add\+Prod\+Price\+Qtt()}{addProdPriceQtt()}}
+{\footnotesize\ttfamily void Sale\+::add\+Prod\+Price\+Qtt (\begin{DoxyParamCaption}\item[{\hyperlink{classProduct}{Product}}]{p,  }\item[{int}]{q }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & product to be add \\
+\hline
+{\em qtt} & quantity \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{classSale_ad582ae56bc2aa780b428e31de213a192_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSale_af237ba4edbb4747b5d325fa7d60de179}\label{classSale_af237ba4edbb4747b5d325fa7d60de179}} 
+\index{Sale@{Sale}!display@{display}}
+\index{display@{display}!Sale@{Sale}}
+\subsubsection{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily string Sale\+::display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classSale_a0f4f6f985ba28b31fc56adfac37bc952}\label{classSale_a0f4f6f985ba28b31fc56adfac37bc952}} 
+\index{Sale@{Sale}!get\+Code@{get\+Code}}
+\index{get\+Code@{get\+Code}!Sale@{Sale}}
+\subsubsection{\texorpdfstring{get\+Code()}{getCode()}}
+{\footnotesize\ttfamily unsigned int Sale\+::get\+Code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the Code object. 
+
+\begin{DoxyReturn}{Returns}
+unsigned int code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSale_a7dbd53790d4cbd1d04163f3ace444122}\label{classSale_a7dbd53790d4cbd1d04163f3ace444122}} 
+\index{Sale@{Sale}!get\+Date@{get\+Date}}
+\index{get\+Date@{get\+Date}!Sale@{Sale}}
+\subsubsection{\texorpdfstring{get\+Date()}{getDate()}}
+{\footnotesize\ttfamily tm $\ast$ Sale\+::get\+Date (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the Date object. 
+
+\begin{DoxyReturn}{Returns}
+tm$\ast$ time and date 
+\end{DoxyReturn}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classSale_a3dc1c9b3c685b4a1d9553083be9c3fbf}\label{classSale_a3dc1c9b3c685b4a1d9553083be9c3fbf}} 
+\index{Sale@{Sale}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Sale@{Sale}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{os,  }\item[{\hyperlink{classSale}{Sale} \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Write sale to Outstream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & outstream \\
+\hline
+{\em s} & \hyperlink{classSale}{Sale} to be written \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ostream\& 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classSale_ad86ea33bedf6450d06a90442eca79053}\label{classSale_ad86ea33bedf6450d06a90442eca79053}} 
+\index{Sale@{Sale}!code@{code}}
+\index{code@{code}!Sale@{Sale}}
+\subsubsection{\texorpdfstring{code}{code}}
+{\footnotesize\ttfamily unsigned int Sale\+::code\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Code of the last sale in the system. 
+
+$<$ \mbox{\Hypertarget{classSale_a953e40805ef7b401caa1fc356c23772c}\label{classSale_a953e40805ef7b401caa1fc356c23772c}} 
+\index{Sale@{Sale}!date@{date}}
+\index{date@{date}!Sale@{Sale}}
+\subsubsection{\texorpdfstring{date}{date}}
+{\footnotesize\ttfamily tm$\ast$ Sale\+::date\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classSale_aeebd444e8f864bd91a90e6d426dabc70}\label{classSale_aeebd444e8f864bd91a90e6d426dabc70}} 
+\index{Sale@{Sale}!last\+Code@{last\+Code}}
+\index{last\+Code@{last\+Code}!Sale@{Sale}}
+\subsubsection{\texorpdfstring{last\+Code}{lastCode}}
+{\footnotesize\ttfamily unsigned int Sale\+::last\+Code = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Time and Date of \hyperlink{classSale}{Sale}. 
+
+$<$ \mbox{\Hypertarget{classSale_a7fcb726755f9a802c21c1ecef5fc5753}\label{classSale_a7fcb726755f9a802c21c1ecef5fc5753}} 
+\index{Sale@{Sale}!price@{price}}
+\index{price@{price}!Sale@{Sale}}
+\subsubsection{\texorpdfstring{price}{price}}
+{\footnotesize\ttfamily float Sale\+::price\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Vector containing a tuples of product names, price paid and quantity. 
+
+$<$ \mbox{\Hypertarget{classSale_a968a0a80a79f28b918509af6f9c93821}\label{classSale_a968a0a80a79f28b918509af6f9c93821}} 
+\index{Sale@{Sale}!prod\+Price\+Qtt@{prod\+Price\+Qtt}}
+\index{prod\+Price\+Qtt@{prod\+Price\+Qtt}!Sale@{Sale}}
+\subsubsection{\texorpdfstring{prod\+Price\+Qtt}{prodPriceQtt}}
+{\footnotesize\ttfamily vector$<$tuple$<$string , unsigned int, float$>$ $>$ Sale\+::prod\+Price\+Qtt\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Code of the \hyperlink{classSale}{Sale}. 
+
+$<$ 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{Sale_8h}{Sale.\+h}\item 
+src/\hyperlink{Sale_8cpp}{Sale.\+cpp}\end{DoxyCompactItemize}

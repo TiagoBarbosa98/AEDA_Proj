@@ -1,0 +1,7 @@
+<map id="DataBase::writeToProductsFile" name="DataBase::writeToProductsFile">
+<area shape="rect" id="node2" href="$classDataBase.html#aec542d0eb4b2c2d44abe5cefd25d2057" title="DataBase::writeToProducts\lFile2" alt="" coords="257,49,440,90"/>
+<area shape="rect" id="node3" href="$classProduct.html#a2f411b12652a6b7b6194fcdbab3a1fb3" title="Write product info to string. " alt="" coords="488,56,604,83"/>
+<area shape="rect" id="node4" href="$classProduct.html#a732aca2574f7a39e3a90837e0240e81f" title="Get the Total Price object. " alt="" coords="652,5,804,32"/>
+<area shape="rect" id="node5" href="$classProduct.html#a6a449b90b669aa4380d229b44eca686f" title="Product::getQuantity" alt="" coords="657,56,799,83"/>
+<area shape="rect" id="node6" href="$classProduct.html#aa2ccc7b6aa44a0bf10694b18f910dfa1" title="Product::med" alt="" coords="678,107,778,133"/>
+</map>

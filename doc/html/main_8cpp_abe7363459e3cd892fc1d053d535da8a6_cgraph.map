@@ -1,0 +1,51 @@
+<map id="mainMenu" name="mainMenu">
+<area shape="rect" id="node2" href="$main_8cpp.html#acae0cb71cc559b4b16c3bb6709724d97" title="checkBoundaries" alt="" coords="453,731,576,757"/>
+<area shape="rect" id="node3" href="$main_8cpp.html#ac892403bd7bb3f5bac7ef98066af4d32" title="pharmaciesMenu" alt="" coords="186,427,307,453"/>
+<area shape="rect" id="node19" href="$main_8cpp.html#a80af2a4e56a2cad76ea29c8e2bab08a6" title="staffMenu" alt="" coords="207,224,287,251"/>
+<area shape="rect" id="node23" href="$main_8cpp.html#a46e3cb3588a4c774625292cbad09f2d3" title="clientsMenu" alt="" coords="201,1035,293,1061"/>
+<area shape="rect" id="node30" href="$main_8cpp.html#a2558faa12dabc123877491b5b0c0d2f6" title="productsMenu" alt="" coords="195,1304,299,1331"/>
+<area shape="rect" id="node35" href="$main_8cpp.html#afa6188515d5698c8610c53bd3b1400c9" title="salesMenu" alt="" coords="204,655,289,681"/>
+<area shape="rect" id="node39" href="$main_8cpp.html#a6493618a83fdbf17d2097f85784f7e09" title="prescriptionsMenu" alt="" coords="183,857,311,884"/>
+<area shape="rect" id="node42" href="$classDataBase.html#a4d855ccf967f4f741646100d2c890ede" title="DataBase::writeToClientsFile" alt="" coords="150,1507,343,1533"/>
+<area shape="rect" id="node44" href="$classDataBase.html#aef0dc00d9d40159c361518e60e78f857" title="DataBase::writeToPharmaciesFile" alt="" coords="136,1355,357,1381"/>
+<area shape="rect" id="node45" href="$classDataBase.html#a1435e1728598586503f199981b84a933" title="DataBase::writeToPrescriptionFile" alt="" coords="136,1405,357,1432"/>
+<area shape="rect" id="node46" href="$classDataBase.html#a108ba0eb315d14ed6bc7181b98499318" title="DataBase::writeToProductsFile" alt="" coords="145,1561,349,1588"/>
+<area shape="rect" id="node48" href="$classDataBase.html#a62cb54f7bbcd213d71f604003298cd95" title="DataBase::writeToSalesFile" alt="" coords="154,1620,339,1647"/>
+<area shape="rect" id="node50" href="$classDataBase.html#abc8c8d3116c6b3422d87ae781ba91538" title="DataBase::writeToStaffFile" alt="" coords="157,1456,337,1483"/>
+<area shape="rect" id="node4" href="$classDataBase.html#ab00290f55389cd62d8ee5594ecf9a6b5" title="DataBase::showAllPharmacies" alt="" coords="676,477,879,504"/>
+<area shape="rect" id="node6" href="$classDataBase.html#a4a6fca7606a5734e623a3d8ea7c00fa4" title="DataBase::addPharmacy" alt="" coords="431,376,599,403"/>
+<area shape="rect" id="node7" href="$classDataBase.html#af923ee9db26814bf9413afe95262a01d" title="DataBase::removePharmacy" alt="" coords="419,119,610,145"/>
+<area shape="rect" id="node14" href="$classItemDoesNotExist.html#ac043ce235a565e8766cf55b32a2aa80c" title="ItemDoesNotExist::printMsg" alt="" coords="683,655,871,681"/>
+<area shape="rect" id="node15" href="$classDataBase.html#a9704dec1b0797bf3f6dc18a754a4a1b5" title="Asks the user edit a Pharmacy &#39;s info. " alt="" coords="409,275,620,301"/>
+<area shape="rect" id="node5" href="$PrintsNSorts_8h.html#a5837010d189a7bf58768fd9efb808919" title="printVector" alt="" coords="979,491,1065,517"/>
+<area shape="rect" id="node8" href="$classDataBase.html#ac572ac9a3091e0adcef16ab79bfba7fb" title="Displays the names of the pharmacies available in the DB. " alt="" coords="683,107,871,149"/>
+<area shape="rect" id="node9" href="$classDataBase.html#aecde8e08249b522ff9431c9feed57996" title="Asks the user to assign some StaffMember &#39;s to existing Pharmacy &#39;s. " alt="" coords="700,56,855,83"/>
+<area shape="rect" id="node10" href="$classDataBase.html#af3c7f6a88b927dbd01b34121eefabe4d" title="Gets the staff Member with name name. " alt="" coords="949,140,1095,167"/>
+<area shape="rect" id="node11" href="$classEntity.html#a438837d2be5b221fd9aafc323c46f08a" title="Get the Name object. " alt="" coords="963,233,1081,260"/>
+<area shape="rect" id="node12" href="$classDataBase.html#a33b218c5674029a4696a44d710f88aa6" title="Keeps asking the user for the name of a Pharmacy until an existing one is given. " alt="" coords="935,31,1109,57"/>
+<area shape="rect" id="node13" href="$classStaffMember.html#a628c894f76e94a3a9370e610ccdf78fe" title="Set the Pharmacy object. " alt="" coords="931,415,1113,441"/>
+<area shape="rect" id="node16" href="$classStaffMember.html#afa7f9171f01d6d24ea25e0e458fca513" title="Set the Position object. " alt="" coords="692,376,863,403"/>
+<area shape="rect" id="node17" href="$classDataBase.html#aa1d2ae05f581ec45eb8da06e468aec30" title="DataBase::showAllStaff" alt="" coords="696,173,859,200"/>
+<area shape="rect" id="node18" href="$classDataBase.html#a79dbf45f9b1a60fd5a29505f44e188e0" title="Searches through pharmacies vector and removes the StaffMember with a specific name from one of those..." alt="" coords="692,325,863,352"/>
+<area shape="rect" id="node20" href="$classDataBase.html#aed28994adfb33442ffd3469496150da8" title="DataBase::addStaffMember" alt="" coords="685,5,869,32"/>
+<area shape="rect" id="node21" href="$classDataBase.html#a26ab8f3d2cb6d78a5105e72c2377c21c" title="DataBase::removeStaffMember" alt="" coords="411,224,618,251"/>
+<area shape="rect" id="node22" href="$classDataBase.html#a28237a8f74d11c092cf250d17c7997f1" title="Asks the user to assign all StaffMember &#39;s in the DataBase with no Pharmacy assigned. " alt="" coords="407,68,622,95"/>
+<area shape="rect" id="node24" href="$classDataBase.html#a0c83992321a456f8fa097ea5bbf4a093" title="Displays all the clients in the DataBase. " alt="" coords="423,933,607,960"/>
+<area shape="rect" id="node25" href="$classDataBase.html#a1eebe53a8f3c83af5d75d3a83590ca01" title="DataBase::addClient" alt="" coords="443,984,586,1011"/>
+<area shape="rect" id="node26" href="$classDataBase.html#a9fb1b3625b3431d09b4b64a13bbb1e0f" title="DataBase::removeClient" alt="" coords="432,1035,597,1061"/>
+<area shape="rect" id="node27" href="$classDataBase.html#ab87e9a50f26c934790774b0bf0d62a51" title="Displays the clients on the top 3 of most purchases made. " alt="" coords="421,1086,608,1127"/>
+<area shape="rect" id="node28" href="$classDataBase.html#a2016794a78b86df19676ea9aba3114bc" title="Displays all clients from a specific district. " alt="" coords="405,1152,624,1179"/>
+<area shape="rect" id="node29" href="$classDataBase.html#aa613181e1960fa22305feae26560960b" title="Displays the client with specific id info. " alt="" coords="433,1203,596,1229"/>
+<area shape="rect" id="node31" href="$classDataBase.html#a74dcc435917c328bd89aaf5fd3cb804d" title="DataBase::showAllProducts" alt="" coords="421,1405,608,1432"/>
+<area shape="rect" id="node32" href="$classDataBase.html#a654216132c946bdb05ec4ae866302259" title="DataBase::addProduct" alt="" coords="437,1456,592,1483"/>
+<area shape="rect" id="node33" href="$classDataBase.html#a6be2328441f5fe20086a4f8b0002adee" title="DataBase::removeProduct" alt="" coords="427,1304,603,1331"/>
+<area shape="rect" id="node34" href="$classDataBase.html#a6255a0d9489dee6c6de802bcfff2d19e" title="Checks and displays if there is a product with less products. " alt="" coords="418,1355,611,1381"/>
+<area shape="rect" id="node36" href="$classDataBase.html#abf8a64bd81ce3207862b0105d52f646f" title="DataBase::showAllSales" alt="" coords="694,528,861,555"/>
+<area shape="rect" id="node37" href="$classDataBase.html#a0fb00cab402248ffba3903cc1f19f6c2" title="DataBase::addSale" alt="" coords="447,680,582,707"/>
+<area shape="rect" id="node38" href="$classDataBase.html#adba6b4fad6dcb329aae27d8f610edaac" title="DataBase::removeSale" alt="" coords="436,579,593,605"/>
+<area shape="rect" id="node40" href="$classDataBase.html#a40a951f6f2c923ca315655956ab8e196" title="DataBase::showAllPrescriptions" alt="" coords="672,807,883,833"/>
+<area shape="rect" id="node41" href="$classDataBase.html#a82e38546b8cb54beffd3185a13a838aa" title="DataBase::addPrescription" alt="" coords="425,781,604,808"/>
+<area shape="rect" id="node43" href="$classDataBase.html#a136d789db1f6c1cd615dc1bdbe27557b" title="DataBase::writeToFileW" alt="" coords="432,1507,597,1533"/>
+<area shape="rect" id="node47" href="$classDataBase.html#aec542d0eb4b2c2d44abe5cefd25d2057" title="DataBase::writeToProducts\lFile2" alt="" coords="423,1558,606,1599"/>
+<area shape="rect" id="node49" href="$classDataBase.html#a0bf85b7fb0feb4fb1f6888ba58ebe2b2" title="Writes the info saved in the DataBase to the Sales file. " alt="" coords="433,1624,597,1651"/>
+</map>

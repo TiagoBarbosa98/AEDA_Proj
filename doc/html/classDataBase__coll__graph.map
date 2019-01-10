@@ -1,0 +1,8 @@
+<map id="DataBase" name="DataBase">
+<area shape="rect" id="node2" href="$classBST.html" title="BST\&lt; Client \&gt;" alt="" coords="180,367,287,393"/>
+<area shape="rect" id="node3" href="$classClient.html" title="Client Class that represents a client. " alt="" coords="267,172,323,199"/>
+<area shape="rect" id="node6" href="$classBinaryNode.html" title="BinaryNode\&lt; Client \&gt;" alt="" coords="98,277,246,304"/>
+<area shape="rect" id="node4" href="$classPerson.html" title="Person Class that represents a Person where is stored the person&#39;s tax number. " alt="" coords="263,81,326,108"/>
+<area shape="rect" id="node5" href="$classEntity.html" title="Entity Class that represents a entity(can be a Person or a Pharmacy) where are stored the name and ad..." alt="" coords="267,5,323,32"/>
+<area shape="rect" id="node7" href="$classBinaryNode.html" title="BinaryNode\&lt; Comparable \&gt;" alt="" coords="5,172,189,199"/>
+</map>

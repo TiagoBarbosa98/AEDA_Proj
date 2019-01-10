@@ -1,0 +1,221 @@
+\hypertarget{classMedicine}{}\section{Medicine Class Reference}
+\label{classMedicine}\index{Medicine@{Medicine}}
+
+
+Class for medicine.  
+
+
+
+
+{\ttfamily \#include $<$Medicine.\+h$>$}
+
+
+
+Inheritance diagram for Medicine\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=136pt]{classMedicine__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Medicine\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=136pt]{classMedicine__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMedicine_a6a879be6fb9f5b9b16b465a5aff3f835}{Medicine} ()
+\begin{DoxyCompactList}\small\item\em If said \hyperlink{classMedicine}{Medicine} requires a precription. \end{DoxyCompactList}\item 
+\hyperlink{classMedicine_a6b66bb37ef10ea4951aa94577f1a1c58}{Medicine} (string \hyperlink{classProduct_acc9bddcf74112d85a6dc231db2269b8d}{name}, string \hyperlink{classProduct_ac39d552b24ce60549271a85aea3f5ed0}{description}, float \hyperlink{classProduct_ad1fd6ee6c8653bf81898668b1d01b05d}{price}, int \hyperlink{classProduct_a299430b8756aba9f6d44af46831791cc}{quantity}, float \hyperlink{classProduct_ac772b7a57928ccfdb02309bde2e4fa33}{iva}, int \hyperlink{classProduct_acf4c1bb9d62717e3b2ecaaf7ec5dffd7}{code}, float \hyperlink{classMedicine_a56e42f35d8edce81983df5837b6fee54}{discount}, bool no\+Receipt)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classMedicine}{Medicine} Constructor. \end{DoxyCompactList}\item 
+float \hyperlink{classMedicine_aae7277cc1a23171b2d60225d0e11f24d}{get\+Discount} () const
+\begin{DoxyCompactList}\small\item\em Gets the Discount. \end{DoxyCompactList}\item 
+float \hyperlink{classMedicine_a313a6ad362c0746ddb96425b097a8f77}{get\+Price\+With\+Discount} () const
+\begin{DoxyCompactList}\small\item\em Calculates price with discount. \end{DoxyCompactList}\item 
+bool \hyperlink{classMedicine_ac69fcbbcfda660e3ee4df38282442dc4}{prescription\+Required} () const
+\item 
+string \hyperlink{classMedicine_a42cabfcd2dd5f04b10e5a01d86f5ee60}{display} () const
+\begin{DoxyCompactList}\small\item\em Write product info to string. \end{DoxyCompactList}\item 
+string \hyperlink{classMedicine_a502f519c44cfb89071af6a920fb773e3}{prescr} () const
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \hyperlink{classMedicine_a56e42f35d8edce81983df5837b6fee54}{discount}
+\item 
+bool \hyperlink{classMedicine_a10737b485d7f6e8b208ae5e26299333d}{prescription}
+\begin{DoxyCompactList}\small\item\em State discount on \hyperlink{classMedicine}{Medicine}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+ostream \& \hyperlink{classMedicine_ac59d59dad83c5b44d752d0dc6bdbf845}{operator$<$$<$} (ostream \&os, const \hyperlink{classMedicine}{Medicine} \&m)
+\begin{DoxyCompactList}\small\item\em Overload ostream operator $<$$<$ to write \hyperlink{classMedicine}{Medicine}\textquotesingle{}s info to an outstream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class for medicine. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMedicine_a6a879be6fb9f5b9b16b465a5aff3f835}\label{classMedicine_a6a879be6fb9f5b9b16b465a5aff3f835}} 
+\index{Medicine@{Medicine}!Medicine@{Medicine}}
+\index{Medicine@{Medicine}!Medicine@{Medicine}}
+\subsubsection{\texorpdfstring{Medicine()}{Medicine()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Medicine\+::\+Medicine (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+If said \hyperlink{classMedicine}{Medicine} requires a precription. 
+
+$<$ \hyperlink{classMedicine}{Medicine} Constructor \mbox{\Hypertarget{classMedicine_a6b66bb37ef10ea4951aa94577f1a1c58}\label{classMedicine_a6b66bb37ef10ea4951aa94577f1a1c58}} 
+\index{Medicine@{Medicine}!Medicine@{Medicine}}
+\index{Medicine@{Medicine}!Medicine@{Medicine}}
+\subsubsection{\texorpdfstring{Medicine()}{Medicine()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Medicine\+::\+Medicine (\begin{DoxyParamCaption}\item[{string}]{name,  }\item[{string}]{description,  }\item[{float}]{price,  }\item[{int}]{quantity,  }\item[{float}]{iva,  }\item[{int}]{code,  }\item[{float}]{discount,  }\item[{bool}]{no\+Receipt }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{classMedicine}{Medicine} Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \hyperlink{classProduct}{Product} name\\
+\hline
+{\em description} & Description\\
+\hline
+{\em prince} & Price\\
+\hline
+{\em iva} & I\+VA\\
+\hline
+{\em Code} & \hyperlink{classProduct}{Product} Code\\
+\hline
+{\em Discount} & State discount\\
+\hline
+{\em no\+Receipt} & If said \hyperlink{classMedicine}{Medicine} requeires a prescription \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classMedicine_a42cabfcd2dd5f04b10e5a01d86f5ee60}\label{classMedicine_a42cabfcd2dd5f04b10e5a01d86f5ee60}} 
+\index{Medicine@{Medicine}!display@{display}}
+\index{display@{display}!Medicine@{Medicine}}
+\subsubsection{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily string Medicine\+::display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Write product info to string. 
+
+\begin{DoxyReturn}{Returns}
+String with product info. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classProduct_a2f411b12652a6b7b6194fcdbab3a1fb3}{Product}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMedicine_a42cabfcd2dd5f04b10e5a01d86f5ee60_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classMedicine_aae7277cc1a23171b2d60225d0e11f24d}\label{classMedicine_aae7277cc1a23171b2d60225d0e11f24d}} 
+\index{Medicine@{Medicine}!get\+Discount@{get\+Discount}}
+\index{get\+Discount@{get\+Discount}!Medicine@{Medicine}}
+\subsubsection{\texorpdfstring{get\+Discount()}{getDiscount()}}
+{\footnotesize\ttfamily float Medicine\+::get\+Discount (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the Discount. 
+
+\begin{DoxyReturn}{Returns}
+The discount 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMedicine_a313a6ad362c0746ddb96425b097a8f77}\label{classMedicine_a313a6ad362c0746ddb96425b097a8f77}} 
+\index{Medicine@{Medicine}!get\+Price\+With\+Discount@{get\+Price\+With\+Discount}}
+\index{get\+Price\+With\+Discount@{get\+Price\+With\+Discount}!Medicine@{Medicine}}
+\subsubsection{\texorpdfstring{get\+Price\+With\+Discount()}{getPriceWithDiscount()}}
+{\footnotesize\ttfamily float Medicine\+::get\+Price\+With\+Discount (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Calculates price with discount. 
+
+\begin{DoxyReturn}{Returns}
+Price with discount applied 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMedicine_a313a6ad362c0746ddb96425b097a8f77_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classMedicine_a502f519c44cfb89071af6a920fb773e3}\label{classMedicine_a502f519c44cfb89071af6a920fb773e3}} 
+\index{Medicine@{Medicine}!prescr@{prescr}}
+\index{prescr@{prescr}!Medicine@{Medicine}}
+\subsubsection{\texorpdfstring{prescr()}{prescr()}}
+{\footnotesize\ttfamily string Medicine\+::prescr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classMedicine_ac69fcbbcfda660e3ee4df38282442dc4}\label{classMedicine_ac69fcbbcfda660e3ee4df38282442dc4}} 
+\index{Medicine@{Medicine}!prescription\+Required@{prescription\+Required}}
+\index{prescription\+Required@{prescription\+Required}!Medicine@{Medicine}}
+\subsubsection{\texorpdfstring{prescription\+Required()}{prescriptionRequired()}}
+{\footnotesize\ttfamily bool Medicine\+::prescription\+Required (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classMedicine_ac59d59dad83c5b44d752d0dc6bdbf845}\label{classMedicine_ac59d59dad83c5b44d752d0dc6bdbf845}} 
+\index{Medicine@{Medicine}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Medicine@{Medicine}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{os,  }\item[{const \hyperlink{classMedicine}{Medicine} \&}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Overload ostream operator $<$$<$ to write \hyperlink{classMedicine}{Medicine}\textquotesingle{}s info to an outstream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & outstream\\
+\hline
+{\em m} & \hyperlink{classMedicine}{Medicine} to be written\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+outstream 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classMedicine_a56e42f35d8edce81983df5837b6fee54}\label{classMedicine_a56e42f35d8edce81983df5837b6fee54}} 
+\index{Medicine@{Medicine}!discount@{discount}}
+\index{discount@{discount}!Medicine@{Medicine}}
+\subsubsection{\texorpdfstring{discount}{discount}}
+{\footnotesize\ttfamily float Medicine\+::discount\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classMedicine_a10737b485d7f6e8b208ae5e26299333d}\label{classMedicine_a10737b485d7f6e8b208ae5e26299333d}} 
+\index{Medicine@{Medicine}!prescription@{prescription}}
+\index{prescription@{prescription}!Medicine@{Medicine}}
+\subsubsection{\texorpdfstring{prescription}{prescription}}
+{\footnotesize\ttfamily bool Medicine\+::prescription\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+State discount on \hyperlink{classMedicine}{Medicine}. 
+
+$<$ 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{Medicine_8h}{Medicine.\+h}\item 
+src/\hyperlink{Medicine_8cpp}{Medicine.\+cpp}\end{DoxyCompactItemize}

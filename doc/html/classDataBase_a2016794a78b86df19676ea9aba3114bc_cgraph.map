@@ -1,0 +1,6 @@
+<map id="DataBase::showClientsByDistrict" name="DataBase::showClientsByDistrict">
+<area shape="rect" id="node2" href="$classBSTItrIn.html#a6f9a43217862c263a9bf15b9a08b889a" title="BSTItrIn::isAtEnd" alt="" coords="273,5,399,32"/>
+<area shape="rect" id="node3" href="$classBSTItrIn.html#a434375a2d263bf132ab3c4ac878af8ef" title="BSTItrIn::retrieve" alt="" coords="275,56,397,83"/>
+<area shape="rect" id="node4" href="$classClient.html#aa6acbbfc2c1717d7303a3db86ac22058" title="Get function of the variable district. " alt="" coords="274,107,398,133"/>
+<area shape="rect" id="node5" href="$classBSTItrIn.html#ac772d3ebbac748c5f8cf9bc659f2e32c" title="BSTItrIn::advance" alt="" coords="272,157,400,184"/>
+</map>

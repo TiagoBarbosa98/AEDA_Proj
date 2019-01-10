@@ -1,0 +1,6 @@
+<map id="prescriptionsMenu" name="prescriptionsMenu">
+<area shape="rect" id="node2" href="$main_8cpp.html#acae0cb71cc559b4b16c3bb6709724d97" title="checkBoundaries" alt="" coords="225,5,348,32"/>
+<area shape="rect" id="node3" href="$classDataBase.html#a40a951f6f2c923ca315655956ab8e196" title="DataBase::showAllPrescriptions" alt="" coords="181,56,392,83"/>
+<area shape="rect" id="node5" href="$classDataBase.html#a82e38546b8cb54beffd3185a13a838aa" title="DataBase::addPrescription" alt="" coords="197,107,376,133"/>
+<area shape="rect" id="node4" href="$PrintsNSorts_8h.html#a5837010d189a7bf58768fd9efb808919" title="printVector" alt="" coords="440,56,525,83"/>
+</map>

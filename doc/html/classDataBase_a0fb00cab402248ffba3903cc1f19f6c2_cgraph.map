@@ -1,0 +1,8 @@
+<map id="DataBase::addSale" name="DataBase::addSale">
+<area shape="rect" id="node2" href="$classDataBase.html#ae83d4c612ff8d93b69ab1c05345cd62c" title="DataBase::getProductByName" alt="" coords="188,5,391,32"/>
+<area shape="rect" id="node3" href="$classDataBase.html#a780ad993953bd70eaee64df86d0f1974" title="DataBase::removeQuantity" alt="" coords="199,56,379,83"/>
+<area shape="rect" id="node4" href="$classSale.html#ad582ae56bc2aa780b428e31de213a192" title="Sale::addProdPriceQtt" alt="" coords="213,107,365,133"/>
+<area shape="rect" id="node7" href="$classItemDoesNotExist.html#ac043ce235a565e8766cf55b32a2aa80c" title="ItemDoesNotExist::printMsg" alt="" coords="195,157,383,184"/>
+<area shape="rect" id="node5" href="$classProduct.html#acbf3d46720bb1a0d16e49663b73b803d" title="Get the Name object. " alt="" coords="439,81,567,108"/>
+<area shape="rect" id="node6" href="$classProduct.html#a0aaea95b8d3241b3758246254b8575e2" title="Get the Price object. " alt="" coords="441,132,564,159"/>
+</map>
